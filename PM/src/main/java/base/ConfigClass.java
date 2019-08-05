@@ -11,16 +11,21 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import utilities.Take_Screenshot;
 
 public class ConfigClass
 {
+
 	public WebDriver driver = null;
+	
+	@Parameters({"browser"})
 	@BeforeClass()
-	public void beforeClass()
+	public void beforeClass(String browser)
 	{
-		driver = new FirefoxDriver();
+		System.out.println(browser);
+		driver = new WebdriverFactory(browser).get_driver_instance();
 	}
 	
 	@AfterClass()

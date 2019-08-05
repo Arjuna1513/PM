@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Command line test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/1</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Aug 04 16:50:37 IST 2019</td>
+<td>Started on:</td><td>Mon Aug 05 17:45:41 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>11 seconds (11123 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (192 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,83 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.FirstTest.beforeClass()'><b>beforeClass</b><br>Test class: tests.FirstTest</td>
+<td><div><pre>org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @BeforeClass annotated beforeClass.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1509563803", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1509563803'><pre>org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @BeforeClass annotated beforeClass.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:407)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:356)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:635)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
+<td>0</td>
+<td>tests.FirstTest@66d2e7d9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='tests.FirstTest.beforeMethod()'><b>beforeMethod</b><br>Test class: tests.FirstTest</td>
+<td></td>
+<td>0</td>
+<td>tests.FirstTest@66d2e7d9</td></tr>
+<tr>
+<td title='tests.FirstTest.afterMethod()'><b>afterMethod</b><br>Test class: tests.FirstTest</td>
+<td></td>
+<td>0</td>
+<td>tests.FirstTest@66d2e7d9</td></tr>
+<tr>
+<td title='tests.FirstTest.afterClass()'><b>afterClass</b><br>Test class: tests.FirstTest</td>
+<td></td>
+<td>0</td>
+<td>tests.FirstTest@66d2e7d9</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
@@ -76,7 +151,46 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='tests.FirstTest.myTest()'><b>myTest</b><br>Test class: tests.FirstTest</td>
-<td></td>
+<td><div><pre>org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @BeforeClass annotated beforeClass.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1501587365", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1501587365'><pre>org.testng.TestNGException: 
+Can inject only one of &lt;ITestContext, XmlTest&gt; into a @BeforeClass annotated beforeClass.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+	at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:407)
+	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:356)
+	at org.testng.internal.Parameters.createParameters(Parameters.java:635)
+	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+	at org.testng.internal.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:168)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:105)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:110)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</pre></div></td>
 <td>0</td>
 <td>tests.FirstTest@66d2e7d9</td></tr>
 </table><p>
