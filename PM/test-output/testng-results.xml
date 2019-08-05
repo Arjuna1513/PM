@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="10770" started-at="2019-08-05T13:22:53Z" finished-at="2019-08-05T13:23:04Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="10770" started-at="2019-08-05T13:22:53Z" finished-at="2019-08-05T13:23:04Z">
+      <class name="tests.FirstTest">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:tests.FirstTest@4bec1f0c]" name="beforeClass" is-config="true" duration-ms="5562" started-at="2019-08-05T13:22:53Z" finished-at="2019-08-05T13:22:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.FirstTest@4bec1f0c]" name="beforeMethod" is-config="true" duration-ms="4500" started-at="2019-08-05T13:22:58Z" finished-at="2019-08-05T13:23:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="myTest()[pri:0, instance:tests.FirstTest@4bec1f0c]" name="myTest" duration-ms="11" started-at="2019-08-05T13:23:03Z" finished-at="2019-08-05T13:23:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- myTest -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.FirstTest@4bec1f0c]" name="afterMethod" is-config="true" duration-ms="3" started-at="2019-08-05T13:23:03Z" finished-at="2019-08-05T13:23:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=myTest status=SUCCESS method=FirstTest.myTest()[pri:0, instance:tests.FirstTest@4bec1f0c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.FirstTest@4bec1f0c]" name="afterClass" is-config="true" duration-ms="642" started-at="2019-08-05T13:23:03Z" finished-at="2019-08-05T13:23:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- tests.FirstTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
