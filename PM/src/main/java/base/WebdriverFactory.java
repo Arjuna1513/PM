@@ -17,17 +17,17 @@ public class WebdriverFactory
 	public WebDriver get_driver_instance()
 	{
 		WebDriver driver = null;
-		if(browser.equals("chrome"))
+		if(browser == "chrome")
 		{
 			driver = new ChromeDriver();
 			return driver;
 		}
-		else if(browser.equals("firefox"))
+		else if(browser == "firefox")
 		{
 			driver = new FirefoxDriver();
 			return driver;
 		}
-		else if(browser.equals("ie"))
+		else if(browser == "ie")
 		{
 			driver = new InternetExplorerDriver();
 			return driver;

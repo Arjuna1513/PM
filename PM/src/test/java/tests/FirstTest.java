@@ -1,5 +1,7 @@
 package tests;
 
+import static org.testng.Assert.fail;
+
 import org.testng.annotations.Test;
 
 import base.ConfigClass;
