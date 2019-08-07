@@ -1,0 +1,21 @@
+2019-08-07 01:32:10 INFO  method1:28 - Hello
+2019-08-07 01:33:43 INFO  method:28 - Hello
+2019-08-07 01:33:43 INFO  method1:28 - Hello
+2019-08-07 01:37:02 ERROR MyTest:43 - error
+2019-08-07 01:40:20 ERROR MyTest:43 - error
+2019-08-07 01:40:20 ERROR MyTest:43 - / by zero
+2019-08-07 01:50:17 ERROR MyTest:43 - error
+2019-08-07 01:50:17 ERROR MyTest:43 - / by zero
+2019-08-07 01:51:51 ERROR MyTest:43 - error
+2019-08-07 01:51:51 ERROR MyTest:43 - / by zero
+2019-08-07 01:53:07 ERROR MyTest:43 - error
+2019-08-07 01:53:07 ERROR MyTest:43 - java.lang.ArithmeticException: / by zero
+2019-08-07 01:55:12 ERROR MyTest:43 - error
+2019-08-07 01:55:22 ERROR MyTest:43 - org.openqa.selenium.NoSuchElementException: Unable to locate element: #kkk
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'IN-7SMH5H2', ip: '172.25.109.193', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 68.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190717172542, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 152332, moz:profile: C:\Users\mallikar\AppData\L..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: c46db1a4-7982-427e-a147-8cefe92e83bc
+*** Element info: {Using=id, value=kkk}
