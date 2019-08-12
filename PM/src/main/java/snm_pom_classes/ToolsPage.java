@@ -10,6 +10,9 @@ public class ToolsPage
 	@FindBy(id="Command_Line")
 	private WebElement commandLine;
 	
+	@FindBy(name="CommandLine")
+	private WebElement cmdFrame;
+	
 	@FindBy(id="Quality_of_Service")
 	private WebElement qualityofService;       
 	
@@ -35,6 +38,11 @@ public class ToolsPage
 	public WebElement getCommandLine() 
 	{
 		return commandLine;
+	}
+	
+	public WebElement getcmdFrame() 
+	{
+		return cmdFrame;
 	}
 
 	public WebElement getQualityofService() 

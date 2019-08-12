@@ -68,5 +68,11 @@ public class SNM_Login_Page
 		return copyRightText;
 	}
 
-	
+	public void snm_login(String usrName, String usrPassword)
+	{
+		setSnmUserNameField(usrName);
+		getSnmPasswordField().click();
+		setSnmPasswordField(usrPassword);
+		getSnmUserLoginBtn().click();
+	}
 }

@@ -51,5 +51,12 @@ public class PM_Login_Page
 		PageFactory.initElements(driver, this);
 	}
 	
+	public void PM_Login(String userName, String usrPassword)
+	{
+		setUserLoginTextBox(userName);
+		getUserPasswordTextBox().click();
+		setUserPasswordTextBox(usrPassword);
+		getUserLoginButton().click();
+	}
 	
 }

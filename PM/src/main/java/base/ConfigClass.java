@@ -16,16 +16,26 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import utilities.ExcelReadAndWrite;
 import utilities.Take_Screenshot;
 
 public class ConfigClass
 {
 	public WebDriver driver = null;
+	public static String excelPath = null;
+	public static ExcelReadAndWrite loginData;
+	public static ExcelReadAndWrite pmTests;
+	public static ExcelReadAndWrite snmTests;
+	public static ExcelReadAndWrite ipData;
 	
 	@BeforeSuite()
 	public void beforeSuite()
 	{
-		
+		excelPath = "./testData/TestData.xlsx";
+		loginData = new ExcelReadAndWrite("logindata", excelPath);
+		pmTests = new ExcelReadAndWrite("PMTestData", excelPath);
+		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);
+		ipData = new ExcelReadAndWrite("IP", excelPath);
 	}
 	
 	@AfterSuite()

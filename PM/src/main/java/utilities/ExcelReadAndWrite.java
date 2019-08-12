@@ -12,6 +12,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.Reporter;
+import org.testng.SkipException;
 
 public class ExcelReadAndWrite 
 {
@@ -59,24 +60,36 @@ public class ExcelReadAndWrite
 		return sheet.getPhysicalNumberOfRows();
 	}
 	
-	public String getData(int row, int cell)
+	public String[] getData(String methodName, int row, int cell)
 	{
-		//System.out.println("Before fetching flag value");
-		return sheet.getRow(row).getCell(cell).getStringCellValue();
+		String[] values = null;
+		int ttlRows = getTotalRows();
+		for(int i=1; i<ttlRows; i++)
+		{
+			if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(methodName))
+			{
+				values = sheet.getRow(i).getCell(1).getStringCellValue().trim().split(",");
+				return values;
+			}
+		}
+		return values;
 		
 	}
 	
-	public String getTestCaseFlag(String path, int cell,String testName)
+	public void checkTestStatus(String methodName)
 	{
+		String flag = null;
 		for(int i=1; i<sheet.getPhysicalNumberOfRows(); i++)
 		{
-			if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(testName))
+			if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(methodName))
 			{
-				System.out.println("Match Found");
-				return sheet.getRow(i).getCell(cell).getStringCellValue();
+				flag = sheet.getRow(i).getCell(2).getStringCellValue();
+				if(flag.equalsIgnoreCase("N"))
+				{
+					throw new SkipException("TestCase "+methodName+" is Skipped because flag is set to NO");
+				}
 			}
 		}
-		return null;
 	}
 	
 	
