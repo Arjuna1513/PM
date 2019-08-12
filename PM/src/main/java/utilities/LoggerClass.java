@@ -5,49 +5,79 @@ import org.apache.log4j.xml.DOMConfigurator;
 
 public class LoggerClass 
 {
-	public static Logger log = null;
+	private static Logger log = null;
 	
-	public static void testBeginning(String testCaseName)
+	public static Logger testBeginning(String testCaseName)
 	{
-		log = Logger.getLogger(testCaseName);
-		DOMConfigurator.configure("log4j.xml");
-		log.info("========= Beginning of testcase :"+testCaseName+" ===========");
+		if(log==null)
+		{
+			log = Logger.getLogger(testCaseName);
+			DOMConfigurator.configure("log4j.xml");
+			log.info("========= Beginning of testcase :"+testCaseName+" ===========");
+			return log;
+		}
+		return log;
 	}
 	
-	public static void testEnd(String testCaseName)
+	public static Logger testEnd(String testCaseName)
 	{
-		log = Logger.getLogger(testCaseName);
-		DOMConfigurator.configure("log4j.xml");
-		log.info("========= End of testcase :"+testCaseName+" ===========");
+		if(log==null)
+		{
+			log = Logger.getLogger(testCaseName);
+			DOMConfigurator.configure("log4j.xml");
+			log.info("========= End of testcase :"+testCaseName+" ===========");
+			return log;
+		}
+		return log;
 	}
 	
-	public static void info(String message, String name)
+	public static Logger info(String message, String name)
 	{
-		log = Logger.getLogger(name);
-		DOMConfigurator.configure("log4j.xml");
-		log.info(message);
+		if(log==null)
+		{
+			log = Logger.getLogger(name);
+			DOMConfigurator.configure("log4j.xml");
+			log.info(message);
+			return log;
+		}
+		return log;
 	}
 
 	
-	public static void warning(String message, String name)
+	public static Logger warning(String message, String name)
 	{
-		log = Logger.getLogger(name);
-		DOMConfigurator.configure("log4j.xml");
-		log.warn(message);
+		if(log==null)
+		{
+			log = Logger.getLogger(name);
+			DOMConfigurator.configure("log4j.xml");
+			log.warn(message);
+			return log;
+		}
+		return log;
 	}
 	
-	public static void error(String message, String name)
+	public static Logger error(String message, String name)
 	{
-		log = Logger.getLogger(name);
-		DOMConfigurator.configure("log4j.xml");
-		log.error(message);
+		if(log==null)
+		{
+			log = Logger.getLogger(name);
+			DOMConfigurator.configure("log4j.xml");
+			log.error(message);
+			return log;
+		}
+		return log;
 	}
 	
 	
-	public static void fatal(String message, String name)
+	public static Logger fatal(String message, String name)
 	{
-		log = Logger.getLogger(name);
-		DOMConfigurator.configure("log4j.xml");
-		log.fatal(message);
+		if(log==null)
+		{
+			log = Logger.getLogger(name);
+			DOMConfigurator.configure("log4j.xml");
+			log.fatal(message);
+			return log;
+		}
+		return log;
 	}
 }

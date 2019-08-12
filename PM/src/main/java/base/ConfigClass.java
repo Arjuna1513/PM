@@ -9,8 +9,10 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -20,6 +22,17 @@ public class ConfigClass
 {
 	public WebDriver driver = null;
 	
+	@BeforeSuite()
+	public void beforeSuite()
+	{
+		
+	}
+	
+	@AfterSuite()
+	public void afterSuite() 
+	{
+		
+	}
 
 	@BeforeClass()
 	public void beforeClass()

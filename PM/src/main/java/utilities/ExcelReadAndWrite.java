@@ -10,7 +10,7 @@ import java.util.Map;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.Reporter;
 
 public class ExcelReadAndWrite 
@@ -22,9 +22,7 @@ public class ExcelReadAndWrite
 	Sheet sheet;
 	Map<String, Sheet> allInOneData;
 	
-	
-	
-	public void fetchExcelData(String sheet, String excelFilePath)
+	public ExcelReadAndWrite(String sheet, String excelFilePath)
 	{
 		file = new File(excelFilePath);
 		try 
@@ -33,7 +31,7 @@ public class ExcelReadAndWrite
 		
 			if(excelFilePath.substring(excelFilePath.indexOf(".")).equals(".xlsx"))
 			{
-//				book = new XSSFWorkbook(fis);	
+				book = new XSSFWorkbook(fis);	
 			}
 			else if(excelFilePath.substring(excelFilePath.indexOf(".")).equals(".xls"))
 			{
