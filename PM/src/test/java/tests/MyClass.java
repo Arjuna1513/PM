@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class MyTest 
+public class MyClass 
 {
 	@Test
-	public void helloWorld()
+	public void openBrowser()
 	{
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();

@@ -31,7 +31,7 @@ public class ConfigClass
 	@BeforeSuite
 	public void beforeSuite()
 	{
-		excelPath = "./testData/TestData.xlsx";
+		excelPath = "C://Users//mallikar//git//PM//PM//src//main//java//testData//TestData.xlsx";
 		loginData = new ExcelReadAndWrite("logindata", excelPath);
 		pmTests = new ExcelReadAndWrite("PMTestData", excelPath);
 		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);

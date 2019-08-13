@@ -80,6 +80,7 @@ public class ExcelReadAndWrite
 	public String getData(int row, int cell)
 	{
 		String value = sheet.getRow(row).getCell(cell).getStringCellValue().trim();
+		System.out.println("Fetchec value is : "+value);
 		return value;
 	}
 	
