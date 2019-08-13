@@ -28,7 +28,7 @@ public class ConfigClass
 	public static ExcelReadAndWrite snmTests;
 	public static ExcelReadAndWrite ipData;
 	
-	@BeforeSuite()
+	@BeforeSuite
 	public void beforeSuite()
 	{
 		excelPath = "./testData/TestData.xlsx";
@@ -38,34 +38,34 @@ public class ConfigClass
 		ipData = new ExcelReadAndWrite("IP", excelPath);
 	}
 	
-	@AfterSuite()
+	@AfterSuite
 	public void afterSuite() 
 	{
 		
 	}
 
-	@BeforeClass()
+	@BeforeClass
 	public void beforeClass()
 	{
 		driver = new FirefoxDriver();
 	}
 	
-	@AfterClass()
+	@AfterClass
 	public void afterClass()
 	{
 		driver.close();
 	}
 	
-	@BeforeMethod()
+	@BeforeMethod
 	public void beforeMethod()
 	{
-		driver.get("https://sqa.stackexchange.com/questions/36253/taking-screenshot-on-test-failure-selenium-webdriver-testng");
-		System.out.println(driver);
+//		driver.get("https://sqa.stackexchange.com/questions/36253/taking-screenshot-on-test-failure-selenium-webdriver-testng");
+//		System.out.println(driver);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
-	@AfterMethod()
+	@AfterMethod
 	public void afterMethod(ITestResult result) throws IOException
 	{
 		if(result.getStatus() == 2)

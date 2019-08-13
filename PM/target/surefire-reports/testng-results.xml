@@ -2,39 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="tests.FirstTest" duration-ms="12797" started-at="2019-08-06T18:23:01Z" finished-at="2019-08-06T18:23:14Z">
+  <suite name="tests.MyTest" duration-ms="7830" started-at="2019-08-13T17:30:53Z" finished-at="2019-08-13T17:31:01Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="12797" started-at="2019-08-06T18:23:01Z" finished-at="2019-08-06T18:23:14Z">
-      <class name="tests.FirstTest">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.FirstTest@7921b0a2]" name="beforeClass" is-config="true" duration-ms="7954" started-at="2019-08-06T18:23:01Z" finished-at="2019-08-06T18:23:09Z">
+    <test name="Command line test" duration-ms="7830" started-at="2019-08-13T17:30:53Z" finished-at="2019-08-13T17:31:01Z">
+      <class name="tests.MyTest">
+        <test-method status="PASS" signature="helloWorld()[pri:0, instance:tests.MyTest@5056dfcb]" name="helloWorld" duration-ms="7763" started-at="2019-08-13T17:30:53Z" finished-at="2019-08-13T17:31:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.FirstTest@7921b0a2]" name="beforeMethod" is-config="true" duration-ms="2711" started-at="2019-08-06T18:23:09Z" finished-at="2019-08-06T18:23:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="myTest()[pri:0, instance:tests.FirstTest@7921b0a2]" name="myTest" duration-ms="2" started-at="2019-08-06T18:23:12Z" finished-at="2019-08-06T18:23:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- myTest -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.FirstTest@7921b0a2]" name="afterMethod" is-config="true" duration-ms="3" started-at="2019-08-06T18:23:12Z" finished-at="2019-08-06T18:23:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=myTest status=SUCCESS method=FirstTest.myTest()[pri:0, instance:tests.FirstTest@7921b0a2] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.FirstTest@7921b0a2]" name="afterClass" is-config="true" duration-ms="2090" started-at="2019-08-06T18:23:12Z" finished-at="2019-08-06T18:23:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- tests.FirstTest -->
+        </test-method> <!-- helloWorld -->
+      </class> <!-- tests.MyTest -->
     </test> <!-- Command line test -->
-  </suite> <!-- tests.FirstTest -->
+  </suite> <!-- tests.MyTest -->
 </testng-results>
