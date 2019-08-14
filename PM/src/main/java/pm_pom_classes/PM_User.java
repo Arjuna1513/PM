@@ -12,11 +12,19 @@ import org.openqa.selenium.support.PageFactory;
 
 public class PM_User
 {
+	public static String addSuccessfulMsg = "Add operation successful for:";
 	public PM_User(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath="//a/b[text()=' Logout']")
+	private WebElement logOutLink;
+	
+	public WebElement getLogoutLink()
+	{
+		return logOutLink;
+	}
 	
 	@FindBy(name="onAddButton")
 	private WebElement addButton;

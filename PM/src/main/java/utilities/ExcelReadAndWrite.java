@@ -60,7 +60,7 @@ public class ExcelReadAndWrite
 		return sheet.getPhysicalNumberOfRows();
 	}
 	
-	public String[] getData(String methodName, int row, int cell)
+	public String[] getData(String methodName,int cell)
 	{
 		String[] values = null;
 		int ttlRows = getTotalRows();
@@ -68,7 +68,7 @@ public class ExcelReadAndWrite
 		{
 			if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(methodName))
 			{
-				values = sheet.getRow(i).getCell(1).getStringCellValue().trim().split(",");
+				values = sheet.getRow(i).getCell(cell).getStringCellValue().trim().split(",");
 				return values;
 			}
 		}

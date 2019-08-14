@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.PM_User_Tests">
+      <class name="tests.PM_User_Test">
         <methods>
           <include name="beforeClass"/>
-          <include name="test_create_user" invocation-numbers="0"/>
           <include name="beforeMethod"/>
+          <include name="test_create_user" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_User_Tests -->
+      </class> <!-- tests.PM_User_Test -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
