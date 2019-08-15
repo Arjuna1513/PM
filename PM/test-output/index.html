@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,6 +103,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)">test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)">test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -129,6 +134,14 @@
                   </a> <!-- test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...) -->
                   <span class="method-name">test_create_user</span>
                   <span class="parameters">(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)">
+                  </a> <!-- test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...) -->
+                  <span class="method-name">test_edit_user</span>
+                  <span class="parameters">(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -185,16 +198,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_create_user')
+data.setCell(0, 1, 'test_edit_user')
 data.setCell(0, 2, 'tests.PM_User_Test')
-data.setCell(0, 3, 14334);
+data.setCell(0, 3, 16755);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'test_create_user')
+data.setCell(1, 2, 'tests.PM_User_Test')
+data.setCell(1, 3, 13523);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 14 seconds</span>
+              <span class="suite-total-time">Total running time: 30 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -227,27 +244,39 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">932 ms</span>
+                <span class="method-start">1016 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">7400 ms</span>
+                <span class="method-start">7206 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)</span>
-                <span class="method-start">7434 ms</span>
+                <span class="method-start">7253 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=test_create_user status=SUCCESS method=PM_User_Test.test_create_user(java.lang.refl...)</span>
-                <span class="method-start">21771 ms</span>
+                <span class="method-start">20782 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">20783 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)</span>
+                <span class="method-start">20802 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=test_edit_user status=SUCCESS method=PM_User_Test.test_edit_user(java.lang.reflect....)</span>
+                <span class="method-start">37560 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">21773 ms</span>
+                <span class="method-start">37562 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">23406 ms</span>
+                <span class="method-start">38904 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

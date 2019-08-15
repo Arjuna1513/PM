@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_create_user" invocation-numbers="0"/>
+          <include name="test_edit_user" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>

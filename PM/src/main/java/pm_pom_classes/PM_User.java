@@ -41,7 +41,7 @@ public class PM_User
 	@FindBy(xpath="(//input[@name='onNextButton'])[2]")
 	private WebElement nextButton;
 	
-	@FindBy(xpath="(//input[@name='onApplyButton'])[2]")
+	@FindBy(xpath="//input[@id='onApplyButtonTopID']")
 	private WebElement applyButton;
 	
 	@FindBy(xpath="((//input[@name='onCancelButton'])[2]")
@@ -160,6 +160,11 @@ public class PM_User
 	{
 		firstNamefield.sendKeys(firstName);
 	}
+	
+	public WebElement getFirstName()
+	{
+		return firstNamefield;
+	}
 
 
 	//last Name
@@ -170,6 +175,11 @@ public class PM_User
 	public void setLastNamefield(String lastName) 
 	{
 		lastNamefield.sendKeys(lastName);
+	}
+	
+	public WebElement getLastName()
+	{
+		return lastNamefield;
 	}
 
 	//alternate LastName

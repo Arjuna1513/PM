@@ -16,7 +16,7 @@ public class CleanUP
 	public PM_User pmUser;
 	public PM_Users pmUsers;
 	
-	public void deleteUser(WebDriver driver, ExcelReadAndWrite ipData, String[] data, String[] testData)
+	public void deleteUser(WebDriver driver, ExcelReadAndWrite ipData, String[] data, String uerName)
 	{
 		pmMainPage = new PM_Main_Page(driver);
 		pmLoginPage = new PM_Login_Page(driver);
@@ -26,9 +26,9 @@ public class CleanUP
 		pmLoginPage.PM_Login(data[0], data[1]);
 		pmMainPage.getUsers().click();
 		pmUsers.getUser().click();
-		pmUser.setUserSearchTextBox(testData[0]);
+		pmUser.setUserSearchTextBox(uerName);
 		pmUser.getOnViewRangeButton().click();
-		driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')]//preceding-sibling::td)[8]")).click();
+		driver.findElement(By.xpath("(//td[contains(text(),'"+uerName+"')]//preceding-sibling::td)[8]")).click();
 		driver.switchTo().alert().accept();
 		Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
 		pmUser.getLogoutLink().click();
