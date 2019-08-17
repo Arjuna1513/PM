@@ -1,7 +1,10 @@
 package utilities;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import junit.framework.Assert;
 import pm_pom_classes.PM_Login_Page;
@@ -28,9 +31,13 @@ public class CleanUP
 		pmUsers.getUser().click();
 		pmUser.setUserSearchTextBox(uerName);
 		pmUser.getOnViewRangeButton().click();
-		driver.findElement(By.xpath("(//td[contains(text(),'"+uerName+"')]//preceding-sibling::td)[8]")).click();
-		driver.switchTo().alert().accept();
-		Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
-		pmUser.getLogoutLink().click();
+		List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+uerName+"')]//preceding-sibling::td)[8]"));
+		if(eles.size() > 0)
+		{
+			driver.findElement(By.xpath("(//td[contains(text(),'"+uerName+"')]//preceding-sibling::td)[8]")).click();
+			driver.switchTo().alert().accept();
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
+			pmUser.getLogoutLink().click();
+		}
 	}
 }

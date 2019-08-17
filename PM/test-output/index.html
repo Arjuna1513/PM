@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">5 methods,  4 skipped,  1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)">test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_delete_user(public void tests.PM_User_Test.test_delete_user(java.lang.reflect.Method) throws java.lang.Interrupt...)">test_delete_user(public void tests.PM_User_Test.test_delete_user(java.lang.reflect.Method) throws java.lang.Interrupt...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)">test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_userSearchUsingViewSymbol(public void tests.PM_User_Test.test_userSearchUsingViewSymbol(java.lang.reflect.Method) throws java....)">test_userSearchUsingViewSymbol(public void tests.PM_User_Test.test_userSearchUsingViewSymbol(java.lang.reflect.Method) throws java....)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,12 +131,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)">test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)">test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_User_Test" hash-for-method="test_delete_user_byClicking_delete_button(public void tests.PM_User_Test.test_delete_user_byClicking_delete_button(java.lang.reflect.Method) t...)">test_delete_user_byClicking_delete_button(public void tests.PM_User_Test.test_delete_user_byClicking_delete_button(java.lang.reflect.Method) t...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -122,9 +146,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">tests.PM_User_Test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -134,6 +158,24 @@
                   </a> <!-- test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...) -->
                   <span class="method-name">test_create_user</span>
                   <span class="parameters">(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
+                  <div class="stack-trace">org.testng.SkipException: TestCase test_create_user is Skipped because flag is set to NO
+	at utilities.ExcelReadAndWrite.checkTestStatus(ExcelReadAndWrite.java:97)
+	at tests.PM_User_Test.test_create_user(PM_User_Test.java:35)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_delete_user(public void tests.PM_User_Test.test_delete_user(java.lang.reflect.Method) throws java.lang.Interrupt...)">
+                  </a> <!-- test_delete_user(public void tests.PM_User_Test.test_delete_user(java.lang.reflect.Method) throws java.lang.Interrupt...) -->
+                  <span class="method-name">test_delete_user</span>
+                  <span class="parameters">(public void tests.PM_User_Test.test_delete_user(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
+                  <div class="stack-trace">org.testng.SkipException: TestCase test_delete_user is Skipped because flag is set to NO
+	at utilities.ExcelReadAndWrite.checkTestStatus(ExcelReadAndWrite.java:97)
+	at tests.PM_User_Test.test_delete_user(PM_User_Test.java:86)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -142,6 +184,40 @@
                   </a> <!-- test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...) -->
                   <span class="method-name">test_edit_user</span>
                   <span class="parameters">(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
+                  <div class="stack-trace">org.testng.SkipException: TestCase test_edit_user is Skipped because flag is set to NO
+	at utilities.ExcelReadAndWrite.checkTestStatus(ExcelReadAndWrite.java:97)
+	at tests.PM_User_Test.test_edit_user(PM_User_Test.java:52)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_userSearchUsingViewSymbol(public void tests.PM_User_Test.test_userSearchUsingViewSymbol(java.lang.reflect.Method) throws java....)">
+                  </a> <!-- test_userSearchUsingViewSymbol(public void tests.PM_User_Test.test_userSearchUsingViewSymbol(java.lang.reflect.Method) throws java....) -->
+                  <span class="method-name">test_userSearchUsingViewSymbol</span>
+                  <span class="parameters">(public void tests.PM_User_Test.test_userSearchUsingViewSymbol(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
+                  <div class="stack-trace">org.testng.SkipException: TestCase test_userSearchUsingViewSymbol is Skipped because flag is set to NO
+	at utilities.ExcelReadAndWrite.checkTestStatus(ExcelReadAndWrite.java:97)
+	at tests.PM_User_Test.test_userSearchUsingViewSymbol(PM_User_Test.java:101)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-skipped -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.PM_User_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_delete_user_byClicking_delete_button(public void tests.PM_User_Test.test_delete_user_byClicking_delete_button(java.lang.reflect.Method) t...)">
+                  </a> <!-- test_delete_user_byClicking_delete_button(public void tests.PM_User_Test.test_delete_user_byClicking_delete_button(java.lang.reflect.Method) t...) -->
+                  <span class="method-name">test_delete_user_byClicking_delete_button</span>
+                  <span class="parameters">(public void tests.PM_User_Test.test_delete_user_byClicking_delete_button(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -198,20 +274,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_edit_user')
+data.setCell(0, 1, 'test_delete_user_byClicking_delete_button')
 data.setCell(0, 2, 'tests.PM_User_Test')
-data.setCell(0, 3, 16755);
+data.setCell(0, 3, 24265);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'test_create_user')
 data.setCell(1, 2, 'tests.PM_User_Test')
-data.setCell(1, 3, 13523);
+data.setCell(1, 3, 14558);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'test_edit_user')
+data.setCell(2, 2, 'tests.PM_User_Test')
+data.setCell(2, 3, 13531);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test_userSearchUsingViewSymbol')
+data.setCell(3, 2, 'tests.PM_User_Test')
+data.setCell(3, 3, 13477);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test_delete_user')
+data.setCell(4, 2, 'tests.PM_User_Test')
+data.setCell(4, 3, 6);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -244,39 +332,75 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">1016 ms</span>
+                <span class="method-start">1101 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">7206 ms</span>
+                <span class="method-start">8154 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test_create_user(public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Interrupt...)</span>
-                <span class="method-start">7253 ms</span>
+                <span class="method-start">8185 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=test_create_user status=SUCCESS method=PM_User_Test.test_create_user(java.lang.refl...)</span>
-                <span class="method-start">20782 ms</span>
+                <span class="method-name">afterMethod([TestResult name=test_create_user status=SKIP method=PM_User_Test.test_create_user(java.lang.reflect...)</span>
+                <span class="method-start">22756 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">20783 ms</span>
+                <span class="method-start">22764 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test_delete_user(public void tests.PM_User_Test.test_delete_user(java.lang.reflect.Method) throws java.lang.Interrupt...)</span>
+                <span class="method-start">22844 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=test_delete_user status=SKIP method=PM_User_Test.test_delete_user(java.lang.reflect...)</span>
+                <span class="method-start">22856 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">22858 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test_delete_user_byClicking_delete_button(public void tests.PM_User_Test.test_delete_user_byClicking_delete_button(java.lang.reflect.Method) t...)</span>
+                <span class="method-start">22914 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=test_delete_user_byClicking_delete_button status=SUCCESS method=PM_User_Test.test_d...)</span>
+                <span class="method-start">47186 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">47190 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">test_edit_user(public void tests.PM_User_Test.test_edit_user(java.lang.reflect.Method) throws java.lang.Interrupted...)</span>
-                <span class="method-start">20802 ms</span>
+                <span class="method-start">47232 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=test_edit_user status=SUCCESS method=PM_User_Test.test_edit_user(java.lang.reflect....)</span>
-                <span class="method-start">37560 ms</span>
+                <span class="method-name">afterMethod([TestResult name=test_edit_user status=SKIP method=PM_User_Test.test_edit_user(java.lang.reflect.Met...)</span>
+                <span class="method-start">60768 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">beforeMethod</span>
+                <span class="method-start">60771 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">test_userSearchUsingViewSymbol(public void tests.PM_User_Test.test_userSearchUsingViewSymbol(java.lang.reflect.Method) throws java....)</span>
+                <span class="method-start">60810 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=test_userSearchUsingViewSymbol status=SKIP method=PM_User_Test.test_userSearchUsing...)</span>
+                <span class="method-start">74292 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">37562 ms</span>
+                <span class="method-start">74293 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">38904 ms</span>
+                <span class="method-start">75667 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -5,8 +5,11 @@
     <classes>
       <class name="tests.PM_User_Test">
         <methods>
+          <include name="test_delete_user" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
+          <include name="test_create_user" invocation-numbers="0"/>
+          <include name="test_userSearchUsingViewSymbol" invocation-numbers="0"/>
           <include name="test_edit_user" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>

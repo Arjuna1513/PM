@@ -80,4 +80,59 @@ public class PM_User_Test extends ConfigClass
 		}
 	}
 	
+	@Test
+	public void test_delete_user(Method method) throws InterruptedException
+	{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			String[] testData = pmTests.getData(method.getName(), 1);
+			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')]//preceding-sibling::td)[8]")).click();
+			driver.switchTo().alert().accept();
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
+	}
+	
+	@Test
+	public void test_userSearchUsingViewSymbol(Method method) throws InterruptedException
+	{
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
+			String[] testData = pmTests.getData(method.getName(), 1);
+			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//preceding-sibling::td[20]")).click();
+			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'User Id')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+			Assert.assertTrue(eles.size() > 0);
+		}
+		finally
+		{
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			String[] testData = pmTests.getData(method.getName(), 1);
+			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+		}
+	}
+	
+	@Test
+	public void test_delete_user_byClicking_delete_button(Method method) throws InterruptedException
+	{
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
+			String[] testData = pmTests.getData(method.getName(), 1);
+			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//preceding-sibling::td[25]")).click();
+			pmUser.getRemoveSelected().click();
+			driver.switchTo().alert().accept();
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
+		}
+		finally
+		{
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			String[] testData = pmTests.getData(method.getName(), 1);
+			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+		}
+	}
+	
 }
