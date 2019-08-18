@@ -2,50 +2,50 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="87691" started-at="2019-08-18T10:41:19Z" finished-at="2019-08-18T10:42:47Z">
+  <suite name="Suite" duration-ms="101577" started-at="2019-08-18T17:11:54Z" finished-at="2019-08-18T17:13:35Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="87691" started-at="2019-08-18T10:41:19Z" finished-at="2019-08-18T10:42:47Z">
+    <test name="Test" duration-ms="101577" started-at="2019-08-18T17:11:54Z" finished-at="2019-08-18T17:13:35Z">
       <class name="tests.PM_User_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1063" started-at="2019-08-18T10:41:18Z" finished-at="2019-08-18T10:41:19Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1055" started-at="2019-08-18T17:11:53Z" finished-at="2019-08-18T17:11:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="6251" started-at="2019-08-18T10:41:19Z" finished-at="2019-08-18T10:41:25Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="7820" started-at="2019-08-18T17:11:54Z" finished-at="2019-08-18T17:12:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="21" started-at="2019-08-18T10:41:25Z" finished-at="2019-08-18T10:41:25Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="42" started-at="2019-08-18T17:12:02Z" finished-at="2019-08-18T17:12:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_delete_multipleUsers(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="test_delete_multipleUsers" duration-ms="80162" started-at="2019-08-18T10:41:25Z" finished-at="2019-08-18T10:42:45Z">
+        <test-method status="PASS" signature="test_search_using_wildCard_star(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="test_search_using_wildCard_star" duration-ms="91774" started-at="2019-08-18T17:12:02Z" finished-at="2019-08-18T17:13:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.PM_User_Test.test_delete_multipleUsers(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
+                <![CDATA[public void tests.PM_User_Test.test_search_using_wildCard_star(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_delete_multipleUsers -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-18T10:42:45Z" finished-at="2019-08-18T10:42:45Z">
+        </test-method> <!-- test_search_using_wildCard_star -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-18T17:13:33Z" finished-at="2019-08-18T17:13:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_delete_multipleUsers status=SUCCESS method=PM_User_Test.test_delete_multipleUsers(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@6e1ec318] output={null}]]]>
+                <![CDATA[[TestResult name=test_search_using_wildCard_star status=SUCCESS method=PM_User_Test.test_search_using_wildCard_star(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@6e1ec318] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1229" started-at="2019-08-18T10:42:45Z" finished-at="2019-08-18T10:42:47Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1896" started-at="2019-08-18T17:13:33Z" finished-at="2019-08-18T17:13:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-08-18T10:42:47Z" finished-at="2019-08-18T10:42:47Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-18T17:13:35Z" finished-at="2019-08-18T17:13:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

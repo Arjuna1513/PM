@@ -260,69 +260,47 @@ public class PM_User_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 	}*/
 	
-	@Test
+/*	@Test
 	public void test_delete_multipleUsers(Method method) throws InterruptedException
 	{
 		pmUser = new PM_User(driver);
-		pmUsers = new PM_Users(driver);
-		pmLoginPage = new PM_Login_Page(driver);
-		pmMainPage = new PM_Main_Page(driver);
 		try 
 		{
 			pmTests.checkTestStatus(method.getName());
-			driver.get(ipData.getData(0, 0));
-			String[] credentials = loginData.getData("test_pm_valid_login", 1);
-			String[] testData = pmTests.getData(method.getName(), 1);
-			pmLoginPage.PM_Login(credentials[0], credentials[1]);
-			for(int i=0; i<10; i++)
-			{
-				pmMainPage.getUsers().click();
-				pmUsers.getUser().click();
-				pmUser.getAddButton().click();
-				pmUser.setFirstNamefield(testData[0]+i);
-				pmUser.setLastNamefield(testData[0]+i);
-				pmUser.setUserIDField(testData[0]+i);
-				Thread.sleep(1000);
-				pmUser.setUserPasswordField(testData[1]);
-				pmUser.setUserConfirmPasswordField(testData[1]);
-				pmUser.setEmailIDField(testData[2]);
-				pmUser.setAlternateFirstName(testData[3]+i);
-				pmUser.setAltLastName(testData[4]+i);
-				pmUser.setBusinessField(testData[5]);
-				pmUser.setBusiness2(testData[6]);
-				pmUser.setMobilePhone(testData[7]);
-				pmUser.setMobilePhone2(testData[8]);
-				new SelectDropDownValue().selectByIndex(pmUser.getSelectDepartmentDropdown(), 0);
-				pmUser.getListFilterAddButton_mySelectedDepts().click();
-				pmUser.getApplyButton().click();
-				Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Add operation successful for:");
-				pmUser.getDoneButton().click();
-				pmUser.setUserSearchTextBox(testData[0]+i);
-				pmUser.getOnViewRangeButton().click();
-				List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+i+"')])[1]"));
-				Assert.assertTrue(eles.size() > 0);
-			}
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests, 10);
 			pmUser.getLogoutLink().click();
-			
 		}
 		finally
 		{
-			driver.get(ipData.getData(0, 0));
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			pmLoginPage.PM_Login(credentials[0], credentials[1]);
-			pmMainPage.getUsers().click();
-			pmUsers.getUser().click();
-			pmUser.setUserSearchTextBox(testData[0]);
+			new CleanUP().deleteUser(driver, ipData, credentials, testData[0], 10);
+		}
+	}*/
+	
+	
+	
+	@Test
+	public void test_search_using_wildCard_star(Method method) throws InterruptedException
+	{
+			pmUser = new PM_User(driver);
+		try 
+		{
+			pmTests.checkTestStatus(method.getName());
+			String[] testData = pmTests.getData(method.getName(), 1);
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests, 10);
+			pmUser.getUserSearchTextBox().clear();
+			pmUser.setUserSearchTextBox("*");
 			pmUser.getOnViewRangeButton().click();
-			for(int i=1; i<=10; i++)
-			{
-				driver.findElement(By.xpath("(//input[@name='selectItem'])["+i+"]")).click();
-			}
-			pmUser.getRemoveSelected().click();
-			driver.switchTo().alert().accept();
-			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
+			List<WebElement> eles = driver.findElements(By.xpath("//input[@name='selectItem']"));
+			Assert.assertTrue(eles.size()>=10);
 			pmUser.getLogoutLink().click();
+		}
+		finally
+		{
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			String[] testData = pmTests.getData(method.getName(), 1);
+			new CleanUP().deleteUser(driver, ipData, credentials, testData[0], 10);
 		}
 	}
 }

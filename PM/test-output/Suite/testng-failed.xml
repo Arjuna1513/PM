@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_delete_multipleUsers" invocation-numbers="0"/>
+          <include name="test_search_using_wildCard_star" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>

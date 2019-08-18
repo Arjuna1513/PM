@@ -64,4 +64,43 @@ public class ReusableUnits
 		List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]"));
 		Assert.assertTrue(eles.size() > 0);
 	}
+	
+	
+	
+	public void createUser(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int iterations) throws InterruptedException
+	{
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		for(int i=0; i<10; i++)
+		{
+			pmMainPge.getUsers().click();
+			pmUsers.getUser().click();
+			pmUser.getAddButton().click();
+			pmUser.setFirstNamefield(testData[0]+i);
+			pmUser.setLastNamefield(testData[0]+i);
+			pmUser.setUserIDField(testData[0]+i);
+			Thread.sleep(1000);
+			pmUser.setUserPasswordField(testData[1]);
+			pmUser.setUserConfirmPasswordField(testData[1]);
+			pmUser.setEmailIDField(testData[2]);
+			pmUser.setAlternateFirstName(testData[3]+i);
+			pmUser.setAltLastName(testData[4]+i);
+			pmUser.setBusinessField(testData[5]);
+			pmUser.setBusiness2(testData[6]);
+			pmUser.setMobilePhone(testData[7]);
+			pmUser.setMobilePhone2(testData[8]);
+			new SelectDropDownValue().selectByIndex(pmUser.getSelectDepartmentDropdown(), 0);
+			pmUser.getListFilterAddButton_mySelectedDepts().click();
+			pmUser.getApplyButton().click();
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Add operation successful for:");
+			pmUser.getDoneButton().click();
+			pmUser.setUserSearchTextBox(testData[0]+i);
+			pmUser.getOnViewRangeButton().click();
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+i+"')])[1]"));
+			Assert.assertTrue(eles.size() > 0);
+		}
+	}
 }
