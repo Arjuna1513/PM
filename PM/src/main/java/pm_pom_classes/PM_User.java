@@ -47,6 +47,14 @@ public class PM_User
 	@FindBy(xpath="((//input[@name='onCancelButton'])[2]")
 	private WebElement cancelButton;
 	
+	@FindBy(xpath="//button[@name='onViewSelectedButton']")
+	private WebElement viewButton;
+	
+	public WebElement getViewButton()
+	{
+		return viewButton;
+	}
+	
 	public WebElement getUserSearchTextBox() 
 	{
 		return userSearchTextBox;
@@ -457,6 +465,14 @@ public class PM_User
 	public WebElement getHelpLink()
 	{
 		return helpLink;
+	}
+	
+	@FindBy(name="onPrintSelected")
+	private WebElement userPrintButton;
+	
+	public WebElement getUsrPrintButton()
+	{
+		return userPrintButton;
 	}
 	/*//subsystem selection drop-down extensionType
 	@FindBy(id="nodeName")
