@@ -6,11 +6,15 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import base.ConfigClass;
+import pm_pom_classes.Extension;
 import pm_pom_classes.PM_Login_Page;
 import pm_pom_classes.PM_Main_Page;
+import pm_pom_classes.PM_Services;
 import pm_pom_classes.PM_User;
 import pm_pom_classes.PM_Users;
 
@@ -20,6 +24,9 @@ public class ReusableUnits
 	public PM_Users pmUsers;
 	public PM_Login_Page pmLoginPge;
 	public PM_Main_Page pmMainPge;
+	public PM_Services pmServices;
+	public Extension pmExtension;
+	WebDriverWait wait;
 	
 	public ReusableUnits(WebDriver driver)
 	{
@@ -27,6 +34,8 @@ public class ReusableUnits
 		pmUsers = new PM_Users(driver);
 		pmLoginPge = new PM_Login_Page(driver);
 		pmMainPge = new PM_Main_Page(driver);
+		pmServices = new PM_Services(driver);
+		pmExtension = new Extension(driver);
 	}
 	
 	public void createUser(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
@@ -102,5 +111,43 @@ public class ReusableUnits
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+i+"')])[1]"));
 			Assert.assertTrue(eles.size() > 0);
 		}
+	}
+	
+	
+	public void createExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		for(String s : testData)
+		{
+			System.out.println(s);
+		}
+		System.out.println(testData.length);
+		System.out.println(testData);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
+		pmExtension.getNextButton().click();
+//		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("vacDir")));
+		Thread.sleep(3000);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionValueFromDropDown(), testData[2]);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
+//		new SelectDropDownValue().selectByVisibleText(pmExtension.getMyCSPNameDropDown(), "");
+		pmExtension.setFirstName(testData[4]);
+		pmExtension.setLastName(testData[5]);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
+		pmExtension.getApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+		pmExtension.setEnterExtensionNumberTextBox(testData[2]);
+		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
+		Assert.assertTrue(eles.size()==1);
 	}
 }

@@ -280,7 +280,7 @@ public class PM_User_Test extends ConfigClass
 	
 	
 	
-	@Test
+/*	@Test
 	public void test_search_using_wildCard_star(Method method) throws InterruptedException
 	{
 			pmUser = new PM_User(driver);
@@ -301,6 +301,31 @@ public class PM_User_Test extends ConfigClass
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
 			new CleanUP().deleteUser(driver, ipData, credentials, testData[0], 10);
+		}
+	}*/
+	
+	
+	@Test
+	public void test_search_using_wildCard_questionMark(Method method) throws InterruptedException
+	{
+			pmUser = new PM_User(driver);
+		try 
+		{
+			pmTests.checkTestStatus(method.getName());
+			String[] testData = pmTests.getData(method.getName(), 1);
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
+			pmUser.getUserSearchTextBox().clear();
+			pmUser.setUserSearchTextBox(testData[9]+"?");
+			pmUser.getOnViewRangeButton().click();
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]"));
+			Assert.assertTrue(eles.size()==1);
+			pmUser.getLogoutLink().click();
+		}
+		finally
+		{
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			String[] testData = pmTests.getData(method.getName(), 1);
+			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
 		}
 	}
 }

@@ -1,9 +1,17 @@
 package pm_pom_classes;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class Extension 
 {
+	
+	public Extension(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
 	@FindBy(name="onAddButton")
 	private WebElement addButton;
 
@@ -11,7 +19,39 @@ public class Extension
 	{
 		return addButton;
 	}
+	
+	@FindBy(name="okbutton")
+	private WebElement doneButton;
+	
+	public WebElement getDoneButton()
+	{
+		return doneButton;
+	}
+	
+	@FindBy(className="responseMessage")
+	private WebElement responseMessage;
+	
+	public String getResponseMessage()
+	{
+		return responseMessage.getText().trim();
+	}
+	
+	@FindBy(name="onNextButton")
+	private WebElement nextButton;
+	
+	public WebElement getNextButton()
+	{
+		return nextButton;
+	}
 
+	@FindBy(name="onApplyButton")
+	private WebElement applyButton;
+	
+	public WebElement getApplyButton()
+	{
+		return applyButton;
+	}
+	
 	//MiVoice MX-ONE: drop-down
 	@FindBy(name="range")
 	private WebElement miVoiceMXONEDropDown;
@@ -160,11 +200,11 @@ public class Extension
 	
 	//extensions drop down
 	@FindBy(id="myIPExtension_VO.DIR")
-	private WebElement singleExtensionDropDown;
+	private WebElement singleExtensionValueFromDropDown;
 
-	public WebElement getSingleExtensionDropDown() 
+	public WebElement getSingleExtensionValueFromDropDown() 
 	{
-		return singleExtensionDropDown;
+		return singleExtensionValueFromDropDown;
 	}
 	
 	//extensions range input
@@ -252,6 +292,7 @@ public class Extension
 	{
 		return phoneTypeDropDown;
 	}
+	
 	
 	//Function Keys Button
 	@FindBy(id="changeItem_ipfunctionkeys")
@@ -397,6 +438,33 @@ public class Extension
 	public WebElement getGroupDNDDropDown() 
 	{
 		return groupDNDDropDown;
+	}
+	
+	@FindBy(id="myIPExtension_VO.NIINP.name1")
+	private WebElement firstName;
+	
+	public WebElement getFirstName()
+	{
+		return firstName;
+	}
+	
+	public void setFirstName(String name)
+	{
+		firstName.sendKeys(name);
+	}
+	
+	
+	@FindBy(id="myIPExtension_VO.NIINP.name2")
+	private WebElement lastName;
+	
+	public WebElement getLastName()
+	{
+		return lastName;
+	}
+	
+	public void setLastName(String name)
+	{
+		lastName.sendKeys(name);
 	}
 	
 }
