@@ -6,8 +6,8 @@
       <class name="tests.PM_Extension_Test">
         <methods>
           <include name="beforeClass"/>
+          <include name="test_delete_multiple_IP_extension" invocation-numbers="0"/>
           <include name="beforeMethod"/>
-          <include name="test_create_IP_extension" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>

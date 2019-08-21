@@ -20,6 +20,22 @@ public class Extension
 		return addButton;
 	}
 	
+	@FindBy(name="onRemoveSelected")
+	private WebElement removeButton;
+	
+	public WebElement getRemoveButton()
+	{
+		return removeButton;
+	}
+	
+	@FindBy(linkText="About")
+	private WebElement aboutlink;
+	
+	public WebElement getAboutLink()
+	{
+		return aboutlink;
+	}
+	
 	@FindBy(name="okbutton")
 	private WebElement doneButton;
 	
@@ -200,11 +216,24 @@ public class Extension
 	
 	//extensions drop down
 	@FindBy(id="myIPExtension_VO.DIR")
-	private WebElement singleExtensionValueFromDropDown;
+	private WebElement singleExtensionValue;
 
-	public WebElement getSingleExtensionValueFromDropDown() 
+	public WebElement getSingleExtensionValue() 
 	{
-		return singleExtensionValueFromDropDown;
+		return singleExtensionValue;
+	}
+	
+	public void setSingleExtensionValue(String value)
+	{
+		singleExtensionValue.sendKeys(value);
+	}
+	
+	@FindBy(id="myIPExtension_VO.DIR")
+	private WebElement singleExtensionDropDown;
+	
+	public WebElement getSingleExtensionDropDown()
+	{
+		return singleExtensionDropDown;
 	}
 	
 	//extensions range input

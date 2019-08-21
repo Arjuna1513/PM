@@ -121,24 +121,26 @@ public class ReusableUnits
 		driver.get(ipData.getData(0, 0));
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
 		String[] testData = pmTests.getData(methodName, 1);
-		for(String s : testData)
-		{
-			System.out.println(s);
-		}
-		System.out.println(testData.length);
-		System.out.println(testData);
 		pmLoginPge.PM_Login(credentials[0], credentials[1]);
 		pmMainPge.getServices().click();
 		pmServices.getExtension().click();
 		pmExtension.getAddButton().click();
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
 		pmExtension.getNextButton().click();
-//		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("vacDir")));
-		Thread.sleep(3000);
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionValueFromDropDown(), testData[2]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setSingleExtensionValue(testData[2]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[2]);
+		}
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
-//		new SelectDropDownValue().selectByVisibleText(pmExtension.getMyCSPNameDropDown(), "");
 		pmExtension.setFirstName(testData[4]);
 		pmExtension.setLastName(testData[5]);
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
@@ -147,6 +149,7 @@ public class ReusableUnits
 		pmExtension.getDoneButton().click();
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
 		pmExtension.setEnterExtensionNumberTextBox(testData[2]);
+		pmExtension.getViewRangeButton().click();
 		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
 		Assert.assertTrue(eles.size()==1);
 	}
