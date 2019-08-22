@@ -496,4 +496,46 @@ public class Extension
 		lastName.sendKeys(name);
 	}
 	
+	@FindBy(name="onAdvancedButton")
+	private WebElement advanceButton;
+	
+	public WebElement getAdvanceButton()
+	{
+		return advanceButton;
+	}
+	
+	@FindBy(id="myParallellRinging_VO.PLLNP.SDIR[0]")
+	private WebElement secDirNum1;
+	
+	public WebElement getSecondaryDirNum1()
+	{
+		return secDirNum1;
+	}
+	
+	public void setSecDirNum1(String number)
+	{
+		secDirNum1.sendKeys(number);
+	}
+		
+	@FindBy(id="myParallellRinging_VO.PLLNP.SDIR[1]")
+	private WebElement secDirNum2;
+	
+	public WebElement getSecondaryDirNum2()
+	{
+		return secDirNum2;
+	}
+	
+	public void setSecDirNum2(String number)
+	{
+		secDirNum2.sendKeys(number);
+	}
+	
+	@FindBy(name="Apply")
+	private WebElement editPageApplyButton;
+	
+	public WebElement getEditPageApplyButton()
+	{
+		return editPageApplyButton;
+	}
+	
 }
