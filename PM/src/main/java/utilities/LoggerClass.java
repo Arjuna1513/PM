@@ -7,7 +7,39 @@ public class LoggerClass
 {
 	private static Logger log = null;
 	
-	public static Logger testBeginning(String testCaseName)
+	
+	public static Logger getLogger(String className)
+	{
+		if(log==null)
+		{
+			log = Logger.getLogger(className);
+			DOMConfigurator.configure("log4j.xml");
+			return log;
+		}
+		return log;
+	}
+	
+	public static void markTestBeginning(String testCaseName, String className)
+	{
+		if(log==null)
+		{
+			log = Logger.getLogger(className);
+			DOMConfigurator.configure("log4j.xml");
+		}
+		log.info("========= Beginning of testcase :"+testCaseName+" ===========");
+	}
+	
+	public static void markTestEnding(String testCaseName, String className)
+	{
+		if(log==null)
+		{
+			log = Logger.getLogger(className);
+			DOMConfigurator.configure("log4j.xml");
+		}
+		log.info("========= End of testcase :"+testCaseName+" ===========");
+	}
+	
+/*	public static Logger testBeginning(String testCaseName)
 	{
 		if(log==null)
 		{
@@ -79,5 +111,5 @@ public class LoggerClass
 			return log;
 		}
 		return log;
-	}
+	}*/
 }

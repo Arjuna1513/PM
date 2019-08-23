@@ -133,7 +133,7 @@ public class PM_Extension_Test extends ConfigClass
 		}
 	}*/
 	
-	@Test
+/*	@Test
 	public void test_configureParallel_ringing_to_IP(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -187,6 +187,71 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[8]);
 			list.add(testData[9]);
 			list.add(testData[10]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+	
+	@Test
+	public void test_editIPExtensionPhoneType(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmExtension = new Extension(driver);
+			loginPage = new PM_Login_Page(driver);
+			pmMainPge = new PM_Main_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmUser = new PM_User(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			driver.get(ipData.getData(0, 0));
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			loginPage.PM_Login(credentials[0], credentials[1]);
+			pmMainPge.getServices().click();
+			pmServices.getExtension().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+			pmExtension.setEnterExtensionNumberTextBox(testData[3]);
+			pmExtension.getViewRangeButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[3]+"')]//preceding-sibling::td[19]")).click();
+			Thread.sleep(3000);
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[4]);
+			Thread.sleep(3000);
+			System.out.println(testData[4]);
+			System.out.println(testData[4].length());
+//			pmExtension.getAdvanceButton().click();
+//			pmExtension.setSecDirNum1(testData[5]);
+//			pmExtension.setSecDirNum2(testData[6]);
+			pmExtension.getEditPageApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+			pmExtension.getDoneButton().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+			pmExtension.getEnterExtensionNumberTextBox().clear();
+			pmExtension.setEnterExtensionNumberTextBox(testData[3]);
+			pmExtension.getViewRangeButton().click();
+			wait = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[3]+"')]//preceding-sibling::td[20]")).click();
+			String value = testData[4].replace(" ", "");
+//			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'Mitel6873i')]")));
+			List<WebElement> sdn1  = driver.findElements(By.xpath("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+value+"')]"));
+			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[4]+"')]");
+			Assert.assertTrue(sdn1.size() == 1);
+			pmExtension.getDoneButton().click();
+			pmUser.getLogoutLink().click();
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[5]);
+			list.add(testData[6]);
+			list.add(testData[7]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}

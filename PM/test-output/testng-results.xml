@@ -2,50 +2,50 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="96670" started-at="2019-08-22T18:00:44Z" finished-at="2019-08-22T18:02:21Z">
+  <suite name="Suite" duration-ms="60415" started-at="2019-08-23T12:58:23Z" finished-at="2019-08-23T12:59:24Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="96670" started-at="2019-08-22T18:00:44Z" finished-at="2019-08-22T18:02:21Z">
+    <test name="Test" duration-ms="60415" started-at="2019-08-23T12:58:23Z" finished-at="2019-08-23T12:59:24Z">
       <class name="tests.PM_Extension_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1279" started-at="2019-08-22T18:00:43Z" finished-at="2019-08-22T18:00:44Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1172" started-at="2019-08-23T12:58:22Z" finished-at="2019-08-23T12:58:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="6906" started-at="2019-08-22T18:00:44Z" finished-at="2019-08-22T18:00:51Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="7583" started-at="2019-08-23T12:58:23Z" finished-at="2019-08-23T12:58:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="22" started-at="2019-08-22T18:00:51Z" finished-at="2019-08-22T18:00:51Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="33" started-at="2019-08-23T12:58:31Z" finished-at="2019-08-23T12:58:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_configureParallel_ringing_to_IP(java.lang.reflect.Method)[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="test_configureParallel_ringing_to_IP" duration-ms="88200" started-at="2019-08-22T18:00:51Z" finished-at="2019-08-22T18:02:19Z">
+        <test-method status="PASS" signature="test_editIPExtensionPhoneType(java.lang.reflect.Method)[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="test_editIPExtensionPhoneType" duration-ms="50426" started-at="2019-08-23T12:58:31Z" finished-at="2019-08-23T12:59:21Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.PM_Extension_Test.test_configureParallel_ringing_to_IP(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
+                <![CDATA[public void tests.PM_Extension_Test.test_editIPExtensionPhoneType(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_configureParallel_ringing_to_IP -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-22T18:02:19Z" finished-at="2019-08-22T18:02:19Z">
+        </test-method> <!-- test_editIPExtensionPhoneType -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-23T12:59:21Z" finished-at="2019-08-23T12:59:21Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_configureParallel_ringing_to_IP status=SUCCESS method=PM_Extension_Test.test_configureParallel_ringing_to_IP(java.lang.reflect.Method)[pri:0, instance:tests.PM_Extension_Test@6e1ec318] output={null}]]]>
+                <![CDATA[[TestResult name=test_editIPExtensionPhoneType status=SUCCESS method=PM_Extension_Test.test_editIPExtensionPhoneType(java.lang.reflect.Method)[pri:0, instance:tests.PM_Extension_Test@6e1ec318] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1501" started-at="2019-08-22T18:02:19Z" finished-at="2019-08-22T18:02:21Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="2348" started-at="2019-08-23T12:59:21Z" finished-at="2019-08-23T12:59:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-08-22T18:02:21Z" finished-at="2019-08-22T18:02:21Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-23T12:59:24Z" finished-at="2019-08-23T12:59:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
