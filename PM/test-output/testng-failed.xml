@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_editIPExtensionPhoneType" invocation-numbers="0"/>
+          <include name="test_create_IP_extension" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>

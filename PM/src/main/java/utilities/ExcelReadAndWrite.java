@@ -84,6 +84,33 @@ public class ExcelReadAndWrite
 		return value;
 	}
 	
+/*	public void checkTestStatus(String methodName)
+	{
+		String flag = null;
+		System.out.println(sheet);
+		System.out.println(sheet.getPhysicalNumberOfRows());
+		for(int i=1; i<sheet.getPhysicalNumberOfRows(); i++)
+		{
+			if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(methodName))
+			{
+				System.out.println("Method "+methodName+ "found");
+				System.out.println(i);
+				System.out.println(sheet.getRow(i).getCell(1).getStringCellValue().trim());
+				flag = sheet.getRow(i).getCell(2).getStringCellValue();
+				if(flag.equalsIgnoreCase("N"))
+				{
+					System.out.println(flag);
+					throw new SkipException("TestCase "+methodName+" is Skipped because flag is set to NO");
+				}
+				else
+				{
+					System.out.println(flag);
+				}
+			}
+		}
+	}*/
+	
+	
 	public void checkTestStatus(String methodName)
 	{
 		String flag = null;
@@ -99,7 +126,6 @@ public class ExcelReadAndWrite
 			}
 		}
 	}
-	
 	
 	
 	

@@ -20,6 +20,7 @@ C:\Users\mallikar\git\PM\PM\src\main\java\pm_pom_classes\PM_Login_Page.java
 C:\Users\mallikar\git\PM\PM\src\main\java\utilities\LoggerClass.java
 C:\Users\mallikar\git\PM\PM\src\main\java\base\WebdriverFactory.java
 C:\Users\mallikar\git\PM\PM\src\main\java\pm_pom_classes\PM_User.java
+C:\Users\mallikar\git\PM\PM\src\main\java\utilities\ReusableUnits.java
 C:\Users\mallikar\git\PM\PM\src\main\java\pm_pom_classes\Logs.java
 C:\Users\mallikar\git\PM\PM\src\main\java\pm_pom_classes\Administrators.java
 C:\Users\mallikar\git\PM\PM\src\main\java\snm_pom_classes\CallDiscrimination.java
@@ -34,8 +35,10 @@ C:\Users\mallikar\git\PM\PM\src\main\java\pm_pom_classes\PM_Users.java
 C:\Users\mallikar\git\PM\PM\src\main\java\utilities\SelectDropDownValue.java
 C:\Users\mallikar\git\PM\PM\src\main\java\snm_pom_classes\SystemPage.java
 C:\Users\mallikar\git\PM\PM\src\main\java\snm_pom_classes\TelephonyExtensionsPage.java
+C:\Users\mallikar\git\PM\PM\src\main\java\utilities\CleanUP.java
 C:\Users\mallikar\git\PM\PM\src\main\java\utilities\DownloadFile.java
 C:\Users\mallikar\git\PM\PM\src\main\java\pm_pom_classes\PM_Services.java
+C:\Users\mallikar\git\PM\PM\src\main\java\utilities\GetMxoneVersionNumber.java
 C:\Users\mallikar\git\PM\PM\src\main\java\pm_pom_classes\Departments.java
 C:\Users\mallikar\git\PM\PM\src\main\java\snm_pom_classes\SystemHardware.java
 C:\Users\mallikar\git\PM\PM\src\main\java\utilities\Take_Screenshot.java
