@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content passed suite-Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_Extension_Test" hash-for-method="test_create_IP_extension(public void tests.PM_Extension_Test.test_create_IP_extension(java.lang.reflect.Method) throws java.l...)">test_create_IP_extension(public void tests.PM_Extension_Test.test_create_IP_extension(java.lang.reflect.Method) throws java.l...)</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="tests.PM_Extension_Test" hash-for-method="test_editToSetFirst_LastNames(public void tests.PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method) throws j...)">test_editToSetFirst_LastNames(public void tests.PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method) throws j...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,27 +117,22 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">tests.PM_Extension_Test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test_create_IP_extension(public void tests.PM_Extension_Test.test_create_IP_extension(java.lang.reflect.Method) throws java.l...)">
-                  </a> <!-- test_create_IP_extension(public void tests.PM_Extension_Test.test_create_IP_extension(java.lang.reflect.Method) throws java.l...) -->
-                  <span class="method-name">test_create_IP_extension</span>
-                  <span class="parameters">(public void tests.PM_Extension_Test.test_create_IP_extension(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
-                  <div class="stack-trace">java.lang.NullPointerException
-	at utilities.ExcelReadAndWrite.checkTestStatus(ExcelReadAndWrite.java:119)
-	at tests.PM_Extension_Test.test_create_IP_extension(PM_Extension_Test.java:40)
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
+                  <a name="test_editToSetFirst_LastNames(public void tests.PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method) throws j...)">
+                  </a> <!-- test_editToSetFirst_LastNames(public void tests.PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method) throws j...) -->
+                  <span class="method-name">test_editToSetFirst_LastNames</span>
+                  <span class="parameters">(public void tests.PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method) throws java.lang.InterruptedException)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -192,14 +187,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_create_IP_extension')
+data.setCell(0, 1, 'test_editToSetFirst_LastNames')
 data.setCell(0, 2, 'tests.PM_Extension_Test')
-data.setCell(0, 3, 24);
+data.setCell(0, 3, 54438);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 24 ms</span>
+              <span class="suite-total-time">Total running time: 54 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -232,29 +227,27 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">1171 ms</span>
+                <span class="method-start">1132 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">beforeMethod</span>
-                <span class="method-start">7640 ms</span>
+                <span class="method-start">7576 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">test_create_IP_extension(public void tests.PM_Extension_Test.test_create_IP_extension(java.lang.reflect.Method) throws java.l...)</span>
-                <span class="method-start">7670 ms</span>
+                <span class="method-name">test_editToSetFirst_LastNames(public void tests.PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method) throws j...)</span>
+                <span class="method-start">7602 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">afterMethod([TestResult name=test_create_IP_extension status=FAILURE method=PM_Extension_Test.test_create_IP_ext...)</span>
-                <span class="method-start">7705 ms</span>
+                <span class="method-name">afterMethod([TestResult name=test_editToSetFirst_LastNames status=SUCCESS method=PM_Extension_Test.test_editToSe...)</span>
+                <span class="method-start">62044 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">7853 ms</span>
+                <span class="method-start">62048 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">9477 ms</span>
+                <span class="method-start">63928 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

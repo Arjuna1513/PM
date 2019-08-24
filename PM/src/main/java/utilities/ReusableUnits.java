@@ -115,7 +115,7 @@ public class ReusableUnits
 	
 	
 	public void createExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
-			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests) throws InterruptedException
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
 	{
 		wait = new WebDriverWait(driver, 10);
 		driver.get(ipData.getData(0, 0));
@@ -140,6 +140,7 @@ public class ReusableUnits
 		{
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[2]);
 		}
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
 		pmExtension.setFirstName(testData[4]);
 		pmExtension.setLastName(testData[5]);

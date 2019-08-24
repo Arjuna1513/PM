@@ -1,4 +1,5 @@
 package pm_pom_classes;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -537,5 +538,44 @@ public class Extension
 	{
 		return editPageApplyButton;
 	}
+					
+	@FindBy(xpath="//input[@id='myIPExtension_VO.GEDIP.enhancedServices_CB']")
+	private WebElement thirdPartySIPClient;
 	
+	public WebElement getThirdPartySIPClient()
+	{
+		return thirdPartySIPClient;
+	}
+	
+	@FindBy(id="myCPPGroup_CB")
+	private WebElement extensionCallParkPool;
+	
+	public WebElement getExtensionCallParkPool()
+	{
+		return extensionCallParkPool;
+	}
+	
+	@FindBy(id="myIPExtension_VO.GEDIP.freeOnSecondLine")
+	private WebElement secondLineSetting;
+	
+	public WebElement getSecondLineSetting()
+	{
+		return secondLineSetting;
+	}
+	
+	@FindBy(id="myIPExtension_VO.GEDIP.SPOPT")
+	private WebElement phoneHotLineType;
+	
+	public WebElement getPhoneHotLineType()
+	{
+		return phoneHotLineType;
+	}
+	
+	@FindBy(id="myIPExtension_VO.GEDIP.NDNUM")
+	private WebElement hotLineNumber;
+	
+	public void setHotLineNumber(String value)
+	{
+		hotLineNumber.sendKeys(value);
+	}
 }
