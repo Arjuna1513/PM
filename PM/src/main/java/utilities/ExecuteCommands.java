@@ -3,8 +3,12 @@ package utilities;
 import java.util.ArrayList;
 import java.util.Set;
 
+import org.apache.commons.math3.analysis.function.Exp;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pm_pom_classes.PM_User;
 import snm_pom_classes.SNM_Login_Page;
@@ -21,6 +25,7 @@ public class ExecuteCommands
 	public SystemPage snmSystempage;
 	public ToolsPage toolsPage;
 	public String title = "Command Line Interface";
+	WebDriverWait wait;
 	
 	public ExecuteCommands(WebDriver driver)
 	{
@@ -30,6 +35,7 @@ public class ExecuteCommands
 		snmMainPage = new SNM_Main_Page(driver);
 		snmSystempage = new SystemPage(driver);
 		toolsPage = new ToolsPage(driver);
+		wait = new WebDriverWait(driver, 40);
 	}
 	
 	public void executeCmds(String methodName, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, ArrayList<String> pmTestData) throws InterruptedException
@@ -53,8 +59,10 @@ public class ExecuteCommands
 					for(String cmd : pmTestData)
 					{
 						toolsPage.getCommandField().sendKeys(cmd);
+//						wait.until(ExpectedConditions.elementToBeClickable(By.name("cmdApply")));
 						toolsPage.getCmdApply().click();
-						Thread.sleep(1000);
+						wait.until(ExpectedConditions.elementToBeClickable(By.name("cmdApply")));
+//						Thread.sleep(1000);
 					}
 					driver.close();
 				}

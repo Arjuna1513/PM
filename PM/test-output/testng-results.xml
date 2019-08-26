@@ -2,54 +2,54 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="62760" started-at="2019-08-24T13:21:50Z" finished-at="2019-08-24T13:22:52Z">
+  <suite name="Default suite" duration-ms="120149" started-at="2019-08-26T05:39:03Z" finished-at="2019-08-26T05:41:03Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="62760" started-at="2019-08-24T13:21:50Z" finished-at="2019-08-24T13:22:52Z">
-      <class name="tests.PM_Extension_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1119" started-at="2019-08-24T13:21:49Z" finished-at="2019-08-24T13:21:50Z">
+    <test name="Default test" duration-ms="120149" started-at="2019-08-26T05:39:03Z" finished-at="2019-08-26T05:41:03Z">
+      <class name="tests.PM_FunctionKeys_Test">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1233" started-at="2019-08-26T05:39:01Z" finished-at="2019-08-26T05:39:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="6434" started-at="2019-08-24T13:21:50Z" finished-at="2019-08-24T13:21:56Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="6348" started-at="2019-08-26T05:39:03Z" finished-at="2019-08-26T05:39:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="26" started-at="2019-08-24T13:21:56Z" finished-at="2019-08-24T13:21:56Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="24" started-at="2019-08-26T05:39:09Z" finished-at="2019-08-26T05:39:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_editToSetFirst_LastNames(java.lang.reflect.Method)[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="test_editToSetFirst_LastNames" duration-ms="54438" started-at="2019-08-24T13:21:56Z" finished-at="2019-08-24T13:22:51Z">
+        <test-method status="PASS" signature="test_createDMN_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="test_createDMN_FuncKey" duration-ms="112297" started-at="2019-08-26T05:39:09Z" finished-at="2019-08-26T05:41:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
+                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createDMN_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_editToSetFirst_LastNames -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="4" started-at="2019-08-24T13:22:51Z" finished-at="2019-08-24T13:22:51Z">
+        </test-method> <!-- test_createDMN_FuncKey -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-26T05:41:01Z" finished-at="2019-08-26T05:41:01Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_editToSetFirst_LastNames status=SUCCESS method=PM_Extension_Test.test_editToSetFirst_LastNames(java.lang.reflect.Method)[pri:0, instance:tests.PM_Extension_Test@6e1ec318] output={null}]]]>
+                <![CDATA[[TestResult name=test_createDMN_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createDMN_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1830" started-at="2019-08-24T13:22:51Z" finished-at="2019-08-24T13:22:52Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1451" started-at="2019-08-26T05:41:01Z" finished-at="2019-08-26T05:41:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_Extension_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-24T13:22:52Z" finished-at="2019-08-24T13:22:52Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-08-26T05:41:03Z" finished-at="2019-08-26T05:41:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tests.PM_Extension_Test -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- tests.PM_FunctionKeys_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
