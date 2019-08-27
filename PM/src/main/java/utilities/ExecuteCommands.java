@@ -62,7 +62,7 @@ public class ExecuteCommands
 //						wait.until(ExpectedConditions.elementToBeClickable(By.name("cmdApply")));
 						toolsPage.getCmdApply().click();
 						wait.until(ExpectedConditions.elementToBeClickable(By.name("cmdApply")));
-//						Thread.sleep(1000);
+						Thread.sleep(3000);
 					}
 					driver.close();
 				}

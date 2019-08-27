@@ -171,6 +171,7 @@ public class ReusableUnits
 		pmExtension.getAddButton().click();
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
 		pmExtension.getNextButton().click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("vacDir")));
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
 		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
 		System.out.println(version);
@@ -191,9 +192,57 @@ public class ReusableUnits
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[7]);
 		pmExtension.getFunctionKeysButton().click();
 		funcKeys.getFuncKey2().click();
-		new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
-		funcKeys.setKeyLabel("DMN-"+testData[3]);
-		funcKeys.setDmnDir(testData[3]);
+		if(testData[8].equals("DMN"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("DMN-"+testData[3]);
+			funcKeys.setDmnDir(testData[3]);
+		}
+		else if(testData[8].equals("EDN"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("EDN-"+testData[3]);
+			funcKeys.setEdnDir(testData[3]);
+		}
+		else if(testData[8].equals("GMA"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("GMA-"+testData[3]);
+			funcKeys.setGMAGroupNumber(testData[3]);
+		}
+		else if(testData[8].equals("MNS"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("MNS-"+testData[3]);
+			funcKeys.setMNSDir(testData[3]);
+		}
+		else if(testData[8].equals("TNS"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("TNS-"+testData[3]);
+			funcKeys.setTnsDigit(testData[3]);
+		}
+		else if(testData[8].equals("MCT"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("MCT");
+		}
+		else if(testData[8].equals("MOI"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("MOI");
+		}
+		else if(testData[8].equals("PGM"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("PGM");
+		}
+		else if(testData[8].equals("REC"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("REC");
+			funcKeys.setRecordURI(testData[3]);
+		}
 		funcKeys.getFuncKeyOKButton().click();
 		funcKeys.getApplyButton().click();
 		pmExtension.getApplyButton().click();
@@ -205,5 +254,125 @@ public class ReusableUnits
 		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
 		Assert.assertTrue(eles.size()==1);
 		
+	}
+	
+	
+	public void createExt_Line1_SCA_SCABR(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
+		pmExtension.getNextButton().click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("vacDir")));
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setSingleExtensionValue(testData[2]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[2]);
+		}
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[4]);
+		pmExtension.setFirstName(testData[5]);
+		pmExtension.setLastName(testData[6]);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[7]);
+		pmExtension.getFunctionKeysButton().click();
+		funcKeys.getFuncKeyLine1().click();
+//		Thread.sleep(10000);
+		if(testData[8].equals("SCA"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("SCA");
+			funcKeys.setSCADir(testData[2]);
+			Thread.sleep(3000);
+		}
+		else if(testData[8].equals("SCABR"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("SCABR");
+			funcKeys.setSCADir(testData[2]);
+		}
+		funcKeys.getFuncKeyOKButton().click();
+		funcKeys.getApplyButton().click();
+		pmExtension.getApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+		pmExtension.setEnterExtensionNumberTextBox(testData[2]);
+		pmExtension.getViewRangeButton().click();
+		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
+		Assert.assertTrue(eles.size()==1);
+	}
+	
+	
+	public void createExt_SCA_SCABRFunctionKey(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
+		pmExtension.getNextButton().click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("vacDir")));
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[3]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setSingleExtensionValue(testData[3]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[3]);
+		}
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[4]);
+		pmExtension.setFirstName(testData[5]);
+		pmExtension.setLastName(testData[6]);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[7]);
+		pmExtension.getFunctionKeysButton().click();
+		funcKeys.getFuncKey2().click();
+		if(testData[8].equals("SCA"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("SCA-"+testData[2]);
+			funcKeys.setSCADir(testData[2]);
+		}
+		else if(testData[8].equals("SCABR"))
+		{
+			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(), testData[8]);
+			funcKeys.setKeyLabel("SCABR-"+testData[2]);
+			funcKeys.setSCADir(testData[2]);
+		}
+		funcKeys.getFuncKeyOKButton().click();
+		funcKeys.getApplyButton().click();
+		pmExtension.getApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+		pmExtension.setEnterExtensionNumberTextBox(testData[3]);
+		pmExtension.getViewRangeButton().click();
+		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[3]+"')]"));
+		Assert.assertTrue(eles.size()==1);
 	}
 }

@@ -7,8 +7,8 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
+          <include name="test_createSCA_FuncKey" invocation-numbers="0"/>
           <include name="afterClass"/>
-          <include name="test_createDMN_FuncKey" invocation-numbers="0"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
