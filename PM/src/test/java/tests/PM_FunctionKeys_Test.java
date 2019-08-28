@@ -9,10 +9,13 @@ import org.testng.annotations.Test;
 import base.ConfigClass;
 import junit.framework.Assert;
 import pm_pom_classes.Extension;
+import pm_pom_classes.PM_Function_Keys;
 import pm_pom_classes.PM_Login_Page;
 import pm_pom_classes.PM_Main_Page;
+import pm_pom_classes.PM_Services;
 import utilities.ExecuteCommands;
 import utilities.ReusableUnits;
+import utilities.SelectDropDownValue;
 
 public class PM_FunctionKeys_Test extends ConfigClass
 {
@@ -20,8 +23,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 	ArrayList<String> list;
 	public PM_Main_Page pmMainPage;
 	public Extension pmExtension;
+	public PM_Login_Page pmLogin;
+	public PM_Services pmServices;
+	public PM_Function_Keys funcKeys;
 	
-	@Test
+/*	@Test
 	public void test_createDMN_FuncKey(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -332,8 +338,8 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			testData = pmTests.getData(method.getName(), 3);
 			list = new ArrayList<String>();
 			list.add(testData[0]);
-/*			list.add(testData[1]);
-			list.add(testData[2]);*/
+			list.add(testData[1]);
+			list.add(testData[2]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			testData = pmTests.getData(method.getName(), 1);
 			list.clear();
@@ -378,8 +384,8 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			testData = pmTests.getData(method.getName(), 3);
 			list = new ArrayList<String>();
 			list.add(testData[0]);
-/*			list.add(testData[1]);
-			list.add(testData[2]);*/
+			list.add(testData[1]);
+			list.add(testData[2]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			testData = pmTests.getData(method.getName(), 1);
 			list.clear();
@@ -409,5 +415,318 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[14]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
+	}*/
+	
+	
+/*	@Test
+	public void test_clearTNS_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"TNS");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
 	}
+	
+	
+	@Test
+	public void test_clearMNS_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"MNS");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+	@Test
+	public void test_clearEDN_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"EDN");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	
+/*	@Test
+	public void test_clearMOI_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"MOI");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+/*	@Test
+	public void test_clearPGM_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"PGM");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	
+	@Test
+	public void test_clearREC_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"REC");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	
+	@Test
+	public void test_clearDMN_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"DMN");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	@Test
+	public void test_clearGMA_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"GMA");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	@Test
+	public void test_clearMCT_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"MCT");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
 }

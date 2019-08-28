@@ -1,311 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="1425105" started-at="2019-08-27T14:44:53Z" finished-at="2019-08-27T15:08:38Z">
+  <suite name="Suite" duration-ms="84119" started-at="2019-08-28T12:01:04Z" finished-at="2019-08-28T12:02:28Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="1425105" started-at="2019-08-27T14:44:53Z" finished-at="2019-08-27T15:08:38Z">
+    <test name="Test" duration-ms="84119" started-at="2019-08-28T12:01:04Z" finished-at="2019-08-28T12:02:28Z">
       <class name="tests.PM_FunctionKeys_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeSuite" is-config="true" duration-ms="1379" started-at="2019-08-27T14:44:51Z" finished-at="2019-08-27T14:44:53Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1653" started-at="2019-08-28T12:01:02Z" finished-at="2019-08-28T12:01:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeClass" is-config="true" duration-ms="7019" started-at="2019-08-27T14:44:53Z" finished-at="2019-08-27T14:45:00Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="8302" started-at="2019-08-28T12:01:04Z" finished-at="2019-08-28T12:01:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="33" started-at="2019-08-27T14:45:00Z" finished-at="2019-08-27T14:45:00Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="36" started-at="2019-08-28T12:01:12Z" finished-at="2019-08-28T12:01:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createDMN_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createDMN_FuncKey" duration-ms="156476" started-at="2019-08-27T14:45:00Z" finished-at="2019-08-27T14:47:36Z">
+        <test-method status="PASS" signature="test_clearEDN_funcKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="test_clearEDN_funcKey" duration-ms="74025" started-at="2019-08-28T12:01:12Z" finished-at="2019-08-28T12:02:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createDMN_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
+                <![CDATA[public void tests.PM_FunctionKeys_Test.test_clearEDN_funcKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_createDMN_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="4" started-at="2019-08-27T14:47:36Z" finished-at="2019-08-27T14:47:36Z">
+        </test-method> <!-- test_clearEDN_funcKey -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-28T12:02:27Z" finished-at="2019-08-28T12:02:27Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_createDMN_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createDMN_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
+                <![CDATA[[TestResult name=test_clearEDN_funcKey status=SUCCESS method=PM_FunctionKeys_Test.test_clearEDN_funcKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="30" started-at="2019-08-27T14:47:36Z" finished-at="2019-08-27T14:47:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createEDN_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createEDN_FuncKey" duration-ms="156692" started-at="2019-08-27T14:47:36Z" finished-at="2019-08-27T14:50:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createEDN_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createEDN_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-27T14:50:13Z" finished-at="2019-08-27T14:50:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createEDN_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createEDN_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="16" started-at="2019-08-27T14:50:13Z" finished-at="2019-08-27T14:50:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createGMA_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createGMA_FuncKey" duration-ms="157860" started-at="2019-08-27T14:50:13Z" finished-at="2019-08-27T14:52:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createGMA_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createGMA_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-27T14:52:51Z" finished-at="2019-08-27T14:52:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createGMA_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createGMA_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="12" started-at="2019-08-27T14:52:51Z" finished-at="2019-08-27T14:52:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createMCT_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createMCT_FuncKey" duration-ms="61895" started-at="2019-08-27T14:52:51Z" finished-at="2019-08-27T14:53:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createMCT_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createMCT_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-27T14:53:53Z" finished-at="2019-08-27T14:53:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createMCT_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createMCT_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="20" started-at="2019-08-27T14:53:53Z" finished-at="2019-08-27T14:53:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createMNS_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createMNS_FuncKey" duration-ms="157237" started-at="2019-08-27T14:53:53Z" finished-at="2019-08-27T14:56:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createMNS_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createMNS_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-27T14:56:30Z" finished-at="2019-08-27T14:56:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createMNS_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createMNS_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="17" started-at="2019-08-27T14:56:30Z" finished-at="2019-08-27T14:56:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createMOI_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createMOI_FuncKey" duration-ms="63183" started-at="2019-08-27T14:56:30Z" finished-at="2019-08-27T14:57:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createMOI_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createMOI_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-27T14:57:33Z" finished-at="2019-08-27T14:57:33Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createMOI_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createMOI_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="36" started-at="2019-08-27T14:57:33Z" finished-at="2019-08-27T14:57:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createPGM_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createPGM_FuncKey" duration-ms="62874" started-at="2019-08-27T14:57:33Z" finished-at="2019-08-27T14:58:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createPGM_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createPGM_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-27T14:58:36Z" finished-at="2019-08-27T14:58:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createPGM_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createPGM_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="20" started-at="2019-08-27T14:58:36Z" finished-at="2019-08-27T14:58:36Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createREC_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createREC_FuncKey" duration-ms="62860" started-at="2019-08-27T14:58:36Z" finished-at="2019-08-27T14:59:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createREC_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createREC_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-27T14:59:39Z" finished-at="2019-08-27T14:59:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createREC_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createREC_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="33" started-at="2019-08-27T14:59:39Z" finished-at="2019-08-27T14:59:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createSCABR_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createSCABR_FuncKey" duration-ms="180875" started-at="2019-08-27T14:59:39Z" finished-at="2019-08-27T15:02:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createSCABR_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createSCABR_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-27T15:02:40Z" finished-at="2019-08-27T15:02:40Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createSCABR_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createSCABR_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="23" started-at="2019-08-27T15:02:40Z" finished-at="2019-08-27T15:02:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createSCA_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createSCA_FuncKey" duration-ms="185464" started-at="2019-08-27T15:02:40Z" finished-at="2019-08-27T15:05:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createSCA_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createSCA_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-27T15:05:45Z" finished-at="2019-08-27T15:05:45Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createSCA_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createSCA_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="beforeMethod" is-config="true" duration-ms="30" started-at="2019-08-27T15:05:45Z" finished-at="2019-08-27T15:05:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_createTNS_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="test_createTNS_FuncKey" duration-ms="170997" started-at="2019-08-27T15:05:46Z" finished-at="2019-08-27T15:08:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_createTNS_FuncKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_createTNS_FuncKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-27T15:08:37Z" finished-at="2019-08-27T15:08:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_createTNS_FuncKey status=SUCCESS method=PM_FunctionKeys_Test.test_createTNS_FuncKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterClass" is-config="true" duration-ms="1285" started-at="2019-08-27T15:08:37Z" finished-at="2019-08-27T15:08:38Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1698" started-at="2019-08-28T12:02:27Z" finished-at="2019-08-28T12:02:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@7e0b0338]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-27T15:08:38Z" finished-at="2019-08-27T15:08:38Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-08-28T12:02:28Z" finished-at="2019-08-28T12:02:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
