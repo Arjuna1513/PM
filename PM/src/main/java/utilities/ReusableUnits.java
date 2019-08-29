@@ -495,49 +495,38 @@ public class ReusableUnits
 		pmMainPge.getServices().click();
 		pmServices.getExtension().click();
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
-		pmExtension.setEnterExtensionNumberTextBox(testData[4]);
+		pmExtension.setEnterExtensionNumberTextBox(testData[5]);
 		pmExtension.getViewRangeButton().click();
-		driver.findElement(By.xpath("//td[contains(text(),'"+testData[4]+"')]//preceding-sibling::td[20]")).click();
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[5]+"')]//preceding-sibling::td[20]")).click();
 		List<WebElement> eles = null;
-		if(fKey.equals("TNS"))
+		if(fKey.equals("SCA"))
 		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'TNS-"+testData[5]+" TNS "+testData[5]+"')]"));
+			eles  = driver.findElements(By.xpath("//td[contains(text(),'SCA SCA "+testData[5]+"')]"));
 		}
-		else if(fKey.equals("MNS"))
+		else if(fKey.equals("SCABR"))
 		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'MNS-"+testData[5]+" MNS "+testData[5]+"')]"));
-		}
-		else if(fKey.equals("DMN"))
-		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'DMN-"+testData[5]+" DMN"+"')]"));
-		}
-		else if(fKey.equals("MCT"))
-		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'MCT MCT')]"));
-		}
-		else if(fKey.equals("EDN"))
-		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'EDN-"+testData[5]+" EDN "+testData[5]+"')]"));
-		}
-		else if(fKey.equals("GMA"))
-		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'GMA-"+testData[5]+" GMA "+testData[5]+"')]"));
-		}
-		else if(fKey.equals("MOI"))
-		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'MOI MOI')]"));
-		}
-		else if(fKey.equals("PGM"))
-		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'PGM PGM')]"));
-		}
-		else if(fKey.equals("REC"))
-		{
-			eles  = driver.findElements(By.xpath("//td[contains(text(),'REC REC http://149.13.0.80:80//nrj.ogg')]"));
+			eles  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[5]+"')]"));
 		}
 		Assert.assertTrue(eles.size() == 1);
 		pmExtension.getDoneButton().click();
-		driver.findElement(By.xpath("//td[contains(text(),'"+testData[4]+"')]//preceding-sibling::td[19]")).click();
+		
+		pmExtension.getEnterExtensionNumberTextBox().clear();
+		pmExtension.setEnterExtensionNumberTextBox(testData[6]);
+		pmExtension.getViewRangeButton().click();
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[6]+"')]//preceding-sibling::td[20]")).click();
+		List<WebElement> eles1 = null;
+		if(fKey.equals("SCA"))
+		{
+			eles1  = driver.findElements(By.xpath("//td[contains(text(),'SCA SCA "+testData[5]+"')]"));
+		}
+		else if(fKey.equals("SCABR"))
+		{
+			eles1  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[5]+"')]"));
+		}
+		Assert.assertTrue(eles1.size() == 1);
+		pmExtension.getDoneButton().click();
+		
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[6]+"')]//preceding-sibling::td[19]")).click();
 		new SelectDropDownValue().selectByValue(pmExtension.getPhoneTypeDropDown(), "Mitel6869i");
 		pmExtension.getFunctionKeysButton().click();
 		funcKeys.getFuncKey2().click();
@@ -549,47 +538,46 @@ public class ReusableUnits
 		pmExtension.getDoneButton().click();
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
 		pmExtension.getEnterExtensionNumberTextBox().clear();
-		pmExtension.setEnterExtensionNumberTextBox(testData[4]);
+		pmExtension.setEnterExtensionNumberTextBox(testData[6]);
 		pmExtension.getViewRangeButton().click();
-		driver.findElement(By.xpath("//td[contains(text(),'"+testData[4]+"')]//preceding-sibling::td[20]")).click();
-		List<WebElement> eles1 = null;
-		if(fKey.equals("TNS"))
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[6]+"')]//preceding-sibling::td[20]")).click();
+		List<WebElement> eles2 = null;
+		if(fKey.equals("SCA"))
 		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'TNS')]"));
+			eles2  = driver.findElements(By.xpath("//td[contains(text(),'SCA SCA "+testData[5]+"')]"));
 		}
-		else if(fKey.equals("MNS"))
+		else if(fKey.equals("SCABR"))
 		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'MNS')]"));
+			eles2  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[5]+"')]"));
 		}
-		else if(fKey.equals("DMN"))
+		Assert.assertTrue(eles2.size() == 0);
+		pmExtension.getDoneButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+		pmExtension.getEnterExtensionNumberTextBox().clear();
+		pmExtension.setEnterExtensionNumberTextBox(testData[5]);
+		pmExtension.getViewRangeButton().click();
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[5]+"')]//preceding-sibling::td[19]")).click();
+		new SelectDropDownValue().selectByValue(pmExtension.getPhoneTypeDropDown(), "Mitel6869i");
+		pmExtension.getFunctionKeysButton().click();
+		funcKeys.getFuncKeyLine1().click();
+		new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(),"REMOVE");
+		funcKeys.getFuncKeyOKButton().click();
+		funcKeys.getApplyButton().click();
+		pmExtension.getEditPageApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+		pmExtension.getDoneButton().click();
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[5]+"')]//preceding-sibling::td[20]")).click();
+		List<WebElement> eles3 = null;
+		if(fKey.equals("SCA"))
 		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'DMN')]"));
+			eles3  = driver.findElements(By.xpath("//td[contains(text(),'SCA SCA "+testData[5]+"')]"));
 		}
-		else if(fKey.equals("MCT"))
+		else if(fKey.equals("SCABR"))
 		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'MCT')]"));
+			eles3  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[5]+"')]"));
 		}
-		else if(fKey.equals("EDN"))
-		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'EDN-"+testData[5]+" EDN "+testData[5]+"')]"));
-		}
-		else if(fKey.equals("GMA"))
-		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'GMA')]"));
-		}
-		else if(fKey.equals("MOI"))
-		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'MOI')]"));
-		}
-		else if(fKey.equals("PGM"))
-		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'PGM')]"));
-		}
-		else if(fKey.equals("REC"))
-		{
-			eles1  = driver.findElements(By.xpath("//td[contains(text(),'REC')]"));
-		}
-		Assert.assertTrue(eles1.size() == 0);
+		Assert.assertTrue(eles3.size() == 0);
+		pmExtension.getDoneButton().click();
 		pmMainPge.getLogoutLink().click();
 	}
 }

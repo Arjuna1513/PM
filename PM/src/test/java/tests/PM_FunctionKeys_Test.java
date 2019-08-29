@@ -488,7 +488,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 	}*/
 	
 	
-	@Test
+/*	@Test
 	public void test_clearEDN_funcKey(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -520,7 +520,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 	
 	
 /*	@Test
@@ -729,4 +729,79 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}*/
+	
+	
+	@Test
+	public void test_clearSCA_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			list.add(testData[4]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key_SCA_SCABR(driver,method.getName(), ipData, loginData,pmTests,"SCA");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			list.add(testData[10]);
+			list.add(testData[11]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	
+	@Test
+	public void test_clearSCABR_funcKey(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmMainPage = new PM_Main_Page(driver);
+			pmLogin = new PM_Login_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			funcKeys = new PM_Function_Keys(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(testData[1]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			list.add(testData[4]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).clear_function_key_SCA_SCABR(driver,method.getName(), ipData, loginData,pmTests,"SCABR");
+		}
+		finally
+		{
+			list.clear();
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			list.add(testData[10]);
+			list.add(testData[11]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
 }
