@@ -354,6 +354,15 @@ public class PM_User
 		return responseMessage;
 	}
 	
+	//UserEdit Service Summary page.
+	@FindBy(xpath="(//a[@class='menu1itemUnSel'])[1]")
+	private WebElement userEditServiceSummary;
+	
+	public WebElement getUserEditServiceSummary()
+	{
+		return userEditServiceSummary;
+	}
+	
 	//existing extension field.
 	@FindBy(id="myExistingExtensions[0]")
 	private WebElement existingExtensionField;

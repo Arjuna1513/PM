@@ -17,8 +17,10 @@ import pm_pom_classes.PM_Login_Page;
 import pm_pom_classes.PM_Main_Page;
 import pm_pom_classes.PM_Services;
 import pm_pom_classes.PM_User;
+import pm_pom_classes.PM_Users;
 import utilities.CleanUP;
 import utilities.ExecuteCommands;
+import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
 
@@ -30,9 +32,11 @@ public class PM_Extension_Test extends ConfigClass
 	public Extension pmExtension;
 	public PM_Main_Page pmMainPge;
 	public PM_Services pmServices;
-//	WebDriverWait wait = null;
+	WebDriverWait wait = null;
+	public PM_Login_Page pmLoginPge;
+	public PM_Users pmUsers;
 	
-/*	@Test
+	/*@Test
 	public void test_create_IP_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -48,10 +52,6 @@ public class PM_Extension_Test extends ConfigClass
 			new ReusableUnits(driver).createExtension(driver, method.getName(), ipData, loginData, pmTests,0);
 			pmUser.getLogoutLink().click();
 		}
-		catch(InterruptedException e)
-		{
-			System.out.println(e.getMessage());
-		}
 		finally
 		{
 			list.clear();
@@ -60,9 +60,9 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
+	@Test
 	public void test_delete_IP_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -89,9 +89,9 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
+	@Test
 	public void test_delete_multiple_IP_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -136,9 +136,9 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
+	@Test
 	public void test_configureParallel_ringing_to_IP(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -194,11 +194,11 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[10]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
 	
-/*	@Test
+	@Test
 	public void test_editIPExtensionPhoneType(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -245,10 +245,10 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[10]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-/*	@Test
+	@Test
 	public void test_editIPExtensionCSP(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -295,9 +295,9 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
+	@Test
 	public void test_editToAssignThirdPartySIPClient(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -344,9 +344,9 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
+	@Test
 	public void test_editToConfigureCallPark(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -398,9 +398,9 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@DataProvider(name = "SLDProvider")
+	@DataProvider(name = "SLDProvider")
 	public Object[] getData()
 	{
 		Object[] obj = new Object[3];
@@ -459,9 +459,9 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@DataProvider(name = "hotline")
+	@DataProvider(name = "hotline")
 	public Object[] getHotLineData()
 	{
 		Object[] obj = new Object[2];
@@ -530,7 +530,7 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[7]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
 	@Test
@@ -593,6 +593,75 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[6]);
 			list.add(testData[7]);
 			list.add(testData[8]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	@Test
+	public void test_create_IP_extension_usingTemplate(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmMainPge = new PM_Main_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmExtension = new Extension(driver);
+			pmLoginPge = new PM_Login_Page(driver);
+			pmUsers = new PM_Users(driver);
+			
+			testData = pmTests.getData(method.getName(), 1);
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits(driver).createIPTemplate(driver, method.getName(), ipData, loginData, testData[2]);
+//			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
+//			Thread.sleep(10000);
+			driver.get(ipData.getData(0, 0));
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			pmLoginPge.PM_Login(credentials[0], credentials[1]);
+			pmMainPge.getServices().click();
+			pmServices.getExtension().click();
+			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
+//			Thread.sleep(10000);
+			pmExtension.getAddButton().click();
+			/*new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
+			pmExtension.getNextButton().click();*/
+			//Provide extension details.
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setSingleExtensionValue(testData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[1]);
+			}
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[3]);
+			pmExtension.getApplyButton().click();
+			
+			Assert.assertEquals("Add operation successful for:", pmExtension.getResponseMessage());
+			pmExtension.getDoneButton().click();
+			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+			pmExtension.getViewRangeButton().click();
+			/*pmMainPge.getServices().click();
+			pmServices.getExtension().click();*/
+			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[1]+"')]"));
+			Assert.assertTrue(eles.size()==1);
+			pmMainPge.getLogoutLink().click();
+		}
+		finally
+		{
+			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, testData[2], ipData);
+			list.clear();
+			list.add(testData[4]);
+			list.add(testData[5]);
+			list.add(testData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}

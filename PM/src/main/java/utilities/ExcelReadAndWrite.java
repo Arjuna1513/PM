@@ -108,4 +108,24 @@ public class ExcelReadAndWrite
 //			System.out.println("No Idea, why I have written this method, it started throwing error for no reason");
 		}
 	}
+	
+	public String checkTestStatusToCleanData(String methodName)
+	{
+		String flag = null;
+		try
+		{
+		for(int i=1; i<sheet.getPhysicalNumberOfRows(); i++)
+		{
+			if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(methodName))
+			{
+				flag = sheet.getRow(i).getCell(2).getStringCellValue().trim();
+			}
+		}
+		}
+		catch(Exception e)
+		{
+//			System.out.println("No Idea, why I have written this method, it started throwing error for no reason");
+		}
+		return flag;
+	}
 }

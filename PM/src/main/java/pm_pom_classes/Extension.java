@@ -165,11 +165,31 @@ public class Extension
 	@FindBy(name="multiStepBackButton")
 	private WebElement submitButton;
 
-	public WebElement getSubmitButton() 
+	public WebElement getTemplateSubmitButton() 
 	{
 		return submitButton;
 	}
 	
+	@FindBy(id="newTemplateName")
+	private WebElement templateName;
+	
+	public WebElement getTemplateName()
+	{
+		return templateName;
+	}
+	
+	@FindBy(name="templateName")
+	private WebElement extensionHomePageTemplateDropDown;
+	
+	public WebElement getExtensionHomePageTemplateDropDown()
+	{
+		return extensionHomePageTemplateDropDown;
+	}
+	
+	public void setTempplateName(String name)
+	{
+		templateName.sendKeys(name);
+	}
 	//mivoice mxone drop-down 
 	@FindBy(name="nodeName")
 	private WebElement mivoiceMxoneDropDown;
@@ -577,5 +597,181 @@ public class Extension
 	public void setHotLineNumber(String value)
 	{
 		hotLineNumber.sendKeys(value);
+	}
+	
+	@FindBy(xpath="//a[text()='Manage Templates']")
+	private WebElement manageTemplates;
+	
+	public WebElement getManageTemplates()
+	{
+		return manageTemplates;
+	}
+	
+	@FindBy(name="newTemplateName")
+	private WebElement templateApplyButton;
+	
+	public WebElement getTemplateApplyButton()
+	{
+		return templateApplyButton;
+	}
+	
+	@FindBy(id="myAnalogueExtension_VO.EXDDP.CAT.CATName")
+	private WebElement commonCategoryDropDown;
+	
+	public WebElement getCommonCategoryDropDown()
+	{
+		return commonCategoryDropDown;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.KSDDP.CAT.CATName")
+	private WebElement digitalCommonCategoryDropDown;
+	
+	public WebElement getDigitalCommonCategoryDropDown()
+	{
+		return digitalCommonCategoryDropDown;
+	}
+	
+	
+	@FindBy(id="myAnalogueExtension_VO.DIR")
+	private WebElement enterAnalogDirctoryNumber;
+	
+	public WebElement getEnterAnalogDirectorynumber()
+	{
+		return enterAnalogDirctoryNumber;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.DIR")
+	private WebElement enterDigitalExtensionNumber;
+	
+	public WebElement getEnterDigitalExtensionNumber()
+	{
+		return enterDigitalExtensionNumber;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.DIR")
+	private WebElement setDigitalExtensionNumber;
+	
+	public void setDigitalExtensionNumber(String value)
+	{
+		setDigitalExtensionNumber.sendKeys(value);
+	}
+	
+	public void setEnterAnalogDirectoryNumber(String value)
+	{
+		enterAnalogDirctoryNumber.sendKeys(value);
+	}
+	
+	@FindBy(id="myAnalogueExtension_VO.DIR")
+	private WebElement analogDirectoryDropDown;
+	
+	public WebElement getAnalogDirctoryDropDown()
+	{
+		return analogDirectoryDropDown;
+	}
+	
+	@FindBy(id="hardwareDesc")
+	private WebElement equipmentPosition;
+	
+	public void setEquipmentPosition(String value)
+	{
+		equipmentPosition.sendKeys(value);
+	}
+	
+	@FindBy(id="myAnalogueExtension_VO.NIINP.name1")
+	private WebElement analogFirstname;
+	
+	public void setAnalogFirstName(String value)
+	{
+		analogFirstname.sendKeys(value);
+	}
+	
+	public WebElement getAnalogFirstname()
+	{
+		return analogFirstname;
+	}
+	
+	@FindBy(id="myAnalogueExtension_VO.NIINP.name2")
+	private WebElement analogLastname;
+	
+	public void setAnalogLastname(String value)
+	{
+		analogLastname.sendKeys(value);
+	}
+	
+	public WebElement getAnalogLastname()
+	{
+		return analogLastname;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.KSCAP.ITYPE")
+	private WebElement digitalPhoneTypeDropDown;
+	
+	public WebElement getDigitalPhoneTypeDropDown()
+	{
+		return digitalPhoneTypeDropDown;
+	}
+	
+	
+	@FindBy(id="myDigitalExtension_VO.NIINP.name1")
+	private WebElement digitalFirstname;
+	
+	public void setDigitalFirstname(String value)
+	{
+		digitalFirstname.sendKeys(value);
+	}
+	
+	public WebElement getDigitalFirstname()
+	{
+		return digitalFirstname;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.NIINP.name2")
+	private WebElement digitalLastname;
+	
+	public void setDigitalLastname(String value)
+	{
+		digitalLastname.sendKeys(value);
+	}
+	
+	public WebElement getDigitalLastname()
+	{
+		return digitalLastname;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.KSCAP.agentPos_CB")
+	private WebElement digitalAgentPosition;
+	
+	public WebElement getDigitalAgentPosition()
+	{
+		return digitalAgentPosition;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.SPEXP.nonDialledConnExtn")
+	private WebElement hotLineDelayedHotLineDropDown;
+	
+	public WebElement getHotLineDelayedHotLineDropDown()
+	{
+		return hotLineDelayedHotLineDropDown;
+	}
+	
+	@FindBy(id="myDigitalExtension_VO.SPEXP.nonDialledConnNumber")
+	private WebElement hotLineNumberTextBox;
+	
+	public WebElement getHotLineNumberTextBox()
+	{
+		return hotLineNumberTextBox;
+	}
+	
+	public void setHotLineNumberTextBox(String value)
+	{
+		 hotLineNumberTextBox.sendKeys(value);;
+	}
+	
+	@FindBy(name="onSwapSelectedButton")
+	private WebElement swapButton;
+	
+	public WebElement getSwapButton()
+	{
+		return swapButton;
 	}
 }

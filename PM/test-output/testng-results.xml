@@ -1,81 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="250850" started-at="2019-08-29T08:58:55Z" finished-at="2019-08-29T09:03:06Z">
+  <suite name="Default suite" duration-ms="42817" started-at="2019-09-06T07:41:41Z" finished-at="2019-09-06T07:42:24Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="250850" started-at="2019-08-29T08:58:55Z" finished-at="2019-08-29T09:03:06Z">
-      <class name="tests.PM_FunctionKeys_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1669" started-at="2019-08-29T08:58:54Z" finished-at="2019-08-29T08:58:55Z">
+    <test name="Default test" duration-ms="42817" started-at="2019-09-06T07:41:41Z" finished-at="2019-09-06T07:42:24Z">
+      <class name="tests.PM_AnalogExtension_Test">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1265" started-at="2019-09-06T07:41:40Z" finished-at="2019-09-06T07:41:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="8378" started-at="2019-08-29T08:58:55Z" finished-at="2019-08-29T08:59:04Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="7546" started-at="2019-09-06T07:41:41Z" finished-at="2019-09-06T07:41:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="36" started-at="2019-08-29T08:59:04Z" finished-at="2019-08-29T08:59:04Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="32" started-at="2019-09-06T07:41:49Z" finished-at="2019-09-06T07:41:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_clearSCABR_funcKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="test_clearSCABR_funcKey" duration-ms="122840" started-at="2019-08-29T08:59:04Z" finished-at="2019-08-29T09:01:07Z">
+        <test-method status="PASS" signature="test_swap_digitalEquipmentPositions(java.lang.reflect.Method)[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="test_swap_digitalEquipmentPositions" duration-ms="33452" started-at="2019-09-06T07:41:49Z" finished-at="2019-09-06T07:42:22Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_clearSCABR_funcKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
+                <![CDATA[public void tests.PM_AnalogExtension_Test.test_swap_digitalEquipmentPositions(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_clearSCABR_funcKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-29T09:01:07Z" finished-at="2019-08-29T09:01:07Z">
+        </test-method> <!-- test_swap_digitalEquipmentPositions -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-09-06T07:42:22Z" finished-at="2019-09-06T07:42:22Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_clearSCABR_funcKey status=SUCCESS method=PM_FunctionKeys_Test.test_clearSCABR_funcKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318] output={null}]]]>
+                <![CDATA[[TestResult name=test_swap_digitalEquipmentPositions status=SUCCESS method=PM_AnalogExtension_Test.test_swap_digitalEquipmentPositions(java.lang.reflect.Method)[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="27" started-at="2019-08-29T09:01:07Z" finished-at="2019-08-29T09:01:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_clearSCA_funcKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="test_clearSCA_funcKey" duration-ms="118237" started-at="2019-08-29T09:01:07Z" finished-at="2019-08-29T09:03:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.PM_FunctionKeys_Test.test_clearSCA_funcKey(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_clearSCA_funcKey -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-29T09:03:05Z" finished-at="2019-08-29T09:03:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_clearSCA_funcKey status=SUCCESS method=PM_FunctionKeys_Test.test_clearSCA_funcKey(java.lang.reflect.Method)[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1271" started-at="2019-08-29T09:03:05Z" finished-at="2019-08-29T09:03:06Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1742" started-at="2019-09-06T07:42:22Z" finished-at="2019-09-06T07:42:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_FunctionKeys_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-08-29T09:03:06Z" finished-at="2019-08-29T09:03:06Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-09-06T07:42:24Z" finished-at="2019-09-06T07:42:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tests.PM_FunctionKeys_Test -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- tests.PM_AnalogExtension_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
