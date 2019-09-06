@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.PM_AnalogExtension_Test">
+      <class name="tests.PM_DigitalExtension_Test">
         <methods>
+          <include name="test_editUser_to_create_DigitalExtension" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_swap_digitalEquipmentPositions" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_AnalogExtension_Test -->
+      </class> <!-- tests.PM_DigitalExtension_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

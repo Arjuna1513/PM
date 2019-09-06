@@ -69,6 +69,14 @@ public class Extension
 		return applyButton;
 	}
 	
+	@FindBy(id="onApplyButtonTopID")
+	private WebElement applyButtonAfterAssigningDigitalExtension;
+	
+	public WebElement getApplyButtonAfterAssigningDigitalExtension()
+	{
+		return applyButtonAfterAssigningDigitalExtension;
+	}
+	
 	//MiVoice MX-ONE: drop-down
 	@FindBy(name="range")
 	private WebElement miVoiceMXONEDropDown;
@@ -176,6 +184,14 @@ public class Extension
 	public WebElement getTemplateName()
 	{
 		return templateName;
+	}
+	
+	@FindBy(id="addItem_extension")
+	private WebElement createAndAssignExtensionToUser;
+
+	public WebElement getCreateAndAssignExtensionToUser() 
+	{
+		return createAndAssignExtensionToUser;
 	}
 	
 	@FindBy(name="templateName")

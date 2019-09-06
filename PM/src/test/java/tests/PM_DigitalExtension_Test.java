@@ -18,12 +18,14 @@ import pm_pom_classes.PM_Main_Page;
 import pm_pom_classes.PM_Services;
 import pm_pom_classes.PM_User;
 import pm_pom_classes.PM_Users;
+import utilities.CleanUP;
 import utilities.ExecuteCommands;
+import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.ReusableUnits_Analog_Digital;
 import utilities.SelectDropDownValue;
 
-public class PM_AnalogExtension_Test extends ConfigClass
+public class PM_DigitalExtension_Test extends ConfigClass
 {
 	public ArrayList<String> list;
 //	public PM_Login_Page loginPage;
@@ -491,7 +493,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 	}*/
 	
 	
-	@Test
+	/*@Test
 	public void test_swap_digitalEquipmentPositions(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -546,6 +548,405 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(testData[5]);
 			list.add(testData[6]);
 			list.add(testData[7]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+	/*@Test
+	public void test_create_digitalExt_using_Template(Method method) throws InterruptedException
+	{
+		String[] testData = null;
+		String[] credentials = null;
+		wait = new WebDriverWait(driver, 20);
+		try
+		{
+			System.out.println(pmTests);
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmLoginPage = new PM_Login_Page(driver);
+			pmMainPage = new PM_Main_Page(driver);
+			pmExtension = new Extension(driver);
+			pmServices = new PM_Services(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add("KSEXI:DIR="+testData[1]+",CAT=0,EQU="+testData[2]+",ITYPE=0;");
+			list.add("KSEXI:DIR="+testData[3]+",CAT=0,EQU="+testData[4]+",ITYPE=0;");
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits_Analog_Digital(driver).createDigitalTemplate(driver, ipData, loginData, testData[3]);
+			
+			driver.get(ipData.getData(0, 0));
+			pmLoginPage.PM_Login(credentials[0], credentials[1]);
+			pmMainPage.getServices().click();
+			pmServices.getExtension().click();
+			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
+			pmExtension.getAddButton().click();
+			
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setDigitalExtensionNumber(testData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getEnterDigitalExtensionNumber(), testData[1]);
+			}
+			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalCommonCategoryDropDown(), 0);
+			pmExtension.setEquipmentPosition(testData[2]);
+			
+			pmExtension.getApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+			pmExtension.getDoneButton().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Digital");
+			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+			pmExtension.getViewRangeButton().click();
+			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[1]+"')]//following-sibling::td[contains(text(),'Digital')]"));
+			Assert.assertTrue(eles.size()==1);
+			pmUser.getLogoutLink().click();
+		}
+		finally
+		{
+			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, testData[3], ipData);
+			list.clear();
+			list.add(testData[4]);
+			list.add(testData[5]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+/*	@Test
+	public void test_createUser_with_Digital_Extension(Method method) throws InterruptedException
+	{
+		list = new ArrayList<String>();
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(method.getName(), 1);
+		String[] ipTestData = pmTests.getData(method.getName(), 3);
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmLoginPage = new PM_Login_Page(driver);
+			pmMainPage = new PM_Main_Page(driver);
+			pmExtension = new Extension(driver);
+			pmServices = new PM_Services(driver);
+			
+			list.add(ipTestData[0]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
+			pmUser.getCreateAndAssignExtensionToUser().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Digital");
+			pmExtension.getNextButton().click();
+			
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), ipTestData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setDigitalExtensionNumber(ipTestData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getEnterDigitalExtensionNumber(), ipTestData[1]);
+			}
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getDigitalPhoneTypeDropDown(), ipTestData[2]);
+			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalCommonCategoryDropDown(), 0);
+			pmExtension.setEquipmentPosition(ipTestData[3]);
+			pmExtension.setDigitalFirstname(testData[4]);
+			pmExtension.setDigitalLastname(testData[5]);
+			pmExtension.getApplyButton().click();
+			pmExtension.getApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+			pmExtension.getDoneButton().click();
+			
+			pmUser.setUserSearchTextBox(testData[0]);
+			pmUser.getOnViewRangeButton().click();
+			
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
+			Assert.assertTrue(eles.size()==1);
+		}
+		finally
+		{
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
+			String[] extData = pmTests.getData(method.getName(), 3);
+			list.clear();
+			list.add(ipTestData[6]);
+			list.add(ipTestData[7]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+/*	@Test
+	public void test_createUser_with_existing_Digital_Extension(Method method) throws InterruptedException
+	{
+		list = new ArrayList<String>();
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(method.getName(), 1);
+		String[] ipTestData = pmTests.getData(method.getName(), 3);
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmLoginPage = new PM_Login_Page(driver);
+			pmMainPage = new PM_Main_Page(driver);
+			pmExtension = new Extension(driver);
+			pmServices = new PM_Services(driver);
+			
+			list.add(ipTestData[0]);
+			list.add("KSEXI:DIR="+ipTestData[1]+",CAT=0,EQU="+ipTestData[2]+",ITYPE=0;");
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
+			pmUser.setExistingExtensionField(ipTestData[1]);
+			pmUser.getApplyButton().click();
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Add operation successful for:");
+			pmUser.getDoneButton().click();
+			
+			pmUser.getUserSearchTextBox().clear();
+			pmUser.setUserSearchTextBox(testData[0]);
+			pmUser.getOnViewRangeButton().click();
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
+			Assert.assertTrue(eles.size() == 1);
+		}
+		finally
+		{
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
+			list.clear();
+			list.add(ipTestData[3]);
+			list.add(ipTestData[4]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+	/*@Test
+	public void test_createUser_with_DigitalExtension_usingTemplate(Method method) throws InterruptedException
+	{
+		list = new ArrayList<String>();
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(method.getName(), 1);
+		String[] ipTestData = pmTests.getData(method.getName(), 3);
+		try
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmLoginPage = new PM_Login_Page(driver);
+			pmMainPage = new PM_Main_Page(driver);
+			pmExtension = new Extension(driver);
+			pmServices = new PM_Services(driver);
+			
+			list.add(ipTestData[0]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			new ReusableUnits_Analog_Digital(driver).createDigitalTemplate(driver, ipData, loginData, ipTestData[3]);
+			
+			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
+			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
+			pmExtension.getCreateAndAssignExtensionToUser().click();
+			
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), ipTestData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setDigitalExtensionNumber(ipTestData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getEnterDigitalExtensionNumber(), ipTestData[1]);
+			}
+			pmExtension.setEquipmentPosition(ipTestData[2]);
+			pmExtension.getApplyButton().click();
+			pmExtension.getApplyButton().click();
+			
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Add operation successful for:");
+			pmUser.getDoneButton().click();
+			
+			pmUser.getUserSearchTextBox().clear();
+			pmUser.setUserSearchTextBox(testData[0]);
+			pmUser.getOnViewRangeButton().click();
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
+			Assert.assertTrue(eles.size() == 1);
+		}
+		finally
+		{
+			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, ipTestData[3], ipData);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
+			list.clear();
+			list.add(ipTestData[4]);
+			list.add(ipTestData[5]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+	/*@Test
+	public void test_editUser_and_Assign_Existing_DigitalExtension(Method method) throws InterruptedException
+	{
+		list = new ArrayList<String>();
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(method.getName(), 1);
+		String[] ipTestData = pmTests.getData(method.getName(), 3);
+		wait = new WebDriverWait(driver, 20);
+		try 
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmLoginPage = new PM_Login_Page(driver);
+			pmMainPage = new PM_Main_Page(driver);
+			pmExtension = new Extension(driver);
+			pmServices = new PM_Services(driver);
+			
+			list.add(ipTestData[0]);
+			list.add("KSEXI:DIR="+ipTestData[1]+",CAT=0,EQU="+ipTestData[2]+",ITYPE=0;");
+			
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
+			
+			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//preceding-sibling::td[19]")).click();
+			pmUser.getUserEditServiceSummary().click();
+			pmUser.setExistingExtensionField(ipTestData[1]);
+			pmUser.getApplyButton().click();
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Change operation successful for:");
+			pmUser.getDoneButton().click();
+			
+			pmUser.getUserSearchTextBox().clear();
+			pmUser.setUserSearchTextBox(testData[0]);
+			pmUser.getOnViewRangeButton().click();
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
+			Assert.assertTrue(eles.size() == 1);
+		}
+		finally
+		{
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
+			list.clear();
+			list.add(ipTestData[3]);
+			list.add(ipTestData[4]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+	/*@Test
+	public void test_editUser_and_remove_Existing_DigitalExtension(Method method) throws InterruptedException
+	{
+		list = new ArrayList<String>();
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(method.getName(), 1);
+		String[] ipTestData = pmTests.getData(method.getName(), 3);
+		wait = new WebDriverWait(driver, 20);
+		try 
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmLoginPage = new PM_Login_Page(driver);
+			pmMainPage = new PM_Main_Page(driver);
+			pmExtension = new Extension(driver);
+			pmServices = new PM_Services(driver);
+			
+			new ReusableUnits_Analog_Digital(driver).createUser_With_Digital_Extension(driver, method.getName(), ipData, loginData, pmTests,0);
+			
+			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//preceding-sibling::td[19]")).click();
+			pmUser.getUserEditServiceSummary().click();
+
+			driver.findElement(By.id("removeThis"+ipTestData[1]+"-Digital-SN_link")).click();
+			driver.switchTo().alert().accept();
+			Thread.sleep(2000);
+			pmUser.getApplyButton().click();
+			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Change operation successful for:");
+			pmUser.getDoneButton().click();
+			
+			pmUser.getUserSearchTextBox().clear();
+			pmUser.setUserSearchTextBox(testData[0]);
+			pmUser.getOnViewRangeButton().click();
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
+			Assert.assertTrue(eles.size() == 0);
+		}
+		finally
+		{
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
+			list.clear();
+			list.add(ipTestData[4]);
+			list.add(ipTestData[5]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}*/
+	
+	
+	@Test
+	public void test_editUser_to_create_DigitalExtension(Method method) throws InterruptedException
+	{
+		list = new ArrayList<String>();
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(method.getName(), 1);
+		String[] ipTestData = pmTests.getData(method.getName(), 3);
+		wait = new WebDriverWait(driver, 20);
+		try 
+		{
+			pmTests.checkTestStatus(method.getName());
+			pmUser = new PM_User(driver);
+			pmLoginPage = new PM_Login_Page(driver);
+			pmMainPage = new PM_Main_Page(driver);
+			pmExtension = new Extension(driver);
+			pmServices = new PM_Services(driver);
+			
+			list.add(ipTestData[0]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
+			
+			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//preceding-sibling::td[19]")).click();
+			pmUser.getUserEditServiceSummary().click();
+			
+			pmUser.getCreateAndAssignExtensionToUser().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Digital");
+			pmExtension.getNextButton().click();
+			
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), ipTestData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setDigitalExtensionNumber(ipTestData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getEnterDigitalExtensionNumber(), ipTestData[1]);
+			}
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getDigitalPhoneTypeDropDown(), ipTestData[2]);
+			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalCommonCategoryDropDown(), 0);
+			pmExtension.setEquipmentPosition(ipTestData[3]);
+			pmExtension.getApplyButton().click();
+			pmExtension.getApplyButtonAfterAssigningDigitalExtension().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+			pmExtension.getDoneButton().click();
+			
+			pmUser.getUserSearchTextBox().clear();
+			pmUser.setUserSearchTextBox(testData[0]);
+			pmUser.getOnViewRangeButton().click();
+			
+			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
+			Assert.assertTrue(eles.size()==1);
+		}
+		finally
+		{
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
+			list.clear();
+			list.add(ipTestData[4]);
+			list.add(ipTestData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}

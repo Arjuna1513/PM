@@ -359,7 +359,7 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 	
 	@Test
 	public void test_editUserToRemoveExtension(Method method) throws InterruptedException
@@ -394,7 +394,7 @@ public class PM_User_Test extends ConfigClass
 		}
 		finally
 		{
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 			list.clear();
 			list.add(extData[7]);
 			list.add(extData[8]);
@@ -403,7 +403,7 @@ public class PM_User_Test extends ConfigClass
 		}
 	}
 	
-	@Test
+	/*@Test
 	public void test_editUserAssignExistingExtension(Method method) throws InterruptedException
 	{
 		list = new ArrayList<String>();
@@ -483,9 +483,9 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void test_createUserWithExtesnsionUsingIPTemplate(Method method) throws InterruptedException
 	{
 		list = new ArrayList<String>();
@@ -549,7 +549,7 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
 	@Test
@@ -567,8 +567,8 @@ public class PM_User_Test extends ConfigClass
 			pmMainPage = new PM_Main_Page(driver);
 			pmExtension = new Extension(driver);
 			list.add(extData[0]);
-			/*list.add(extData[1]);
-			list.add(extData[2]);*/
+			list.add(extData[1]);
+			list.add(extData[2]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
 			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//preceding-sibling::td[19]")).click();
@@ -593,20 +593,20 @@ public class PM_User_Test extends ConfigClass
 			}
 			new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(),0);
 			new SelectDropDownValue().selectByIndex(pmExtension.getServerDropDown(), 1);
-			/*pmExtension.setFirstName(extData[4]);
-			pmExtension.setLastName(extData[5]);*/
+			pmExtension.setFirstName(extData[4]);
+			pmExtension.setLastName(extData[5]);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), extData[2]);
 			pmExtension.getApplyButton().click();
-			/*Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-			pmExtension.getDoneButton().click();*/
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+			pmExtension.getDoneButton().click();
 			
 			pmUser.getApplyButton().click();
 			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Change operation successful for:");
 			pmUser.getDoneButton().click();
 			
-			/*new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
 			pmExtension.setEnterExtensionNumberTextBox(extData[2]);
-			pmExtension.getViewRangeButton().click();*/
+			pmExtension.getViewRangeButton().click();
 			
 			pmUser.getUserSearchTextBox().clear();
 			pmUser.setUserSearchTextBox(testData[0]);
@@ -625,5 +625,5 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 }
