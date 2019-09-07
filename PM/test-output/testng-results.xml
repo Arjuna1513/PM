@@ -2,54 +2,54 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="84255" started-at="2019-09-06T19:37:25Z" finished-at="2019-09-06T19:38:49Z">
+  <suite name="Default suite" duration-ms="80845" started-at="2019-09-07T17:47:17Z" finished-at="2019-09-07T17:48:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="84255" started-at="2019-09-06T19:37:25Z" finished-at="2019-09-06T19:38:49Z">
-      <class name="tests.PM_DigitalExtension_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1331" started-at="2019-09-06T19:37:24Z" finished-at="2019-09-06T19:37:25Z">
+    <test name="Default test" duration-ms="80845" started-at="2019-09-07T17:47:17Z" finished-at="2019-09-07T17:48:38Z">
+      <class name="tests.PM_AnalogExtension_Test">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="beforeSuite" is-config="true" duration-ms="1272" started-at="2019-09-07T17:47:16Z" finished-at="2019-09-07T17:47:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="7568" started-at="2019-09-06T19:37:25Z" finished-at="2019-09-06T19:37:33Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="beforeClass" is-config="true" duration-ms="7389" started-at="2019-09-07T17:47:17Z" finished-at="2019-09-07T17:47:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="59" started-at="2019-09-06T19:37:33Z" finished-at="2019-09-06T19:37:33Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="beforeMethod" is-config="true" duration-ms="114" started-at="2019-09-07T17:47:25Z" finished-at="2019-09-07T17:47:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_editUser_to_create_DigitalExtension(java.lang.reflect.Method)[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318]" name="test_editUser_to_create_DigitalExtension" duration-ms="75212" started-at="2019-09-06T19:37:33Z" finished-at="2019-09-06T19:38:48Z">
+        <test-method status="PASS" signature="test_editUser_to_create_AnalogExtension(java.lang.reflect.Method)[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="test_editUser_to_create_AnalogExtension" duration-ms="71908" started-at="2019-09-07T17:47:25Z" finished-at="2019-09-07T17:48:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.PM_DigitalExtension_Test.test_editUser_to_create_DigitalExtension(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
+                <![CDATA[public void tests.PM_AnalogExtension_Test.test_editUser_to_create_AnalogExtension(java.lang.reflect.Method) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_editUser_to_create_DigitalExtension -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-06T19:38:48Z" finished-at="2019-09-06T19:38:48Z">
+        </test-method> <!-- test_editUser_to_create_AnalogExtension -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-09-07T17:48:37Z" finished-at="2019-09-07T17:48:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_editUser_to_create_DigitalExtension status=SUCCESS method=PM_DigitalExtension_Test.test_editUser_to_create_DigitalExtension(java.lang.reflect.Method)[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318] output={null}]]]>
+                <![CDATA[[TestResult name=test_editUser_to_create_AnalogExtension status=SUCCESS method=PM_AnalogExtension_Test.test_editUser_to_create_AnalogExtension(java.lang.reflect.Method)[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1364" started-at="2019-09-06T19:38:48Z" finished-at="2019-09-06T19:38:49Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="afterClass" is-config="true" duration-ms="1391" started-at="2019-09-07T17:48:37Z" finished-at="2019-09-07T17:48:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_DigitalExtension_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-09-06T19:38:49Z" finished-at="2019-09-06T19:38:49Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_AnalogExtension_Test@6e1ec318]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-09-07T17:48:38Z" finished-at="2019-09-07T17:48:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tests.PM_DigitalExtension_Test -->
+      </class> <!-- tests.PM_AnalogExtension_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

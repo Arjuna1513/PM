@@ -693,6 +693,27 @@ public class Extension
 		equipmentPosition.sendKeys(value);
 	}
 	
+	public WebElement getEquipmentPosition()
+	{
+		return equipmentPosition;
+	}
+	
+	@FindBy(id="myAnalogueExtension_VO.SPEXP.nonDialledConnExtn")
+	private WebElement analogHotLineDelayedHotLineDropDown;
+	
+	public WebElement getAnalogHotLineDelayedHotLineDropDown()
+	{
+		return analogHotLineDelayedHotLineDropDown;
+	}
+	
+	@FindBy(id="myAnalogueExtension_VO.SPEXP.nonDialledConnNumber")
+	private WebElement analogHotLineDelayedHotLineTextBox;
+	
+	public void setAnalogHotLineDelayedHotLineTextBox(String value)
+	{
+		analogHotLineDelayedHotLineTextBox.sendKeys(value);
+	}
+	
 	@FindBy(id="myAnalogueExtension_VO.NIINP.name1")
 	private WebElement analogFirstname;
 	
