@@ -179,6 +179,76 @@ public class ReusableUnits
 		Assert.assertTrue(eles.size()==1);
 	}
 	
+	
+	public void createUserWith_Virtual_Extension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests) throws InterruptedException
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		String[] extData = pmTests.getData(methodName, 3);
+		list.add(extData[0]);
+		new ExecuteCommands(driver).executeCmds(methodName, ipData, loginData, list);
+		
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		
+		driver.get(ipData.getData(0, 0));
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getUsers().click();
+		pmUsers.getUser().click();
+		pmUser.getAddButton().click();
+		pmUser.setFirstNamefield(testData[0]);
+		pmUser.setLastNamefield(testData[0]);
+		pmUser.setUserIDField(testData[0]);
+		Thread.sleep(1000);
+		pmUser.setUserPasswordField(testData[1]);
+		pmUser.setUserConfirmPasswordField(testData[1]);
+		pmUser.setEmailIDField(testData[2]);
+		pmUser.setAlternateFirstName(testData[3]);
+		pmUser.setAltLastName(testData[4]);
+		pmUser.setBusinessField(testData[5]);
+		pmUser.setBusiness2(testData[6]);
+		pmUser.setMobilePhone(testData[7]);
+		pmUser.setMobilePhone2(testData[8]);
+		new SelectDropDownValue().selectByIndex(pmUser.getSelectDepartmentDropdown(), 0);
+		pmUser.getListFilterAddButton_mySelectedDepts().click();
+		pmUser.getNextButton().click();
+		pmUser.getCreateAndAssignExtensionToUser().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Virtual");
+		pmExtension.getNextButton().click();
+		
+		//Provide extension details.
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), extData[1]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setVirtualExtensionTextBox(extData[1]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTextBox(), extData[1]);
+		}
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTypeDropDown(), "Virtual");
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtServerDropDown(), extData[2]);
+		pmExtension.setVirtualExtFirstName(extData[3]);
+		pmExtension.setVirtualExtLastName(extData[4]);
+		pmExtension.getApplyButton().click();
+		
+		pmUser.getApplyButton().click();
+		Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Add operation successful for:");
+		pmUser.getDoneButton().click();
+		
+		pmUser.setUserSearchTextBox(testData[0]);
+		pmUser.getOnViewRangeButton().click();
+		
+		List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
+		Assert.assertTrue(eles.size()==1);
+	}
+	
+	
 	public void createUser(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
 			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int iterations) throws InterruptedException
 	{
@@ -258,8 +328,9 @@ public class ReusableUnits
 		Assert.assertTrue(eles.size()==1);
 	}
 	
-	public void createAnalogExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
-			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
+	
+	public void create_multi_TerminalExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index, String type) throws InterruptedException
 	{
 		wait = new WebDriverWait(driver, 10);
 		driver.get(ipData.getData(0, 0));
@@ -269,7 +340,7 @@ public class ReusableUnits
 		pmMainPge.getServices().click();
 		pmServices.getExtension().click();
 		pmExtension.getAddButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Multi-Terminal");
 		pmExtension.getNextButton().click();
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
 		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
@@ -278,28 +349,109 @@ public class ReusableUnits
 		System.out.println(ver);
 		if(ver >= 720000)
 		{
-			pmExtension.setSingleExtensionValue(testData[2]);
+			pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
 		}
 		else
 		{
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[2]);
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalExtensionDropDown(), testData[1]);
 		}
 		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
-		pmExtension.setFirstName(testData[4]);
-		pmExtension.setLastName(testData[5]);
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalServerDropDown(), testData[2]);
+		
+		if(type.equalsIgnoreCase("IP"))
+		{
+			pmExtension.getAddIPButtonForMultiTerminal().click();
+			pmExtension.getApplyButton().click();
+		}
+		else if(type.equalsIgnoreCase("mobile"))
+		{
+			pmExtension.getAddMobileExtButtonForMultiTerminal().click();
+			pmExtension.setMobileExtRemoteNumber(testData[5]);
+			pmExtension.setMobileExtReceivedANumber(testData[5]);
+			pmExtension.getApplyButton().click();
+		}
+		else if(type.equalsIgnoreCase("dect"))
+		{
+			
+		}
+		else if(type.equalsIgnoreCase("sipauto"))
+		{
+			pmExtension.getAddSipAutoRegTerminalButtonForMultiTerminal().click();
+			pmExtension.setSipAutoPortNumber(testData[5]);
+			pmExtension.setSipAutoPortIdentity(testData[6]);
+			pmExtension.setSIPAutoURI(testData[7]);
+			pmExtension.getApplyButton().click();
+		}
+		else if(type.equalsIgnoreCase("sipremote"))
+		{
+			
+		}
+		
+		pmExtension.setMultiTerminalFirstName(testData[3]);
+		pmExtension.setMultiTerminalLastName(testData[4]);
 		pmExtension.getApplyButton().click();
 		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
 		pmExtension.getDoneButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
-		pmExtension.setEnterExtensionNumberTextBox(testData[2]);
+		
+		if(type.equalsIgnoreCase("none"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Virtual");
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Multi-Terminal");
+		}
+		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
 		pmExtension.getViewRangeButton().click();
 		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
 		Assert.assertTrue(eles.size()==1);
 	}
 	
-	public void createDigitalExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+	
+	public void create_virtual_extension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Virtual");
+		pmExtension.getNextButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setVirtualExtensionTextBox(testData[1]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTextBox(), testData[1]);
+		}
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTypeDropDown(), "Virtual");
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtServerDropDown(), testData[2]);
+		pmExtension.setVirtualExtFirstName(testData[3]);
+		pmExtension.setVirtualExtLastName(testData[4]);
+		pmExtension.getApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Virtual");
+		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+		pmExtension.getViewRangeButton().click();
+		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[1]+"')]"));
+		Assert.assertTrue(eles.size()==1);
+	}
+	
+	
+	
+	/*public void createAnalogExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
 			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
 	{
 		wait = new WebDriverWait(driver, 10);
@@ -338,7 +490,48 @@ public class ReusableUnits
 		pmExtension.getViewRangeButton().click();
 		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
 		Assert.assertTrue(eles.size()==1);
-	}
+	}*/
+	
+	/*public void createDigitalExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
+		pmExtension.getNextButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setSingleExtensionValue(testData[2]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[2]);
+		}
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
+		pmExtension.setFirstName(testData[4]);
+		pmExtension.setLastName(testData[5]);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
+		pmExtension.getApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+		pmExtension.setEnterExtensionNumberTextBox(testData[2]);
+		pmExtension.getViewRangeButton().click();
+		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
+		Assert.assertTrue(eles.size()==1);
+	}*/
 	
 	public void createExt_With_FunctionKey(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
 			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
@@ -790,4 +983,30 @@ public class ReusableUnits
 		pmMainPge.getLogoutLink().click();
 	}
 	
+	
+	public void create_virtual_template(WebDriver driver, String methodName, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName)
+	{
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		driver.get(ipData.getData(0, 0));
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getManageTemplates().click();
+		pmExtension.getAddNewTemplateButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Virtual");
+		pmExtension.getNextButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTypeDropDown(), "Virtual");
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtServerDropDown(), "1");
+		pmExtension.getNextButton().click();
+		pmExtension.setTempplateName(templateName);
+		pmExtension.getApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "New Template operation successful for:");
+		pmExtension.getDoneButton().click();
+		List<WebElement> list = driver.findElements(By.xpath("//td[contains(text(),'"+templateName+"')]"));
+		Assert.assertTrue(list.size()==1);
+//		pmExtension.getApplyButton().click();
+		pmExtension.getTemplateSubmitButton().click();
+		pmMainPge.getLogoutLink().click();
+	}
 }

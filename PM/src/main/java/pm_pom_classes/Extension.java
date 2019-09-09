@@ -265,12 +265,123 @@ public class Extension
 		singleExtensionValue.sendKeys(value);
 	}
 	
+	@FindBy(id="myVirtualExtension_VO.DIR")
+	private WebElement virtualExtensionTextBox;
+	
+	public WebElement getVirtualExtensionTextBox()
+	{
+		return virtualExtensionTextBox;
+	}
+	
+	public void setVirtualExtensionTextBox(String value)
+	{
+		virtualExtensionTextBox.sendKeys(value);
+	}
+	
+	@FindBy(id="myVirtualExtension_VO.NIINP.name1")
+	private WebElement virtualExtFirstName;
+	
+	public WebElement getVirtualExtFirstName()
+	{
+		return virtualExtFirstName;
+	}
+	
+	public void setVirtualExtFirstName(String value)
+	{
+		virtualExtFirstName.sendKeys(value);
+	}
+	
+	
+	@FindBy(id="myVirtualExtension_VO.NIINP.name2")
+	private WebElement virtualExtLastName;
+	
+	public WebElement getVirtualExtLastName()
+	{
+		return virtualExtLastName;
+	}
+	
+	public void setVirtualExtLastName(String value)
+	{
+		virtualExtLastName.sendKeys(value);
+	}
+	
+	@FindBy(id="myVirtualExtension_VO.GEDIP.SPOPT")
+	private WebElement virtualExtHotlineDelayedHotlineDropDown;
+	
+	public WebElement getVirtualExtHotlineDelayedHotlineDropDown()
+	{
+		return virtualExtHotlineDelayedHotlineDropDown;
+	}
+	
+	@FindBy(id="myMultiTerminalExtension_VO.DIR")
+	private WebElement multiTerminalExtensionTextBox;
+	
+	public void setMultiTerminalExtensionTextBox(String value)
+	{
+		multiTerminalExtensionTextBox.sendKeys(value);
+	}
+	
+	public WebElement getMultiTerminalExtensionDropDown()
+	{
+		return multiTerminalExtensionTextBox;
+	}
+	
+	@FindBy(id="myMultiTerminalExtension_VO.NIINP.name1")
+	private WebElement multiTerminalFirstName;
+	
+	public WebElement getMultiTerminalFirstName()
+	{
+		return multiTerminalFirstName;
+	}
+	
+	public void setMultiTerminalFirstName(String value)
+	{
+		multiTerminalFirstName.sendKeys(value);
+	}
+	
+	
+	@FindBy(id="myMultiTerminalExtension_VO.NIINP.name2")
+	private WebElement multiTerminalLastName;
+	
+	public WebElement getMultiTerminalLastName()
+	{
+		return multiTerminalLastName;
+	}
+	
+	public void setMultiTerminalLastName(String value)
+	{
+		multiTerminalLastName.sendKeys(value);
+	}
+	
+	@FindBy(id="myMultiTerminalExtension_VO.GEDIP.LIM.LIMNumber")
+	private WebElement multiTerminalServerDropDown;
+	
+	public WebElement getMultiTerminalServerDropDown()
+	{
+		return multiTerminalServerDropDown;
+	}
+	
+	@FindBy(id="myVirtualExtension_VO.GEDIP.NDNUM")
+	private WebElement virtualExtHotlineDelayedHotlineTextBox;
+	public void SetVirtualExtHotlineDelayedHotlineTextBox(String value)
+	{
+		virtualExtHotlineDelayedHotlineTextBox.sendKeys(value);
+	}
+	
 	@FindBy(id="myIPExtension_VO.DIR")
 	private WebElement singleExtensionDropDown;
 	
 	public WebElement getSingleExtensionDropDown()
 	{
 		return singleExtensionDropDown;
+	}
+	
+	@FindBy(id="virtualExtensionType")
+	private WebElement virtualExtensionTypeDropDown;
+	
+	public WebElement getVirtualExtensionTypeDropDown()
+	{
+		return virtualExtensionTypeDropDown;
 	}
 	
 	//extensions range input
@@ -303,6 +414,14 @@ public class Extension
 	public WebElement getServerDropDown() 
 	{
 		return serverDropDown;
+	}
+	
+	@FindBy(id="myVirtualExtension_VO.GEDIP.LIM.LIMNumber")
+	private WebElement virtualExtServerDropDown;
+
+	public WebElement getVirtualExtServerDropDown() 
+	{
+		return virtualExtServerDropDown;
 	}
 	
 	//customer drop-down
@@ -810,5 +929,99 @@ public class Extension
 	public WebElement getSwapButton()
 	{
 		return swapButton;
+	}
+	
+	@FindBy(id="addItem_ipTerminal")
+	public WebElement addIPButtonForMultiTerminal;
+	
+	public WebElement getAddIPButtonForMultiTerminal()
+	{
+		return addIPButtonForMultiTerminal;
+	}
+	
+	
+	@FindBy(id="addItem_dectTerminal")
+	public WebElement addDectButtonForMultiTerminal;
+	
+	public WebElement getAddDectButtonForMultiTerminal()
+	{
+		return addDectButtonForMultiTerminal;
+	}
+	
+	
+	@FindBy(id="addItem_mobileOverISDNTerminal")
+	public WebElement addMobileExtButtonForMultiTerminal;
+	
+	public WebElement getAddMobileExtButtonForMultiTerminal()
+	{
+		return addMobileExtButtonForMultiTerminal;
+	}
+	
+	
+	@FindBy(id="addItem_mobileOverSIPTerminal")
+	public WebElement addSipRemoteButtonForMultiTerminal;
+	
+	public WebElement getAddSipRemoteButtonForMultiTerminal()
+	{
+		return addSipRemoteButtonForMultiTerminal;
+	}
+	
+	
+	@FindBy(id="addItem_sipTerminal")
+	public WebElement addSipAutoRegTerminalButtonForMultiTerminal;
+	
+	public WebElement getAddSipAutoRegTerminalButtonForMultiTerminal()
+	{
+		return addSipAutoRegTerminalButtonForMultiTerminal;
+	}
+	
+	
+	@FindBy(id="myMultiTerminalExtension_VO.GEDIP.SPOPT")
+	private WebElement hotLineDelayedHotLineForMultiTerminal;
+	
+	public WebElement getHotLineDelayedHotLineForMultiTerminal()
+	{
+		return hotLineDelayedHotLineForMultiTerminal;
+	}
+	
+	
+	@FindBy(id="portNumber")
+	private WebElement sipAutoPortNumber;
+	
+	public void setSipAutoPortNumber(String value)
+	{
+		sipAutoPortNumber.sendKeys(value);
+	}
+	
+	@FindBy(id="myIpexp.TERMID")
+	private WebElement sipAutoPortIdentity;
+	
+	public void setSipAutoPortIdentity(String value)
+	{
+		sipAutoPortIdentity.sendKeys(value);
+	}
+	
+	@FindBy(id="myIpexp.URI")
+	private WebElement sipAutoURI;
+	
+	public void setSIPAutoURI(String value)
+	{
+		sipAutoURI.sendKeys(value);
+	}
+	
+	@FindBy(id="myMultiTerminalExtension_VO.REEXP.defMobNum")
+	private WebElement mobileExtRemoteNumber;
+	
+	public void setMobileExtRemoteNumber(String value)
+	{
+		mobileExtRemoteNumber.sendKeys(value);
+	}
+	
+	@FindBy(id="myRemNum")
+	private WebElement mobileExtReceivedANumber;
+	
+	public void setMobileExtReceivedANumber(String value)
+	{
+		mobileExtReceivedANumber.sendKeys(value);
 	}
 }

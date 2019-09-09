@@ -37,7 +37,7 @@ public class PM_User_Test extends ConfigClass
 	WebDriverWait wait = null;
 	public Extension pmExtension;
 	
-/*	@Test
+	@Test
 	public void test_create_user(Method method) throws InterruptedException
 	{
 		try 
@@ -49,7 +49,7 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 		}
 		
 	}
@@ -86,7 +86,7 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[9]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[9]);
 		}
 	}
 	
@@ -119,10 +119,11 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 		}
 	}
-//	
+	
+	
 	@Test
 	public void test_delete_user_byClicking_delete_button(Method method) throws InterruptedException
 	{
@@ -141,7 +142,7 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 		}
 	}
 	
@@ -177,7 +178,7 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 		}
 	}
 	
@@ -204,7 +205,7 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 		}
 	}
 	
@@ -283,7 +284,7 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0], 10);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0], 10);
 		}
 	}
 	
@@ -309,7 +310,7 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0], 10);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0], 10);
 		}
 	}
 	
@@ -334,11 +335,11 @@ public class PM_User_Test extends ConfigClass
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 		}
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void test_createUserWithExtension(Method method) throws InterruptedException
 	{
 		list = new ArrayList<String>();
@@ -351,7 +352,7 @@ public class PM_User_Test extends ConfigClass
 		}
 		finally
 		{
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 			String[] extData = pmTests.getData(method.getName(), 3);
 			list.clear();
 			list.add(extData[7]);
@@ -359,7 +360,7 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	@Test
 	public void test_editUserToRemoveExtension(Method method) throws InterruptedException
@@ -403,7 +404,7 @@ public class PM_User_Test extends ConfigClass
 		}
 	}
 	
-	/*@Test
+	@Test
 	public void test_editUserAssignExistingExtension(Method method) throws InterruptedException
 	{
 		list = new ArrayList<String>();
@@ -436,7 +437,7 @@ public class PM_User_Test extends ConfigClass
 		}
 		finally
 		{
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 			list.clear();
 			list.add(extData[4]);
 			list.add(extData[5]);
@@ -476,7 +477,7 @@ public class PM_User_Test extends ConfigClass
 		}
 		finally
 		{
-			new CleanUP().deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 			list.clear();
 			list.add(extData[4]);
 			list.add(extData[5]);
@@ -504,13 +505,8 @@ public class PM_User_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).createIPTemplate(driver, method.getName(), ipData, loginData, extData[2]);
 			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
-//			Thread.sleep(10000);
 			new SelectDropDownValue().selectByIndex(pmUser.getTemplateNameDropDown(), 1);
-//			Thread.sleep(10000);
 			pmUser.getCreateAndAssignExtensionToUser().click();
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
-			pmExtension.getNextButton().click();
-			//Provide extension details.
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), extData[1]);
 			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
 			System.out.println(version);
@@ -597,16 +593,10 @@ public class PM_User_Test extends ConfigClass
 			pmExtension.setLastName(extData[5]);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), extData[2]);
 			pmExtension.getApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-			pmExtension.getDoneButton().click();
 			
 			pmUser.getApplyButton().click();
 			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Change operation successful for:");
 			pmUser.getDoneButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
-			pmExtension.setEnterExtensionNumberTextBox(extData[2]);
-			pmExtension.getViewRangeButton().click();
 			
 			pmUser.getUserSearchTextBox().clear();
 			pmUser.setUserSearchTextBox(testData[0]);
@@ -625,5 +615,5 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 }

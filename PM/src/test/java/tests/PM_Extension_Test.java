@@ -36,7 +36,7 @@ public class PM_Extension_Test extends ConfigClass
 	public PM_Login_Page pmLoginPge;
 	public PM_Users pmUsers;
 	
-	/*@Test
+	@Test
 	public void test_create_IP_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -279,7 +279,6 @@ public class PM_Extension_Test extends ConfigClass
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[2]+"')]//preceding-sibling::td[20]")).click();
-//			String value = testData[7].replace(" ", "");
 			List<WebElement> sdn1  = driver.findElements(By.xpath("//td[contains(text(),'Common Service Profile')]//following-sibling::td[contains(text(),'"+testData[10]+"')]"));
 			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
 			Assert.assertTrue(sdn1.size() == 1);
@@ -328,9 +327,7 @@ public class PM_Extension_Test extends ConfigClass
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[2]+"')]//preceding-sibling::td[20]")).click();
-//			String value = testData[7].replace(" ", "");
 			List<WebElement> sdn1  = driver.findElements(By.xpath("//td[contains(text(),'Allow Third Party SIP Client')]//following-sibling::td[contains(text(),'Yes')]"));
-//			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
 			Assert.assertTrue(sdn1.size() == 1);
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
@@ -377,14 +374,13 @@ public class PM_Extension_Test extends ConfigClass
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[2]+"')]//preceding-sibling::td[20]")).click();
-//			
+			
 			List<WebElement> verify1  = driver.findElements(By.xpath("//td[contains(text(),'Terminal Identity')]//following-sibling::td[contains(text(),'0.0.0.0')]"));
 			List<WebElement> verify2  = driver.findElements(By.xpath("//td[contains(text(),'Universal Resource Identifier')]//following-sibling::td[contains(text(),'0.0.0.0')]"));
 			List<WebElement> verify3  = driver.findElements(By.xpath("//td[contains(text(),'Transport')]//following-sibling::td[contains(text(),'TCP')]"));
 			List<WebElement> verify4  = driver.findElements(By.xpath("//td[contains(text(),'IP Address')]//following-sibling::td[contains(text(),'0.0.0.0')]"));
 			List<WebElement> verify5  = driver.findElements(By.xpath("//td[contains(text(),'CS Port')]//following-sibling::td[contains(text(),'5060')]"));
 			
-//			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
 			Assert.assertTrue(verify1.size() == 1 && verify2.size() == 1 && verify3.size() == 1 && verify4.size() == 1 && verify5.size() == 1);
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
@@ -407,7 +403,6 @@ public class PM_Extension_Test extends ConfigClass
 				obj[0] = "No, but can be changed via terminal menu";
 				obj[1] = "Yes, can not be changed via terminal menu";
 				obj[2] = "No, can not be changed via terminal menu";
-//				obj[3] = "";
 		return obj;
 	}
 	
@@ -442,10 +437,9 @@ public class PM_Extension_Test extends ConfigClass
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[2]+"')]//preceding-sibling::td[20]")).click();
-//			
+			
 			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'Free on Second Line')]//following-sibling::td[contains(text(),'"+slConfig+"')]"));
 			
-//			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
 			Assert.assertTrue(eles.size() == 1);
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
@@ -513,10 +507,9 @@ public class PM_Extension_Test extends ConfigClass
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[3]+"')]//preceding-sibling::td[20]")).click();
-//			
+			
 			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'Phone Type')]//following-sibling::td[contains(text(),'"+hotLineType+"')]"));
 			List<WebElement> eles2  = driver.findElements(By.xpath("//td[contains(text(),'Hotline Number')]//following-sibling::td[contains(text(),'"+testData[4]+"')]"));
-//			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
 			Assert.assertTrue(eles.size() == 1 && eles2.size() == 1);
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
@@ -577,10 +570,9 @@ public class PM_Extension_Test extends ConfigClass
 			WebDriverWait wait = new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[3]+"')]//preceding-sibling::td[20]")).click();
-//			
+		
 			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'First Name')]//following-sibling::td[contains(text(),'"+testData[4]+"')]"));
 			List<WebElement> eles2  = driver.findElements(By.xpath("//td[contains(text(),'Last Name')]//following-sibling::td[contains(text(),'"+testData[5]+"')]"));
-//			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
 			Assert.assertTrue(eles.size() == 1 && eles2.size() == 1);
 			Thread.sleep(10000);
 			pmExtension.getDoneButton().click();
@@ -595,7 +587,7 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[8]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	@Test
 	public void test_create_IP_extension_usingTemplate(Method method) throws InterruptedException
@@ -616,19 +608,14 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[0]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).createIPTemplate(driver, method.getName(), ipData, loginData, testData[2]);
-//			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
-//			Thread.sleep(10000);
 			driver.get(ipData.getData(0, 0));
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			pmLoginPge.PM_Login(credentials[0], credentials[1]);
 			pmMainPge.getServices().click();
 			pmServices.getExtension().click();
 			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
-//			Thread.sleep(10000);
 			pmExtension.getAddButton().click();
-			/*new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
-			pmExtension.getNextButton().click();*/
-			//Provide extension details.
+			Thread.sleep(2000);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
 			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
 			System.out.println(version);
@@ -649,8 +636,6 @@ public class PM_Extension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
 			pmExtension.getViewRangeButton().click();
-			/*pmMainPge.getServices().click();
-			pmServices.getExtension().click();*/
 			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
