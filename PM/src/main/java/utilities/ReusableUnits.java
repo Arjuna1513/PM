@@ -449,90 +449,6 @@ public class ReusableUnits
 		Assert.assertTrue(eles.size()==1);
 	}
 	
-	
-	
-	/*public void createAnalogExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
-			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
-	{
-		wait = new WebDriverWait(driver, 10);
-		driver.get(ipData.getData(0, 0));
-		String[] credentials = loginData.getData("test_pm_valid_login", 1);
-		String[] testData = pmTests.getData(methodName, 1);
-		pmLoginPge.PM_Login(credentials[0], credentials[1]);
-		pmMainPge.getServices().click();
-		pmServices.getExtension().click();
-		pmExtension.getAddButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
-		pmExtension.getNextButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
-		System.out.println(version);
-		int ver = Integer.parseInt(version);
-		System.out.println(ver);
-		if(ver >= 720000)
-		{
-			pmExtension.setSingleExtensionValue(testData[2]);
-		}
-		else
-		{
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[2]);
-		}
-		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
-		pmExtension.setFirstName(testData[4]);
-		pmExtension.setLastName(testData[5]);
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
-		pmExtension.getApplyButton().click();
-		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-		pmExtension.getDoneButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
-		pmExtension.setEnterExtensionNumberTextBox(testData[2]);
-		pmExtension.getViewRangeButton().click();
-		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
-		Assert.assertTrue(eles.size()==1);
-	}*/
-	
-	/*public void createDigitalExtension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
-			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
-	{
-		wait = new WebDriverWait(driver, 10);
-		driver.get(ipData.getData(0, 0));
-		String[] credentials = loginData.getData("test_pm_valid_login", 1);
-		String[] testData = pmTests.getData(methodName, 1);
-		pmLoginPge.PM_Login(credentials[0], credentials[1]);
-		pmMainPge.getServices().click();
-		pmServices.getExtension().click();
-		pmExtension.getAddButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
-		pmExtension.getNextButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
-		System.out.println(version);
-		int ver = Integer.parseInt(version);
-		System.out.println(ver);
-		if(ver >= 720000)
-		{
-			pmExtension.setSingleExtensionValue(testData[2]);
-		}
-		else
-		{
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[2]);
-		}
-		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
-		pmExtension.setFirstName(testData[4]);
-		pmExtension.setLastName(testData[5]);
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
-		pmExtension.getApplyButton().click();
-		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-		pmExtension.getDoneButton().click();
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
-		pmExtension.setEnterExtensionNumberTextBox(testData[2]);
-		pmExtension.getViewRangeButton().click();
-		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
-		Assert.assertTrue(eles.size()==1);
-	}*/
-	
 	public void createExt_With_FunctionKey(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
 			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
 	{
@@ -1008,5 +924,181 @@ public class ReusableUnits
 //		pmExtension.getApplyButton().click();
 		pmExtension.getTemplateSubmitButton().click();
 		pmMainPge.getLogoutLink().click();
+	}
+
+
+	//Reusable methods of SIPDECT Extensions
+	public void create_SIPDECT_Extension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "SIP DECT");
+		pmExtension.getNextButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalExtensionDropDown(), testData[1]);
+		}
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), index);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalServerDropDown(), testData[2]);
+		
+		pmExtension.getAddSipDectTerminalButton().click();
+		pmExtension.setSIPDectName(testData[3]);
+		pmExtension.setSIPDectDescription1("SIP DECT");
+		pmExtension.setSIPDectDescription2("SIP DECT");
+		pmExtension.setSIPDectAuthKey(testData[4]);
+		pmExtension.setSIPDectIPEINumber(testData[5]);
+		pmExtension.getApplyButton().click();
+		
+		pmExtension.setMultiTerminalFirstName(testData[6]);
+		pmExtension.setMultiTerminalLastName(testData[7]);
+		pmExtension.getApplyButton().click();
+		
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Multi-Terminal");
+		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+		pmExtension.getViewRangeButton().click();
+		
+		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[1]+"')]"));
+		Assert.assertTrue(eles.size()==1);
+	}
+
+
+	public void navigate_to_sipdect_settings_page(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, int index) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "SIP DECT");
+		pmExtension.getNextButton().click();
+		
+		
+		/*pmExtension.getApplyButton().click();
+		
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Multi-Terminal");
+		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+		pmExtension.getViewRangeButton().click();
+		
+		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
+		Assert.assertTrue(eles.size()==1);*/
+	}
+
+	
+	public void createUserWith_SIPDECT_Extension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests) throws InterruptedException
+	{
+		ArrayList<String> list = new ArrayList<String>();
+		String[] extData = pmTests.getData(methodName, 3);
+		list.add(extData[0]);
+		new ExecuteCommands(driver).executeCmds(methodName, ipData, loginData, list);
+		
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		
+		driver.get(ipData.getData(0, 0));
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getUsers().click();
+		pmUsers.getUser().click();
+		pmUser.getAddButton().click();
+		pmUser.setFirstNamefield(testData[0]);
+		pmUser.setLastNamefield(testData[0]);
+		pmUser.setUserIDField(testData[0]);
+		Thread.sleep(1000);
+		pmUser.setUserPasswordField(testData[1]);
+		pmUser.setUserConfirmPasswordField(testData[1]);
+		pmUser.setEmailIDField(testData[2]);
+		pmUser.setAlternateFirstName(testData[3]);
+		pmUser.setAltLastName(testData[4]);
+		pmUser.setBusinessField(testData[5]);
+		pmUser.setBusiness2(testData[6]);
+		pmUser.setMobilePhone(testData[7]);
+		pmUser.setMobilePhone2(testData[8]);
+		new SelectDropDownValue().selectByIndex(pmUser.getSelectDepartmentDropdown(), 0);
+		pmUser.getListFilterAddButton_mySelectedDepts().click();
+		pmUser.getNextButton().click();
+		pmUser.getCreateAndAssignExtensionToUser().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "SIP DECT");
+		pmExtension.getNextButton().click();
+		
+		//Provide extension details.
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), extData[1]);
+		String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+		System.out.println(version);
+		int ver = Integer.parseInt(version);
+		System.out.println(ver);
+		if(ver >= 720000)
+		{
+			pmExtension.setMultiTerminalExtensionTextBox(extData[1]);
+		}
+		else
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalExtensionDropDown(), extData[1]);
+		}
+		new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalServerDropDown(), extData[2]);
+		
+		pmExtension.getAddSipDectTerminalButton().click();
+		pmExtension.setSIPDectName(extData[3]);
+		pmExtension.setSIPDectDescription1("SIP DECT");
+		pmExtension.setSIPDectDescription2("SIP DECT");
+		pmExtension.setSIPDectAuthKey(extData[4]);
+		pmExtension.setSIPDectIPEINumber(extData[5]);
+		pmExtension.getApplyButton().click();
+		
+		pmExtension.setMultiTerminalFirstName(extData[6]);
+		pmExtension.setMultiTerminalLastName(extData[7]);
+		pmExtension.getApplyButton().click();
+		pmExtension.getApplyButton().click();
+		
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		
+		pmUser.setUserSearchTextBox(testData[0]);
+		pmUser.getOnViewRangeButton().click();
+		
+		List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
+		Assert.assertTrue(eles.size()==1);
+	}
+	
+	public void navigateToExtensionEditPage(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, String extType) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(0, 0));
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), extType);
+		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+		pmExtension.getViewRangeButton().click();
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
 	}
 }

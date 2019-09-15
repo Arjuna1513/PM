@@ -984,6 +984,15 @@ public class Extension
 		return hotLineDelayedHotLineForMultiTerminal;
 	}
 	
+	@FindBy(id="myMultiTerminalExtension_VO.GEDIP.NDNUM")
+	private WebElement multiTrmnlHotLineDelayedHotLineTextBox;
+	
+	public void setMultiTrmnlHotLineDelayedHotLineTextBox(String value)
+	{
+		multiTrmnlHotLineDelayedHotLineTextBox.sendKeys(value);
+	}
+
+	
 	
 	@FindBy(id="portNumber")
 	private WebElement sipAutoPortNumber;
@@ -1023,5 +1032,64 @@ public class Extension
 	public void setMobileExtReceivedANumber(String value)
 	{
 		mobileExtReceivedANumber.sendKeys(value);
+	}
+	
+	
+	
+	//SIP-DECT Terminal
+	@FindBy(id="addItem_sipDectTerminal")
+	private WebElement addSipDectTerminalButton;
+	
+	public WebElement getAddSipDectTerminalButton()
+	{
+		return addSipDectTerminalButton;
+	}
+	
+	@FindBy(id="mySIPDECTExtension_VO.CXAKP.authenticationData.keyData.AUTKEY")
+	private WebElement SIPDectAuthKey;
+	
+	public void setSIPDectAuthKey(String value)
+	{
+		SIPDectAuthKey.sendKeys(value);
+	}
+	
+	@FindBy(id="mySIPDECTExtension_VO.CXAKP.authenticationData.keyData.IPEI")
+	private WebElement SIPDectIPEINumber;
+	
+	public void setSIPDectIPEINumber(String value)
+	{
+		SIPDectIPEINumber.sendKeys(value);
+	}
+	
+	@FindBy(id="mySIPDECTExtension_VO.SDEP.name")
+	private WebElement SIPDectName;
+	
+	public void setSIPDectName(String value)
+	{
+		SIPDectName.sendKeys(value);
+	}
+	
+	@FindBy(id="mySIPDECTExtension_VO.SDEP.hierarchy1")
+	private WebElement SIPDectDescription1;
+	
+	public void setSIPDectDescription1(String value)
+	{
+		SIPDectDescription1.sendKeys(value);
+	}
+	
+	@FindBy(id="mySIPDECTExtension_VO.SDEP.hierarchy2")
+	private WebElement SIPDectDescription2;
+	
+	public void setSIPDectDescription2(String value)
+	{
+		SIPDectDescription2.sendKeys(value);
+	}
+	
+	@FindBy(xpath="(//input[@name='multiStepBackButton'])[2]")
+	private WebElement multiStepBackButton;
+	
+	public WebElement getMultiStepBackButton()
+	{
+		return multiStepBackButton;
 	}
 }

@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -47,7 +48,7 @@ public class ConfigClass
 	@BeforeClass
 	public void beforeClass()
 	{
-		driver = new FirefoxDriver();
+		driver = new ChromeDriver();
 	}
 	
 	@AfterClass
@@ -62,6 +63,7 @@ public class ConfigClass
 //		driver.get("https://sqa.stackexchange.com/questions/36253/taking-screenshot-on-test-failure-selenium-webdriver-testng");
 //		System.out.println(driver);
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	}
 	
