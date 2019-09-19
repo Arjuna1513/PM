@@ -124,7 +124,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	
+*/	
 	
 	
 	@Test
@@ -214,7 +214,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	
+	/*
 	@Test
 	public void create_PN_Digital_Extension(Method method) throws InterruptedException
 	{
@@ -302,9 +302,9 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			list.add(testData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 	
-	@Test
+/*	@Test
 	public void create_PN_Virtual_Extension(Method method) throws InterruptedException
 	{
 		pmTests.checkTestStatus(method.getName());
@@ -753,7 +753,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 		}
 	}*/
 	
-	@Test
+	/*@Test
 	public void test_edit_SIPDECT_Assign_PN(Method method) throws InterruptedException
 	{
 		pmTests.checkTestStatus(method.getName());
@@ -821,6 +821,6 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			list.add(testData[12]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 	
 }

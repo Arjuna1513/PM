@@ -553,7 +553,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 	}*/
 	
 	
-	@Test
+	/*@Test
 	public void test_create_digitalExt_using_Template(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -617,7 +617,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(testData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 	
 /*	@Test
 	public void test_createUser_with_Digital_Extension(Method method) throws InterruptedException

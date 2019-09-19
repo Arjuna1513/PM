@@ -37,7 +37,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	public PM_Login_Page pmLoginPge;
 	public PM_Users pmUsers;
 	
-	@Test
+	/*@Test
 	public void test_create_virtual_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -137,7 +137,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 
 		
-	/*@Test
+	@Test
 	public void test_configureParallel_ringing_to_VirtualExt(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -195,7 +195,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	*/
+	
 			
 		
 	@Test
@@ -247,66 +247,66 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 
 	
-	/*@DataProvider(name = "SLDProvider")
-	public Object[] getData()
-	{
-		Object[] obj = new Object[3];
-				obj[0] = "No, but can be changed via terminal menu";
-				obj[1] = "Yes, can not be changed via terminal menu";
-				obj[2] = "No, can not be changed via terminal menu";
-//				obj[3] = "";
-		return obj;
-	}
-	
-	@Test(dataProvider="SLDProvider")
-	public void test_editToConfigureSecondLineState_virtualExtension(String slConfig,Method method) throws InterruptedException
-	{
-		String[] testData = null;
-		try
-		{
-			pmTests.checkTestStatus(method.getName());
-			pmExtension = new Extension(driver);
-			loginPage = new PM_Login_Page(driver);
-			pmMainPge = new PM_Main_Page(driver);
-			pmServices = new PM_Services(driver);
-			pmUser = new PM_User(driver);
-			testData = pmTests.getData(method.getName(), 1);
-			list = new ArrayList<String>();
-			list.add(testData[0]);
-			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
-			new ReusableUnits(driver).create_virtual_extension(driver, method.getName(), ipData, loginData, pmTests,0);
-			
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
-			pmExtension.getAdvanceButton().click();
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSecondLineSetting(), slConfig);
-			pmExtension.getEditPageApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
-			pmExtension.getDoneButton().click();
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[2]);
-			pmExtension.getViewRangeButton().click();
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
+//	@DataProvider(name = "SLDProvider")
+//	public Object[] getData()
+//	{
+//		Object[] obj = new Object[3];
+//				obj[0] = "No, but can be changed via terminal menu";
+//				obj[1] = "Yes, can not be changed via terminal menu";
+//				obj[2] = "No, can not be changed via terminal menu";
+////				obj[3] = "";
+//		return obj;
+//	}
+//	
+//	@Test(dataProvider="SLDProvider")
+//	public void test_editToConfigureSecondLineState_virtualExtension(String slConfig,Method method) throws InterruptedException
+//	{
+//		String[] testData = null;
+//		try
+//		{
+//			pmTests.checkTestStatus(method.getName());
+//			pmExtension = new Extension(driver);
+//			loginPage = new PM_Login_Page(driver);
+//			pmMainPge = new PM_Main_Page(driver);
+//			pmServices = new PM_Services(driver);
+//			pmUser = new PM_User(driver);
+//			testData = pmTests.getData(method.getName(), 1);
+//			list = new ArrayList<String>();
+//			list.add(testData[0]);
+//			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+//			new ReusableUnits(driver).create_virtual_extension(driver, method.getName(), ipData, loginData, pmTests,0);
 //			
-			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'Free on Second Line')]//following-sibling::td[contains(text(),'"+slConfig+"')]"));
-			
-//			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
-			Assert.assertTrue(eles.size() == 1);
-			pmExtension.getDoneButton().click();
-			pmUser.getLogoutLink().click();
-
-		}
-		finally
-		{
-			list.clear();
-			list.add(testData[5]);
-			list.add(testData[6]);
-			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
-		}
-	}*/
-	
+//			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
+//			pmExtension.getAdvanceButton().click();
+//			new SelectDropDownValue().selectByVisibleText(pmExtension.getSecondLineSetting(), slConfig);
+//			pmExtension.getEditPageApplyButton().click();
+//			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+//			pmExtension.getDoneButton().click();
+//			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+//			pmExtension.getEnterExtensionNumberTextBox().clear();
+//			pmExtension.setEnterExtensionNumberTextBox(testData[2]);
+//			pmExtension.getViewRangeButton().click();
+//			WebDriverWait wait = new WebDriverWait(driver, 20);
+//			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
+//			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
+////			
+//			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'Free on Second Line')]//following-sibling::td[contains(text(),'"+slConfig+"')]"));
+//			
+////			System.out.println("//td[contains(text(),'Phone type')]//following-sibling::td[contains(text(),'"+testData[7]+"')]");
+//			Assert.assertTrue(eles.size() == 1);
+//			pmExtension.getDoneButton().click();
+//			pmUser.getLogoutLink().click();
+//
+//		}
+//		finally
+//		{
+//			list.clear();
+//			list.add(testData[5]);
+//			list.add(testData[6]);
+//			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+//		}
+//	}
+//	
 	
 	@DataProvider(name = "hotline")
 	public Object[] getHotLineData()
@@ -788,6 +788,6 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			list.add(extData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 	
 }

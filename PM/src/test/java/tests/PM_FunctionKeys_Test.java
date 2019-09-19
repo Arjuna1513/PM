@@ -809,7 +809,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 	}*/
 
 	
-	@Test
+	/*@Test
 	public void test_create_all_function_keys(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -944,75 +944,6 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
 			pmExtension.getDoneButton().click();
 			
-			/*//Configure SCABR to line1 for 80004
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[7]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[7]+"')]//preceding-sibling::td[19]")).click();
-			new SelectDropDownValue().selectByValue(pmExtension.getPhoneTypeDropDown(), "Mitel6869i");
-			pmExtension.getFunctionKeysButton().click();
-			funcKeys.getFuncKeyLine1().click();
-			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(),"SCABR");
-			funcKeys.setKeyLabel("SCABR");
-			funcKeys.setSCADir(testData[7]);
-			funcKeys.getFuncKeyOKButton().click();
-			funcKeys.getApplyButton().click();
-			pmExtension.getEditPageApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
-			pmExtension.getDoneButton().click();
-			
-			//Configure SCABR to some-key for 80003
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[6]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[6]+"')]//preceding-sibling::td[19]")).click();
-			new SelectDropDownValue().selectByValue(pmExtension.getPhoneTypeDropDown(), "Mitel6869i");
-			pmExtension.getFunctionKeysButton().click();
-			funcKeys.getFuncKey3().click();
-			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(),"SCABR");
-			funcKeys.setKeyLabel("SCABR-"+testData[7]);
-			funcKeys.setSCADir(testData[7]);
-			funcKeys.getFuncKeyOKButton().click();
-			funcKeys.getApplyButton().click();
-			pmExtension.getEditPageApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
-			pmExtension.getDoneButton().click();
-			
-			//Configure SCABR to some-key for 80002
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[5]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[5]+"')]//preceding-sibling::td[19]")).click();
-			new SelectDropDownValue().selectByValue(pmExtension.getPhoneTypeDropDown(), "Mitel6869i");
-			pmExtension.getFunctionKeysButton().click();
-			funcKeys.getFuncKey3().click();
-			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(),"SCABR");
-			funcKeys.setKeyLabel("SCABR-"+testData[7]);
-			funcKeys.setSCADir(testData[7]);
-			funcKeys.getFuncKeyOKButton().click();
-			funcKeys.getApplyButton().click();
-			pmExtension.getEditPageApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
-			pmExtension.getDoneButton().click();
-			
-			//Configure SCABR to some-key for 80001
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[4]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[4]+"')]//preceding-sibling::td[19]")).click();
-			new SelectDropDownValue().selectByValue(pmExtension.getPhoneTypeDropDown(), "Mitel6869i");
-			pmExtension.getFunctionKeysButton().click();
-			funcKeys.getFuncKey3().click();
-			new SelectDropDownValue().selectByValue(funcKeys.getFunctionType(),"SCABR");
-			funcKeys.setKeyLabel("SCABR-"+testData[7]);
-			funcKeys.setSCADir(testData[7]);
-			funcKeys.getFuncKeyOKButton().click();
-			funcKeys.getApplyButton().click();
-			pmExtension.getEditPageApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
-			pmExtension.getDoneButton().click();*/
-			
-			
 			//Verifying the function keys assigned by viewing the extension
 			pmExtension.getEnterExtensionNumberTextBox().clear();
 			pmExtension.setEnterExtensionNumberTextBox(testData[3]);
@@ -1054,51 +985,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 //			List<WebElement> eles10  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[4]+"')]"));
 			List<WebElement> eles8  = driver.findElements(By.xpath("//td[contains(text(),'SCA SCA "+testData[3]+"')]"));
 			Assert.assertTrue(eles8.size() == 1);
-/*			
-			//Verifying SCABR assigned to line1 and different function keys.
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[7]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[7]+"')]//preceding-sibling::td[20]")).click();
-//			List<WebElement> eles10  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[4]+"')]"));
-			List<WebElement> eles9  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[7]+"')]"));
-			Assert.assertTrue(eles9.size() == 1);
-			pmExtension.getDoneButton().click();
-			pmMainPage.getLogoutLink().click();
-			
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[6]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[6]+"')]//preceding-sibling::td[20]")).click();
-//			List<WebElement> eles10  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[4]+"')]"));
-			List<WebElement> eles10  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[7]+"')]"));
-			Assert.assertTrue(eles10.size() == 1);
-			pmExtension.getDoneButton().click();
-			pmMainPage.getLogoutLink().click();
-			
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[5]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[5]+"')]//preceding-sibling::td[20]")).click();
-//			List<WebElement> eles10  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[4]+"')]"));
-			List<WebElement> eles11  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[7]+"')]"));
-			Assert.assertTrue(eles11.size() == 1);
-			pmExtension.getDoneButton().click();
-			pmMainPage.getLogoutLink().click();
-			
-			pmExtension.getEnterExtensionNumberTextBox().clear();
-			pmExtension.setEnterExtensionNumberTextBox(testData[4]);
-			pmExtension.getViewRangeButton().click();
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[4]+"')]//preceding-sibling::td[20]")).click();
-//			List<WebElement> eles10  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[4]+"')]"));
-			List<WebElement> eles12  = driver.findElements(By.xpath("//td[contains(text(),'SCABR SCABR "+testData[7]+"')]"));
-			Assert.assertTrue(eles12.size() == 1);
-			pmExtension.getDoneButton().click();*/
 			pmMainPage.getLogoutLink().click();
 		}
 		finally
 		{
-			/*String flag = pmTests.checkTestStatusToCleanData(method.getName());
+			String flag = pmTests.checkTestStatusToCleanData(method.getName());
 			if(flag.equals("Y"))
 			{
 				list.clear();
@@ -1108,7 +999,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 				list.add(testData[12]);
 				list.add(testData[13]);
 				new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
-			}*/
+			}
 		}
-	}
+	}*/
 }

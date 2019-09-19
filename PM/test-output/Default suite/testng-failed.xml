@@ -6,8 +6,8 @@
       <class name="tests.PM_PersonalNumber_Tests">
         <methods>
           <include name="beforeClass"/>
-          <include name="test_edit_SIPDECT_Assign_PN" invocation-numbers="0"/>
           <include name="beforeMethod"/>
+          <include name="create_PN_Analog_Extension" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>

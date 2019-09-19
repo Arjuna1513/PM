@@ -36,7 +36,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	WebDriverWait wait = null;
 	public PM_Users pmUsers;
 	
-	@Test
+	/*@Test
 	public void test_create_SIP_DECT_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -735,5 +735,5 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			list.add(extData[11]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 }

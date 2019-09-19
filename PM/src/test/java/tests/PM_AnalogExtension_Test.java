@@ -826,7 +826,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 	}*/
 	
 	
-	@Test
+	/*@Test
 	public void test_editUser_to_create_AnalogExtension(Method method) throws InterruptedException
 	{
 		list = new ArrayList<String>();
@@ -890,5 +890,5 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(ipTestData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 }

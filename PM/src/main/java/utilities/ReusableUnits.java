@@ -89,9 +89,13 @@ public class ReusableUnits
 		pmUser.setAlternateFirstName(testData[3]);
 		pmUser.setAltLastName(testData[4]);
 		pmUser.setBusinessField(testData[5]);
+//		Thread.sleep(5000);
 		pmUser.setBusiness2(testData[6]);
+//		Thread.sleep(5000);
 		pmUser.setMobilePhone(testData[7]);
+//		Thread.sleep(5000);
 		pmUser.setMobilePhone2(testData[8]);
+//		Thread.sleep(5000);
 		new SelectDropDownValue().selectByIndex(pmUser.getSelectDepartmentDropdown(), 0);
 		pmUser.getListFilterAddButton_mySelectedDepts().click();
 //		Thread.sleep(5000);

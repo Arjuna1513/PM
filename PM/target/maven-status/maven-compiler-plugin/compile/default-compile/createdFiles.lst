@@ -25,6 +25,7 @@ snm_pom_classes\SNM_Login_Page.class
 pm_pom_classes\Logs.class
 pm_pom_classes\PM_Login_Page.class
 pm_pom_classes\PM_Users.class
+utilities\Call_list_utilities.class
 utilities\Take_Screenshot.class
 pm_pom_classes\PM_Function_Keys.class
 snm_pom_classes\SystemHardware.class

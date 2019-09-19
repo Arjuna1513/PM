@@ -112,7 +112,7 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}*/
-	
+	/*
 	@Test
 	public void test_create_multi_terminal_With_MobileExtension(Method method) throws InterruptedException
 	{
@@ -144,6 +144,6 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
-	}
+	}*/
 	
 }

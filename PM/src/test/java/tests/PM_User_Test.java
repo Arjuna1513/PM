@@ -54,7 +54,7 @@ public class PM_User_Test extends ConfigClass
 		
 	}
 	
-	@Test
+	/*@Test
 	public void test_edit_user(Method method) throws InterruptedException
 	{
 		try 
@@ -615,5 +615,5 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}
+	}*/
 }
