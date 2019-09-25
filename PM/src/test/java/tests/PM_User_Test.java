@@ -42,14 +42,15 @@ public class PM_User_Test extends ConfigClass
 	{
 		try 
 		{
+			Thread.sleep(5000);
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
 		}
 		finally
 		{
-			String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			/*String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);*/
 		}
 		
 	}

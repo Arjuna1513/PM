@@ -32,6 +32,7 @@ public class ConfigClass
 	public static ExcelReadAndWrite snmTests;
 	public static ExcelReadAndWrite ipData;
 	
+	
 	@BeforeSuite
 	public void beforeSuite()
 	{
@@ -48,12 +49,21 @@ public class ConfigClass
 		
 	}
 
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass()
+	public void beforeClass(String browser)
 	{
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-		driver = new ChromeDriver(dc);
+		if(browser.equalsIgnoreCase("firefox"))
+		{
+			driver = new FirefoxDriver(dc);
+		}
+		else if(browser.equalsIgnoreCase("chrome"))
+		{
+			driver = new ChromeDriver();
+		}
+		
 	}
 	
 	@AfterClass
