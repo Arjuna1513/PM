@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="22083" started-at="2019-09-24T06:06:39Z" finished-at="2019-09-24T06:07:01Z">
+  <suite name="Suite" duration-ms="52076" started-at="2019-09-25T04:25:01Z" finished-at="2019-09-25T04:25:54Z">
     <groups>
     </groups>
-    <test name="FirefoxTest" duration-ms="17309" started-at="2019-09-24T06:06:39Z" finished-at="2019-09-24T06:06:56Z">
+    <test name="FirefoxTest" duration-ms="48109" started-at="2019-09-25T04:25:01Z" finished-at="2019-09-25T04:25:50Z">
       <class name="tests.PM_User_Test">
-        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="beforeClass" is-config="true" duration-ms="8789" started-at="2019-09-24T06:06:39Z" finished-at="2019-09-24T06:06:47Z">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="beforeClass" is-config="true" duration-ms="16497" started-at="2019-09-25T04:25:01Z" finished-at="2019-09-25T04:25:18Z">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="beforeMethod" is-config="true" duration-ms="50" started-at="2019-09-24T06:06:47Z" finished-at="2019-09-24T06:06:47Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="beforeMethod" is-config="true" duration-ms="341" started-at="2019-09-25T04:25:18Z" finished-at="2019-09-25T04:25:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="test_create_user" duration-ms="5671" started-at="2019-09-24T06:06:47Z" finished-at="2019-09-24T06:06:53Z">
+        <test-method status="FAIL" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="test_create_user" duration-ms="6101" started-at="2019-09-25T04:25:18Z" finished-at="2019-09-25T04:25:24Z">
           <params>
             <param index="0">
               <value>
@@ -36,16 +36,16 @@
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'IN-7SMH5H2', ip: '172.25.109.193', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 238036, moz:profile: C:\Users\mallikar\AppData\L..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
-Session ID: 1bb253b2-f200-43af-9495-e5f9a16663e2]]>
+Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 250036, moz:profile: C:\Users\mallikar\AppData\L..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: f368ce59-ca0a-4dea-8eab-de42119caee6]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.WebDriverException: 
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'IN-7SMH5H2', ip: '172.25.109.193', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 238036, moz:profile: C:\Users\mallikar\AppData\L..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
-Session ID: 1bb253b2-f200-43af-9495-e5f9a16663e2
+Capabilities {acceptInsecureCerts: false, browserName: firefox, browserVersion: 69.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190917135527, moz:geckodriverVersion: 0.25.0, moz:headless: false, moz:processID: 250036, moz:profile: C:\Users\mallikar\AppData\L..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: f368ce59-ca0a-4dea-8eab-de42119caee6
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -85,7 +85,7 @@ at java.lang.Thread.run(Thread.java:748)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_create_user -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="afterMethod" is-config="true" duration-ms="302" started-at="2019-09-24T06:06:53Z" finished-at="2019-09-24T06:06:53Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="afterMethod" is-config="true" duration-ms="352" started-at="2019-09-25T04:25:24Z" finished-at="2019-09-25T04:25:25Z">
           <params>
             <param index="0">
               <value>
@@ -96,19 +96,19 @@ at java.lang.Thread.run(Thread.java:748)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="afterClass" is-config="true" duration-ms="2477" started-at="2019-09-24T06:06:53Z" finished-at="2019-09-24T06:06:56Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_User_Test@3c0f93f1]" name="afterClass" is-config="true" duration-ms="24778" started-at="2019-09-25T04:25:25Z" finished-at="2019-09-25T04:25:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- tests.PM_User_Test -->
     </test> <!-- FirefoxTest -->
-    <test name="ChromeTest" duration-ms="22083" started-at="2019-09-24T06:06:39Z" finished-at="2019-09-24T06:07:01Z">
+    <test name="ChromeTest" duration-ms="52076" started-at="2019-09-25T04:25:01Z" finished-at="2019-09-25T04:25:54Z">
       <class name="tests.PM_User_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@210366b4]" name="beforeSuite" is-config="true" duration-ms="1717" started-at="2019-09-24T06:06:37Z" finished-at="2019-09-24T06:06:39Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@210366b4]" name="beforeSuite" is-config="true" duration-ms="2579" started-at="2019-09-25T04:24:59Z" finished-at="2019-09-25T04:25:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:tests.PM_User_Test@210366b4]" name="beforeClass" is-config="true" duration-ms="4436" started-at="2019-09-24T06:06:39Z" finished-at="2019-09-24T06:06:43Z">
+        <test-method status="PASS" signature="beforeClass(java.lang.String)[pri:0, instance:tests.PM_User_Test@210366b4]" name="beforeClass" is-config="true" duration-ms="5837" started-at="2019-09-25T04:25:02Z" finished-at="2019-09-25T04:25:07Z">
           <params>
             <param index="0">
               <value>
@@ -119,11 +119,11 @@ at java.lang.Thread.run(Thread.java:748)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_User_Test@210366b4]" name="beforeMethod" is-config="true" duration-ms="1298" started-at="2019-09-24T06:06:43Z" finished-at="2019-09-24T06:06:44Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.PM_User_Test@210366b4]" name="beforeMethod" is-config="true" duration-ms="1534" started-at="2019-09-25T04:25:07Z" finished-at="2019-09-25T04:25:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@210366b4]" name="test_create_user" duration-ms="13459" started-at="2019-09-24T06:06:44Z" finished-at="2019-09-24T06:06:58Z">
+        <test-method status="FAIL" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@210366b4]" name="test_create_user" duration-ms="27018" started-at="2019-09-25T04:25:09Z" finished-at="2019-09-25T04:25:36Z">
           <params>
             <param index="0">
               <value>
@@ -138,8 +138,8 @@ at java.lang.Thread.run(Thread.java:748)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'IN-7SMH5H2', ip: '172.25.109.193', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\mallikar\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:27816}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: c7f6074fb9ea2d149087fe523682e4b8
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\mallikar\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:6060}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e9d1cf38066f3275ef7b1881945923ba
 *** Element info: {Using=id, value=mySelectedUDFList[1]}]]>
             </message>
             <full-stacktrace>
@@ -148,8 +148,8 @@ Session ID: c7f6074fb9ea2d149087fe523682e4b8
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'IN-7SMH5H2', ip: '172.25.109.193', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\mallikar\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:27816}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: c7f6074fb9ea2d149087fe523682e4b8
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.90, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\mallikar\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:6060}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: e9d1cf38066f3275ef7b1881945923ba
 *** Element info: {Using=id, value=mySelectedUDFList[1]}
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
 at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -192,7 +192,7 @@ at java.lang.Thread.run(Thread.java:748)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_create_user -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@210366b4]" name="afterMethod" is-config="true" duration-ms="575" started-at="2019-09-24T06:06:58Z" finished-at="2019-09-24T06:06:58Z">
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@210366b4]" name="afterMethod" is-config="true" duration-ms="16476" started-at="2019-09-25T04:25:36Z" finished-at="2019-09-25T04:25:52Z">
           <params>
             <param index="0">
               <value>
@@ -203,11 +203,11 @@ at java.lang.Thread.run(Thread.java:748)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_User_Test@210366b4]" name="afterClass" is-config="true" duration-ms="2285" started-at="2019-09-24T06:06:58Z" finished-at="2019-09-24T06:07:01Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_User_Test@210366b4]" name="afterClass" is-config="true" duration-ms="1151" started-at="2019-09-25T04:25:52Z" finished-at="2019-09-25T04:25:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@210366b4]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-09-24T06:07:01Z" finished-at="2019-09-24T06:07:01Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@210366b4]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-09-25T04:25:54Z" finished-at="2019-09-25T04:25:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
