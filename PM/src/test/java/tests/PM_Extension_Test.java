@@ -36,7 +36,7 @@ public class PM_Extension_Test extends ConfigClass
 	public PM_Login_Page pmLoginPge;
 	public PM_Users pmUsers;
 	
-	/*@Test
+	@Test
 	public void test_create_IP_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;
@@ -62,7 +62,7 @@ public class PM_Extension_Test extends ConfigClass
 		}
 	}
 	
-	@Test
+/*	@Test
 	public void test_delete_IP_extension(Method method) throws InterruptedException
 	{
 		String[] testData = null;

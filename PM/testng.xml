@@ -12,6 +12,7 @@
     <parameter name="browser" value="chrome"/>
     <classes>
       <class name="tests.PM_User_Test"/>
+      <class name="tests.PM_Extension_Test"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
