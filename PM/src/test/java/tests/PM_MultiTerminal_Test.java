@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import base.ConfigClass;
-import junit.framework.Assert;
+//import junit.framework.Assert;
 import pm_pom_classes.Extension;
 import pm_pom_classes.PM_Login_Page;
 import pm_pom_classes.PM_Main_Page;

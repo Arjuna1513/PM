@@ -57,11 +57,11 @@ public class ConfigClass
 		dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 		if(browser.equalsIgnoreCase("firefox"))
 		{
-			driver = new FirefoxDriver(dc);
+			driver = new FirefoxDriver();
 		}
 		else if(browser.equalsIgnoreCase("chrome"))
 		{
-			driver = new ChromeDriver();
+			driver = new ChromeDriver(dc);
 		}
 		
 	}

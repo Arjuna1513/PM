@@ -6,8 +6,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-import junit.framework.Assert;
+//import junit.framework.Assert;
 import pm_pom_classes.Extension;
 import pm_pom_classes.PM_Login_Page;
 import pm_pom_classes.PM_Main_Page;
