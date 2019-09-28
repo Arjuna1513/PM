@@ -1105,4 +1105,172 @@ public class ReusableUnits
 		pmExtension.getViewRangeButton().click();
 		driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
 	}
+	
+	
+	//Helper method for Personal Number List:
+	public void create_personal_number_for_given_extension(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
+			ExcelReadAndWrite loginData,ExcelReadAndWrite pmTests, String extType) throws InterruptedException
+	{
+		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		String[] testData = pmTests.getData(methodName, 1);
+		
+		driver.get(ipData.getData(0, 0));
+		pmLoginPge.PM_Login(credentials[0], credentials[1]);
+		pmMainPge.getServices().click();
+		pmServices.getExtension().click();
+		pmExtension.getAddButton().click();
+		
+		if(extType.equals("IP"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
+			pmExtension.getNextButton().click();
+			
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setSingleExtensionValue(testData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[1]);
+			}
+			new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
+			new SelectDropDownValue().selectByIndex(pmExtension.getServerDropDown(), 1);
+		}
+		else if(extType.equals("analog"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Analog");
+			pmExtension.getNextButton().click();
+			
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setEnterAnalogDirectoryNumber(testData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getAnalogDirctoryDropDown(), testData[1]);
+			}
+			new SelectDropDownValue().selectByIndex(pmExtension.getCommonCategoryDropDown(), 0);
+			pmExtension.setEquipmentPosition(testData[2]);
+		}
+		else if(extType.equals("digital"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Digital");
+			pmExtension.getNextButton().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setDigitalExtensionNumber(testData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getEnterDigitalExtensionNumber(), testData[1]);
+			}
+			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalPhoneTypeDropDown(), 1);
+			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalCommonCategoryDropDown(), 0);
+			pmExtension.setEquipmentPosition(testData[2]);
+		}
+		else if(extType.equals("virtual"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Virtual");
+			pmExtension.getNextButton().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setVirtualExtensionTextBox(testData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTextBox(), testData[1]);
+			}
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTypeDropDown(), "Virtual");
+			new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
+			new SelectDropDownValue().selectByIndex(pmExtension.getVirtualExtServerDropDown(), 1);
+		}
+		else if(extType.equals("sip-dect"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "SIP DECT");
+			pmExtension.getNextButton().click();
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
+			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
+			System.out.println(version);
+			int ver = Integer.parseInt(version);
+			System.out.println(ver);
+			if(ver >= 720000)
+			{
+				pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
+			}
+			else
+			{
+				new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalExtensionDropDown(), testData[1]);
+			}
+			new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
+			new SelectDropDownValue().selectByIndex(pmExtension.getMultiTerminalServerDropDown(), 1);
+			
+			pmExtension.getAddSipDectTerminalButton().click();
+			pmExtension.setSIPDectName(testData[2]);
+			pmExtension.setSIPDectDescription1("SIP DECT");
+			pmExtension.setSIPDectDescription2("SIP DECT");
+			pmExtension.setSIPDectAuthKey(testData[3]);
+			pmExtension.setSIPDectIPEINumber(testData[4]);
+			pmExtension.getApplyButton().click();
+		}
+		
+		pmExtension.getPENListButton().click();
+		
+		new Call_list_utilities(driver).create_extension_with_personalNumber(driver, methodName,
+				loginData, pmTests, ipData);
+		pmExtension.getMultiStepBackButton().click();
+		
+		pmExtension.getApplyButton().click();
+		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+		pmExtension.getDoneButton().click();
+		
+		if(extType.equals("IP"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+		}
+		else if(extType.equals("analog"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Analog");
+		}
+		else if(extType.equals("digital"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Digital");
+		}
+		else if(extType.equals("virtual"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Virtual");
+		}
+		else if(extType.equals("sip-dect"))
+		{
+			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Multi-Terminal");
+		}
+		
+		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+		pmExtension.getViewRangeButton().click();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
+	
+		new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "1");
+		pmExtension.getDoneButton().click();
+	}
 }

@@ -49,7 +49,7 @@ public class ConfigClass
 		
 	}
 
-	@Parameters({"browser"})
+	/*@Parameters({"browser"})
 	@BeforeClass
 	public void beforeClass(String browser)
 	{
@@ -64,16 +64,16 @@ public class ConfigClass
 			driver = new ChromeDriver(dc);
 		}
 		
-	}
+	}*/
 	
-	/*@Parameters("browser")
+	//@Parameters("browser")
 	@BeforeClass
 	public void beforeClass()
 	{
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-		driver = new FirefoxDriver(dc);
-	}*/
+		driver = new ChromeDriver(dc);
+	}
 	
 	@AfterClass
 	public void afterClass()
