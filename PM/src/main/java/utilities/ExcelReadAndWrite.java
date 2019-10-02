@@ -21,7 +21,7 @@ public class ExcelReadAndWrite
 	FileInputStream fis;
 	Workbook book;
 	Sheet sheet;
-	Map<String, Sheet> allInOneData;
+//	Map<String, Sheet> allInOneData;
 	
 	public ExcelReadAndWrite(String sheet, String excelFilePath)
 	{
@@ -68,7 +68,7 @@ public class ExcelReadAndWrite
 		{
 			if(sheet.getRow(i).getCell(0).getStringCellValue().trim().equalsIgnoreCase(methodName))
 			{
-				values = sheet.getRow(i).getCell(cell).getStringCellValue().trim().split(",");
+				values = sheet.getRow(i).getCell(cell).getStringCellValue().trim().split("##");
 				return values;
 			}
 		}

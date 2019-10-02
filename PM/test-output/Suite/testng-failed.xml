@@ -1,36 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <test thread-count="5" name="FirefoxTest(failed)" parallel="tests">
-    <parameter name="browser" value="firefox"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="tests.PM_User_Test">
+      <class name="tests.PM_SIPDECT_Tests">
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_create_user" invocation-numbers="0"/>
+          <include name="test_editUserAssignNew_SIPDECT_Extension" invocation-numbers="0"/>
+          <include name="test_edit_configureParallel_ringing_to_SIPDECT" invocation-numbers="0"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="test_editT_ConfigureHotLineNumber_SIPDECT" invocation-numbers="1"/>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- tests.PM_SIPDECT_Tests -->
+      <class name="tests.PM_AnalogExtension_Test">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="beforeMethod"/>
+          <include name="test_swap_analogEquipmentPositions" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_User_Test -->
-    </classes>
-  </test> <!-- FirefoxTest(failed) -->
-  <test thread-count="5" name="ChromeTest(failed)" parallel="tests">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="tests.PM_User_Test">
+      </class> <!-- tests.PM_AnalogExtension_Test -->
+      <class name="tests.PM_DigitalExtension_Test">
         <methods>
+          <include name="test_swap_digitalEquipmentPositions" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_create_user" invocation-numbers="0"/>
+          <include name="test_createUser_with_Digital_Extension" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_User_Test -->
+      </class> <!-- tests.PM_DigitalExtension_Test -->
+      <class name="tests.PM_FunctionKeys_Test">
+        <methods>
+          <include name="test_clearREC_funcKey" invocation-numbers="0"/>
+          <include name="test_clearPGM_funcKey" invocation-numbers="0"/>
+          <include name="test_clearGMA_funcKey" invocation-numbers="0"/>
+          <include name="test_clearMOI_funcKey" invocation-numbers="0"/>
+          <include name="test_createSCA_FuncKey" invocation-numbers="0"/>
+          <include name="test_clearDMN_funcKey" invocation-numbers="0"/>
+          <include name="test_clearSCA_funcKey" invocation-numbers="0"/>
+          <include name="beforeSuite"/>
+          <include name="test_clearMNS_funcKey" invocation-numbers="0"/>
+          <include name="afterMethod"/>
+          <include name="beforeClass"/>
+          <include name="test_createPGM_FuncKey" invocation-numbers="0"/>
+          <include name="test_createREC_FuncKey" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="test_clearEDN_funcKey" invocation-numbers="0"/>
+          <include name="test_clearMCT_funcKey" invocation-numbers="0"/>
+          <include name="test_clearTNS_funcKey" invocation-numbers="0"/>
+          <include name="test_clearSCABR_funcKey" invocation-numbers="0"/>
+          <include name="afterClass"/>
+          <include name="test_createSCABR_FuncKey" invocation-numbers="0"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- tests.PM_FunctionKeys_Test -->
     </classes>
-  </test> <!-- ChromeTest(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

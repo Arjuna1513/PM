@@ -24,6 +24,7 @@ import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.ReusableUnits_Analog_Digital;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_DigitalExtension_Test extends ConfigClass
 {
@@ -38,8 +39,8 @@ public class PM_DigitalExtension_Test extends ConfigClass
 	public PM_Users pmUsers;
 	
 	
-	/*@Test
-	public void test_createDigitalExtension(Method method) throws InterruptedException
+	@Test
+	public void test_createDigitalExtension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -54,6 +55,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			new ReusableUnits_Analog_Digital(driver).createDigitalExtension(driver, method.getName(), ipData, pmTests, loginData, 0);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -61,10 +67,10 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(testData[7]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-	/*@Test
-	public void test_edit_digital_extension_toChange_CAT(Method method) throws InterruptedException
+	@Test
+	public void test_edit_digital_extension_toChange_CAT(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -110,6 +116,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -117,11 +128,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(testData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-/*	@Test
-	public void test_edit_digital_extension_toChange_First_Last_Names(Method method) throws InterruptedException
+	@Test
+	public void test_edit_digital_extension_toChange_First_Last_Names(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -164,6 +175,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -171,10 +187,10 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(testData[7]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/	
-		/*
+	}	
+		
 		@Test
-		public void test_edit_digital_extension_toChange_PhoneModel(Method method) throws InterruptedException
+		public void test_edit_digital_extension_toChange_PhoneModel(Method method) throws Exception
 		{
 			String[] testData = null;
 			String[] credentials = null;
@@ -219,6 +235,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 				pmExtension.getDoneButton().click();
 				pmUser.getLogoutLink().click();
 			}
+			catch(Exception e)
+			{
+					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					throw e;
+			}
 			finally
 			{
 				list.clear();
@@ -226,11 +247,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 				list.add(testData[5]);
 				new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			}
-	}*/
+	}
 		
-		
-		/*@Test
-		public void test_edit_digital_extension_toSet_AgentPosition(Method method) throws InterruptedException
+				
+		@Test
+		public void test_edit_digital_extension_toSet_AgentPosition(Method method) throws Exception
 		{
 			String[] testData = null;
 			String[] credentials = null;
@@ -276,6 +297,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 				pmExtension.getDoneButton().click();
 				pmUser.getLogoutLink().click();
 			}
+			catch(Exception e)
+			{
+					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					throw e;
+			}
 			finally
 			{
 				list.clear();
@@ -283,11 +309,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 				list.add(testData[4]);
 				new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			}
-	}*/
+	}
 	
 		
-		/*@Test
-		public void test_edit_digital_extension_toSet_HotLine(Method method) throws InterruptedException
+		@Test
+		public void test_edit_digital_extension_toSet_HotLine(Method method) throws Exception
 		{
 			String[] testData = null;
 			String[] credentials = null;
@@ -353,6 +379,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 				
 				pmUser.getLogoutLink().click();
 			}
+			catch(Exception e)
+			{
+					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					throw e;
+			}
 			finally
 			{
 				list.clear();
@@ -361,13 +392,18 @@ public class PM_DigitalExtension_Test extends ConfigClass
 				list.add(ipExtData[6]);
 				list.add(testData[3]);
 				list.add(testData[4]);
+				list.add(testData[5]);
+				list.add(testData[6]);
+				list.add(testData[7]);
+				list.add(testData[8]);
+				list.add(testData[9]);
 				new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_edit_digital_extension_toDelayed_HotLine(Method method) throws InterruptedException
+	@Test
+	public void test_edit_digital_extension_toDelayed_HotLine(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -436,6 +472,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmExtension.getViewRangeButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -444,13 +485,18 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(ipExtData[6]);
 			list.add(testData[3]);
 			list.add(testData[4]);
+			list.add(testData[5]);
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_delete_digitalExtension(Method method) throws InterruptedException
+	@Test
+	public void test_delete_digitalExtension(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -483,6 +529,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -490,11 +541,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(testData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_swap_digitalEquipmentPositions(Method method) throws InterruptedException
+	@Test
+	public void test_swap_digitalEquipmentPositions(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -533,14 +584,19 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[3]+"')]//following-sibling::td[contains(text(),'"+testData[4]+"')]//preceding-sibling::td[27]")).click();
 			pmExtension.getSwapButton().click();
 			driver.switchTo().alert().accept();
-			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("blockUI"))));
-			wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.id("blockUI"))));
+//			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("blockUI"))));
+//			wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.id("blockUI"))));
 			
 			List<WebElement> ele3 = driver.findElements(By.xpath("//td[contains(text(),'"+testData[1]+"')]//following-sibling::td[contains(text(),'"+testData[4]+"')]"));
 			List<WebElement> ele4 = driver.findElements(By.xpath("//td[contains(text(),'"+testData[3]+"')]//following-sibling::td[contains(text(),'"+testData[2]+"')]"));
 			Assert.assertTrue(ele3.size() == 1 && ele4.size() == 1);
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -550,11 +606,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(testData[7]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_create_digitalExt_using_Template(Method method) throws InterruptedException
+	@Test
+	public void test_create_digitalExt_using_Template(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -580,7 +636,8 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmLoginPage.PM_Login(credentials[0], credentials[1]);
 			pmMainPage.getServices().click();
 			pmServices.getExtension().click();
-			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
+			new SelectDropDownValue().selectByValue(pmExtension.getExtensionHomePageTemplateDropDown(),
+					"CUST."+testData[3]+"_SN_DigitalExtension");
 			pmExtension.getAddButton().click();
 			
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
@@ -590,10 +647,12 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			System.out.println(ver);
 			if(ver >= 720000)
 			{
+//				wait.until(ExpectedConditions.presenceOfElementLocated(By.id("myDigitalExtension_VO.DIR")));
 				pmExtension.setDigitalExtensionNumber(testData[1]);
 			}
 			else
 			{
+//				wait.until(ExpectedConditions.presenceOfElementLocated(By.id("myDigitalExtension_VO.DIR")));
 				new SelectDropDownValue().selectByVisibleText(pmExtension.getEnterDigitalExtensionNumber(), testData[1]);
 			}
 			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalCommonCategoryDropDown(), 0);
@@ -609,6 +668,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, testData[3], ipData);
@@ -617,10 +681,10 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(testData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
-	public void test_createUser_with_Digital_Extension(Method method) throws InterruptedException
+	@Test
+	public void test_createUser_with_Digital_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -662,7 +726,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmExtension.setDigitalFirstname(testData[4]);
 			pmExtension.setDigitalLastname(testData[5]);
 			pmExtension.getApplyButton().click();
-			pmExtension.getApplyButton().click();
+//			pmExtension.getDoneButton().click();
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
 			pmExtension.getDoneButton().click();
 			
@@ -671,6 +735,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -681,10 +750,10 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(ipTestData[7]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
-	public void test_createUser_with_existing_Digital_Extension(Method method) throws InterruptedException
+	@Test
+	public void test_createUser_with_existing_Digital_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -715,6 +784,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -723,11 +797,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(ipTestData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_createUser_with_DigitalExtension_usingTemplate(Method method) throws InterruptedException
+	@Test
+	public void test_createUser_with_DigitalExtension_usingTemplate(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -747,7 +821,8 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			new ReusableUnits_Analog_Digital(driver).createDigitalTemplate(driver, ipData, loginData, ipTestData[3]);
 			
 			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
-			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
+			new SelectDropDownValue().selectByValue(pmExtension.getExtensionHomePageTemplateDropDown(),
+					"CUST."+ipTestData[3]+"_SN_DigitalExtension");
 			pmExtension.getCreateAndAssignExtensionToUser().click();
 			
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), ipTestData[1]);
@@ -776,6 +851,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, ipTestData[3], ipData);
@@ -785,11 +865,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(ipTestData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_editUser_and_Assign_Existing_DigitalExtension(Method method) throws InterruptedException
+	@Test
+	public void test_editUser_and_Assign_Existing_DigitalExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -825,6 +905,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -833,11 +918,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(ipTestData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_editUser_and_remove_Existing_DigitalExtension(Method method) throws InterruptedException
+	@Test
+	public void test_editUser_and_remove_Existing_DigitalExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -871,6 +956,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 0);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -879,11 +969,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(ipTestData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_editUser_to_create_DigitalExtension(Method method) throws InterruptedException
+	@Test
+	public void test_editUser_to_create_DigitalExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -939,6 +1029,11 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -947,5 +1042,5 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			list.add(ipTestData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 }

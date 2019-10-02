@@ -24,6 +24,7 @@ import utilities.ExecuteCommands;
 import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_SIPDECT_Tests extends ConfigClass
 {
@@ -36,8 +37,8 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	WebDriverWait wait = null;
 	public PM_Users pmUsers;
 	
-	/*@Test
-	public void test_create_SIP_DECT_extension(Method method) throws InterruptedException
+/*	@Test
+	public void test_create_SIP_DECT_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -52,6 +53,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			new ReusableUnits(driver).create_SIPDECT_Extension(driver, method.getName(), ipData, loginData, pmTests,0);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -64,7 +70,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_delete_SIPDECT_extension(Method method) throws InterruptedException
+	public void test_delete_SIPDECT_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -82,6 +88,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -94,7 +105,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_delete_multiple_SIPDECT_extension(Method method) throws InterruptedException
+	public void test_delete_multiple_SIPDECT_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -119,6 +130,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -129,9 +145,9 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	
+*/	
 	@Test
-	public void test_edit_configureParallel_ringing_to_SIPDECT(Method method) throws InterruptedException
+	public void test_edit_configureParallel_ringing_to_SIPDECT(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] prllRingData = null;
@@ -205,6 +221,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -219,8 +240,8 @@ public class PM_SIPDECT_Tests extends ConfigClass
 		}
 	}
 	
-	@Test
-	public void test_edit_SIPDECT_ExtensionCSP(Method method) throws InterruptedException
+/*	@Test
+	public void test_edit_SIPDECT_ExtensionCSP(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -257,6 +278,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -278,7 +304,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test(dataProvider="hotline")
-	public void test_editT_ConfigureHotLineNumber_SIPDECT(String hotLineType,Method method) throws InterruptedException
+	public void test_editT_ConfigureHotLineNumber_SIPDECT(String hotLineType,Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] hotLineDelayedHotLineData = null;
@@ -329,6 +355,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -344,7 +375,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_editSet_First_LastNames_SIPDECT(Method method) throws InterruptedException
+	public void test_editSet_First_LastNames_SIPDECT(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -388,6 +419,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -400,7 +436,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_createUserWith_SIPDECT_Extension(Method method) throws InterruptedException
+	public void test_createUserWith_SIPDECT_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -409,6 +445,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 		{
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUserWith_SIPDECT_Extension(driver, method.getName(), ipData, loginData, pmTests);
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -424,7 +465,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_editUserToRemove_SIPDECT_Extension(Method method) throws InterruptedException
+	public void test_editUserToRemove_SIPDECT_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -454,6 +495,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			Assert.assertTrue(eles.size()==0);
 			
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -467,7 +513,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_editUser_AssignExisting_SIPDECT_Extension(Method method) throws InterruptedException
+	public void test_editUser_AssignExisting_SIPDECT_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -550,6 +596,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			List<WebElement> eles2 = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
 			Assert.assertTrue(eles2.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -563,7 +614,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_createUserAssignExisting_SIPDECT_Extension(Method method) throws InterruptedException
+	public void test_createUserAssignExisting_SIPDECT_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -643,6 +694,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			List<WebElement> eles2 = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
 			Assert.assertTrue(eles2.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -654,9 +710,9 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	
-	@Test
-	public void test_editUserAssignNew_SIPDECT_Extension(Method method) throws InterruptedException
+*/	
+/*	@Test
+	public void test_editUserAssignNew_SIPDECT_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -713,17 +769,22 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmExtension.setMultiTerminalFirstName(extData[6]);
 			pmExtension.setMultiTerminalLastName(extData[7]);
 			pmExtension.getApplyButton().click();
-			pmExtension.getApplyButton().click();
+			pmExtension.getEditPageApplyButton().click();
 			
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
 			pmExtension.getDoneButton().click();
 			
-			pmUser.setUserSearchTextBox(testData[0]);
+//			pmUser.setUserSearchTextBox(testData[0]);
 			pmUser.getOnViewRangeButton().click();
 			
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{

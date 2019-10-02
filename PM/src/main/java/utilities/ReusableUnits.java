@@ -74,7 +74,12 @@ public class ReusableUnits
 	{
 		driver.get(ipData.getData(0, 0));
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
+		for(String s : credentials)
+		{
+			System.out.println(s);
+		}
 		String[] testData = pmTests.getData(methodName, 1);
+		System.out.println(testData);
 		pmLoginPge.PM_Login(credentials[0], credentials[1]);
 		pmMainPge.getUsers().click();
 		pmUsers.getUser().click();
@@ -1122,6 +1127,7 @@ public class ReusableUnits
 		
 		if(extType.equals("IP"))
 		{
+			Thread.sleep(1000);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
 			pmExtension.getNextButton().click();
 			
@@ -1143,6 +1149,7 @@ public class ReusableUnits
 		}
 		else if(extType.equals("analog"))
 		{
+			Thread.sleep(1000);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Analog");
 			pmExtension.getNextButton().click();
 			
@@ -1164,6 +1171,7 @@ public class ReusableUnits
 		}
 		else if(extType.equals("digital"))
 		{
+			Thread.sleep(1000);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Digital");
 			pmExtension.getNextButton().click();
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
@@ -1185,6 +1193,7 @@ public class ReusableUnits
 		}
 		else if(extType.equals("virtual"))
 		{
+			Thread.sleep(1000);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Virtual");
 			pmExtension.getNextButton().click();
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
@@ -1206,6 +1215,7 @@ public class ReusableUnits
 		}
 		else if(extType.equals("sip-dect"))
 		{
+			Thread.sleep(1000);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "SIP DECT");
 			pmExtension.getNextButton().click();
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);

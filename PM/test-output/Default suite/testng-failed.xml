@@ -3,17 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.PM_User_Test">
+      <class name="tests.PM_FunctionKeys_Test">
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_create_user" invocation-numbers="0"/>
+          <include name="test_clearSCABR_funcKey" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_User_Test -->
+      </class> <!-- tests.PM_FunctionKeys_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

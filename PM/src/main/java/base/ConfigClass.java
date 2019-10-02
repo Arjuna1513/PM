@@ -1,9 +1,12 @@
 package base;
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -34,13 +37,20 @@ public class ConfigClass
 	
 	
 	@BeforeSuite
-	public void beforeSuite()
+	public void beforeSuite() throws IOException
 	{
 		excelPath = "C://Users//mallikar//git//PM//PM//src//main//java//myTestData//TestData.xlsx";
 		loginData = new ExcelReadAndWrite("logindata", excelPath);
 		pmTests = new ExcelReadAndWrite("PMTestData", excelPath);
 		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);
 		ipData = new ExcelReadAndWrite("IP", excelPath);
+		
+		File file = new File("C://Users//mallikar//git//PM//PM//ScreenShots");
+	    if (file.exists()) 
+	    {
+	      FileUtils.cleanDirectory(file);
+	    }
+//		FileUtils.cleanDirectory(Paths.get()) 
 	}
 	
 	@AfterSuite
@@ -88,16 +98,16 @@ public class ConfigClass
 //		System.out.println(driver);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
 	
 	@AfterMethod
 	public void afterMethod(ITestResult result) throws IOException
 	{
-		if(result.getStatus() == 2)
+		/*if(result.getStatus() == 2)
 		{
 			String methodName = result.getMethod().getMethodName();
 			new Take_Screenshot().get_Screenshot(driver, methodName);
-		}
+		}*/
 	}
 }

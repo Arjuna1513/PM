@@ -23,6 +23,7 @@ import utilities.ExecuteCommands;
 import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_PersonalNumber_Tests extends ConfigClass
 {
@@ -36,7 +37,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	public PM_Users pmUsers;
 	
 	@Test
-	public void create_PN_IP_Extension(Method method) throws InterruptedException
+	public void create_PN_IP_Extension(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
 		String[] testData = null;
@@ -68,6 +69,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -83,9 +89,9 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	
-/*	
+	
 	@Test
-	public void create_PN_Analog_Extension(Method method) throws InterruptedException
+	public void create_PN_Analog_Extension(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
 		String[] testData = null;
@@ -112,52 +118,15 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			
-			driver.get(ipData.getData(0, 0));
-			loginPage.PM_Login(credentials[0], credentials[1]);
-			pmMainPge.getServices().click();
-			pmServices.getExtension().click();
-			pmExtension.getAddButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Analog");
-			pmExtension.getNextButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
-			System.out.println(version);
-			int ver = Integer.parseInt(version);
-			System.out.println(ver);
-			if(ver >= 720000)
-			{
-				pmExtension.setEnterAnalogDirectoryNumber(testData[1]);
-			}
-			else
-			{
-				new SelectDropDownValue().selectByVisibleText(pmExtension.getAnalogDirctoryDropDown(), testData[1]);
-			}
-			new SelectDropDownValue().selectByIndex(pmExtension.getCommonCategoryDropDown(), 0);
-			pmExtension.setEquipmentPosition(testData[2]);
-//			new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
-			
-			pmExtension.getPENListButton().click();
-			
-			new Call_list_utilities(driver).create_extension_with_personalNumber(driver, method.getName(),
-					loginData, pmTests, ipData);
-			pmExtension.getMultiStepBackButton().click();
-			pmExtension.getApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-			pmExtension.getDoneButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Analog");
-			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
-			pmExtension.getViewRangeButton().click();
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
-		
-			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "1");
-			pmExtension.getDoneButton().click();
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "analog");
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -173,7 +142,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void create_PN_Digital_Extension(Method method) throws InterruptedException
+	public void create_PN_Digital_Extension(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
 		String[] testData = null;
@@ -200,53 +169,15 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			
-			driver.get(ipData.getData(0, 0));
-			loginPage.PM_Login(credentials[0], credentials[1]);
-			pmMainPge.getServices().click();
-			pmServices.getExtension().click();
-			pmExtension.getAddButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Digital");
-			pmExtension.getNextButton().click();
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
-			System.out.println(version);
-			int ver = Integer.parseInt(version);
-			System.out.println(ver);
-			if(ver >= 720000)
-			{
-				pmExtension.setDigitalExtensionNumber(testData[1]);
-			}
-			else
-			{
-				new SelectDropDownValue().selectByVisibleText(pmExtension.getEnterDigitalExtensionNumber(), testData[1]);
-			}
-			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalPhoneTypeDropDown(), 1);
-			new SelectDropDownValue().selectByIndex(pmExtension.getDigitalCommonCategoryDropDown(), 0);
-			pmExtension.setEquipmentPosition(testData[2]);
-//			new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
-//			new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
-			
-			pmExtension.getPENListButton().click();
-			new Call_list_utilities(driver).create_extension_with_personalNumber(driver, method.getName(),
-					loginData, pmTests, ipData);
-			pmExtension.getMultiStepBackButton().click();
-			
-			pmExtension.getApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-			pmExtension.getDoneButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Digital");
-			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
-			pmExtension.getViewRangeButton().click();
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
-		
-			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "1");
-			pmExtension.getDoneButton().click();
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "digital");
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -262,7 +193,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void create_PN_Virtual_Extension(Method method) throws InterruptedException
+	public void create_PN_Virtual_Extension(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
 		String[] testData = null;
@@ -289,53 +220,15 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			
-			driver.get(ipData.getData(0, 0));
-			loginPage.PM_Login(credentials[0], credentials[1]);
-			pmMainPge.getServices().click();
-			pmServices.getExtension().click();
-			pmExtension.getAddButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Virtual");
-			pmExtension.getNextButton().click();
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
-			System.out.println(version);
-			int ver = Integer.parseInt(version);
-			System.out.println(ver);
-			if(ver >= 720000)
-			{
-				pmExtension.setVirtualExtensionTextBox(testData[1]);
-			}
-			else
-			{
-				new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTextBox(), testData[1]);
-			}
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getVirtualExtensionTypeDropDown(), "Virtual");
-			new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
-			new SelectDropDownValue().selectByIndex(pmExtension.getVirtualExtServerDropDown(), 1);
-//			new SelectDropDownValue().selectByVisibleText(pmExtension.getServerDropDown(), testData[3]);
-//			new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), testData[6]);
-			
-			pmExtension.getPENListButton().click();
-			new Call_list_utilities(driver).create_extension_with_personalNumber(driver, method.getName(),
-					loginData, pmTests, ipData);
-			pmExtension.getMultiStepBackButton().click();
-			
-			pmExtension.getApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-			pmExtension.getDoneButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Virtual");
-			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
-			pmExtension.getViewRangeButton().click();
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
-		
-			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "1");
-			pmExtension.getDoneButton().click();
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "virtual");
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -351,7 +244,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_create_PN_SIPDECT_Extension(Method method) throws InterruptedException
+	public void test_create_PN_SIPDECT_Extension(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
 		String[] testData = null;
@@ -378,59 +271,15 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			
-			driver.get(ipData.getData(0, 0));
-			loginPage.PM_Login(credentials[0], credentials[1]);
-			pmMainPge.getServices().click();
-			pmServices.getExtension().click();
-			pmExtension.getAddButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "SIP DECT");
-			pmExtension.getNextButton().click();
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
-			System.out.println(version);
-			int ver = Integer.parseInt(version);
-			System.out.println(ver);
-			if(ver >= 720000)
-			{
-				pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
-			}
-			else
-			{
-				new SelectDropDownValue().selectByVisibleText(pmExtension.getMultiTerminalExtensionDropDown(), testData[1]);
-			}
-			new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
-			new SelectDropDownValue().selectByIndex(pmExtension.getMultiTerminalServerDropDown(), 1);
-			
-			pmExtension.getAddSipDectTerminalButton().click();
-			pmExtension.setSIPDectName(testData[2]);
-			pmExtension.setSIPDectDescription1("SIP DECT");
-			pmExtension.setSIPDectDescription2("SIP DECT");
-			pmExtension.setSIPDectAuthKey(testData[3]);
-			pmExtension.setSIPDectIPEINumber(testData[4]);
-			pmExtension.getApplyButton().click();
-			
-			pmExtension.getPENListButton().click();
-			new Call_list_utilities(driver).create_extension_with_personalNumber(driver, method.getName(),
-					loginData, pmTests, ipData);
-			
-			pmExtension.getMultiStepBackButton().click();
-			
-			pmExtension.getApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-			pmExtension.getDoneButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Multi-Terminal");
-			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
-			pmExtension.getViewRangeButton().click();
-			
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
-			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
-		
-			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "1");
-			pmExtension.getDoneButton().click();
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "sip-dect");
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -449,7 +298,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	
 	
 	@Test
-	public void test_edit_IP_extension_assign_PN(Method method) throws InterruptedException
+	public void test_edit_IP_extension_assign_PN(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] extData = null;
@@ -500,6 +349,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -515,7 +369,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_edit_Analog_extension_assign_PN(Method method) throws InterruptedException
+	public void test_edit_Analog_extension_assign_PN(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] extData = null;
@@ -566,6 +420,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -581,7 +440,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	
 	
 	@Test
-	public void test_edit_Digital_extension_assign_PN(Method method) throws InterruptedException
+	public void test_edit_Digital_extension_assign_PN(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] extData = null;
@@ -632,6 +491,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -646,7 +510,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_edit_Virtual_extension_assign_PN(Method method) throws InterruptedException
+	public void test_edit_Virtual_extension_assign_PN(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] extData = null;
@@ -697,6 +561,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -711,7 +580,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void test_edit_SIPDECT_Assign_PN(Method method) throws InterruptedException
+	public void test_edit_SIPDECT_Assign_PN(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
 		String[] testData = null;
@@ -765,6 +634,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -781,7 +655,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	@Test
-	public void edit_extension_to_change_active_call_list(Method method) throws InterruptedException
+	public void edit_IP_extension_to_change_active_call_list(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
 		String[] testData = null;
@@ -808,53 +682,33 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			
-			driver.get(ipData.getData(0, 0));
-			loginPage.PM_Login(credentials[0], credentials[1]);
-			pmMainPge.getServices().click();
-			pmServices.getExtension().click();
-			pmExtension.getAddButton().click();
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "IP");
 			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "IP");
-			pmExtension.getNextButton().click();
-			
-			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
-			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
-			System.out.println(version);
-			int ver = Integer.parseInt(version);
-			System.out.println(ver);
-			if(ver >= 720000)
-			{
-				pmExtension.setSingleExtensionValue(testData[1]);
-			}
-			else
-			{
-				new SelectDropDownValue().selectByVisibleText(pmExtension.getSingleExtensionDropDown(), testData[1]);
-			}
-			new SelectDropDownValue().selectByIndex(pmExtension.getMyCSPNameDropDown(), 0);
-			new SelectDropDownValue().selectByIndex(pmExtension.getServerDropDown(), 1);
-			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
 			pmExtension.getPENListButton().click();
+			driver.findElement(By.xpath("//img[@id='activateThis9_img']")).click();
+			pmExtension.getMultiStepBackButton().click();
 			
-			new Call_list_utilities(driver).create_extension_with_personalNumber(driver, method.getName(),
-					loginData, pmTests, ipData);
-			Thread.sleep(1000);
-			driver.findElement(By.xpath("(//img//following::input[10])[3]")).click();
-//			pmExtension.getMultiStepBackButton().click();
-			Thread.sleep(1000);
-			pmExtension.getApplyButton().click();
-			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+			List<WebElement> p10 = driver.findElements(By.xpath("//td[contains(text(),'Profile10:Active')]"));
+			Assert.assertTrue(p10.size() == 1);
+			
+			pmExtension.getEditPageApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
 			pmExtension.getDoneButton().click();
 			
-			pmExtension.setEnterExtensionNumberTextBox(testData[1]);
-			pmExtension.getViewRangeButton().click();
-			WebDriverWait wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
-		
-			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "1");
+			
+			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "10");
+//			Thread.sleep(10000);
 			pmExtension.getDoneButton().click();
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -868,6 +722,286 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			list.add(testData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
+	
+	
+	@Test
+	public void edit_analog_extension_to_change_active_call_list(Method method) throws Exception
+	{
+		pmTests.checkTestStatus(method.getName());
+		String[] testData = null;
+		String [] extData = null;
+		String[] credentials = null;
+		wait = new WebDriverWait(driver, 20);
+		try
+		{
+			pmExtension = new Extension(driver);
+			loginPage = new PM_Login_Page(driver);
+			pmMainPge = new PM_Main_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmUser = new PM_User(driver);
+			pmUsers = new PM_Users(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			extData = pmTests.getData(method.getName(), 3);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(extData[0]);
+			list.add(extData[1]);
+			list.add(extData[2]);
+			
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "analog");
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
+			pmExtension.getPENListButton().click();
+			driver.findElement(By.xpath("//img[@id='activateThis9_img']")).click();
+			pmExtension.getMultiStepBackButton().click();
+			
+			List<WebElement> p10 = driver.findElements(By.xpath("//td[contains(text(),'Profile10:Active')]"));
+			Assert.assertTrue(p10.size() == 1);
+			
+			pmExtension.getEditPageApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+			pmExtension.getDoneButton().click();
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
+			
+			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "10");
+//			Thread.sleep(10000);
+			pmExtension.getDoneButton().click();
+			
+			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
+		finally
+		{
+			list.clear();
+			list.add(extData[13]);
+			list.add(extData[14]);
+			list.add(extData[15]);
+			list.add(testData[3]);
+			list.add(testData[4]);
+			list.add(testData[5]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	
+	@Test
+	public void edit_digital_extension_to_change_active_call_list(Method method) throws Exception
+	{
+		pmTests.checkTestStatus(method.getName());
+		String[] testData = null;
+		String [] extData = null;
+		String[] credentials = null;
+		wait = new WebDriverWait(driver, 20);
+		try
+		{
+			pmExtension = new Extension(driver);
+			loginPage = new PM_Login_Page(driver);
+			pmMainPge = new PM_Main_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmUser = new PM_User(driver);
+			pmUsers = new PM_Users(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			extData = pmTests.getData(method.getName(), 3);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(extData[0]);
+			list.add(extData[1]);
+			list.add(extData[2]);
+			
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "digital");
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
+			pmExtension.getPENListButton().click();
+			driver.findElement(By.xpath("//img[@id='activateThis9_img']")).click();
+			pmExtension.getMultiStepBackButton().click();
+			
+			List<WebElement> p10 = driver.findElements(By.xpath("//td[contains(text(),'Profile10:Active')]"));
+			Assert.assertTrue(p10.size() == 1);
+			
+			pmExtension.getEditPageApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+			pmExtension.getDoneButton().click();
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
+			
+			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "10");
+//			Thread.sleep(10000);
+			pmExtension.getDoneButton().click();
+			
+			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
+		finally
+		{
+			list.clear();
+			list.add(extData[13]);
+			list.add(extData[14]);
+			list.add(extData[15]);
+			list.add(testData[3]);
+			list.add(testData[4]);
+			list.add(testData[5]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	@Test
+	public void edit_virtual_extension_to_change_active_call_list(Method method) throws Exception
+	{
+		pmTests.checkTestStatus(method.getName());
+		String[] testData = null;
+		String [] extData = null;
+		String[] credentials = null;
+		wait = new WebDriverWait(driver, 20);
+		try
+		{
+			pmExtension = new Extension(driver);
+			loginPage = new PM_Login_Page(driver);
+			pmMainPge = new PM_Main_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmUser = new PM_User(driver);
+			pmUsers = new PM_Users(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			extData = pmTests.getData(method.getName(), 3);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(extData[0]);
+			list.add(extData[1]);
+			list.add(extData[2]);
+			
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "virtual");
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
+			pmExtension.getPENListButton().click();
+			driver.findElement(By.xpath("//img[@id='activateThis9_img']")).click();
+			pmExtension.getMultiStepBackButton().click();
+			
+			List<WebElement> p10 = driver.findElements(By.xpath("//td[contains(text(),'Profile10:Active')]"));
+			Assert.assertTrue(p10.size() == 1);
+			
+			pmExtension.getEditPageApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+			pmExtension.getDoneButton().click();
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
+			
+			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "10");
+//			Thread.sleep(10000);
+			pmExtension.getDoneButton().click();
+			
+			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
+		finally
+		{
+			list.clear();
+			list.add(extData[13]);
+			list.add(extData[14]);
+			list.add(extData[15]);
+			list.add(testData[2]);
+			list.add(testData[3]);
+			list.add(testData[4]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
+	
+	@Test
+	public void edit_sip_dect_extension_to_change_active_call_list(Method method) throws Exception
+	{
+		pmTests.checkTestStatus(method.getName());
+		String[] testData = null;
+		String [] extData = null;
+		String[] credentials = null;
+		wait = new WebDriverWait(driver, 20);
+		try
+		{
+			pmExtension = new Extension(driver);
+			loginPage = new PM_Login_Page(driver);
+			pmMainPge = new PM_Main_Page(driver);
+			pmServices = new PM_Services(driver);
+			pmUser = new PM_User(driver);
+			pmUsers = new PM_Users(driver);
+			testData = pmTests.getData(method.getName(), 1);
+			extData = pmTests.getData(method.getName(), 3);
+			credentials = loginData.getData("test_pm_valid_login", 1);
+			
+			list = new ArrayList<String>();
+			list.add(testData[0]);
+			list.add(extData[0]);
+			list.add(extData[1]);
+			list.add(extData[2]);
+			
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+			
+			new ReusableUnits(driver).create_personal_number_for_given_extension
+			(driver, method.getName(), ipData, loginData, pmTests, "sip-dect");
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
+			pmExtension.getPENListButton().click();
+			driver.findElement(By.xpath("//img[@id='activateThis9_img']")).click();
+			pmExtension.getMultiStepBackButton().click();
+			
+			List<WebElement> p10 = driver.findElements(By.xpath("//td[contains(text(),'Profile10:Active')]"));
+			Assert.assertTrue(p10.size() == 1);
+			
+			pmExtension.getEditPageApplyButton().click();
+			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
+			pmExtension.getDoneButton().click();
+			
+			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
+			
+			new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "10");
+//			Thread.sleep(10000);
+			pmExtension.getDoneButton().click();			
+			
+			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
+		finally
+		{
+			list.clear();
+			list.add(extData[13]);
+			list.add(extData[14]);
+			list.add(extData[15]);
+			list.add(testData[5]);
+			list.add(testData[6]);
+			list.add(testData[7]);
+			list.add(testData[8]);
+			list.add(testData[9]);
+			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
+		}
+	}
 	
 }

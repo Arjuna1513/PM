@@ -1,5 +1,6 @@
 package tests;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.ReusableUnits_Analog_Digital;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_AnalogExtension_Test extends ConfigClass
 {
@@ -38,8 +40,8 @@ public class PM_AnalogExtension_Test extends ConfigClass
 	public PM_Users pmUsers;
 	
 	
-	/*@Test
-	public void test_createAnalogExtension(Method method) throws InterruptedException
+	@Test
+	public void test_createAnalogExtension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -54,6 +56,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			new ReusableUnits_Analog_Digital(driver).createAnalogExtension(driver, method.getName(), ipData, pmTests, loginData, 0);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -61,10 +68,10 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(testData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-/*	@Test
-	public void test_edit_analog_extension_toChange_CAT(Method method) throws InterruptedException
+	@Test
+	public void test_edit_analog_extension_toChange_CAT(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -110,6 +117,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -117,11 +129,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(testData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_edit_analog_extension_toChange_First_Last_Names(Method method) throws InterruptedException
+	@Test
+	public void test_edit_analog_extension_toChange_First_Last_Names(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -164,6 +176,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -171,11 +188,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(testData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}	*/
+	}	
 		
 		
-	/*	@Test
-		public void test_edit_analog_extension_equipmentPosition(Method method) throws InterruptedException
+		@Test
+		public void test_edit_analog_extension_equipmentPosition(Method method) throws Exception
 		{
 			String[] testData = null;
 			String[] credentials = null;
@@ -223,6 +240,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 				pmExtension.getDoneButton().click();
 				pmUser.getLogoutLink().click();
 			}
+			catch(Exception e)
+			{
+					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					throw e;
+			}
 			finally
 			{
 				list.clear();
@@ -230,11 +252,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 				list.add(testData[5]);
 				new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			}
-	}*/
+	}
 	
 	
-	/*	@Test
-		public void test_edit_analog_extension_toSet_HotLine(Method method) throws InterruptedException
+		@Test
+		public void test_edit_analog_extension_toSet_HotLine(Method method) throws Exception
 		{
 			String[] testData = null;
 			String[] credentials = null;
@@ -300,6 +322,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 				
 				pmUser.getLogoutLink().click();
 			}
+			catch(Exception e)
+			{
+					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					throw e;
+			}
 			finally
 			{
 				list.clear();
@@ -308,13 +335,14 @@ public class PM_AnalogExtension_Test extends ConfigClass
 				list.add(ipExtData[6]);
 				list.add(testData[3]);
 				list.add(testData[4]);
+				list.add(testData[5]);
 				new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_edit_analog_extension_toDelayed_HotLine(Method method) throws InterruptedException
+	@Test
+	public void test_edit_analog_extension_toDelayed_HotLine(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -363,7 +391,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
 			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'Phone Type')]//following-sibling::td[contains(text(),'Delayed hot-line')]"));
 			Assert.assertTrue(eles.size()==1);
-			Thread.sleep(5000);
+//			Thread.sleep(5000);
 			pmExtension.getDoneButton().click();
 			
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[19]")).click();
@@ -381,6 +409,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -389,13 +422,14 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(ipExtData[6]);
 			list.add(testData[3]);
 			list.add(testData[4]);
+			list.add(testData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*	@Test
-	public void test_delete_analogExtension(Method method) throws InterruptedException
+		@Test
+	public void test_delete_analogExtension(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -428,6 +462,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -436,10 +475,10 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	*/
 	
-/*	@Test
-	public void test_swap_analogEquipmentPositions(Method method) throws InterruptedException
+	
+	@Test
+	public void test_swap_analogEquipmentPositions(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -478,14 +517,19 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[3]+"')]//following-sibling::td[contains(text(),'"+testData[4]+"')]//preceding-sibling::td[27]")).click();
 			pmExtension.getSwapButton().click();
 			driver.switchTo().alert().accept();
-			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("blockUI"))));
-			wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.id("blockUI"))));
+//			wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("blockUI"))));
+//			wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.id("blockUI"))));
 			
 			List<WebElement> ele3 = driver.findElements(By.xpath("//td[contains(text(),'"+testData[1]+"')]//following-sibling::td[contains(text(),'"+testData[4]+"')]"));
 			List<WebElement> ele4 = driver.findElements(By.xpath("//td[contains(text(),'"+testData[3]+"')]//following-sibling::td[contains(text(),'"+testData[2]+"')]"));
 			Assert.assertTrue(ele3.size() == 1 && ele4.size() == 1);
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -495,11 +539,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(testData[7]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_create_analogExt_using_Template(Method method) throws InterruptedException
+	@Test
+	public void test_create_analogExt_using_Template(Method method) throws Exception
 	{
 		String[] testData = null;
 		String[] credentials = null;
@@ -553,6 +597,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, testData[3], ipData);
@@ -561,10 +610,10 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(testData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
-	/*@Test
-	public void test_createUser_with_analog_Extension(Method method) throws InterruptedException
+	@Test
+	public void test_createUser_with_analog_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -615,6 +664,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -624,11 +678,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(ipTestData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_createUser_with_existing_analog_Extension(Method method) throws InterruptedException
+	@Test
+	public void test_createUser_with_existing_analog_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -659,6 +713,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -668,10 +727,10 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	*/
 	
-	/*@Test
-	public void test_createUser_with_AnalogExtension_usingTemplate(Method method) throws InterruptedException
+	
+	@Test
+	public void test_createUser_with_AnalogExtension_usingTemplate(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -720,6 +779,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, ipTestData[3], ipData);
@@ -729,11 +793,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(ipTestData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_editUser_and_Assign_Existing_AnalogExtension(Method method) throws InterruptedException
+	@Test
+	public void test_editUser_and_Assign_Existing_AnalogExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -769,6 +833,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -777,11 +846,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(ipTestData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-/*	@Test
-	public void test_editUser_and_remove_Existing_AnalogExtension(Method method) throws InterruptedException
+	@Test
+	public void test_editUser_and_remove_Existing_AnalogExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -815,6 +884,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 0);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -823,11 +897,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(ipTestData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_editUser_to_create_AnalogExtension(Method method) throws InterruptedException
+	@Test
+	public void test_editUser_to_create_AnalogExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -882,6 +956,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -890,5 +969,5 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			list.add(ipTestData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 }

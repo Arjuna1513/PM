@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.ConfigClass;
@@ -18,6 +19,7 @@ import pm_pom_classes.PM_Users;
 import utilities.ExecuteCommands;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_MultiTerminal_Test extends ConfigClass
 {
@@ -32,8 +34,8 @@ public class PM_MultiTerminal_Test extends ConfigClass
 	public PM_Users pmUsers;
 	
 	
-/*	@Test
-	public void test_create_multi_terminal_extension(Method method) throws InterruptedException
+	@Test
+	public void test_create_multi_terminal_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -48,6 +50,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0,"none");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -59,7 +66,7 @@ public class PM_MultiTerminal_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_create_multi_terminal_WithIP(Method method) throws InterruptedException
+	public void test_create_multi_terminal_WithIP(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -74,6 +81,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0, "ip");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -83,11 +95,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			list.add(testData[8]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
-	public void test_create_multi_terminal_WithSIP_Auto(Method method) throws InterruptedException
+	@Test
+	public void test_create_multi_terminal_WithSIP_Auto(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -102,6 +114,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0, "sipauto");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -111,10 +128,10 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			list.add(testData[11]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
-	/*
+	}
+	
 	@Test
-	public void test_create_multi_terminal_With_MobileExtension(Method method) throws InterruptedException
+	public void test_create_multi_terminal_With_MobileExtension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -132,6 +149,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0, "mobile");
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			pmMainPge.getServices().click();
@@ -144,6 +166,6 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
-	}*/
+	}
 	
 }

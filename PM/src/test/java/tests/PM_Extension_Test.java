@@ -23,6 +23,7 @@ import utilities.ExecuteCommands;
 import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_Extension_Test extends ConfigClass
 {
@@ -37,7 +38,7 @@ public class PM_Extension_Test extends ConfigClass
 	public PM_Users pmUsers;
 	
 	@Test
-	public void test_create_IP_extension(Method method) throws InterruptedException
+	public void test_create_IP_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -52,6 +53,11 @@ public class PM_Extension_Test extends ConfigClass
 			new ReusableUnits(driver).createExtension(driver, method.getName(), ipData, loginData, pmTests,0);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -62,8 +68,8 @@ public class PM_Extension_Test extends ConfigClass
 		}
 	}
 	
-/*	@Test
-	public void test_delete_IP_extension(Method method) throws InterruptedException
+	@Test
+	public void test_delete_IP_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -81,6 +87,11 @@ public class PM_Extension_Test extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -92,7 +103,7 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_delete_multiple_IP_extension(Method method) throws InterruptedException
+	public void test_delete_multiple_IP_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -128,6 +139,11 @@ public class PM_Extension_Test extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -139,7 +155,7 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_configureParallel_ringing_to_IP(Method method) throws InterruptedException
+	public void test_configureParallel_ringing_to_IP(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -185,6 +201,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -199,7 +220,7 @@ public class PM_Extension_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_editIPExtensionPhoneType(Method method) throws InterruptedException
+	public void test_editIPExtensionPhoneType(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -237,6 +258,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -249,7 +275,7 @@ public class PM_Extension_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_editIPExtensionCSP(Method method) throws InterruptedException
+	public void test_editIPExtensionCSP(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -286,6 +312,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -297,7 +328,7 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_editToAssignThirdPartySIPClient(Method method) throws InterruptedException
+	public void test_editToAssignThirdPartySIPClient(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -333,6 +364,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -344,7 +380,7 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_editToConfigureCallPark(Method method) throws InterruptedException
+	public void test_editToConfigureCallPark(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -386,6 +422,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -407,7 +448,7 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@Test(dataProvider="SLDProvider")
-	public void test_editToConfigureSecondLineState(String slConfig,Method method) throws InterruptedException
+	public void test_editToConfigureSecondLineState(String slConfig,Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -445,6 +486,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -465,7 +511,7 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@Test(dataProvider="hotline")
-	public void test_editToConfigureHotLineNumber(String hotLineType,Method method) throws InterruptedException
+	public void test_editToConfigureHotLineNumber(String hotLineType,Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -515,6 +561,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -527,7 +578,7 @@ public class PM_Extension_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_editToSetFirst_LastNames(Method method) throws InterruptedException
+	public void test_editToSetFirst_LastNames(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -579,6 +630,11 @@ public class PM_Extension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -590,7 +646,7 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_create_IP_extension_usingTemplate(Method method) throws InterruptedException
+	public void test_create_IP_extension_usingTemplate(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -613,7 +669,8 @@ public class PM_Extension_Test extends ConfigClass
 			pmLoginPge.PM_Login(credentials[0], credentials[1]);
 			pmMainPge.getServices().click();
 			pmServices.getExtension().click();
-			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
+			new SelectDropDownValue().selectByValue(pmExtension.getExtensionHomePageTemplateDropDown(),
+					"CUST."+testData[2]+"_SN_IPExtension");
 			pmExtension.getAddButton().click();
 			Thread.sleep(2000);
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), testData[1]);
@@ -640,6 +697,11 @@ public class PM_Extension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, testData[2], ipData);
@@ -649,6 +711,6 @@ public class PM_Extension_Test extends ConfigClass
 			list.add(testData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 }

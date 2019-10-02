@@ -26,6 +26,7 @@ import utilities.ExecuteCommands;
 import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_User_Test extends ConfigClass
 {
@@ -38,25 +39,30 @@ public class PM_User_Test extends ConfigClass
 	public Extension pmExtension;
 	
 	@Test
-	public void test_create_user(Method method) throws InterruptedException
+	public void test_create_user(Method method) throws Exception
 	{
 		try 
 		{
-			Thread.sleep(5000);
+//			Thread.sleep(5000);
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
-			/*String[] credentials = loginData.getData("test_pm_valid_login", 1);
+			String[] credentials = loginData.getData("test_pm_valid_login", 1);
 			String[] testData = pmTests.getData(method.getName(), 1);
-			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);*/
+			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
 		}
 		
 	}
 	
-	/*@Test
-	public void test_edit_user(Method method) throws InterruptedException
+	@Test
+	public void test_edit_user(Method method) throws Exception
 	{
 		try 
 		{
@@ -83,6 +89,11 @@ public class PM_User_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[9]+"')])[1]"));
 			Assert.assertTrue(eles.size() > 0);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -92,8 +103,10 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_delete_user(Method method) throws InterruptedException
+	public void test_delete_user(Method method) throws Exception
 	{
+		try
+		{
 			pmTests.checkTestStatus(method.getName());
 			pmUser = new PM_User(driver);
 			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests);
@@ -102,10 +115,16 @@ public class PM_User_Test extends ConfigClass
 			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')]//preceding-sibling::td)[8]")).click();
 			driver.switchTo().alert().accept();
 			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 	}
 	
 	@Test
-	public void test_userSearchUsingViewSymbol(Method method) throws InterruptedException
+	public void test_userSearchUsingViewSymbol(Method method) throws Exception
 	{
 		try
 		{
@@ -115,6 +134,11 @@ public class PM_User_Test extends ConfigClass
 			driver.findElement(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//preceding-sibling::td[20]")).click();
 			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'User Id')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
 			Assert.assertTrue(eles.size() > 0);
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -126,7 +150,7 @@ public class PM_User_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_delete_user_byClicking_delete_button(Method method) throws InterruptedException
+	public void test_delete_user_byClicking_delete_button(Method method) throws Exception
 	{
 		try
 		{
@@ -139,6 +163,11 @@ public class PM_User_Test extends ConfigClass
 			driver.switchTo().alert().accept();
 			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Remove operation successful for:");
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -148,7 +177,7 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_user_print(Method method) throws InterruptedException
+	public void test_user_print(Method method) throws Exception
 	{
 		try
 		{
@@ -175,6 +204,11 @@ public class PM_User_Test extends ConfigClass
 			}
 			driver.switchTo().window(parentWindow);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -185,7 +219,7 @@ public class PM_User_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_viewUser_with_viewButton(Method method) throws InterruptedException
+	public void test_viewUser_with_viewButton(Method method) throws Exception
 	{
 		try
 		{
@@ -202,6 +236,11 @@ public class PM_User_Test extends ConfigClass
 			pmUser.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -211,9 +250,10 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_verify_helpText(Method method) throws InterruptedException
+	public void test_verify_helpText(Method method) throws Exception
 	{
-			pmTests.checkTestStatus(method.getName());
+		try
+		{	pmTests.checkTestStatus(method.getName());
 			driver.get(ipData.getData(0, 0));
 			pmUser = new PM_User(driver);
 			pmUsers = new PM_Users(driver);
@@ -269,10 +309,16 @@ public class PM_User_Test extends ConfigClass
 			}
 			driver.switchTo().window(parentWindow);
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 	}
 	
 	@Test
-	public void test_delete_multipleUsers(Method method) throws InterruptedException
+	public void test_delete_multipleUsers(Method method) throws Exception
 	{
 		pmUser = new PM_User(driver);
 		try 
@@ -280,6 +326,11 @@ public class PM_User_Test extends ConfigClass
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUser(driver, method.getName(), ipData, loginData, pmTests, 10);
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -292,7 +343,7 @@ public class PM_User_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_search_using_wildCard_star(Method method) throws InterruptedException
+	public void test_search_using_wildCard_star(Method method) throws Exception
 	{
 			pmUser = new PM_User(driver);
 		try 
@@ -307,6 +358,11 @@ public class PM_User_Test extends ConfigClass
 			Assert.assertTrue(eles.size()>=10);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -317,7 +373,7 @@ public class PM_User_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_search_using_wildCard_questionMark(Method method) throws InterruptedException
+	public void test_search_using_wildCard_questionMark(Method method) throws Exception
 	{
 			pmUser = new PM_User(driver);
 		try 
@@ -332,6 +388,11 @@ public class PM_User_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -341,7 +402,7 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_createUserWithExtension(Method method) throws InterruptedException
+	public void test_createUserWithExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -350,6 +411,11 @@ public class PM_User_Test extends ConfigClass
 		{
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUserWithExtension(driver, method.getName(), ipData, loginData, pmTests);
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -364,7 +430,7 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_editUserToRemoveExtension(Method method) throws InterruptedException
+	public void test_editUserToRemoveExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -394,6 +460,11 @@ public class PM_User_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==0);
 			
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -406,7 +477,7 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_editUserAssignExistingExtension(Method method) throws InterruptedException
+	public void test_editUserAssignExistingExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -436,6 +507,11 @@ public class PM_User_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[3]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -448,7 +524,7 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_createUserAssignExistingExtension(Method method) throws InterruptedException
+	public void test_createUserAssignExistingExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -476,6 +552,11 @@ public class PM_User_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[3]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -488,7 +569,7 @@ public class PM_User_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_createUserWithExtesnsionUsingIPTemplate(Method method) throws InterruptedException
+	public void test_createUserWithExtesnsionUsingIPTemplate(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -506,7 +587,8 @@ public class PM_User_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).createIPTemplate(driver, method.getName(), ipData, loginData, extData[2]);
 			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
-			new SelectDropDownValue().selectByIndex(pmUser.getTemplateNameDropDown(), 1);
+			new SelectDropDownValue().selectByValue(pmExtension.getExtensionHomePageTemplateDropDown(),
+					"CUST."+extData[2]+"_SN_IPExtension");
 			pmUser.getCreateAndAssignExtensionToUser().click();
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), extData[1]);
 			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
@@ -536,6 +618,11 @@ public class PM_User_Test extends ConfigClass
 			pmMainPage.getLogoutLink().click();
 			
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, extData[2], ipData);
@@ -550,7 +637,7 @@ public class PM_User_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_editUserAssignNewExtension(Method method) throws InterruptedException
+	public void test_editUserAssignNewExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -607,6 +694,11 @@ public class PM_User_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -616,5 +708,5 @@ public class PM_User_Test extends ConfigClass
 			list.add(extData[5]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 }

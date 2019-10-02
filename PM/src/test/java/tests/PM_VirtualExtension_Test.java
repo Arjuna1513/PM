@@ -24,6 +24,7 @@ import utilities.ExecuteCommands;
 import utilities.GetMxoneVersionNumber;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
+import utilities.Take_Screenshot;
 
 public class PM_VirtualExtension_Test extends ConfigClass
 {
@@ -37,8 +38,8 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	public PM_Login_Page pmLoginPge;
 	public PM_Users pmUsers;
 	
-	/*@Test
-	public void test_create_virtual_extension(Method method) throws InterruptedException
+	@Test
+	public void test_create_virtual_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -53,6 +54,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			new ReusableUnits(driver).create_virtual_extension(driver, method.getName(), ipData, loginData, pmTests,0);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -63,7 +69,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_delete_virtual_extension(Method method) throws InterruptedException
+	public void test_delete_virtual_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -81,6 +87,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -92,7 +103,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_delete_multiple_virtual_extension(Method method) throws InterruptedException
+	public void test_delete_multiple_virtual_extension(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -127,6 +138,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -138,7 +154,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 
 		
 	@Test
-	public void test_configureParallel_ringing_to_VirtualExt(Method method) throws InterruptedException
+	public void test_configureParallel_ringing_to_VirtualExt(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -166,18 +182,19 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmExtension.getAdvanceButton().click();
 			pmExtension.setSecDirNum1(testData[4]);
 			pmExtension.setSecDirNum2(testData[5]);
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			pmExtension.getEditPageApplyButton().click();
-			Thread.sleep(10000);
+			Thread.sleep(1000);
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Change operation successful for:");
 			pmExtension.getDoneButton().click();
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Virtual");
 			pmExtension.getEnterExtensionNumberTextBox().clear();
 			pmExtension.setEnterExtensionNumberTextBox(testData[2]);
 			pmExtension.getViewRangeButton().click();
-			wait = new WebDriverWait(driver, 20);
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("blockUI")));
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
+//			wait = new WebDriverWait(driver, 20);
+//			wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("blockUI")));
+//			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("blockUI")));
+			Thread.sleep(2000);
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[3]+"')]//preceding-sibling::td[20]")).click();
 			List<WebElement> sdn1 = driver.findElements(By.xpath("//td[contains(text(),'Secondary Directory Number 1')]//following-sibling::td[contains(text(),'"+testData[4]+"')]"));
 			List<WebElement> sdn2 = driver.findElements(By.xpath("//td[contains(text(),'Secondary Directory Number 2')]//following-sibling::td[contains(text(),'"+testData[5]+"')]"));
@@ -185,6 +202,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertTrue(sdn1.size() == 1 && sdn2.size() == 1);
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -199,7 +221,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			
 		
 	@Test
-	public void test_edit_virtual_extension_CSP(Method method) throws InterruptedException
+	public void test_edit_virtual_extension_CSP(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -236,6 +258,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -318,7 +345,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 	
 	@Test(dataProvider="hotline")
-	public void test_editToConfigureHotLineNumber_Virtual(String hotLineType,Method method) throws InterruptedException
+	public void test_editToConfigureHotLineNumber_Virtual(String hotLineType,Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -369,6 +396,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -381,7 +413,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 
 	
 	@Test
-	public void test_editToSetFirst_LastNames_virtualExt(Method method) throws InterruptedException
+	public void test_editToSetFirst_LastNames_virtualExt(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -431,6 +463,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			list.clear();
@@ -441,7 +478,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_create_virtual_extension_usingTemplate(Method method) throws InterruptedException
+	public void test_create_virtual_extension_usingTemplate(Method method) throws Exception
 	{
 		String[] testData = null;
 		try
@@ -466,7 +503,8 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmLoginPge.PM_Login(credentials[0], credentials[1]);
 			pmMainPge.getServices().click();
 			pmServices.getExtension().click();
-			new SelectDropDownValue().selectByIndex(pmExtension.getExtensionHomePageTemplateDropDown(), 1);
+			new SelectDropDownValue().selectByValue(pmExtension.getExtensionHomePageTemplateDropDown(),
+					"CUST."+testData[2]+"_SN_VirtualExtension");
 //			Thread.sleep(10000);
 			pmExtension.getAddButton().click();
 //			new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionType(), "Virtual");
@@ -496,6 +534,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, testData[2], ipData);
@@ -511,7 +554,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_createUser_with_virtualExtension(Method method) throws InterruptedException
+	public void test_createUser_with_virtualExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -520,6 +563,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 		{
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUserWith_Virtual_Extension(driver, method.getName(), ipData, loginData, pmTests);
+		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		finally
 		{
@@ -533,7 +581,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_editUserToRemove_VirtualExtension(Method method) throws InterruptedException
+	public void test_editUserToRemove_VirtualExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -563,6 +611,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==0);
 			
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -574,7 +627,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	}
 	
 	@Test
-	public void test_editUserAssign_Existing_VirtualExtension(Method method) throws InterruptedException
+	public void test_editUserAssign_Existing_VirtualExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -603,6 +656,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[2]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -616,7 +674,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 	
 	
 	@Test
-	public void test_createUserAssign_Existing_VirtualExtension(Method method) throws InterruptedException
+	public void test_createUserAssign_Existing_VirtualExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -643,6 +701,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[2]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -656,7 +719,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 
 		
 	@Test
-	public void test_createUserWith_Extesnsion_Using_VirtualTemplate(Method method) throws InterruptedException
+	public void test_createUserWith_Extesnsion_Using_VirtualTemplate(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -677,7 +740,8 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			new ReusableUnits(driver).create_virtual_template(driver, method.getName(), ipData, loginData, extData[2]);
 			
 			new ReusableUnits(driver).navigateUserToServiceSummaryPage(driver, method.getName(), ipData, loginData, pmTests);
-			new SelectDropDownValue().selectByIndex(pmUser.getTemplateNameDropDown(), 1);
+			new SelectDropDownValue().selectByValue(pmExtension.getExtensionHomePageTemplateDropDown(),
+					"CUST."+extData[2]+"_SN_VirtualExtension");
 			pmUser.getCreateAndAssignExtensionToUser().click();
 			
 			new SelectDropDownValue().selectByVisibleText(pmExtension.getSelectExtensionsRange(), extData[1]);
@@ -707,6 +771,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmMainPge.getLogoutLink().click();
 			
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteTemplate(driver, method.getName(), loginData, extData[2], ipData);
@@ -721,7 +790,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 
 	
 	@Test
-	public void test_editUser_Assign_New_VirtualExtension(Method method) throws InterruptedException
+	public void test_editUser_Assign_New_VirtualExtension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -780,6 +849,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
 		}
+		catch(Exception e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		finally
 		{
 			new CleanUP(driver).deleteUser(driver, ipData, credentials, testData[0]);
@@ -788,6 +862,6 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			list.add(extData[6]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 }

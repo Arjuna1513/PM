@@ -88,9 +88,7 @@ public class Call_list_utilities
 		Assert.assertTrue(v1.size()==2 && v2.size()==1 && v3.size()==1 && v4.size()==1 && v5.size()==1 && v6.size()==1
 				& v7.size()==1 && v8.size()==1 && v9.size()==1 && v10.size()==1);
 		
-		List<WebElement> active = driver.findElements(By.xpath("//td[contains(text(),'List Number')]//following-sibling::td[contains(text(),'"+activeListNumber+"')]"
-				+ "//parent::tr//following-sibling::tr/td[contains(text(),'Status')]"
-				+ "//following-sibling::td[contains(text(),'Active')]"));
+		List<WebElement> active = driver.findElements(By.xpath("(//td[starts-with(.,'Status')])["+activeListNumber+"]//following-sibling::td[starts-with(text(),'Active')]"));
 		Assert.assertTrue(active.size()==1);
 
 	}
