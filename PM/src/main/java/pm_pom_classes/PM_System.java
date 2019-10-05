@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class System
+public class PM_System
 {
-	public System(WebDriver driver)
+	public PM_System(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

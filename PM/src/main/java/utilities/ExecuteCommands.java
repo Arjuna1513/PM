@@ -35,7 +35,7 @@ public class ExecuteCommands
 		snmMainPage = new SNM_Main_Page(driver);
 		snmSystempage = new SystemPage(driver);
 		toolsPage = new ToolsPage(driver);
-		wait = new WebDriverWait(driver, 40);
+		wait = new WebDriverWait(driver, 100);
 	}
 	
 	public void executeCmds(String methodName, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, ArrayList<String> pmTestData) throws InterruptedException

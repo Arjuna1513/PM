@@ -35,7 +35,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 	public PM_Function_Keys funcKeys;
 	public WebDriverWait wait = null;
 	
-	/*@Test
+	@Test
 	public void test_createDMN_FuncKey(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -78,7 +78,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 		}
 	}
 	
-	@Test
+	/*	@Test
 	public void test_createEDN_FuncKey(Method method) throws Exception
 	{
 		String[] testData = null;

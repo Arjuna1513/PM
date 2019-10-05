@@ -170,16 +170,16 @@ public class ReusableUnits
 		pmExtension.setLastName(extData[5]);
 		new SelectDropDownValue().selectByVisibleText(pmExtension.getPhoneTypeDropDown(), extData[6]);
 		pmExtension.getApplyButton().click();
-		/*Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-		pmExtension.getDoneButton().click();*/
+//		/*Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+//		pmExtension.getDoneButton().click();*/
 		
 		pmUser.getApplyButton().click();
 		Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Add operation successful for:");
 		pmUser.getDoneButton().click();
 		
-		/*new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
-		pmExtension.setEnterExtensionNumberTextBox(extData[2]);
-		pmExtension.getViewRangeButton().click();*/
+//		/*new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "IP");
+//		pmExtension.setEnterExtensionNumberTextBox(extData[2]);
+//		pmExtension.getViewRangeButton().click();*/
 		
 		pmUser.setUserSearchTextBox(testData[0]);
 		pmUser.getOnViewRangeButton().click();
@@ -1005,17 +1005,17 @@ public class ReusableUnits
 		pmExtension.getNextButton().click();
 		
 		
-		/*pmExtension.getApplyButton().click();
-		
-		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
-		pmExtension.getDoneButton().click();
-		
-		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Multi-Terminal");
-		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
-		pmExtension.getViewRangeButton().click();
-		
-		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
-		Assert.assertTrue(eles.size()==1);*/
+//		/*pmExtension.getApplyButton().click();
+//		
+//		Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
+//		pmExtension.getDoneButton().click();
+//		
+//		new SelectDropDownValue().selectByVisibleText(pmExtension.getExtensionTypeDropDownHomePage(), "Multi-Terminal");
+//		pmExtension.setEnterExtensionNumberTextBox(testData[1]);
+//		pmExtension.getViewRangeButton().click();
+//		
+//		List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'"+testData[2]+"')]"));
+//		Assert.assertTrue(eles.size()==1);*/
 	}
 
 	
