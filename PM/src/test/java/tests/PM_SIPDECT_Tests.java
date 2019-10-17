@@ -37,7 +37,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 	WebDriverWait wait = null;
 	public PM_Users pmUsers;
 	
-/*	@Test
+	@Test
 	public void test_create_SIP_DECT_extension(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -52,6 +52,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).create_SIPDECT_Extension(driver, method.getName(), ipData, loginData, pmTests,0);
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -87,6 +92,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			driver.switchTo().alert().accept();
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -130,6 +140,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -145,7 +160,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-*/	
+	
 	@Test
 	public void test_edit_configureParallel_ringing_to_SIPDECT(Method method) throws Exception
 	{
@@ -221,6 +236,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -240,7 +260,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 		}
 	}
 	
-/*	@Test
+	@Test
 	public void test_edit_SIPDECT_ExtensionCSP(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -277,6 +297,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -355,6 +380,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -419,6 +449,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -445,6 +480,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 		{
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUserWith_SIPDECT_Extension(driver, method.getName(), ipData, loginData, pmTests);
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -494,6 +534,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
 			Assert.assertTrue(eles.size()==0);
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -596,6 +641,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			List<WebElement> eles2 = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
 			Assert.assertTrue(eles2.size() == 1);
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -694,6 +744,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			List<WebElement> eles2 = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
 			Assert.assertTrue(eles2.size() == 1);
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -710,8 +765,8 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-*/	
-/*	@Test
+	
+	@Test
 	public void test_editUserAssignNew_SIPDECT_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
@@ -781,6 +836,11 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -796,5 +856,5 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			list.add(extData[11]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 }

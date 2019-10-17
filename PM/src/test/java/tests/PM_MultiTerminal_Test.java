@@ -50,6 +50,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0,"none");
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -80,6 +85,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0, "ip");
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -113,6 +123,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0, "sipauto");
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -148,6 +163,11 @@ public class PM_MultiTerminal_Test extends ConfigClass
 			list.add(testData[0]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).create_multi_TerminalExtension(driver, method.getName(), ipData, loginData, pmTests,0, "mobile");
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{

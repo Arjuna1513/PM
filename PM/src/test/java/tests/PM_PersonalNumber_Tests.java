@@ -69,6 +69,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -89,7 +94,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	
-/*	
+	
 	@Test
 	public void create_PN_Analog_Extension(Method method) throws Exception
 	{
@@ -122,6 +127,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			(driver, method.getName(), ipData, loginData, pmTests, "analog");
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -174,6 +184,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -225,6 +240,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -275,6 +295,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			(driver, method.getName(), ipData, loginData, pmTests, "sip-dect");
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -349,6 +374,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -419,6 +449,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			pmExtension.getDoneButton().click();
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -491,6 +526,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -560,6 +600,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			pmExtension.getDoneButton().click();
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -634,6 +679,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -704,6 +754,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			pmExtension.getDoneButton().click();
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -776,6 +831,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -846,6 +906,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -914,6 +979,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			pmExtension.getDoneButton().click();
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -984,6 +1054,11 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -1003,5 +1078,5 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	*/
+	
 }

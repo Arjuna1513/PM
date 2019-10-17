@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Default suite]]">
+  <test thread-count="5" name="Default test(failed)(failed)">
     <classes>
       <class name="tests.PM_Micollab_Test">
         <methods>
           <include name="test_edit_micollab_Role_from_entry_to_basic" invocation-numbers="0"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
+          <include name="test_edit_micollab_Role_from_premium_to_basic" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
+          <include name="test_edit_micollab_Role_from_standard_to_basic" invocation-numbers="0"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
         </methods>
       </class> <!-- tests.PM_Micollab_Test -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Default suite]] -->

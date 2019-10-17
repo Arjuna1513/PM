@@ -220,6 +220,11 @@ public class PM_Import_Test extends ConfigClass
 			Assert.assertEquals(noDataMsg, "No data found");
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -425,6 +430,11 @@ public class PM_Import_Test extends ConfigClass
 			Assert.assertEquals(noDataMsg, "No data found");
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -629,6 +639,11 @@ public class PM_Import_Test extends ConfigClass
 			String noDataMsg = driver.findElement(By.xpath("//b[contains(text(),'No data found')]")).getText().trim();
 			Assert.assertEquals(noDataMsg, "No data found");
 			pmMainPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -840,6 +855,11 @@ public class PM_Import_Test extends ConfigClass
 			Assert.assertEquals(noDataMsg, "No data found");
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -1045,6 +1065,11 @@ public class PM_Import_Test extends ConfigClass
 			Assert.assertEquals(noDataMsg, "No data found");
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -1249,6 +1274,11 @@ public class PM_Import_Test extends ConfigClass
 			String noDataMsg = driver.findElement(By.xpath("//b[contains(text(),'No data found')]")).getText().trim();
 			Assert.assertEquals(noDataMsg, "No data found");
 			pmMainPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{

@@ -59,6 +59,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -102,6 +107,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -144,6 +154,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'"+testData[8]+"-"+testData[3]+" "+testData[8]+" "+testData[3]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -189,6 +204,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -233,6 +253,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -270,6 +295,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -304,6 +334,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -337,6 +372,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'"+testData[8]+" "+testData[8]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -374,6 +414,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			List<WebElement> eles  = driver.findElements(By.xpath("//td[contains(text(),'"+testData[8]+" "+testData[8]+" "+testData[3]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 			pmMainPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -422,6 +467,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			Assert.assertTrue(eles1.size() == 1);
 			pmExtension.getDoneButton().click();
 			pmMainPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -475,6 +525,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmMainPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -519,6 +574,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"TNS");
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -558,6 +618,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[3]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"MNS");
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -599,6 +664,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"EDN");
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -638,6 +708,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[3]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"MOI");
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -679,6 +754,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"PGM");
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -718,6 +798,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[3]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"REC");
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -759,6 +844,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"DMN");
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -798,6 +888,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"GMA");
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -836,6 +931,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[3]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key(driver,method.getName(), ipData, loginData,pmTests,"MCT");
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -878,6 +978,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key_SCA_SCABR(driver,method.getName(), ipData, loginData,pmTests,"SCA");
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -919,6 +1024,11 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[4]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			new ReusableUnits(driver).clear_function_key_SCA_SCABR(driver,method.getName(), ipData, loginData,pmTests,"SCABR");
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{

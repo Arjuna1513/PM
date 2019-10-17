@@ -56,6 +56,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			new ReusableUnits_Analog_Digital(driver).createAnalogExtension(driver, method.getName(), ipData, pmTests, loginData, 0);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -117,6 +122,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -175,6 +185,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -239,6 +254,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 				Assert.assertTrue(eles.size()==1);
 				pmExtension.getDoneButton().click();
 				pmUser.getLogoutLink().click();
+			}
+			catch(Error e)
+			{
+					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					throw e;
 			}
 			catch(Exception e)
 			{
@@ -321,6 +341,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 				pmExtension.getDoneButton().click();
 				
 				pmUser.getLogoutLink().click();
+			}
+			catch(Error e)
+			{
+					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					throw e;
 			}
 			catch(Exception e)
 			{
@@ -409,6 +434,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -461,6 +491,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			driver.switchTo().alert().accept();
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -525,6 +560,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			Assert.assertTrue(ele3.size() == 1 && ele4.size() == 1);
 			
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -597,6 +637,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -664,6 +709,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -712,6 +762,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			pmUser.getOnViewRangeButton().click();
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -779,6 +834,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -833,6 +893,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -883,6 +948,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			pmUser.getOnViewRangeButton().click();
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size() == 0);
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -955,6 +1025,11 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+ipTestData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{

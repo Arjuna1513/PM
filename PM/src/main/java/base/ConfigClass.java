@@ -17,6 +17,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -125,7 +126,7 @@ public class ConfigClass
 	}
 	
 	@BeforeMethod
-	public void beforeMethod()
+	public void beforeMethod(ITestContext context)
 	{
 //		driver.get("https://sqa.stackexchange.com/questions/36253/taking-screenshot-on-test-failure-selenium-webdriver-testng");
 //		System.out.println(driver);
@@ -139,6 +140,8 @@ public class ConfigClass
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		
+		context.setAttribute("WebDriver", driver);
 	}
 	
 	@AfterMethod

@@ -3,14 +3,17 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
+      <class name="tests.PM_Micollab_Test"/>
       <class name="tests.PM_User_Test"/>
       <class name="tests.PM_FunctionKeys_Test"/>
       <class name="tests.PM_Extension_Test"/>
       <class name="tests.PM_DigitalExtension_Test"/>
+      <class name="tests.Demo_Delete_Users"/>
       <class name="tests.PM_AnalogExtension_Test"/>
       <class name="tests.PM_SIPDECT_Tests"/>
       <class name="tests.PM_MultiTerminal_Test"/>
       <class name="tests.PM_PersonalNumber_Tests"/>
+      <class name="tests.PM_Import_Test"/>
       <class name="tests.PM_VirtualExtension_Test"/>
     </classes>
   </test> <!-- Test -->

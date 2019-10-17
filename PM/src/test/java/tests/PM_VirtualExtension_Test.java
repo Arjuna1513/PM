@@ -54,6 +54,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			new ReusableUnits(driver).create_virtual_extension(driver, method.getName(), ipData, loginData, pmTests,0);
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -86,6 +91,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			driver.switchTo().alert().accept();
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -137,6 +147,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			driver.switchTo().alert().accept();
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Remove operation successful for:");
 			pmUser.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -203,6 +218,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -258,6 +278,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -396,6 +421,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmUser.getLogoutLink().click();
 
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -462,6 +492,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -534,6 +569,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -563,6 +603,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 		{
 			pmTests.checkTestStatus(method.getName());
 			new ReusableUnits(driver).createUserWith_Virtual_Extension(driver, method.getName(), ipData, loginData, pmTests);
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -611,6 +656,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==0);
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -656,6 +706,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[2]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -700,6 +755,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			pmUser.getOnViewRangeButton().click();
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[2]+"')]"));
 			Assert.assertTrue(eles.size() == 1);
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -770,6 +830,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -848,6 +913,11 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			List<WebElement> eles = driver.findElements(By.xpath("(//td[contains(text(),'"+testData[0]+"')])[1]//following-sibling::td[contains(text(),'"+extData[1]+"')]"));
 			Assert.assertTrue(eles.size()==1);
 			pmMainPge.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{

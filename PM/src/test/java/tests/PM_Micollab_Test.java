@@ -1,5 +1,7 @@
 package tests;
 
+import static org.testng.Assert.fail;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.Test;
 
 import base.ConfigClass;
@@ -60,10 +63,10 @@ public class PM_Micollab_Test extends ConfigClass
 		serverManagerPage.getSearchButton().click();
 		Thread.sleep(10000);
 //		Thread.sleep(2000);
-	}*/
+	}
+	*/
 	
-	
-/*	@Test
+	@Test
 	public void test_CreateUser_basicRole(Method method) throws Exception
 	{
 		authCodePage = new PM_Auth_Code_Page(driver);
@@ -223,6 +226,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -407,6 +415,11 @@ public class PM_Micollab_Test extends ConfigClass
 			driver.switchTo().frame(serverManagerPage.getHeaderFrame());
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -602,6 +615,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -796,6 +814,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -962,6 +985,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -1126,6 +1154,11 @@ public class PM_Micollab_Test extends ConfigClass
 			driver.switchTo().frame(serverManagerPage.getHeaderFrame());
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -1292,6 +1325,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -1455,6 +1493,11 @@ public class PM_Micollab_Test extends ConfigClass
 			driver.switchTo().frame(serverManagerPage.getHeaderFrame());
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -1645,6 +1688,11 @@ public class PM_Micollab_Test extends ConfigClass
 			serverManagerPage.getLogoutLink().click();
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -1834,6 +1882,11 @@ public class PM_Micollab_Test extends ConfigClass
 			driver.switchTo().frame(serverManagerPage.getHeaderFrame());
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -2034,6 +2087,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -2233,6 +2291,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -2257,9 +2320,9 @@ public class PM_Micollab_Test extends ConfigClass
 			}
 		}
 	}
-*/	
 	
-/*	@Test
+	
+	@Test
 	public void test_edit_micollab_Role_from_basic_to_entry(Method method) throws Exception
 	{
 		authCodePage = new PM_Auth_Code_Page(driver);
@@ -2525,6 +2588,11 @@ public class PM_Micollab_Test extends ConfigClass
 			serverManagerPage.getLogoutLink().click();
 			
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -2819,6 +2887,11 @@ public class PM_Micollab_Test extends ConfigClass
 			
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -3112,6 +3185,11 @@ public class PM_Micollab_Test extends ConfigClass
 			
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -3135,7 +3213,7 @@ public class PM_Micollab_Test extends ConfigClass
 			}
 		}
 	}
-*/	
+	
 	
 	
 	@Test
@@ -3404,6 +3482,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -3698,6 +3781,11 @@ public class PM_Micollab_Test extends ConfigClass
 			serverManagerPage.getLogoutLink().click();
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -3989,6 +4077,11 @@ public class PM_Micollab_Test extends ConfigClass
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -4287,6 +4380,11 @@ public class PM_Micollab_Test extends ConfigClass
 			driver.switchTo().frame(serverManagerPage.getHeaderFrame());
 			Thread.sleep(2000);
 			serverManagerPage.getLogoutLink().click();
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -4589,6 +4687,11 @@ public class PM_Micollab_Test extends ConfigClass
 			
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -4889,6 +4992,11 @@ public class PM_Micollab_Test extends ConfigClass
 			
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -4913,7 +5021,7 @@ public class PM_Micollab_Test extends ConfigClass
 		}
 	}
 	
-	
+
 	
 	
 	@Test
@@ -5190,6 +5298,11 @@ public class PM_Micollab_Test extends ConfigClass
 			serverManagerPage.getLogoutLink().click();
 			
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
@@ -5492,6 +5605,11 @@ public class PM_Micollab_Test extends ConfigClass
 			
 			
 		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
+		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
@@ -5793,6 +5911,11 @@ public class PM_Micollab_Test extends ConfigClass
 			serverManagerPage.getLogoutLink().click();
 			
 			
+		}
+		catch(Error e)
+		{
+				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				throw e;
 		}
 		catch(Exception e)
 		{
