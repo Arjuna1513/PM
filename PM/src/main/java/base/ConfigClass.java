@@ -7,12 +7,16 @@ import java.nio.file.Paths;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -82,13 +86,42 @@ public class ConfigClass
 	{
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
-		driver = new ChromeDriver(dc);
+		
+//		dc.setCapability(ChromeOptions.CAPABILITY, options);
+		
+		// ChromeDriver is just AWFUL because every version or two it breaks unless you pass cryptic arguments
+        //AGRESSIVE: options.setPageLoadStrategy(PageLoadStrategy.NONE); // https://www.skptricks.com/2018/08/timed-out-receiving-message-from-renderer-selenium.html
+//        options.addArguments("start-maximized"); // https://stackoverflow.com/a/26283818/1689770
+//        options.addArguments("enable-automation"); // https://stackoverflow.com/a/43840128/1689770
+//        options.addArguments("--headless"); // only if you are ACTUALLY running headless
+//        options.addArguments("--no-sandbox"); //https://stackoverflow.com/a/50725918/1689770
+//        options.addArguments("--disable-infobars"); //https://stackoverflow.com/a/43840128/1689770
+//        options.addArguments("--disable-dev-shm-usage"); //https://stackoverflow.com/a/50725918/1689770
+//        options.addArguments("--disable-browser-side-navigation"); //https://stackoverflow.com/a/49123152/1689770
+//        options.addArguments("--disable-gpu"); //https://stackoverflow.com/questions/51959986/how-to-solve-selenium-chromedriver-timed-out-receiving-message-from-renderer-exc
+//        driver = new ChromeDriver(options);
+		
+		
+		
+//		ChromeOptions options = new ChromeOptions();
+//		options.addArguments("enable-automation");
+//		options.addArguments("--window-size=1920,1080");
+//		options.addArguments("--no-sandbox");
+//		options.addArguments("--disable-extensions");
+//		options.addArguments("--dns-prefetch-disable");
+//		options.addArguments("--disable-gpu");
+//		options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+//		options.merge(dc);
+//		
+//		driver = new ChromeDriver();
+		
+		 
 	}
 	
 	@AfterClass
 	public void afterClass()
 	{
-		driver.close();
+//		driver.close();
 	}
 	
 	@BeforeMethod
@@ -96,6 +129,13 @@ public class ConfigClass
 	{
 //		driver.get("https://sqa.stackexchange.com/questions/36253/taking-screenshot-on-test-failure-selenium-webdriver-testng");
 //		System.out.println(driver);
+		FirefoxProfile profile = new FirefoxProfile();
+	    profile.setPreference("browser.cache.disk.enable", false);
+	    profile.setPreference("browser.cache.memory.enable", false);
+	    profile.setPreference("browser.cache.offline.enable", false);
+	    profile.setPreference("network.http.use-cache", false);
+	    FirefoxOptions options = new FirefoxOptions().setProfile(profile);
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -104,6 +144,7 @@ public class ConfigClass
 	@AfterMethod
 	public void afterMethod(ITestResult result) throws IOException
 	{
+		driver.close();
 		/*if(result.getStatus() == 2)
 		{
 			String methodName = result.getMethod().getMethodName();

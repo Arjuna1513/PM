@@ -882,7 +882,7 @@ public class ReusableUnits
 	}
 	
 	
-	public void createIPTemplate(WebDriver driver, String methodName, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName)
+	public void createIPTemplate(WebDriver driver, String methodName, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName) throws InterruptedException
 	{
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
 //		String[] testData = pmTests.getData(methodName, 3);
@@ -909,7 +909,7 @@ public class ReusableUnits
 	}
 	
 	
-	public void create_virtual_template(WebDriver driver, String methodName, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName)
+	public void create_virtual_template(WebDriver driver, String methodName, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName) throws InterruptedException
 	{
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
 		driver.get(ipData.getData(0, 0));

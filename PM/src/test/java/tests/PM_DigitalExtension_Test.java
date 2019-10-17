@@ -39,7 +39,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 	public PM_Users pmUsers;
 	
 	
-	@Test
+/*	@Test
 	public void test_createDigitalExtension(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -682,7 +682,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	
+*/	
 	@Test
 	public void test_createUser_with_Digital_Extension(Method method) throws Exception
 	{
@@ -726,7 +726,13 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmExtension.setDigitalFirstname(testData[4]);
 			pmExtension.setDigitalLastname(testData[5]);
 			pmExtension.getApplyButton().click();
+			
+			pmExtension.getApplyButtonAfterAssigningDigitalExtension().click();
 //			pmExtension.getDoneButton().click();
+			
+//			WebDriverWait wait = new WebDriverWait(driver, 100);
+//			wait.until(ExpectedConditions.textToBe(By.className("responseMessage"), "Add operation successful for:"));
+			
 			Assert.assertEquals(pmExtension.getResponseMessage(), "Add operation successful for:");
 			pmExtension.getDoneButton().click();
 			
@@ -752,7 +758,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 		}
 	}
 	
-	@Test
+/*	@Test
 	public void test_createUser_with_existing_Digital_Extension(Method method) throws Exception
 	{
 		list = new ArrayList<String>();
@@ -1043,4 +1049,5 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
+	*/
 }

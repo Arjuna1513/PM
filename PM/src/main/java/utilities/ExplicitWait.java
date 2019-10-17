@@ -1,11 +1,15 @@
 package utilities;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class ExplicitWait 
 {
@@ -49,6 +53,13 @@ public class ExplicitWait
 	{
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("")));
+	}
+	
+	public List<WebElement> numberOfElementsPresent(WebDriver driver, int time, By locator)
+	{
+		driver.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+		List<WebElement> list = driver.findElements(locator);
+		return list;
 	}
 	
 }

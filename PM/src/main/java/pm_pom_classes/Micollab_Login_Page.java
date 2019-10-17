@@ -47,4 +47,14 @@ public class Micollab_Login_Page
 		return submitButton;
 	}
 	
+	public void micollab_login(String uName, String pwd) throws InterruptedException
+	{
+		getLoginField().clear();
+		getPassword().clear();
+		Thread.sleep(1000);
+		setLoginField(uName);
+		setPassword(pwd);
+		submitButton.click();
+	}
+	
 }

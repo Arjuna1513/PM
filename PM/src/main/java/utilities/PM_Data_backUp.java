@@ -39,7 +39,7 @@ public class PM_Data_backUp
 		dataMgmt = new PM_System_DataManagement(driver);
 	}
 	
-	public void take_pm_data_backUp(WebDriver driver, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData)
+	public void take_pm_data_backUp(WebDriver driver, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData) throws InterruptedException
 	{
 		List<WebElement> list;
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
@@ -58,7 +58,7 @@ public class PM_Data_backUp
 	}
 	
 	
-	public void restore_pm_data_backUp(WebDriver driver, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData)
+	public void restore_pm_data_backUp(WebDriver driver, ExcelReadAndWrite ipData, ExcelReadAndWrite loginData) throws InterruptedException
 	{
 		List<WebElement> list;
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);

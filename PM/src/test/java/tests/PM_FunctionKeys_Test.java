@@ -78,7 +78,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 		}
 	}
 	
-	/*	@Test
+	@Test
 	public void test_createEDN_FuncKey(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -350,8 +350,9 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[10]);
 			list.add(testData[11]);
 			list.add(testData[12]);
-			list.add(testData[14]);
-			list.add(testData[15]);
+//			list.add(testData[13]);
+//			list.add(testData[14]);
+//			list.add(testData[15]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
@@ -395,16 +396,15 @@ public class PM_FunctionKeys_Test extends ConfigClass
 	public void test_createSCA_FuncKey(Method method) throws Exception
 	{
 		String[] testData = null;
+		String[] extData = null;
 		pmExtension = new Extension(driver);
 		try
 		{
 			pmTests.checkTestStatus(method.getName());
 			pmMainPage = new PM_Main_Page(driver);
-			testData = pmTests.getData(method.getName(), 3);
+			extData = pmTests.getData(method.getName(), 3);
 			list = new ArrayList<String>();
-			list.add(testData[0]);
-			list.add(testData[1]);
-			list.add(testData[2]);
+			list.add(extData[0]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			testData = pmTests.getData(method.getName(), 1);
 			list.clear();
@@ -448,16 +448,15 @@ public class PM_FunctionKeys_Test extends ConfigClass
 	public void test_createSCABR_FuncKey(Method method) throws Exception
 	{
 		String[] testData = null;
+		String[] extData = null;
 		pmExtension = new Extension(driver);
 		try
 		{
 			pmTests.checkTestStatus(method.getName());
 			pmMainPage = new PM_Main_Page(driver);
-			testData = pmTests.getData(method.getName(), 3);
+			extData = pmTests.getData(method.getName(), 3);
 			list = new ArrayList<String>();
-			list.add(testData[0]);
-			list.add(testData[1]);
-			list.add(testData[2]);
+			list.add(extData[0]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 			testData = pmTests.getData(method.getName(), 1);
 			list.clear();
@@ -494,10 +493,10 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[16]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
+	@Test
 	public void test_clearTNS_funcKey(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -614,10 +613,10 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-	/*@Test
+	@Test
 	public void test_clearMOI_funcKey(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -654,10 +653,10 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			list.add(testData[9]);
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
-	}*/
+	}
 	
 	
-/*	@Test
+	@Test
 	public void test_clearPGM_funcKey(Method method) throws Exception
 	{
 		String[] testData = null;
@@ -895,7 +894,7 @@ public class PM_FunctionKeys_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-*/	
+	
 	
 	@Test
 	public void test_clearSCABR_funcKey(Method method) throws Exception

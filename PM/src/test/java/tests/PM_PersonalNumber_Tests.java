@@ -89,7 +89,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 	}
 	
 	
-	
+/*	
 	@Test
 	public void create_PN_Analog_Extension(Method method) throws Exception
 	{
@@ -1003,5 +1003,5 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	
+	*/
 }

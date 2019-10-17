@@ -51,10 +51,11 @@ public class PM_Login_Page
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void PM_Login(String userName, String usrPassword)
+	public void PM_Login(String userName, String usrPassword) throws InterruptedException
 	{
 		setUserLoginTextBox(userName);
 		getUserPasswordTextBox().click();
+		Thread.sleep(1000);
 		setUserPasswordTextBox(usrPassword);
 		getUserLoginButton().click();
 	}

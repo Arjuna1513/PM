@@ -9,6 +9,15 @@ import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import pm_pom_classes.PM_System_DataManagement;
 
 public class UploadFile 
 {
@@ -187,7 +196,7 @@ public class UploadFile
 	}
 	    
 	
-	public void generate_BulkFile_For_NEW_Extension(String ext, String delimiter, int extCount, String usrName)
+	public void generate_BulkFile_For_NEW_Extension(String ext, String delimiter, int extCount, String usrName, String templateName)
 	{
         BufferedReader br = null;
         BufferedWriter br1 = null;
@@ -201,7 +210,7 @@ public class UploadFile
             String gmail;
             String equipmentPosition;
             String lcl_ext;
-            String tempName = "IPTemp_SN_IPExtension";
+            String tempName = templateName+"_SN_IPExtension";
             String AnalogTempName = "Digital_SN6_DigitalExtension";
             for(int i=1; i<=extCount; i++)
             {
@@ -323,6 +332,34 @@ public class UploadFile
                 e.printStackTrace();
             }
         }
+	}
+	
+/*	
+	public static void main(String[] args) throws IOException
+	{    
+		String ext = "80000000000000000000";
+		UploadFile rd = new UploadFile();
+		rd.generate_BulkFile_For_Existing_Extension(ext, " ",1000,"Mangya");
+//		File f = new File("./BulkFile.csv");
+//		f.delete();
+//		rd.generate_BulkFile_For_NEW_Extension(ext, "semicolon");
+	}*/
+	
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	public void wait_till_successful_import(PM_System_DataManagement dataMgmt, WebDriver driver)
+	{
+//		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 2000);
+		dataMgmt.getApplyButton().click();
+//		wait.until(ExpectedConditions.textToBe(By.className("responseMessage"), "  Import operation successful for:"));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(@class,'responseMessage')]")));
+		Assert.assertEquals(driver.findElement(By.xpath("//span[contains(@class,'responseMessage')]")).getText().trim(), "Import operation successful for:");
+		
 	}
 	
 }

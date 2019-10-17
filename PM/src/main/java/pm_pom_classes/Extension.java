@@ -77,6 +77,14 @@ public class Extension
 		return applyButtonAfterAssigningDigitalExtension;
 	}
 	
+//	@FindBy(id="onApplyButtonTopID")
+//	private WebElement editPageApplyButton;
+//	
+//	public WebElement getEditPageApplyButton()
+//	{
+//		return editPageApplyButton;
+//	}
+	
 	//MiVoice MX-ONE: drop-down
 	@FindBy(name="range")
 	private WebElement miVoiceMXONEDropDown;
@@ -1092,4 +1100,6 @@ public class Extension
 	{
 		return multiStepBackButton;
 	}
+	
+	
 }

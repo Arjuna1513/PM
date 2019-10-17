@@ -40,7 +40,7 @@ public class ReusableUnits_Analog_Digital
 		funcKeys = new PM_Function_Keys(driver);
 	}
 	
-	public void createAnalogTemplate(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName)
+	public void createAnalogTemplate(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName) throws InterruptedException
 	{
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
 //		String[] testData = pmTests.getData(methodName, 3);
@@ -65,7 +65,7 @@ public class ReusableUnits_Analog_Digital
 		pmMainPge.getLogoutLink().click();
 	}
 	
-	public void createDigitalTemplate(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName)
+	public void createDigitalTemplate(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, String templateName) throws InterruptedException
 	{
 		String[] credentials = loginData.getData("test_pm_valid_login", 1);
 //		String[] testData = pmTests.getData(methodName, 3);
