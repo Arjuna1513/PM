@@ -1,22 +1,336 @@
-2019-08-07 01:32:10 INFO  method1:28 - Hello
-2019-08-07 01:33:43 INFO  method:28 - Hello
-2019-08-07 01:33:43 INFO  method1:28 - Hello
-2019-08-07 01:37:02 ERROR MyTest:43 - error
-2019-08-07 01:40:20 ERROR MyTest:43 - error
-2019-08-07 01:40:20 ERROR MyTest:43 - / by zero
-2019-08-07 01:50:17 ERROR MyTest:43 - error
-2019-08-07 01:50:17 ERROR MyTest:43 - / by zero
-2019-08-07 01:51:51 ERROR MyTest:43 - error
-2019-08-07 01:51:51 ERROR MyTest:43 - / by zero
-2019-08-07 01:53:07 ERROR MyTest:43 - error
-2019-08-07 01:53:07 ERROR MyTest:43 - java.lang.ArithmeticException: / by zero
-2019-08-07 01:55:12 ERROR MyTest:43 - error
-2019-08-07 01:55:22 ERROR MyTest:43 - org.openqa.selenium.NoSuchElementException: Unable to locate element: #kkk
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'IN-7SMH5H2', ip: '172.25.109.193', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 68.0.1, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20190717172542, moz:geckodriverVersion: 0.24.0, moz:headless: false, moz:processID: 152332, moz:profile: C:\Users\mallikar\AppData\L..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, rotatable: false, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: c46db1a4-7982-427e-a147-8cefe92e83bc
-*** Element info: {Using=id, value=kkk}
-2019-08-13 21:57:59 ERROR MyTest:65 - error
+2019-10-19 14:04:30 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonOperatorNumbers ===========
+2019-10-19 14:04:38 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 14:04:46 DEBUG SNM_Internal_NumberSeries_Test:98 - Add Directory numbers is successful
+2019-10-19 14:04:49 DEBUG SNM_Internal_NumberSeries_Test:103 - Before Viewing the created Number series
+2019-10-19 14:04:49 DEBUG SNM_Internal_NumberSeries_Test:119 - Element is viewed successfully
+2019-10-19 14:15:34 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_individualOperatorNumbers ===========
+2019-10-19 14:17:15 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_individualOperatorNumbers ===========
+2019-10-19 14:17:23 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 14:17:30 DEBUG SNM_Internal_NumberSeries_Test:98 - Add Directory numbers is successful
+2019-10-19 14:17:33 DEBUG SNM_Internal_NumberSeries_Test:103 - Before Viewing the created Number series
+2019-10-19 14:17:33 DEBUG SNM_Internal_NumberSeries_Test:127 - Element is viewed successfully
+2019-10-19 14:26:03 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonAbbreviatedNumbers ===========
+2019-10-19 14:26:11 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 14:27:04 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonAbbreviatedNumbers ===========
+2019-10-19 14:27:12 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 14:27:19 DEBUG SNM_Internal_NumberSeries_Test:98 - Add Directory numbers is successful
+2019-10-19 14:27:22 DEBUG SNM_Internal_NumberSeries_Test:103 - Before Viewing the created Number series
+2019-10-19 14:27:22 DEBUG SNM_Internal_NumberSeries_Test:135 - Element is viewed successfully
+2019-10-19 15:26:42 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_individualAbbreviatedNumbers ===========
+2019-10-19 15:27:46 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_individualAbbreviatedNumbers ===========
+2019-10-19 15:28:05 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 15:28:56 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 15:29:11 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 15:29:11 DEBUG SNM_Internal_NumberSeries_Test:162 - Element is viewed successfully
+2019-10-19 15:54:52 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_gatewayRoutingNumbers ===========
+2019-10-19 15:55:19 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_gatewayRoutingNumbers ===========
+2019-10-19 15:56:32 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_gatewayRoutingNumbers ===========
+2019-10-19 15:59:21 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_gatewayRoutingNumbers ===========
+2019-10-19 15:59:22 FATAL SNM_Internal_NumberSeries_Test:418 - java.lang.NullPointerException
+2019-10-19 16:02:08 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_gatewayRoutingNumbers ===========
+2019-10-19 16:03:01 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 16:03:58 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 16:04:14 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 16:04:14 DEBUG SNM_Internal_NumberSeries_Test:194 - Element is viewed successfully
+2019-10-19 16:38:17 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonAbbreviatedNumbers ===========
+2019-10-19 16:38:37 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 16:41:16 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonAbbreviatedNumbers ===========
+2019-10-19 16:41:34 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 16:42:22 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 16:42:38 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 16:42:38 DEBUG SNM_Internal_NumberSeries_Test:141 - Element is viewed successfully
+2019-10-19 16:42:52 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 16:43:21 DEBUG SNM_Internal_NumberSeries_Test:294 - Before deleting Directory numbers
+2019-10-19 16:43:33 DEBUG SNM_Internal_NumberSeries_Test:297 - After deleting Directory numbers
+2019-10-19 16:43:43 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonOperatorNumbers ===========
+2019-10-19 16:44:06 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 16:44:41 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 16:44:53 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 16:44:53 DEBUG SNM_Internal_NumberSeries_Test:125 - Element is viewed successfully
+2019-10-19 16:45:00 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 16:45:29 DEBUG SNM_Internal_NumberSeries_Test:258 - Before deleting Directory numbers
+2019-10-19 16:45:36 DEBUG SNM_Internal_NumberSeries_Test:261 - After deleting Directory numbers
+2019-10-19 16:45:51 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_dialedNumberInfoService ===========
+2019-10-19 16:46:13 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 16:50:49 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonAbbreviatedNumbers ===========
+2019-10-19 16:59:43 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonAbbreviatedNumbers ===========
+2019-10-19 17:00:01 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:00:17 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:00:24 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:00:24 DEBUG SNM_Internal_NumberSeries_Test:141 - Element is viewed successfully
+2019-10-19 17:00:30 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:00:37 DEBUG SNM_Internal_NumberSeries_Test:294 - Before deleting Directory numbers
+2019-10-19 17:00:41 DEBUG SNM_Internal_NumberSeries_Test:297 - After deleting Directory numbers
+2019-10-19 17:01:19 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonOperatorNumbers ===========
+2019-10-19 17:01:43 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:02:04 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:02:15 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:02:15 DEBUG SNM_Internal_NumberSeries_Test:125 - Element is viewed successfully
+2019-10-19 17:02:22 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:02:39 DEBUG SNM_Internal_NumberSeries_Test:258 - Before deleting Directory numbers
+2019-10-19 17:02:43 DEBUG SNM_Internal_NumberSeries_Test:261 - After deleting Directory numbers
+2019-10-19 17:02:52 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_dialedNumberInfoService ===========
+2019-10-19 17:03:16 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:03:54 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:04:07 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:04:07 DEBUG SNM_Internal_NumberSeries_Test:178 - Element is viewed successfully
+2019-10-19 17:04:13 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:04:30 DEBUG SNM_Internal_NumberSeries_Test:384 - Before deleting Directory numbers
+2019-10-19 17:04:36 DEBUG SNM_Internal_NumberSeries_Test:387 - After deleting Directory numbers
+2019-10-19 17:04:48 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_directoryNumbers ===========
+2019-10-19 17:05:04 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:05:28 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:05:37 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:05:37 DEBUG SNM_Internal_NumberSeries_Test:117 - Element is viewed successfully
+2019-10-19 17:05:44 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:05:59 DEBUG SNM_Internal_NumberSeries_Test:239 - Before deleting Directory numbers
+2019-10-19 17:06:04 DEBUG SNM_Internal_NumberSeries_Test:242 - After deleting Directory numbers
+2019-10-19 17:06:14 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_emergencyOperatorNumbers ===========
+2019-10-19 17:06:30 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:07:02 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:07:11 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:07:11 DEBUG SNM_Internal_NumberSeries_Test:149 - Element is viewed successfully
+2019-10-19 17:07:17 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:07:38 DEBUG SNM_Internal_NumberSeries_Test:312 - Before deleting Directory numbers
+2019-10-19 17:07:43 DEBUG SNM_Internal_NumberSeries_Test:315 - After deleting Directory numbers
+2019-10-19 17:07:53 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_gatewayRoutingNumbers ===========
+2019-10-19 17:08:40 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:09:25 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:09:36 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:09:36 DEBUG SNM_Internal_NumberSeries_Test:194 - Element is viewed successfully
+2019-10-19 17:09:46 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:10:08 DEBUG SNM_Internal_NumberSeries_Test:420 - Before deleting Directory numbers
+2019-10-19 17:10:14 DEBUG SNM_Internal_NumberSeries_Test:423 - After deleting Directory numbers
+2019-10-19 17:10:24 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_individualAbbreviatedNumbers ===========
+2019-10-19 17:10:42 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:11:10 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:11:19 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:11:20 DEBUG SNM_Internal_NumberSeries_Test:162 - Element is viewed successfully
+2019-10-19 17:11:28 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:11:51 DEBUG SNM_Internal_NumberSeries_Test:330 - Before deleting Directory numbers
+2019-10-19 17:11:58 DEBUG SNM_Internal_NumberSeries_Test:333 - After deleting Directory numbers
+2019-10-19 17:12:01 DEBUG SNM_Internal_NumberSeries_Test:348 - Before deleting Directory numbers
+2019-10-19 17:12:10 DEBUG SNM_Internal_NumberSeries_Test:351 - After deleting Directory numbers
+2019-10-19 17:12:20 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_individualOperatorNumbers ===========
+2019-10-19 17:12:40 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:13:02 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:13:14 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:13:14 DEBUG SNM_Internal_NumberSeries_Test:133 - Element is viewed successfully
+2019-10-19 17:13:19 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:13:36 DEBUG SNM_Internal_NumberSeries_Test:276 - Before deleting Directory numbers
+2019-10-19 17:13:41 DEBUG SNM_Internal_NumberSeries_Test:279 - After deleting Directory numbers
+2019-10-19 17:13:52 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_pagingNumbers ===========
+2019-10-19 17:14:07 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:14:37 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:14:46 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:14:47 DEBUG SNM_Internal_NumberSeries_Test:186 - Element is viewed successfully
+2019-10-19 17:14:51 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:15:10 DEBUG SNM_Internal_NumberSeries_Test:402 - Before deleting Directory numbers
+2019-10-19 17:15:15 DEBUG SNM_Internal_NumberSeries_Test:405 - After deleting Directory numbers
+2019-10-19 17:15:25 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_routeDirectoryNumbers ===========
+2019-10-19 17:15:43 INFO  SNM_Internal_NumberSeries_Test:47 - After successful login
+2019-10-19 17:16:19 DEBUG SNM_Internal_NumberSeries_Test:104 - Add Directory numbers is successful
+2019-10-19 17:16:32 DEBUG SNM_Internal_NumberSeries_Test:109 - Before Viewing the created Number series
+2019-10-19 17:16:32 DEBUG SNM_Internal_NumberSeries_Test:170 - Element is viewed successfully
+2019-10-19 17:16:38 INFO  SNM_Internal_NumberSeries_Test:221 - After successful login
+2019-10-19 17:17:01 DEBUG SNM_Internal_NumberSeries_Test:366 - Before deleting Directory numbers
+2019-10-19 17:17:04 DEBUG SNM_Internal_NumberSeries_Test:369 - After deleting Directory numbers
+2019-10-20 16:37:15 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_accessNumbersForMobExtWithAuth ===========
+2019-10-20 16:37:23 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:37:31 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:37:35 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:37:35 DEBUG SNM_Internal_NumberSeries_Test:354 - Element is viewed successfully
+2019-10-20 16:37:38 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:37:43 DEBUG SNM_Internal_NumberSeries_Test:875 - Before deleting Directory numbers
+2019-10-20 16:37:45 DEBUG SNM_Internal_NumberSeries_Test:878 - After deleting Directory numbers
+2019-10-20 16:37:54 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_accessNumbersForMobExtWithOutAuth ===========
+2019-10-20 16:38:02 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:38:12 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:38:15 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:38:15 DEBUG SNM_Internal_NumberSeries_Test:346 - Element is viewed successfully
+2019-10-20 16:38:18 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:38:23 DEBUG SNM_Internal_NumberSeries_Test:853 - Before deleting Directory numbers
+2019-10-20 16:38:25 DEBUG SNM_Internal_NumberSeries_Test:856 - After deleting Directory numbers
+2019-10-20 16:38:34 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_accessNumbersForMobExtWithOutAuthAndDialTone ===========
+2019-10-20 16:38:43 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:38:51 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:38:54 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:38:54 DEBUG SNM_Internal_NumberSeries_Test:362 - Element is viewed successfully
+2019-10-20 16:38:57 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:39:01 DEBUG SNM_Internal_NumberSeries_Test:897 - Before deleting Directory numbers
+2019-10-20 16:39:03 DEBUG SNM_Internal_NumberSeries_Test:900 - After deleting Directory numbers
+2019-10-20 16:39:13 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonDirectInDialingOperatorNumbers ===========
+2019-10-20 16:39:21 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:39:28 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:39:32 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:39:32 DEBUG SNM_Internal_NumberSeries_Test:317 - Element is viewed successfully
+2019-10-20 16:39:34 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:39:39 DEBUG SNM_Internal_NumberSeries_Test:771 - Before deleting Directory numbers
+2019-10-20 16:39:40 DEBUG SNM_Internal_NumberSeries_Test:774 - After deleting Directory numbers
+2019-10-20 16:39:50 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonPublicDirectoryNumbers ===========
+2019-10-20 16:39:58 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:40:05 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:40:08 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:40:08 DEBUG SNM_Internal_NumberSeries_Test:338 - Element is viewed successfully
+2019-10-20 16:40:11 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:40:16 DEBUG SNM_Internal_NumberSeries_Test:815 - Before deleting Directory numbers
+2019-10-20 16:40:17 DEBUG SNM_Internal_NumberSeries_Test:818 - After deleting Directory numbers
+2019-10-20 16:40:20 DEBUG SNM_Internal_NumberSeries_Test:831 - Before deleting Directory numbers
+2019-10-20 16:40:22 DEBUG SNM_Internal_NumberSeries_Test:834 - After deleting Directory numbers
+2019-10-20 16:40:32 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_directInwardServiceAccess ===========
+2019-10-20 16:40:32 FATAL SNM_Internal_NumberSeries_Test:479 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 16:40:40 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:41:50 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_externalCoordinatedNumbers ===========
+2019-10-20 16:41:58 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:42:05 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:42:08 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:42:08 DEBUG SNM_Internal_NumberSeries_Test:293 - Element is viewed successfully
+2019-10-20 16:42:10 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:42:15 DEBUG SNM_Internal_NumberSeries_Test:705 - Before deleting Directory numbers
+2019-10-20 16:42:17 DEBUG SNM_Internal_NumberSeries_Test:708 - After deleting Directory numbers
+2019-10-20 16:42:25 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_externalDestinationNumbers ===========
+2019-10-20 16:42:32 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:42:39 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:42:43 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:42:43 DEBUG SNM_Internal_NumberSeries_Test:301 - Element is viewed successfully
+2019-10-20 16:42:45 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:42:50 DEBUG SNM_Internal_NumberSeries_Test:727 - Before deleting Directory numbers
+2019-10-20 16:42:52 DEBUG SNM_Internal_NumberSeries_Test:730 - After deleting Directory numbers
+2019-10-20 16:43:02 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_fictiousDestNumbers ===========
+2019-10-20 16:43:02 FATAL SNM_Internal_NumberSeries_Test:527 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 16:43:10 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:44:21 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_leastCostRoutingAccessNumbers ===========
+2019-10-20 16:44:29 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:44:36 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:44:39 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:44:39 DEBUG SNM_Internal_NumberSeries_Test:309 - Element is viewed successfully
+2019-10-20 16:44:41 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:44:46 DEBUG SNM_Internal_NumberSeries_Test:749 - Before deleting Directory numbers
+2019-10-20 16:44:47 DEBUG SNM_Internal_NumberSeries_Test:752 - After deleting Directory numbers
+2019-10-20 16:44:57 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_ownNodeNumbers ===========
+2019-10-20 16:45:05 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 16:45:13 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 16:45:16 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 16:45:16 DEBUG SNM_Internal_NumberSeries_Test:325 - Element is viewed successfully
+2019-10-20 16:45:19 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 16:45:24 DEBUG SNM_Internal_NumberSeries_Test:793 - Before deleting Directory numbers
+2019-10-20 16:45:26 DEBUG SNM_Internal_NumberSeries_Test:796 - After deleting Directory numbers
+2019-10-20 16:45:34 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_publicDestLeastCostRouting ===========
+2019-10-20 16:45:34 FATAL SNM_Internal_NumberSeries_Test:431 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 16:45:42 INFO  SNM_Internal_NumberSeries_Test:685 - After successful login
+2019-10-20 17:00:46 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_accessNumbersForMobExtWithAuth ===========
+2019-10-20 17:00:55 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:01:04 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:01:07 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:01:07 DEBUG SNM_Internal_NumberSeries_Test:354 - Element is viewed successfully
+2019-10-20 17:01:10 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:01:17 DEBUG SNM_Internal_NumberSeries_Test:877 - Before deleting Directory numbers
+2019-10-20 17:01:19 DEBUG SNM_Internal_NumberSeries_Test:880 - After deleting Directory numbers
+2019-10-20 17:01:30 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_accessNumbersForMobExtWithOutAuth ===========
+2019-10-20 17:01:38 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:01:47 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:01:50 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:01:50 DEBUG SNM_Internal_NumberSeries_Test:346 - Element is viewed successfully
+2019-10-20 17:01:53 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:02:00 DEBUG SNM_Internal_NumberSeries_Test:855 - Before deleting Directory numbers
+2019-10-20 17:02:02 DEBUG SNM_Internal_NumberSeries_Test:858 - After deleting Directory numbers
+2019-10-20 17:02:13 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_accessNumbersForMobExtWithOutAuthAndDialTone ===========
+2019-10-20 17:02:22 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:02:29 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:02:32 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:02:32 DEBUG SNM_Internal_NumberSeries_Test:362 - Element is viewed successfully
+2019-10-20 17:02:36 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:02:43 DEBUG SNM_Internal_NumberSeries_Test:899 - Before deleting Directory numbers
+2019-10-20 17:02:45 DEBUG SNM_Internal_NumberSeries_Test:902 - After deleting Directory numbers
+2019-10-20 17:02:56 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonDirectInDialingOperatorNumbers ===========
+2019-10-20 17:03:04 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:03:12 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:03:15 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:03:15 DEBUG SNM_Internal_NumberSeries_Test:317 - Element is viewed successfully
+2019-10-20 17:03:18 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:03:25 DEBUG SNM_Internal_NumberSeries_Test:773 - Before deleting Directory numbers
+2019-10-20 17:03:26 DEBUG SNM_Internal_NumberSeries_Test:776 - After deleting Directory numbers
+2019-10-20 17:03:37 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_commonPublicDirectoryNumbers ===========
+2019-10-20 17:03:45 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:03:53 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:03:57 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:03:57 DEBUG SNM_Internal_NumberSeries_Test:338 - Element is viewed successfully
+2019-10-20 17:03:59 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:04:06 DEBUG SNM_Internal_NumberSeries_Test:817 - Before deleting Directory numbers
+2019-10-20 17:04:08 DEBUG SNM_Internal_NumberSeries_Test:820 - After deleting Directory numbers
+2019-10-20 17:04:11 DEBUG SNM_Internal_NumberSeries_Test:833 - Before deleting Directory numbers
+2019-10-20 17:04:13 DEBUG SNM_Internal_NumberSeries_Test:836 - After deleting Directory numbers
+2019-10-20 17:04:23 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_directInwardServiceAccess ===========
+2019-10-20 17:04:23 FATAL SNM_Internal_NumberSeries_Test:479 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 17:04:31 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:05:45 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_externalCoordinatedNumbers ===========
+2019-10-20 17:05:53 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:06:00 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:06:03 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:06:03 DEBUG SNM_Internal_NumberSeries_Test:293 - Element is viewed successfully
+2019-10-20 17:06:05 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:06:12 DEBUG SNM_Internal_NumberSeries_Test:707 - Before deleting Directory numbers
+2019-10-20 17:06:14 DEBUG SNM_Internal_NumberSeries_Test:710 - After deleting Directory numbers
+2019-10-20 17:06:23 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_externalDestinationNumbers ===========
+2019-10-20 17:06:31 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:06:38 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:06:42 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:06:42 DEBUG SNM_Internal_NumberSeries_Test:301 - Element is viewed successfully
+2019-10-20 17:06:44 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:06:50 DEBUG SNM_Internal_NumberSeries_Test:729 - Before deleting Directory numbers
+2019-10-20 17:06:52 DEBUG SNM_Internal_NumberSeries_Test:732 - After deleting Directory numbers
+2019-10-20 17:07:00 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_fictiousDestNumbers ===========
+2019-10-20 17:07:00 FATAL SNM_Internal_NumberSeries_Test:527 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 17:07:08 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:08:22 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_leastCostRoutingAccessNumbers ===========
+2019-10-20 17:08:31 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:08:41 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:08:44 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:08:44 DEBUG SNM_Internal_NumberSeries_Test:309 - Element is viewed successfully
+2019-10-20 17:08:47 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:08:53 DEBUG SNM_Internal_NumberSeries_Test:751 - Before deleting Directory numbers
+2019-10-20 17:08:55 DEBUG SNM_Internal_NumberSeries_Test:754 - After deleting Directory numbers
+2019-10-20 17:09:05 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_ownNodeNumbers ===========
+2019-10-20 17:09:14 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:09:20 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:09:24 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:09:24 DEBUG SNM_Internal_NumberSeries_Test:325 - Element is viewed successfully
+2019-10-20 17:09:26 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:09:32 DEBUG SNM_Internal_NumberSeries_Test:795 - Before deleting Directory numbers
+2019-10-20 17:09:34 DEBUG SNM_Internal_NumberSeries_Test:798 - After deleting Directory numbers
+2019-10-20 17:09:44 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_publicDestLeastCostRouting ===========
+2019-10-20 17:09:45 FATAL SNM_Internal_NumberSeries_Test:431 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 17:09:52 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:22:51 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_directInwardServiceAccess ===========
+2019-10-20 17:22:51 FATAL SNM_Internal_NumberSeries_Test:479 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 17:22:59 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:24:18 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_fictiousDestNumbers ===========
+2019-10-20 17:24:19 FATAL SNM_Internal_NumberSeries_Test:527 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 17:24:28 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:25:43 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_publicDestLeastCostRouting ===========
+2019-10-20 17:25:44 FATAL SNM_Internal_NumberSeries_Test:431 - java.lang.ArrayIndexOutOfBoundsException: 3
+2019-10-20 17:25:51 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:31:30 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_directInwardServiceAccess ===========
+2019-10-20 17:31:38 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:31:46 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:31:50 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:31:50 DEBUG SNM_Internal_NumberSeries_Test:378 - Element is viewed successfully
+2019-10-20 17:31:52 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:31:59 DEBUG SNM_Internal_NumberSeries_Test:941 - Before deleting Directory numbers
+2019-10-20 17:32:01 DEBUG SNM_Internal_NumberSeries_Test:944 - After deleting Directory numbers
+2019-10-20 17:32:09 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_fictiousDestNumbers ===========
+2019-10-20 17:32:17 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:32:25 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:32:28 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:32:28 DEBUG SNM_Internal_NumberSeries_Test:386 - Element is viewed successfully
+2019-10-20 17:32:30 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:32:37 DEBUG SNM_Internal_NumberSeries_Test:962 - Before deleting Directory numbers
+2019-10-20 17:32:39 DEBUG SNM_Internal_NumberSeries_Test:965 - After deleting Directory numbers
+2019-10-20 17:32:49 INFO  SNM_Internal_NumberSeries_Test:29 - ========= Beginning of testcase :test_create_publicDestLeastCostRouting ===========
+2019-10-20 17:32:57 INFO  SNM_Internal_NumberSeries_Test:219 - After successful login
+2019-10-20 17:33:05 DEBUG SNM_Internal_NumberSeries_Test:280 - Add Directory numbers is successful
+2019-10-20 17:33:08 DEBUG SNM_Internal_NumberSeries_Test:285 - Before Viewing the created Number series
+2019-10-20 17:33:08 DEBUG SNM_Internal_NumberSeries_Test:370 - Element is viewed successfully
+2019-10-20 17:33:11 INFO  SNM_Internal_NumberSeries_Test:686 - After successful login
+2019-10-20 17:33:18 DEBUG SNM_Internal_NumberSeries_Test:920 - Before deleting Directory numbers
+2019-10-20 17:33:20 DEBUG SNM_Internal_NumberSeries_Test:923 - After deleting Directory numbers

@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -29,6 +30,7 @@ import utilities.CleanUP;
 import utilities.ExecuteCommands;
 import utilities.ExplicitWait;
 import utilities.GetMxoneVersionNumber;
+import utilities.LoggerClass;
 import utilities.ReusableUnits;
 import utilities.SelectDropDownValue;
 import utilities.Take_Screenshot;
@@ -45,7 +47,7 @@ public class PM_Micollab_Test extends ConfigClass
 	WebDriverWait wait = null;
 	public Extension pmExtension; 
 	PM_Auth_Code_Page authCodePage;
-	
+	private Logger log = LoggerClass.getLogger("PM_Micollab_Test");	
 	
 	/*@Test
 	public void click_Users_and_services() throws InterruptedException
@@ -66,7 +68,7 @@ public class PM_Micollab_Test extends ConfigClass
 	}
 	*/
 	
-	@Test
+/*	@Test
 	public void test_CreateUser_basicRole(Method method) throws Exception
 	{
 		authCodePage = new PM_Auth_Code_Page(driver);
@@ -5634,11 +5636,12 @@ public class PM_Micollab_Test extends ConfigClass
 		}
 	}
 	
-	
+*/	
 	
 	@Test
 	public void test_edit_micollab_Role_from_premium_to_standard(Method method) throws Exception
 	{
+		log.debug("Beginning of the test case.");
 		authCodePage = new PM_Auth_Code_Page(driver);
 		micoLogin = new Micollab_Login_Page(driver);
 		serverManagerPage = new Micollab_Server_Manager_Page(driver);
@@ -5714,7 +5717,7 @@ public class PM_Micollab_Test extends ConfigClass
 //			wait.until(ExpectedConditions.textToBe(By.className("responseMessage"), "  Import operation successful for:"));
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(@class,'responseMessage')]")));
 			Assert.assertEquals(driver.findElement(By.xpath("//span[contains(@class,'responseMessage')]")).getText().trim(), "Add operation successful for:");
-			
+			log.debug("Creation of Micollab User successful");
 			
 //			Assert.assertEquals(pmUser.getResponseMessage().getText().trim(), "Add operation successful for:");
 			pmUser.getDoneButton().click();
@@ -5734,6 +5737,9 @@ public class PM_Micollab_Test extends ConfigClass
 			driver.get(ipData.getData(2, 0));
 			Thread.sleep(1000);
 			micoLogin.micollab_login(micoCredentials[0], micoCredentials[1]);
+			
+			log.debug("Login to Micollab successful");
+			
 			driver.switchTo().frame(serverManagerPage.getInToNavigationFrame());
 			serverManagerPage.getUsersAndServicesLink().click();
 			driver.switchTo().defaultContent();
@@ -5798,6 +5804,7 @@ public class PM_Micollab_Test extends ConfigClass
 			List<WebElement> role = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath("//img[@src='images/g_check_000.gif']"));
 			Assert.assertTrue(role.size()==4);
 			
+			log.debug("Data properly synced to Micollab");
 			
 			driver.switchTo().defaultContent();
 			driver.switchTo().frame(serverManagerPage.getHeaderFrame());
@@ -5841,6 +5848,9 @@ public class PM_Micollab_Test extends ConfigClass
 					+ "//following-sibling::td[contains(text(),'Micollab')]"
 					+ "//following-sibling::td[contains(text(),'UCC (V4.0) Standard')]"));
 			Assert.assertTrue(eles.size() == 1);
+			
+			log.debug("Successfully changed the role to Standard");
+			
 			pmMainPage.getLogoutLink().click();
 			
 			///////////////////Again verify in Micollab Now///////////////////////
@@ -5896,7 +5906,7 @@ public class PM_Micollab_Test extends ConfigClass
 			String dskPhoneExtEdit = driver.findElement(By.xpath("//select[@id='UCADeskphoneSelect']/option[@selected='selected']")).getText().trim();
 			String mailBoxNumEdit = driver.findElement(By.xpath("//select[@id='ucaMailboxSelect']/option[@selected='selected']")).getText().trim();
 			
-			Assert.assertEquals(assignedRoleEdit, "UCC (V4.0) Standard");
+			Assert.assertEquals(assignedRoleEdit, "UCC (V4.0) Standard...");
 			Assert.assertTrue(dskPhoneExtEdit.contains(extData[1]));
 			Assert.assertEquals(mailBoxNumEdit, extData[1]);
 			
@@ -5904,6 +5914,8 @@ public class PM_Micollab_Test extends ConfigClass
 			serverManagerPage.getCancelButton().click();
 			List<WebElement> roleEdit = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath("//img[@src='images/g_check_000.gif']"));
 			Assert.assertTrue(roleEdit.size()==4);
+			
+			log.debug("Changed role is properly synced to Micollab");
 			
 			driver.switchTo().defaultContent();
 			driver.switchTo().frame(serverManagerPage.getHeaderFrame());
@@ -5915,11 +5927,13 @@ public class PM_Micollab_Test extends ConfigClass
 		catch(Error e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				log.fatal(e.toString());
 				throw e;
 		}
 		catch(Exception e)
 		{
 				new Take_Screenshot().get_Screenshot(driver, method.getName());
+				log.error(e.toString());
 				throw e;
 		}
 		finally
@@ -5936,6 +5950,7 @@ public class PM_Micollab_Test extends ConfigClass
 			catch(Exception e)
 			{
 					new Take_Screenshot().get_Screenshot(driver, method.getName());
+					log.fatal(e.toString());
 					throw e;
 			}
 		}

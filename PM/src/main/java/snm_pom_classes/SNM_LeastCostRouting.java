@@ -5,15 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CallDiscrimination 
+public class SNM_LeastCostRouting 
 {
-	@FindBy(linkText=" Group Names")
-	private WebElement  groupNames;
+	@FindBy(linkText=" Least Cost Routing")
+	private WebElement leastCostRouting;
 	
-	@FindBy(linkText=" Permitted Numbers")
-	private WebElement permittedNumbers;
-	
-	public CallDiscrimination(WebDriver driver) 
+	public SNM_LeastCostRouting(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
 	}

@@ -5,15 +5,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CallDiversion 
+public class SNM_CallDiscrimination 
 {
-	@FindBy(linkText=" System Call Diversion")
-	private WebElement  systemCallDiversion;
+	@FindBy(linkText=" Group Names")
+	private WebElement  groupNames;
 	
-	@FindBy(linkText=" Customer Call Diversion")
-	private WebElement  customerCallDiversion;
+	@FindBy(linkText=" Permitted Numbers")
+	private WebElement permittedNumbers;
 	
-	public CallDiversion(WebDriver driver) 
+	public SNM_CallDiscrimination(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
 	}

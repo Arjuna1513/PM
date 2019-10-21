@@ -2,17 +2,23 @@ package snm_pom_classes;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import utilities.ExplicitWait;
 
-public class NumberSeries 
+
+public class SNM_NumberSeries 
 {
+	WebDriverWait wait = null;
 	//Elements of Number Series Home Page
 	@FindBy(name="onAddButton")
 	private WebElement addButton;
@@ -28,6 +34,14 @@ public class NumberSeries
 	
 	@FindBy(xpath="(//input[@name='onCancelButton'])[1]")
 	private WebElement cancelButton;
+	
+	@FindBy(name="okbutton")
+	private WebElement doneButton;
+	
+	public WebElement getDoneButton()
+	{
+		return doneButton;
+	}
 	
 	@FindBy(id="removeThis2_img")
 	private WebElement deleteNumberSeries;
@@ -66,12 +80,12 @@ public class NumberSeries
 	@FindBy(name="onAdvancedButton")
 	private WebElement advanceButton;
 	
-	@FindBy(className="responseMessage")
-	private WebElement successMessage;
+	@FindBy(xpath="//span[contains(@class,'responseMessage')]")
+	private WebElement responseMsg;
 	
-	public WebElement getSuccessMessage() 
+	public WebElement getResponseMsg()
 	{
-		return successMessage;
+		return responseMsg;
 	}
 
 	
@@ -403,7 +417,7 @@ public class NumberSeries
 	
 	
 
-	public NumberSeries(WebDriver driver) 
+	public SNM_NumberSeries(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
 	}
@@ -599,7 +613,7 @@ public class NumberSeries
 	@FindAll(@FindBy(xpath="(//td[contains(text(),'Directory numbers')]//preceding-sibling::td/a)[2]"))
 	private WebElement deleteAllDirectoryNumbers;
 	
-	public void deleteAnyNumberSeries(WebDriver driver, NumberSeries numberSeries, String numberType) throws InterruptedException
+	/*public void deleteAnyNumberSeries(WebDriver driver, SNM_NumberSeries numberSeries, String numberType) throws InterruptedException
 	{
 		List<WebElement> list = driver.findElements(By.xpath("//td[contains(text(),'"+numberType+"')]"));
 		System.out.println(numberType);
@@ -608,20 +622,53 @@ public class NumberSeries
 			System.out.println("In for loop");
 			driver.findElement(By.id("removeThis0_img")).click();
 			driver.switchTo().alert().accept();
-			Assert.assertEquals(numberSeries.getSuccessMessage().getText().trim(), "Remove operation successful for:");
+			Assert.assertEquals(numberSeries.getResponseMsg().getText().trim(), "Remove operation successful for:");
 			Thread.sleep(2000);
 		}
 		
+	}*/
+	
+	public void deleteAnyNumberSeries(WebDriver driver, SNM_NumberSeries numSeries, String number, String numberType, Logger log) throws InterruptedException
+	{
+		
+		wait = new WebDriverWait(driver, 20);
+		
+		driver.findElement(By.xpath("//td[contains(text(),"
+				+ "'"+number+"')]"
+				+ "//following-sibling::td[contains(text(),'"+numberType+"')]"
+						+ "//preceding-sibling::td[20]")).click();
+		
+		driver.switchTo().alert().accept();
+		log.debug("Before deleting Directory numbers");
+		wait.until(ExpectedConditions.textToBePresentInElement(numSeries.getResponseMsg(), 
+				"Remove operation successful for:"));
+		log.debug("After deleting Directory numbers");
+		
+		List<WebElement> eleList = new ExplicitWait().numberOfElementsPresent
+		(driver, 3, By.xpath("//td[contains(text(),'"+number+"')]"
+				+ "//following-sibling::td[contains(text(),'"+numberType+"')]"));
+		
+		Assert.assertTrue(eleList.size()==0);
+		
+		/*for(int i=0; i<list.size(); i++)
+		{
+			System.out.println("In for loop");
+			driver.findElement(By.id("removeThis0_img")).click();
+			driver.switchTo().alert().accept();
+			Assert.assertEquals(numberSeries.getResponseMsg().getText().trim(), "Remove operation successful for:");
+			Thread.sleep(2000);
+		}*/
+		
 	}
 	
-	public void editAnyNumberSeries(WebDriver driver, NumberSeries numberSeries, String editDirNum, WebElement element) throws InterruptedException
+	public void editAnyNumberSeries(WebDriver driver, SNM_NumberSeries numberSeries, String editDirNum, WebElement element) throws InterruptedException
 	{
 			driver.findElement(By.id("changeThis0_img")).click();
 			element.clear();
 			element.sendKeys(editDirNum);
 			Thread.sleep(1000);
 			numberSeries.getApplyButton().click();
-			Assert.assertEquals(numberSeries.getSuccessMessage().getText().trim(), "Change operation successful for:");
+			Assert.assertEquals(numberSeries.getResponseMsg().getText().trim(), "Change operation successful for:");
 	}
 	
 	

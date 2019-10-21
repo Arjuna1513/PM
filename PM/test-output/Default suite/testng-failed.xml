@@ -3,17 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.PM_Micollab_Test">
+      <class name="tests.SNM_External_NumberSeries_Test">
         <methods>
-          <include name="test_edit_micollab_Role_from_entry_to_basic" invocation-numbers="0"/>
           <include name="beforeClass"/>
+          <include name="test_create_fictiousDestNumbers" invocation-numbers="0"/>
+          <include name="test_create_publicDestLeastCostRouting" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>
+          <include name="test_create_directInwardServiceAccess" invocation-numbers="0"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_Micollab_Test -->
+      </class> <!-- tests.SNM_External_NumberSeries_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

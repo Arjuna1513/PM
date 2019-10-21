@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NumberPlan 
+public class SNM_NumberPlan 
 {
 	@FindBy(id="Number_Series")
 	private WebElement  numberSeries;
@@ -56,7 +56,7 @@ public class NumberPlan
 		return systemNumbers;
 	}
 
-	public NumberPlan(WebDriver driver)
+	public SNM_NumberPlan(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

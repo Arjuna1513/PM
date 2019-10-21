@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Number_Analysis_Page 
+public class SNM_Number_Analysis_Page 
 {
 	@FindBy(id="Number_Plan")
 	private WebElement Number_Plan_Link;
@@ -47,7 +47,7 @@ public class Number_Analysis_Page
 		return Least_Cost_Route_Link;
 	}
 
-	public Number_Analysis_Page(WebDriver driver)
+	public SNM_Number_Analysis_Page(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);	
 	}

@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CSP 
+public class SNM_CSP 
 {
-	public CSP(WebDriver driver)
+	public SNM_CSP(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

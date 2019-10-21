@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ServicesPage 
+public class SNM_ServicesPage 
 {
 	@FindBy(linkText="Connections")
 	private WebElement connections;
@@ -34,7 +34,7 @@ public class ServicesPage
 	@FindBy(linkText="Enterprise Gateway")
 	private WebElement enterpriseGateway;
 	
-	public ServicesPage(WebDriver driver) 
+	public SNM_ServicesPage(WebDriver driver) 
 	{
 		PageFactory.initElements(driver, this);
 	}

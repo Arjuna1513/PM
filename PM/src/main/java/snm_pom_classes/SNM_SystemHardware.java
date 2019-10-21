@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SystemHardware 
+public class SNM_SystemHardware 
 {
-	public SystemHardware(WebDriver driver)
+	public SNM_SystemHardware(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

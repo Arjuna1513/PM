@@ -13,8 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pm_pom_classes.PM_User;
 import snm_pom_classes.SNM_Login_Page;
 import snm_pom_classes.SNM_Main_Page;
-import snm_pom_classes.SystemPage;
-import snm_pom_classes.ToolsPage;
+import snm_pom_classes.SNM_SystemPage;
+import snm_pom_classes.SNM_ToolsPage;
 
 public class ExecuteCommands 
 {
@@ -22,8 +22,8 @@ public class ExecuteCommands
 	public PM_User pmUser;
 	public SNM_Login_Page snmLoginPage;
 	public SNM_Main_Page snmMainPage;
-	public SystemPage snmSystempage;
-	public ToolsPage toolsPage;
+	public SNM_SystemPage snmSystempage;
+	public SNM_ToolsPage toolsPage;
 	public String title = "Command Line Interface";
 	WebDriverWait wait;
 	
@@ -33,8 +33,8 @@ public class ExecuteCommands
 		pmUser = new PM_User(driver);
 		snmLoginPage = new SNM_Login_Page(driver);
 		snmMainPage = new SNM_Main_Page(driver);
-		snmSystempage = new SystemPage(driver);
-		toolsPage = new ToolsPage(driver);
+		snmSystempage = new SNM_SystemPage(driver);
+		toolsPage = new SNM_ToolsPage(driver);
 		wait = new WebDriverWait(driver, 100);
 	}
 	

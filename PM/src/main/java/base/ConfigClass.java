@@ -50,10 +50,17 @@ public class ConfigClass
 		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);
 		ipData = new ExcelReadAndWrite("IP", excelPath);
 		
-		File file = new File("C://Users//mallikar//git//PM//PM//ScreenShots");
+		File file = new File("./ScreenShots");
 	    if (file.exists()) 
 	    {
 	      FileUtils.cleanDirectory(file);
+	    }
+	    
+	    File file1 = new File("./seleniumLogs.log");
+	    if (file1.exists()) 
+	    	System.out.println(file1);
+	    {
+	      FileUtils.deleteQuietly(file1);
 	    }
 //		FileUtils.cleanDirectory(Paths.get()) 
 	}

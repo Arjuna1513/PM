@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ToolsPage 
+public class SNM_ToolsPage 
 {
 	@FindBy(id="Command_Line")
 	private WebElement commandLine;
@@ -54,7 +54,7 @@ public class ToolsPage
 		return signalTracing;
 	}
 
-	public ToolsPage(WebDriver driver)
+	public SNM_ToolsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

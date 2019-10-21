@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TelephonyPage 
+public class SNM_TelephonyPage 
 {
 	@FindBy(linkText="Extensions")
 	private WebElement extensions;
@@ -31,7 +31,7 @@ public class TelephonyPage
 	@FindBy(linkText="DECT")
 	private WebElement DECT;
 	
-	public TelephonyPage(WebDriver driver)
+	public SNM_TelephonyPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}

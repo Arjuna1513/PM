@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class TelephonyExtensionsPage 
+public class SNM_TelephonyExtensionsPage 
 {
-	public TelephonyExtensionsPage(WebDriver driver)
+	public SNM_TelephonyExtensionsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
 	}
