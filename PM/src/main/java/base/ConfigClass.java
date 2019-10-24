@@ -44,7 +44,7 @@ public class ConfigClass
 	@BeforeSuite
 	public void beforeSuite() throws IOException
 	{
-		excelPath = "C://Users//mallikar//git//PM//PM//src//main//java//myTestData//TestData.xlsx";
+		excelPath = "./TestData.xlsx";
 		loginData = new ExcelReadAndWrite("logindata", excelPath);
 		pmTests = new ExcelReadAndWrite("PMTestData", excelPath);
 		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);
