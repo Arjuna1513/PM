@@ -65,7 +65,7 @@ public class PM_User_Test extends ConfigClass
 		}
 		
 	}
-	
+/*	
 	@Test
 	public void test_edit_user(Method method) throws Exception
 	{
@@ -794,4 +794,5 @@ public class PM_User_Test extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
+	*/
 }

@@ -31,7 +31,7 @@ import org.testng.annotations.Parameters;
 import utilities.ExcelReadAndWrite;
 import utilities.Take_Screenshot;
 
-public class ConfigClass
+public class ConfigClass implements AutoConstants
 {
 	public WebDriver driver = null;
 	public static String excelPath = null;
@@ -39,6 +39,11 @@ public class ConfigClass
 	public static ExcelReadAndWrite pmTests;
 	public static ExcelReadAndWrite snmTests;
 	public static ExcelReadAndWrite ipData;
+	/*
+	 * public static String chromeKey; public static String firefoxKey; public
+	 * static String chromePath; public static String firefoxPath;
+	 */
+	
 	
 	
 	@BeforeSuite
@@ -49,6 +54,15 @@ public class ConfigClass
 		pmTests = new ExcelReadAndWrite("PMTestData", excelPath);
 		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);
 		ipData = new ExcelReadAndWrite("IP", excelPath);
+		
+		//New lines
+		/*
+		 * chromeKey = "webdriver.chrome.driver"; firefoxKey = "webdriver.gecko.driver";
+		 * chromePath = "./Drivers/chromedriver.exe"; firefoxPath =
+		 * "./Drivers/geckodriver.exe";
+		 */
+		
+		
 		
 		File file = new File("./ScreenShots");
 	    if (file.exists()) 
