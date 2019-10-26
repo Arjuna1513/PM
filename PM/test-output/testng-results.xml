@@ -1,143 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="121066" started-at="2019-10-20T12:01:24Z" finished-at="2019-10-20T12:03:25Z">
+  <suite name="Default suite" duration-ms="25178" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:14:23Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="121066" started-at="2019-10-20T12:01:24Z" finished-at="2019-10-20T12:03:25Z">
-      <class name="tests.SNM_External_NumberSeries_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="beforeSuite" is-config="true" duration-ms="1453" started-at="2019-10-20T12:01:23Z" finished-at="2019-10-20T12:01:24Z">
+    <test name="Default test" duration-ms="25178" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:14:23Z">
+      <class name="tests.PM_User_Test">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="beforeSuite" is-config="true" duration-ms="1064" started-at="2019-10-25T07:13:56Z" finished-at="2019-10-25T07:13:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="beforeClass" is-config="true" duration-ms="26" started-at="2019-10-20T12:01:24Z" finished-at="2019-10-20T12:01:24Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:13:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="beforeMethod" is-config="true" duration-ms="5788" started-at="2019-10-20T12:01:24Z" finished-at="2019-10-20T12:01:30Z">
+        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="beforeMethod" is-config="true" duration-ms="4112" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:14:02Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@c5ee75e]]>
+                <![CDATA[org.testng.TestRunner@47428937]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_create_directInwardServiceAccess(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="test_create_directInwardServiceAccess" duration-ms="33809" started-at="2019-10-20T12:01:30Z" finished-at="2019-10-20T12:02:04Z">
+        <test-method status="FAIL" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="test_create_user" duration-ms="20982" started-at="2019-10-25T07:14:02Z" finished-at="2019-10-25T07:14:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.SNM_External_NumberSeries_Test.test_create_directInwardServiceAccess(java.lang.reflect.Method,org.testng.ITestContext) throws java.lang.Exception]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@c5ee75e]]>
+                <![CDATA[public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Exception]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=78.0.3904.70)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a8801cdb6afdebf800645a43acb8ce1e
+*** Element info: {Using=name, value=range}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=78.0.3904.70)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a8801cdb6afdebf800645a43acb8ce1e
+*** Element info: {Using=name, value=range}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByName(RemoteWebDriver.java:404)
+at org.openqa.selenium.By$ByName.findElement(By.java:284)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy13.clear(Unknown Source)
+at utilities.CleanUP.deleteUser(CleanUP.java:67)
+at tests.PM_User_Test.test_create_user(PM_User_Test.java:64)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_create_directInwardServiceAccess -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="afterMethod" is-config="true" duration-ms="638" started-at="2019-10-20T12:02:04Z" finished-at="2019-10-20T12:02:05Z">
+        </test-method> <!-- test_create_user -->
+        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="afterMethod" is-config="true" duration-ms="50" started-at="2019-10-25T07:14:23Z" finished-at="2019-10-25T07:14:23Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_create_directInwardServiceAccess status=SUCCESS method=SNM_External_NumberSeries_Test.test_create_directInwardServiceAccess(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e] output={null}]]]>
+                <![CDATA[[TestResult name=test_create_user status=FAILURE method=PM_User_Test.test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@5cb9f472] output={null}]]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchWindowException">
+            <message>
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=78.0.3904.70)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a8801cdb6afdebf800645a43acb8ce1e]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=78.0.3904.70)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a8801cdb6afdebf800645a43acb8ce1e
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:609)
+at org.openqa.selenium.remote.RemoteWebDriver.close(RemoteWebDriver.java:442)
+at base.ConfigClass.afterMethod(ConfigClass.java:156)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="beforeMethod" is-config="true" duration-ms="4691" started-at="2019-10-20T12:02:05Z" finished-at="2019-10-20T12:02:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@c5ee75e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_create_fictiousDestNumbers(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="test_create_fictiousDestNumbers" duration-ms="32547" started-at="2019-10-20T12:02:09Z" finished-at="2019-10-20T12:02:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.SNM_External_NumberSeries_Test.test_create_fictiousDestNumbers(java.lang.reflect.Method,org.testng.ITestContext) throws java.lang.Exception]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@c5ee75e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_create_fictiousDestNumbers -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="afterMethod" is-config="true" duration-ms="2499" started-at="2019-10-20T12:02:42Z" finished-at="2019-10-20T12:02:44Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_create_fictiousDestNumbers status=SUCCESS method=SNM_External_NumberSeries_Test.test_create_fictiousDestNumbers(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="beforeMethod" is-config="true" duration-ms="5063" started-at="2019-10-20T12:02:44Z" finished-at="2019-10-20T12:02:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[org.testng.TestRunner@c5ee75e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_create_publicDestLeastCostRouting(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="test_create_publicDestLeastCostRouting" duration-ms="33504" started-at="2019-10-20T12:02:49Z" finished-at="2019-10-20T12:03:23Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void tests.SNM_External_NumberSeries_Test.test_create_publicDestLeastCostRouting(java.lang.reflect.Method,org.testng.ITestContext) throws java.lang.Exception]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[org.testng.TestRunner@c5ee75e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test_create_publicDestLeastCostRouting -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="afterMethod" is-config="true" duration-ms="2430" started-at="2019-10-20T12:03:23Z" finished-at="2019-10-20T12:03:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=test_create_publicDestLeastCostRouting status=SUCCESS method=SNM_External_NumberSeries_Test.test_create_publicDestLeastCostRouting(java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-20T12:03:25Z" finished-at="2019-10-20T12:03:25Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-25T07:14:23Z" finished-at="2019-10-25T07:14:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.SNM_External_NumberSeries_Test@9660f4e]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-10-20T12:03:25Z" finished-at="2019-10-20T12:03:25Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-10-25T07:14:23Z" finished-at="2019-10-25T07:14:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tests.SNM_External_NumberSeries_Test -->
+      </class> <!-- tests.PM_User_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

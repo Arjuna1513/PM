@@ -34,35 +34,20 @@ import utilities.Take_Screenshot;
 public class ConfigClass implements AutoConstants
 {
 	public WebDriver driver = null;
-	public static String excelPath = null;
 	public static ExcelReadAndWrite loginData;
 	public static ExcelReadAndWrite pmTests;
 	public static ExcelReadAndWrite snmTests;
 	public static ExcelReadAndWrite ipData;
-	/*
-	 * public static String chromeKey; public static String firefoxKey; public
-	 * static String chromePath; public static String firefoxPath;
-	 */
-	
-	
 	
 	@BeforeSuite
 	public void beforeSuite() throws IOException
 	{
-		excelPath = "./TestData.xlsx";
+		System.setProperty(chromeKey, chromePath);
+		System.setProperty(firefoxKey, firefoxPath);
 		loginData = new ExcelReadAndWrite("logindata", excelPath);
 		pmTests = new ExcelReadAndWrite("PMTestData", excelPath);
 		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);
 		ipData = new ExcelReadAndWrite("IP", excelPath);
-		
-		//New lines
-		/*
-		 * chromeKey = "webdriver.chrome.driver"; firefoxKey = "webdriver.gecko.driver";
-		 * chromePath = "./Drivers/chromedriver.exe"; firefoxPath =
-		 * "./Drivers/geckodriver.exe";
-		 */
-		
-		
 		
 		File file = new File("./ScreenShots");
 	    if (file.exists()) 
@@ -76,7 +61,6 @@ public class ConfigClass implements AutoConstants
 	    {
 	      FileUtils.deleteQuietly(file1);
 	    }
-//		FileUtils.cleanDirectory(Paths.get()) 
 	}
 	
 	@AfterSuite
@@ -106,8 +90,7 @@ public class ConfigClass implements AutoConstants
 	@BeforeClass
 	public void beforeClass()
 	{
-		DesiredCapabilities dc = new DesiredCapabilities();
-		dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
+		
 		
 //		dc.setCapability(ChromeOptions.CAPABILITY, options);
 		
@@ -149,6 +132,8 @@ public class ConfigClass implements AutoConstants
 	@BeforeMethod
 	public void beforeMethod(ITestContext context)
 	{
+		DesiredCapabilities dc = new DesiredCapabilities();
+		dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.ACCEPT);
 //		driver.get("https://sqa.stackexchange.com/questions/36253/taking-screenshot-on-test-failure-selenium-webdriver-testng");
 //		System.out.println(driver);
 		FirefoxProfile profile = new FirefoxProfile();
@@ -157,7 +142,7 @@ public class ConfigClass implements AutoConstants
 	    profile.setPreference("browser.cache.offline.enable", false);
 	    profile.setPreference("network.http.use-cache", false);
 	    FirefoxOptions options = new FirefoxOptions().setProfile(profile);
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(dc);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
