@@ -2,31 +2,31 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="25178" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:14:23Z">
+  <suite name="Default suite" duration-ms="129647" started-at="2019-10-26T06:42:39Z" finished-at="2019-10-26T06:44:48Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="25178" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:14:23Z">
+    <test name="Default test" duration-ms="129647" started-at="2019-10-26T06:42:39Z" finished-at="2019-10-26T06:44:48Z">
       <class name="tests.PM_User_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="beforeSuite" is-config="true" duration-ms="1064" started-at="2019-10-25T07:13:56Z" finished-at="2019-10-25T07:13:58Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@13805618]" name="beforeSuite" is-config="true" duration-ms="981" started-at="2019-10-26T06:42:38Z" finished-at="2019-10-26T06:42:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:13:58Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_User_Test@13805618]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-26T06:42:39Z" finished-at="2019-10-26T06:42:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="beforeMethod" is-config="true" duration-ms="4112" started-at="2019-10-25T07:13:58Z" finished-at="2019-10-25T07:14:02Z">
+        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.PM_User_Test@13805618]" name="beforeMethod" is-config="true" duration-ms="3983" started-at="2019-10-26T06:42:39Z" finished-at="2019-10-26T06:42:43Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@47428937]]>
+                <![CDATA[org.testng.TestRunner@5dda6f9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="test_create_user" duration-ms="20982" started-at="2019-10-25T07:14:02Z" finished-at="2019-10-25T07:14:23Z">
+        <test-method status="FAIL" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@13805618]" name="test_create_user" duration-ms="125611" started-at="2019-10-26T06:42:43Z" finished-at="2019-10-26T06:44:48Z">
           <params>
             <param index="0">
               <value>
@@ -42,8 +42,8 @@ from unknown error: web view not found
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a8801cdb6afdebf800645a43acb8ce1e
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52087}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: 9409adf98070b2ba988392b8e0ded2a2
 *** Element info: {Using=name, value=range}]]>
             </message>
             <full-stacktrace>
@@ -53,8 +53,8 @@ from unknown error: web view not found
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a8801cdb6afdebf800645a43acb8ce1e
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52087}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: 9409adf98070b2ba988392b8e0ded2a2
 *** Element info: {Using=name, value=range}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
@@ -106,11 +106,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test_create_user -->
-        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="afterMethod" is-config="true" duration-ms="50" started-at="2019-10-25T07:14:23Z" finished-at="2019-10-25T07:14:23Z">
+        <test-method status="FAIL" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@13805618]" name="afterMethod" is-config="true" duration-ms="20" started-at="2019-10-26T06:44:48Z" finished-at="2019-10-26T06:44:48Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_create_user status=FAILURE method=PM_User_Test.test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@5cb9f472] output={null}]]]>
+                <![CDATA[[TestResult name=test_create_user status=FAILURE method=PM_User_Test.test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@13805618] output={null}]]]>
               </value>
             </param>
           </params>
@@ -122,8 +122,8 @@ from unknown error: web view not found
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a8801cdb6afdebf800645a43acb8ce1e]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52087}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: 9409adf98070b2ba988392b8e0ded2a2]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
@@ -132,8 +132,8 @@ from unknown error: web view not found
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:61355}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a8801cdb6afdebf800645a43acb8ce1e
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:52087}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: 9409adf98070b2ba988392b8e0ded2a2
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -181,11 +181,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="SKIP" signature="afterClass()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-25T07:14:23Z" finished-at="2019-10-25T07:14:23Z">
+        <test-method status="SKIP" signature="afterClass()[pri:0, instance:tests.PM_User_Test@13805618]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-26T06:44:48Z" finished-at="2019-10-26T06:44:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@5cb9f472]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-10-25T07:14:23Z" finished-at="2019-10-25T07:14:23Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@13805618]" name="afterSuite" is-config="true" duration-ms="1" started-at="2019-10-26T06:44:48Z" finished-at="2019-10-26T06:44:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
