@@ -145,7 +145,7 @@ public class ConfigClass implements AutoConstants
 		driver = new ChromeDriver(dc);
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		
 		context.setAttribute("WebDriver", driver);
 	}

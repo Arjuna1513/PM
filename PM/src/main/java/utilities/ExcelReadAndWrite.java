@@ -84,7 +84,7 @@ public class ExcelReadAndWrite
 		return value;
 	}
 
-	public void checkTestStatus(String methodName)
+	public void checkTestStatus(String methodName) throws Exception
 	{
 		String flag = null;
 		try
@@ -105,7 +105,8 @@ public class ExcelReadAndWrite
 		}
 		catch(Exception e)
 		{
-//			System.out.println("No Idea, why I have written this method, it started throwing error for no reason");
+			throw e;
+			//System.out.println("No Idea, why I have written this method, it started throwing error for no reason");
 		}
 	}
 	

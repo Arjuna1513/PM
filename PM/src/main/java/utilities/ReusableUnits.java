@@ -3,6 +3,7 @@ package utilities;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,12 @@ import pm_pom_classes.PM_Main_Page;
 import pm_pom_classes.PM_Services;
 import pm_pom_classes.PM_User;
 import pm_pom_classes.PM_Users;
+import snm_pom_classes.SNM_External_Length_Page;
+import snm_pom_classes.SNM_Login_Page;
+import snm_pom_classes.SNM_Main_Page;
+import snm_pom_classes.SNM_NumberPlan;
+import snm_pom_classes.SNM_NumberSeries;
+import snm_pom_classes.SNM_Number_Analysis_Page;
 
 public class ReusableUnits
 {
@@ -29,6 +36,12 @@ public class ReusableUnits
 	public Extension pmExtension;
 	WebDriverWait wait;
 	PM_Function_Keys funcKeys;
+	public SNM_Login_Page snmLogin;
+	public SNM_Main_Page snmMainPage;
+	public SNM_Number_Analysis_Page numAnalysis;
+	public SNM_NumberPlan numPlan;
+	public SNM_NumberSeries numSeries;
+	public SNM_External_Length_Page extNumLength;
 	
 	public ReusableUnits(WebDriver driver)
 	{
@@ -39,6 +52,12 @@ public class ReusableUnits
 		pmServices = new PM_Services(driver);
 		pmExtension = new Extension(driver);
 		funcKeys = new PM_Function_Keys(driver);
+		snmLogin = new SNM_Login_Page(driver);
+		snmMainPage = new SNM_Main_Page(driver);
+		numAnalysis = new SNM_Number_Analysis_Page(driver);
+		numPlan = new SNM_NumberPlan(driver);
+		numSeries = new SNM_NumberSeries(driver);
+		extNumLength = new SNM_External_Length_Page(driver);
 	}
 	
 	public void navigateUserToServiceSummaryPage(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
@@ -1282,5 +1301,41 @@ public class ReusableUnits
 	
 		new Call_list_utilities(driver).verifyPN_In_Ext_View_Page(driver, "1");
 		pmExtension.getDoneButton().click();
+		
+	}
+	
+	public void create_externalNumberLength(WebDriver driver, String methodName,
+			ExcelReadAndWrite ipData, ExcelReadAndWrite snmData,
+			ExcelReadAndWrite loginData, Logger log)
+	{
+		List<WebElement> list = null;
+		wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			log.info("After successful login");
+			
+			snmMainPage.getNumber_Analysis().click();
+			numAnalysis.getNumber_Plan_Link().click();
+			numPlan.getExternalNumberLength().click();
+			extNumLength.getAddButton().click();
+			extNumLength.setExternalNumberLength(testData[0]);
+			extNumLength.setMinimumLength(testData[1]);
+			extNumLength.setMaximumLengthField(testData[2]);
+			extNumLength.getApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(extNumLength.getResponseMsg(), 
+					"Add operation successful for:"));
+			log.debug("Add external number length is successful");
+			extNumLength.getDoneButton().click();
+			list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+					("//td[contains(text(),'"+testData[0]+"')]"
+							+ "//following-sibling::td[contains(text(),'"+testData[1]+"')]"
+							+ "//following-sibling::td[contains(text(),'"+testData[2]+"')]"));
+			Assert.assertTrue(list.size() == 1);
 	}
 }

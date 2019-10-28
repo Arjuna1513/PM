@@ -2,6 +2,7 @@ package utilities;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,6 +19,17 @@ import pm_pom_classes.PM_System;
 import pm_pom_classes.PM_System_DataManagement;
 import pm_pom_classes.PM_User;
 import pm_pom_classes.PM_Users;
+import snm_pom_classes.SNM_External_Length_Page;
+import snm_pom_classes.SNM_Login_Page;
+import snm_pom_classes.SNM_Main_Page;
+import snm_pom_classes.SNM_NumberPlan;
+import snm_pom_classes.SNM_NumberSeries;
+import snm_pom_classes.SNM_Number_Analysis_Page;
+import snm_pom_classes.SNM_TelephonyExtensionsPage;
+import snm_pom_classes.SNM_TelephonyPage;
+import snm_pom_classes.SNM_Telephony_AccountCode_Page;
+import snm_pom_classes.SNM_Telephony_Groups_Customer_Page;
+import snm_pom_classes.SNM_Telephony_Groups_Page;
 
 public class CleanUP 
 {
@@ -29,6 +41,17 @@ public class CleanUP
 	public Extension pmExtension;
 	public PM_System pmSystem;
 	public PM_System_DataManagement dataMgmt;
+	public SNM_Login_Page snmLogin;
+	public SNM_Main_Page snmMainPage;
+	public SNM_Number_Analysis_Page numAnalysis;
+	public SNM_NumberPlan numPlan;
+	public SNM_NumberSeries numSeries;
+	public SNM_External_Length_Page extNumLength;
+	public SNM_Telephony_AccountCode_Page accCode;
+	public SNM_TelephonyExtensionsPage telExt;
+	public SNM_TelephonyPage snmTelephony;
+	public SNM_Telephony_Groups_Page snmTelGrp;
+	public SNM_Telephony_Groups_Customer_Page snmTelCustGrps;
 	
 	public CleanUP(WebDriver driver)
 	{
@@ -40,6 +63,17 @@ public class CleanUP
 		pmExtension = new Extension(driver);
 		pmSystem = new PM_System(driver);
 		dataMgmt = new PM_System_DataManagement(driver);
+		snmLogin = new SNM_Login_Page(driver);
+		snmMainPage = new SNM_Main_Page(driver);
+		numAnalysis = new SNM_Number_Analysis_Page(driver);
+		numPlan = new SNM_NumberPlan(driver);
+		numSeries = new SNM_NumberSeries(driver);
+		extNumLength = new SNM_External_Length_Page(driver);
+		snmTelephony = new SNM_TelephonyPage(driver);
+		accCode = new SNM_Telephony_AccountCode_Page(driver);
+		telExt = new SNM_TelephonyExtensionsPage(driver);
+		snmTelGrp = new SNM_Telephony_Groups_Page(driver);
+		snmTelCustGrps = new SNM_Telephony_Groups_Customer_Page(driver);
 	}
 	
 	public void deleteUser(WebDriver driver, ExcelReadAndWrite ipData, String[] data, String uerName) throws InterruptedException
@@ -257,5 +291,117 @@ public class CleanUP
 		Assert.assertEquals("Remove Template operation successful for:", pmExtension.getResponseMessage());
 		pmExtension.getTemplateSubmitButton().click();
 		pmMainPage.getLogoutLink().click();
+	}
+	
+	
+	public void delete_externalNumberLength(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData,
+			String extNumValue ,Logger log)
+	{
+		List<WebElement> list = null;
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+//			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			log.info("After successful login");
+			
+			snmMainPage.getNumber_Analysis().click();
+			numAnalysis.getNumber_Plan_Link().click();
+			numPlan.getExternalNumberLength().click();
+			
+			list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+					("//td[contains(text(),'"+extNumValue+"')]"));
+			if(list.size() == 1)
+			{
+				log.debug("Record is present");
+				driver.findElement(By.xpath("//td[contains(text(),'"+extNumValue+"')]//preceding-sibling::td[18]")).click();
+				wait.until(ExpectedConditions.textToBePresentInElement(extNumLength.getResponseMsg(), 
+						"Remove operation successful for:"));
+				
+				list.clear();
+				list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+						("//td[contains(text(),'"+extNumValue+"')]"));
+				
+				Assert.assertTrue(list.size() == 0);
+			}
+	}
+	
+	
+	public void snmTelephonyAccountCode(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData,
+			String extNumValue ,Logger log)
+	{
+		List<WebElement> list = null;
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+//			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			log.info("After successful login");
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getExtensions().click();
+			telExt.getAccountCode().click();
+			
+			list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+					("//td[contains(text(),'"+extNumValue+"')]"));
+			if(list.size() == 1)
+			{
+				log.debug("Record is present");
+				driver.findElement(By.xpath("//td[contains(text(),'"+extNumValue+"')]//preceding-sibling::td[18]")).click();
+				wait.until(ExpectedConditions.textToBePresentInElement(extNumLength.getResponseMsg(), 
+						"Remove operation successful for:"));
+				
+				list.clear();
+				list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+						("//td[contains(text(),'"+extNumValue+"')]"));
+				
+				Assert.assertTrue(list.size() == 0);
+			}
+	}
+	
+	
+	public void deleteCustomer(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData,
+			String extNumValue ,Logger log)
+	{
+		List<WebElement> list = null;
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+//			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			log.info("After successful login");
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getGroups().click();
+			snmTelGrp.getCustomerLink().click();
+			
+			list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+					("//td[contains(text(),'"+extNumValue+"')]"));
+			if(list.size() == 1)
+			{
+				log.debug("Record is present");
+				driver.findElement(By.xpath("//td[contains(text(),'"+extNumValue+"')]//preceding-sibling::td[20]")).click();
+				wait.until(ExpectedConditions.textToBePresentInElement(accCode.getResponseMsg(), 
+						"Remove operation successful for:"));
+				
+				list.clear();
+				list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+						("//td[contains(text(),'"+extNumValue+"')]"));
+				
+				Assert.assertTrue(list.size() == 0);
+			}
+			snmMainPage.getLogoutButton().click();
 	}
 }
