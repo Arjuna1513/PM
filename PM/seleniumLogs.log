@@ -697,3 +697,48 @@ Session ID: 96a48f7ca83df1266fdd331839dc04b5
 2019-10-27 16:13:10 INFO  SNM_Telephony_AccountCode_Test:126 - After successful login
 2019-10-27 16:13:11 INFO  SNM_Telephony_AccountCode_Test:138 - After successful accCode creation
 2019-10-27 16:13:14 INFO  SNM_Telephony_AccountCode_Test:347 - After successful login
+2019-10-28 17:00:27 INFO  SNM_Telephony_Extension_CSP_Test:29 - ========= Beginning of testcase :test_create_CSP ===========
+2019-10-28 17:00:29 INFO  SNM_Telephony_Extension_CSP_Test:58 - After successful login
+2019-10-28 17:00:49 INFO  SNM_Telephony_Extension_CSP_Test:197 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='Apply']"}
+  (Session info: chrome=78.0.3904.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54880}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: 27807cd0cda35e8cb1b3634013913d2f
+*** Element info: {Using=name, value=Apply}
+2019-10-28 17:01:40 INFO  SNM_Telephony_Extension_CSP_Test:29 - ========= Beginning of testcase :test_create_CSP ===========
+2019-10-28 17:01:42 INFO  SNM_Telephony_Extension_CSP_Test:58 - After successful login
+2019-10-28 17:02:02 INFO  SNM_Telephony_Extension_CSP_Test:197 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"*[name='Apply']"}
+  (Session info: chrome=78.0.3904.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:54990}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: 8c2a7578756a57ab4af4b95475f80b8b
+*** Element info: {Using=name, value=Apply}
+2019-10-28 17:02:03 INFO  SNM_Telephony_Extension_CSP_Test:425 - After successful login
+2019-10-28 17:03:21 INFO  SNM_Telephony_Extension_CSP_Test:29 - ========= Beginning of testcase :test_create_CSP ===========
+2019-10-28 17:03:23 INFO  SNM_Telephony_Extension_CSP_Test:58 - After successful login
+2019-10-28 17:03:43 INFO  SNM_Telephony_Extension_CSP_Test:197 - org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[contains(text(),'1')]//following-sibling::td[contains(text(),'jkljl')]//preceding-sibling::td[22]"}
+  (Session info: chrome=78.0.3904.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-D19U8M5', ip: '10.211.163.181', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\MALLIK~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55121}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: accept}
+Session ID: 1f445d8a6c092b8e8d9d84ef8c331285
+*** Element info: {Using=xpath, value=//td[contains(text(),'1')]//following-sibling::td[contains(text(),'jkljl')]//preceding-sibling::td[22]}
+2019-10-28 17:03:45 INFO  SNM_Telephony_Extension_CSP_Test:425 - After successful login
+2019-10-28 17:03:45 DEBUG SNM_Telephony_Extension_CSP_Test:435 - Record is present
+2019-10-28 17:04:48 INFO  SNM_Telephony_Extension_CSP_Test:29 - ========= Beginning of testcase :test_create_CSP ===========
+2019-10-28 17:04:50 INFO  SNM_Telephony_Extension_CSP_Test:58 - After successful login
+2019-10-28 17:04:57 INFO  SNM_Telephony_Extension_CSP_Test:425 - After successful login
+2019-10-28 17:04:58 DEBUG SNM_Telephony_Extension_CSP_Test:435 - Record is present
+2019-10-28 17:05:45 INFO  SNM_Telephony_Extension_CSP_Test:29 - ========= Beginning of testcase :test_create_CSP ===========
+2019-10-28 17:05:46 INFO  SNM_Telephony_Extension_CSP_Test:58 - After successful login
+2019-10-28 17:05:56 FATAL SNM_Telephony_Extension_CSP_Test:191 - java.lang.AssertionError: expected [true] but found [false]
+2019-10-28 17:05:58 INFO  SNM_Telephony_Extension_CSP_Test:425 - After successful login
+2019-10-28 17:05:59 DEBUG SNM_Telephony_Extension_CSP_Test:435 - Record is present
