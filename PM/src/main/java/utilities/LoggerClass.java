@@ -8,7 +8,7 @@ public class LoggerClass
 	private static Logger log = null;
 	
 	
-	public static Logger getLogger(String className)
+	public static  Logger getLogger(String className)
 	{
 		if(log==null)
 		{

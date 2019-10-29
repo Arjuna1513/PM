@@ -7,7 +7,7 @@
         <methods>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="test_create_CSP" invocation-numbers="0"/>
+          <include name="test_edit_CSP_name" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
           <include name="afterMethod"/>

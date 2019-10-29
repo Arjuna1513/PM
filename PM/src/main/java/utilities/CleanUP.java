@@ -444,4 +444,77 @@ public class CleanUP
 				Assert.assertTrue(list.size() == 0);
 			}
 	}
+	
+	
+	public void deleteCSPWithCustomer(WebDriver driver,ExcelReadAndWrite ipData, ExcelReadAndWrite loginData,
+			String tempName ,String custName,Logger log)
+	{
+		List<WebElement> list = null;
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+//			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			log.info("After successful login");
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getExtensions().click();
+			telExt.getCSP().click();
+			
+			list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+					("//td[contains(text(),'0')]//following-sibling::td[contains(text(),'"+tempName+"')]"
+							+ "//following-sibling::td[contains(text(),'"+custName+"')]"));
+			if(list.size() == 1)
+			{
+				log.debug("Record is present");
+				driver.findElement(By.xpath("//td[contains(text(),'0')]"
+						+ "//following-sibling::td[contains(text(),'"+tempName+"')]"
+						+ "//following-sibling::td[contains(text(),'"+custName+"')]//preceding-sibling::td[22]")).click();
+				wait.until(ExpectedConditions.textToBePresentInElement(extNumLength.getResponseMsg(), 
+						"Remove operation successful for:"));
+				
+				list.clear();
+				list = new ExplicitWait().numberOfElementsPresent(driver, 3, By.xpath
+						("//td[contains(text(),'"+custName+"')]"));
+				
+				Assert.assertTrue(list.size() == 0);
+			}
+	}
+	
+	public void deleteCSPTemplate(WebDriver driver, String methodName, ExcelReadAndWrite loginData, 
+			String templateName, ExcelReadAndWrite ipData) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(1, 0));
+		String[] credentials = loginData.getData("test_snm_valid_login", 1);
+//		String[] testData = pmTests.getData(methodName, 3);
+		snmLogin.snm_login(credentials[0], credentials[1]);
+		snmMainPage.getTelephony().click();
+		snmTelephony.getExtensions().click();
+		telExt.getCSP().click();
+		Thread.sleep(2000);
+		snmCSP.getManageTemplatesLink().click();
+		Thread.sleep(2000);
+		List<WebElement> list = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+				By.xpath("//td[contains(text(),'"+templateName+"')]"));
+		if(list.size()==1)
+		{
+			driver.findElement(By.xpath("//td[contains(text(),'"+templateName+"')]//preceding-sibling::td[18]")).click();
+			driver.switchTo().alert().accept();
+			wait.until(ExpectedConditions.textToBePresentInElement(extNumLength.getResponseMsg(), 
+					"Remove Template operation successful for:"));
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'"+templateName+"')]"));
+			
+			Assert.assertTrue(list1.size()==0);
+		}
+//		Thread.sleep(5000);
+		snmCSP.getManageTemplatesContinueButton().click();
+//		Thread.sleep(5000);
+		pmMainPage.getLogoutLink().click();
+	}
 }

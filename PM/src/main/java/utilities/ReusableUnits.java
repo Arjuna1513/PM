@@ -25,6 +25,11 @@ import snm_pom_classes.SNM_Main_Page;
 import snm_pom_classes.SNM_NumberPlan;
 import snm_pom_classes.SNM_NumberSeries;
 import snm_pom_classes.SNM_Number_Analysis_Page;
+import snm_pom_classes.SNM_TelephonyExtensionsPage;
+import snm_pom_classes.SNM_TelephonyPage;
+import snm_pom_classes.SNM_Telephony_Extensions_CSP_Page;
+import snm_pom_classes.SNM_Telephony_Groups_Customer_Page;
+import snm_pom_classes.SNM_Telephony_Groups_Page;
 
 public class ReusableUnits
 {
@@ -42,7 +47,11 @@ public class ReusableUnits
 	public SNM_NumberPlan numPlan;
 	public SNM_NumberSeries numSeries;
 	public SNM_External_Length_Page extNumLength;
-	
+	public SNM_Telephony_Extensions_CSP_Page snmCSP;
+	public SNM_TelephonyPage snmTelephony;
+	public SNM_TelephonyExtensionsPage telExt;
+	public SNM_Telephony_Groups_Page snmTelGrp;
+	public SNM_Telephony_Groups_Customer_Page snmTelGrpCust;
 	public ReusableUnits(WebDriver driver)
 	{
 		pmUser = new PM_User(driver);
@@ -58,6 +67,11 @@ public class ReusableUnits
 		numPlan = new SNM_NumberPlan(driver);
 		numSeries = new SNM_NumberSeries(driver);
 		extNumLength = new SNM_External_Length_Page(driver);
+		snmCSP = new SNM_Telephony_Extensions_CSP_Page(driver);
+		snmTelephony = new SNM_TelephonyPage(driver);
+		telExt = new SNM_TelephonyExtensionsPage(driver);
+		snmTelGrp = new SNM_Telephony_Groups_Page(driver);
+		snmTelGrpCust = new SNM_Telephony_Groups_Customer_Page(driver);
 	}
 	
 	public void navigateUserToServiceSummaryPage(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
@@ -1337,5 +1351,695 @@ public class ReusableUnits
 							+ "//following-sibling::td[contains(text(),'"+testData[1]+"')]"
 							+ "//following-sibling::td[contains(text(),'"+testData[2]+"')]"));
 			Assert.assertTrue(list.size() == 1);
+	}
+	
+	public void createWorkingCSP(WebDriver driver, String methodName,
+			ExcelReadAndWrite ipData, ExcelReadAndWrite snmData,
+			ExcelReadAndWrite loginData, Logger log)
+	{
+		wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getExtensions().click();
+			telExt.getCSP().click();
+			snmCSP.getAddButton().click();
+			snmCSP.getCSPName().clear();
+			snmCSP.setCSPName(testData[0]);
+			new SelectDropDownValue().selectByValue(snmCSP.getCSPNumberDropDown(), "2");
+			snmCSP.getNextButton().click();
+			snmCSP.getRequestANumberFromPSTN().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getAllowCallwaitingToneInitiation().click();
+			new SelectDropDownValue().selectByValue(snmCSP.getCallwaitingToneReceptionBPartyDropDown(), "3");
+			snmCSP.getCallwaitingToneReceptionCParty().click();
+			snmCSP.getAllowIndividualDND().click();
+			snmCSP.getAllowActivationDeactivationOfDND().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getAllowFollowMe().click();
+			new SelectDropDownValue().selectByValue(snmCSP.getAllowDirectDiversionToDropDown(), "1");
+			snmCSP.getAllowDirectDiversionOnBusy().click();
+			snmCSP.getAllowDirectDiversionOnNoAnswer().click();
+			snmCSP.getAllowMultiDirectoryDiversion().click();
+			snmCSP.getAllowRemoteProgrammingOnFollowMe().click();
+			snmCSP.getAllowRemoteProgrammingOnNoReply().click();
+			snmCSP.getAllowRemoteProgrammingOnECF().click();
+			snmCSP.getAllowRemoteProgrammingOnBusy().click();
+			snmCSP.getAllowRemoteProgrammingOnDirectDiversion().click();
+			snmCSP.getAllowPrivateNetworkPartiesToChooseDiversion().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Add operation successful for:"));
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+			
+			List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+			
+			List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Request A-number from the PSTN')]"
+							+ "//following-sibling::td[contains(text(),'Not restricted for extension')]"));
+			
+			List<WebElement> list4 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Allow Call Waiting Tone Initiation')]"
+					+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list5 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+				By.xpath("//td[contains(text(),'Call Waiting Tone Reception(B-party)')]"
+							+ "//following-sibling::td[contains(text(),'Active "
+							+ "(calls from extension, attendant, external line)')]"));
+			
+			List<WebElement> list6 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Call Waiting Tone Reception(C-party)')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list7 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Individual Do Not Disturb')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list8 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Enable Common Authorization Code')]"
+							+ "//following-sibling::td[contains(text(),'Enabled')]"));
+			
+			List<WebElement> list9 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Activation/Deactivation of Group Do Not Disturb')]"
+							+ "//following-sibling::td[contains(text(),'Permitted')]"));
+			
+			List<WebElement> list10 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow External Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list11 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list12 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Direct Diversion to')]"
+							+ "//following-sibling::td[contains(text(),'An individual or "
+							+ "common divertee position')]"));
+			
+			List<WebElement> list13 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Diversion on Busy')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list14 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Diversion on No Answer')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list15 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Multi Directory Diversion')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list16 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list17 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on ECF')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list18 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on No Reply')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list19 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Busy')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list20 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Direct Diversion')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list21 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Private Network Parties to choose Diversion "
+							+ "on origin.')]//following-sibling::td[contains(text(),'Yes')]"));
+			
+			Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1 && list4.size()==1 && list5.size()==1
+					&&	list6.size()==1 && list7.size()==1 && list8.size()==1 && list9.size()==1 && list10.size()==1
+					&& list11.size()==1 && list12.size()==1 && list13.size()==1 && list14.size()==1 && list15.size()==1 && list16.size()==1  &&
+					list17.size()==1  && list18.size()==1 && list19.size()==1 && list20.size()==1 && list21.size()==1);
+			snmCSP.getDoneButton().click();
+//			snmMainPage.getLogoutButton().click();
+	}
+	
+	
+	public void createDefaultCSP(WebDriver driver, String methodName,
+			ExcelReadAndWrite ipData, ExcelReadAndWrite snmData,
+			ExcelReadAndWrite loginData, Logger log)
+	{
+		wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getExtensions().click();
+			telExt.getCSP().click();
+			snmCSP.getAddButton().click();
+			snmCSP.getCSPName().clear();
+			snmCSP.setCSPName(testData[0]);
+			new SelectDropDownValue().selectByValue(snmCSP.getCSPNumberDropDown(), "2");
+			snmCSP.getNextButton().click();
+//			snmCSP.getRequestANumberFromPSTN().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Add operation successful for:"));
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+			
+			List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+			
+			Assert.assertTrue(list1.size()==1 && list2.size()==1);
+			snmCSP.getDoneButton().click();
+	}
+	
+	public void editAnyGivenCSP(WebDriver driver, String methodName,
+			ExcelReadAndWrite ipData, ExcelReadAndWrite snmData,
+			ExcelReadAndWrite loginData, Logger log, String cspChanges) throws InterruptedException
+	{
+		wait = new WebDriverWait(driver, 5);
+//		String[] snmCredentials = loginData.getData("test_snm_valid_login", 1);
+		String[] testData = snmData.getData(methodName, 1);
+		driver.findElement(By.xpath("//td[contains(text(),'"+testData[0]+"')]//preceding-sibling::td[21]")).click();
+		if(cspChanges.equalsIgnoreCase("RequestANumberForPSTN"))
+		{
+			snmCSP.getNumberPresentationCategory().click();
+			snmCSP.getRequestANumberFromPSTN().click();
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring Request A number from PSTN");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Request A-number from the PSTN')]"
+									+ "//following-sibling::td[contains(text(),'Not restricted for extension')]"));
+					log.info("Request A Number from PSTN is configured successfully.");
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+		else if(cspChanges.equalsIgnoreCase("AllowCallWaitingToneInitiation"))
+		{
+			snmCSP.getServiceCategory().click();
+			snmCSP.getAllowCallwaitingToneInitiation().click();
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring Allow Call Waiting Tone Initiation");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Call Waiting Tone Initiation')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+		else if(cspChanges.equalsIgnoreCase("CallWaitingToneReceptionBParty"))
+		{
+			snmCSP.getServiceCategory().click();
+			new SelectDropDownValue().selectByValue(snmCSP.getCallwaitingToneReceptionBPartyDropDown(), "3");
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring Call Waiting Tone Reception(B-party)");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Call Waiting Tone Reception(B-party)')]"
+										+ "//following-sibling::td[contains(text(),'Active "
+										+ "(calls from extension, attendant, external line)')]"));
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+		else if(cspChanges.equalsIgnoreCase("CallWaitingToneReceptionCParty"))
+		{
+			snmCSP.getServiceCategory().click();
+			snmCSP.getCallwaitingToneReceptionCParty().click();
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring Call Waiting Tone Reception(B-party)");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Call Waiting Tone Reception(C-party)')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+		else if(cspChanges.equalsIgnoreCase("AllowIndividualDND"))
+		{
+			snmCSP.getServiceCategory().click();
+			snmCSP.getAllowIndividualDND().click();
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring Call Waiting Tone Reception(B-party)");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Individual Do Not Disturb')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+		else if(cspChanges.equalsIgnoreCase("ActivationDeactivationGrpDND"))
+		{
+			snmCSP.getServiceCategory().click();
+			snmCSP.getAllowActivationDeactivationOfDND().click();
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring Activation/Deactivation of Group Do Not Disturb");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Activation/Deactivation of Group Do Not Disturb')]"
+									+ "//following-sibling::td[contains(text(),'Permitted')]"));
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+		else if(cspChanges.equalsIgnoreCase("ForceGatewayCalls"))
+		{
+			snmCSP.getServiceCategory().click();
+			snmCSP.getAllowForceGatewayCalls().click();
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring force gateway calls");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Force Calls from or to IP Terminal to be Gateway "
+									+ "Calls')]//following-sibling::td[contains(text(),'Yes')]"));
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+		else if(cspChanges.equalsIgnoreCase("CallDiversionCategory"))
+		{
+			snmCSP.getCallDiversionCategory().click();
+//			snmCSP.getAllowExternalFollowMe().click();
+			snmCSP.getAllowFollowMe().click();
+			new SelectDropDownValue().selectByValue(snmCSP.getAllowDirectDiversionToDropDown(), "1");
+			snmCSP.getAllowDirectDiversionOnBusy().click();
+			snmCSP.getAllowDirectDiversionOnNoAnswer().click();
+			snmCSP.getAllowMultiDirectoryDiversion().click();
+			snmCSP.getAllowRemoteProgrammingOnFollowMe().click();
+			snmCSP.getAllowRemoteProgrammingOnNoReply().click();
+			snmCSP.getAllowRemoteProgrammingOnECF().click();
+			snmCSP.getAllowRemoteProgrammingOnBusy().click();
+			snmCSP.getAllowRemoteProgrammingOnDirectDiversion().click();
+			snmCSP.getAllowPrivateNetworkPartiesToChooseDiversion().click();
+			
+			snmCSP.getEditCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Change operation successful for:"));
+			log.info("After configuring force gateway calls");
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'2')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//preceding-sibling::td[22]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'2')]"));
+					
+					List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+					
+					
+					List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow External Follow Me')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list4 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Follow Me')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list5 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Direct Diversion to')]"
+									+ "//following-sibling::td[contains(text(),'An individual or "
+									+ "common divertee position')]"));
+					
+					List<WebElement> list6 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Diversion on Busy')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list7 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Diversion on No Answer')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list8 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Multi Directory Diversion')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list9 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Remote Programming on Follow Me')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list10 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Remote Programming on ECF')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list11 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Remote Programming on No Reply')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list12 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Remote Programming on Busy')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list13 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Remote Programming on Direct Diversion')]"
+									+ "//following-sibling::td[contains(text(),'Yes')]"));
+					
+					List<WebElement> list14 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+							By.xpath("//td[contains(text(),'Allow Private Network Parties to choose Diversion "
+									+ "on origin.')]//following-sibling::td[contains(text(),'Yes')]"));
+//					Thread.sleep(100000);
+					Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1 && list4.size()==1 && list5.size()==1
+						&&	list6.size()==1 && list7.size()==1 && list8.size()==1 && list9.size()==1 && list10.size()==1
+							&& list11.size()==1 && list12.size()==1 && list13.size()==1 && list14.size()==1);
+					snmCSP.getDoneButton().click();
+		}
+	}
+	
+	public void createCSPTemplate(WebDriver driver, String methodName, 
+			ExcelReadAndWrite ipData, ExcelReadAndWrite loginData, 
+			String templateName) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		String[] credentials = loginData.getData("test_snm_valid_login", 1);
+//		String[] testData = snmTests.getData(methodName, 3);
+		driver.get(ipData.getData(1, 0));
+		snmLogin.snm_login(credentials[0], credentials[1]);
+		snmMainPage.getTelephony().click();
+		snmTelephony.getExtensions().click();
+		telExt.getCSP().click();
+		snmCSP.getManageTemplatesLink().click();
+		snmCSP.getTemplateAddButton().click();
+		snmCSP.getNextButton().click();
+		
+		snmCSP.getRequestANumberFromPSTN().click();
+		snmCSP.getNextButton().click();
+		snmCSP.getNextButton().click();
+		snmCSP.getAllowCallwaitingToneInitiation().click();
+		new SelectDropDownValue().selectByValue(snmCSP.getCallwaitingToneReceptionBPartyDropDown(), "3");
+		snmCSP.getCallwaitingToneReceptionCParty().click();
+		snmCSP.getAllowIndividualDND().click();
+		snmCSP.getAllowActivationDeactivationOfDND().click();
+		snmCSP.getNextButton().click();
+		snmCSP.getAllowFollowMe().click();
+		new SelectDropDownValue().selectByValue(snmCSP.getAllowDirectDiversionToDropDown(), "1");
+		snmCSP.getAllowDirectDiversionOnBusy().click();
+		snmCSP.getAllowDirectDiversionOnNoAnswer().click();
+		snmCSP.getAllowMultiDirectoryDiversion().click();
+		snmCSP.getAllowRemoteProgrammingOnFollowMe().click();
+		snmCSP.getAllowRemoteProgrammingOnNoReply().click();
+		snmCSP.getAllowRemoteProgrammingOnECF().click();
+		snmCSP.getAllowRemoteProgrammingOnBusy().click();
+		snmCSP.getAllowRemoteProgrammingOnDirectDiversion().click();
+		snmCSP.getAllowPrivateNetworkPartiesToChooseDiversion().click();
+		snmCSP.getNextButton().click();
+		snmCSP.getNextButton().click();
+		snmCSP.getUploadCSPTemplateName().sendKeys(templateName);
+		snmCSP.getCSPApplyButton().click();
+		wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+				"New Template operation successful for:"));
+		snmCSP.getDoneButton().click();
+		List<WebElement> list = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+				By.xpath("//td[contains(text(),'"+templateName+"')]"));
+		Assert.assertTrue(list.size()==1);
+//		snmCSP.getManageTemplatesContinueButton().click();
+//		pmMainPge.getLogoutLink().click();
+	}
+	
+	public void createCustomer(WebDriver driver,String methodName, ExcelReadAndWrite ipData, 
+			ExcelReadAndWrite snmTests,
+			ExcelReadAndWrite loginData,
+			Logger log)
+	{
+		List<WebElement> list = null;
+		WebDriverWait wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+			testData = snmTests.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			log.info("After successful login");
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getGroups().click();
+			snmTelGrp.getCustomerLink().click();
+			snmTelGrpCust.getCustAddButton().click();
+			snmTelGrpCust.setCustomerName(testData[1]);
+			snmTelGrpCust.setCustomerNumber(testData[2]);
+			snmTelGrpCust.getCustomerApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Add operation successful for:"));
+			snmTelGrpCust.getDoneButton().click();
+			List<WebElement> elePresent = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'"+testData[2]+"')]//following-sibling::td[contains(text(),'"+testData[1]+"')]"));
+			Assert.assertTrue(elePresent.size()==1);
+			snmMainPage.getLogoutButton().click();
+	}
+	
+	
+	public void createWorkingCSPWithCustomer(WebDriver driver, String methodName,
+			ExcelReadAndWrite ipData, ExcelReadAndWrite snmData,
+			ExcelReadAndWrite loginData, Logger log)
+	{
+		wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getExtensions().click();
+			telExt.getCSP().click();
+			snmCSP.getAddButton().click();
+			new SelectDropDownValue().selectByValue(snmCSP.getCSPCustomerDropDown(), testData[1]);
+			snmCSP.getCSPName().clear();
+			snmCSP.setCSPName(testData[0]);
+			new SelectDropDownValue().selectByValue(snmCSP.getCSPNumberDropDown(), "0");
+			snmCSP.getNextButton().click();
+			snmCSP.getRequestANumberFromPSTN().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getAllowCallwaitingToneInitiation().click();
+			new SelectDropDownValue().selectByValue(snmCSP.getCallwaitingToneReceptionBPartyDropDown(), "3");
+			snmCSP.getCallwaitingToneReceptionCParty().click();
+			snmCSP.getAllowIndividualDND().click();
+			snmCSP.getAllowActivationDeactivationOfDND().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getAllowFollowMe().click();
+			new SelectDropDownValue().selectByValue(snmCSP.getAllowDirectDiversionToDropDown(), "1");
+			snmCSP.getAllowDirectDiversionOnBusy().click();
+			snmCSP.getAllowDirectDiversionOnNoAnswer().click();
+			snmCSP.getAllowMultiDirectoryDiversion().click();
+			snmCSP.getAllowRemoteProgrammingOnFollowMe().click();
+			snmCSP.getAllowRemoteProgrammingOnNoReply().click();
+			snmCSP.getAllowRemoteProgrammingOnECF().click();
+			snmCSP.getAllowRemoteProgrammingOnBusy().click();
+			snmCSP.getAllowRemoteProgrammingOnDirectDiversion().click();
+			snmCSP.getAllowPrivateNetworkPartiesToChooseDiversion().click();
+			snmCSP.getNextButton().click();
+			snmCSP.getCSPApplyButton().click();
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCSP.getResponseMessage(), 
+					"Add operation successful for:"));
+			snmCSP.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'0')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[0]+"')]"
+					+ "//following-sibling::td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[24]")).click();
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'CSP Number')]//following-sibling::td[contains(text(),'0')]"));
+			
+			List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'CSP Name')]//following-sibling::td[contains(text(),'"+testData[0]+"')]"));
+			
+			List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Request A-number from the PSTN')]"
+							+ "//following-sibling::td[contains(text(),'Not restricted for extension')]"));
+			
+			List<WebElement> list4 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Allow Call Waiting Tone Initiation')]"
+					+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list5 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+				By.xpath("//td[contains(text(),'Call Waiting Tone Reception(B-party)')]"
+							+ "//following-sibling::td[contains(text(),'Active "
+							+ "(calls from extension, attendant, external line)')]"));
+			
+			List<WebElement> list6 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Call Waiting Tone Reception(C-party)')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list7 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Individual Do Not Disturb')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list8 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Enable Common Authorization Code')]"
+							+ "//following-sibling::td[contains(text(),'Enabled')]"));
+			
+			List<WebElement> list9 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Activation/Deactivation of Group Do Not Disturb')]"
+							+ "//following-sibling::td[contains(text(),'Permitted')]"));
+			
+			List<WebElement> list10 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow External Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list11 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list12 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Direct Diversion to')]"
+							+ "//following-sibling::td[contains(text(),'An individual or "
+							+ "common divertee position')]"));
+			
+			List<WebElement> list13 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Diversion on Busy')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list14 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Diversion on No Answer')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list15 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Multi Directory Diversion')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list16 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list17 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on ECF')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list18 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on No Reply')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list19 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Busy')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list20 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Direct Diversion')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list21 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Private Network Parties to choose Diversion "
+							+ "on origin.')]//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list22 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Customer')]//following-sibling::td[contains(text(),'"+testData[1]+"')]"));
+			
+			Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1 && list4.size()==1 && list5.size()==1
+					&&	list6.size()==1 && list7.size()==1 && list8.size()==1 && list9.size()==1 && list10.size()==1
+					&& list11.size()==1 && list12.size()==1 && list13.size()==1 && list14.size()==1 && list15.size()==1 && list16.size()==1  &&
+					list17.size()==1  && list18.size()==1 && list19.size()==1 && list20.size()==1 && list21.size()==1 && list22.size()==1);
+			snmCSP.getDoneButton().click();
+//			snmMainPage.getLogoutButton().click();
 	}
 }

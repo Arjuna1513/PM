@@ -82,6 +82,13 @@ public class SNM_Telephony_Extensions_CSP_Page
 		return uploadCSPTemplateName;
 	}
 	
+	@FindBy(id="myCommonServiceProfiles_VO.GESPP[0].CSP.CSPName")
+	private WebElement CSPNameForAddingCSPUsingCSPAsTemplate;
+	public WebElement getCSPNameForAddingCSPUsingCSPAsTemplate()
+	{
+		return CSPNameForAddingCSPUsingCSPAsTemplate;
+	}
+	
 	@FindBy(name="templateFile")
 	private WebElement browseButton;
 	public WebElement getBrowseButton()
@@ -572,5 +579,54 @@ public class SNM_Telephony_Extensions_CSP_Page
 	public WebElement getAllowPrivateNetworkPartiesToChooseDiversion()
 	{
 		return allowPrivateNetworkPartiesToChooseDiversion;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Number Presentation Category')]")
+	private WebElement numberPresentationCategory;
+	public WebElement getNumberPresentationCategory()
+	{
+		return numberPresentationCategory;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Traffic Category')]")
+	private WebElement trafficCategory;
+	public WebElement getTrafficCategory()
+	{
+		return trafficCategory;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Service Category')]")
+	private WebElement serviceCategory;
+	public WebElement getServiceCategory()
+	{
+		return serviceCategory;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Template Name')]")
+	private WebElement templateName;
+	public WebElement getTemplateNameLink()
+	{
+		return templateName;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Call Diversion Category')]")
+	private WebElement callDiversionCategory;
+	public WebElement getCallDiversionCategory()
+	{
+		return callDiversionCategory;
+	}
+	
+	@FindBy(xpath="//a[contains(text(),'Routing Category')]")
+	private WebElement routingCategory;
+	public WebElement getRoutingCategory()
+	{
+		return routingCategory;
+	}
+	
+	@FindBy(name="Apply")
+	private WebElement editCSPApplyButton;
+	public WebElement getEditCSPApplyButton()
+	{
+		return editCSPApplyButton;
 	}
 }
