@@ -28,6 +28,7 @@ import snm_pom_classes.SNM_Number_Analysis_Page;
 import snm_pom_classes.SNM_TelephonyExtensionsPage;
 import snm_pom_classes.SNM_TelephonyPage;
 import snm_pom_classes.SNM_Telephony_Extensions_CSP_Page;
+import snm_pom_classes.SNM_Telephony_Extensions_CommonCategory;
 import snm_pom_classes.SNM_Telephony_Groups_Customer_Page;
 import snm_pom_classes.SNM_Telephony_Groups_Page;
 
@@ -52,6 +53,7 @@ public class ReusableUnits
 	public SNM_TelephonyExtensionsPage telExt;
 	public SNM_Telephony_Groups_Page snmTelGrp;
 	public SNM_Telephony_Groups_Customer_Page snmTelGrpCust;
+	public SNM_Telephony_Extensions_CommonCategory snmCAT;
 	public ReusableUnits(WebDriver driver)
 	{
 		pmUser = new PM_User(driver);
@@ -72,6 +74,7 @@ public class ReusableUnits
 		telExt = new SNM_TelephonyExtensionsPage(driver);
 		snmTelGrp = new SNM_Telephony_Groups_Page(driver);
 		snmTelGrpCust = new SNM_Telephony_Groups_Customer_Page(driver);
+		snmCAT = new SNM_Telephony_Extensions_CommonCategory(driver);
 	}
 	
 	public void navigateUserToServiceSummaryPage(WebDriver driver, String methodName, ExcelReadAndWrite ipData,
@@ -1495,6 +1498,179 @@ public class ReusableUnits
 //			snmMainPage.getLogoutButton().click();
 	}
 	
+	
+	public void createWorkingCAT(WebDriver driver, String methodName,
+			ExcelReadAndWrite ipData, ExcelReadAndWrite snmData,
+			ExcelReadAndWrite loginData, Logger log, String catNumber)
+	{
+		wait = new WebDriverWait(driver, 15);
+		String[] snmCredentials = null;
+		String[] testData = null;
+		
+			snmCredentials = loginData.getData("test_snm_valid_login", 1);
+			testData = snmData.getData(methodName, 1);
+			driver.get(ipData.getData(1, 0));
+			snmLogin.snm_login(snmCredentials[0], snmCredentials[1]);
+			
+			snmMainPage.getTelephony().click();
+			snmTelephony.getExtensions().click();
+			telExt.getCommonCategory().click();
+			snmCAT.getCatNumberLink(catNumber).click();
+			snmCAT.getCommonCatName().clear();
+			snmCAT.setCommonCatName("CAT"+catNumber);
+			snmCAT.getServiceCategoryLink().click();
+			snmCAT.getAllowIntrusionInitiationAndBypassOfDiversion().click();
+			snmCAT.getAllowReceptionOfIntrusionAndCallWaitingTone().click();
+			new SelectDropDownValue().selectByValue(snmCAT.getAutomaticCallBackDeopDown(), "2");
+			snmCAT.getAllowCallWaitingToneInitiation().click();
+			new SelectDropDownValue().selectByValue(snmCAT.getCallWaitingToneReception(), "06");
+			snmCAT.getAllowExternalControlledCallDistribution().click();
+			snmCAT.getOfferedTimer().clear();
+			snmCAT.setOfferedTimer("60");
+			snmCAT.getAutomaticCallDistribution().click();
+			snmCAT.getAnswerHandledByExternalApplication().click();
+			snmCAT.getCallDivCategory().click();
+			snmCAT.getAllowIndividualDND().click();
+			snmCAT.getAllowExternalFollowMe().click();
+			snmCAT.getAllowDirectDivToCommonDiverteePosition().click();
+			snmCAT.getAllowDiversionOnBusy().click();
+			snmCAT.getAllowDiversionOnNoAnswer().click();
+			snmCAT.getAllowFollowMe().click();
+			snmCAT.getAllowDiversionOnOrigin().click();
+			new SelectDropDownValue().selectByValue(snmCAT.getOriginIsAnInternalExtension(), "2");
+			new SelectDropDownValue().selectByValue(snmCAT.getOriginIsAPublicExternalLine(), "2");
+			new SelectDropDownValue().selectByValue(snmCAT.getOriginIsAPrivateExternalLine(), "2");
+			snmCAT.getAllowRemoteProgrammingOnFollowMe().click();
+			snmCAT.getAllowRemoteProgrammingOnECF().click();
+			snmCAT.getAllowRemoteProgrammingOnNoReply().click();
+			snmCAT.getAllowRemoteProgrammingOnBusy().click();
+			snmCAT.getAllowRemoteProgrammingOnDirectDiversion().click();
+//			snmCAT.getAnswerHandledByExternalApplication().click();
+			snmCAT.getApplyButton().click();
+			
+			wait.until(ExpectedConditions.textToBePresentInElement(snmCAT.getResponseMessage(), 
+					"Change operation successful for:"));
+			snmCAT.getDoneButton().click();
+			driver.findElement(By.xpath("//td[contains(text(),'CAT5')]"
+					+ "//preceding-sibling::td[contains(text(),'5')]"
+					+ "//preceding-sibling::td[20]")).click();
+			
+			
+			List<WebElement> list1 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Category Number')]//following-sibling::td[contains(text(),'"+catNumber+"')]"));
+			
+			List<WebElement> list2 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Category Name')]//following-sibling::td[contains(text(),'"+"CAT"+catNumber+"')]"));
+			
+			List<WebElement> list3 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Allow Intrusion Initiation and Bypass of Diversion')]"
+					+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list4 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+			By.xpath("//td[contains(text(),'Allow Reception of Intrusion and Call Waiting Tone')]"
+					+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list5 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+				By.xpath("//td[contains(text(),'Automatic Call Back Characteristics')]"
+						+ "//following-sibling::td[contains(text(),"
+						+ "'Permitted in private network or external line')]"));
+			
+			List<WebElement> list6 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Call Waiting Tone Initiation')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list7 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Call Waiting Tone Reception')]"
+							+ "//following-sibling::td[contains(text(),"
+							+ "'From another extension, PBX operator and external line')]"));
+			
+			List<WebElement> list8 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow External Controlled Call Distribution ')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list9 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Offered Timer')]"
+							+ "//following-sibling::td[contains(text(),'60')]"));
+			
+			List<WebElement> list10 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Automatic Call Distribution')]"
+							+ "//following-sibling::td[contains(text(),'Enabled')]"));
+			
+			List<WebElement> list11 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Individual Do Not Disturb')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list12 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow External Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list13 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Direct Diversion to a Common Divertee Position')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list14 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Diversion on Busy')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list15 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Diversion on No Answer')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list16 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list17 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Diversion on Origin')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list18 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Origin is an Internal Extension')]"
+							+ "//following-sibling::td[contains(text(),'Common diversion position')]"));
+			
+			List<WebElement> list19 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Origin is a Public External Line')]"
+							+ "//following-sibling::td[contains(text(),'Common diversion position')]"));
+			
+			List<WebElement> list20 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Origin is a Private External Line')]"
+							+ "//following-sibling::td[contains(text(),'Common diversion position')]"));
+			
+			List<WebElement> list21 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Follow Me')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list22 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on ECF')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list23 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on No Reply')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list24 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Busy')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			List<WebElement> list25 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+					By.xpath("//td[contains(text(),'Allow Remote Programming on Direct Diversion')]"
+							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+//			List<WebElement> list26 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+//					By.xpath("//td[contains(text(),'Allow Private Network Parties to choose Diversion "
+//							+ "on origin.')]//following-sibling::td[contains(text(),'Yes')]"));
+			
+//			List<WebElement> list27 = new ExplicitWait().numberOfElementsPresent(driver, 3, 
+//					By.xpath("//td[contains(text(),'Answer Handled By External Application')]"
+//							+ "//following-sibling::td[contains(text(),'Yes')]"));
+			
+			Assert.assertTrue(list1.size()==1 && list2.size()==1 && list3.size()==1 && list4.size()==1 && list5.size()==1
+					&&	list6.size()==1 && list7.size()==1 && list8.size()==1 && list9.size()==1 && list10.size()==1
+					&& list11.size()==1 && list12.size()==1 && list13.size()==1 && list14.size()==1 && list15.size()==1 && list16.size()==1  &&
+					list17.size()==1  && list18.size()==1 && list19.size()==1 && list20.size()==1 && list21.size()==1
+					&& list22.size()==1 && list23.size()==1 && list24.size()==1 && list25.size()==1);
+//			snmMainPage.getLogoutButton().click();
+	}
 	
 	public void createDefaultCSP(WebDriver driver, String methodName,
 			ExcelReadAndWrite ipData, ExcelReadAndWrite snmData,

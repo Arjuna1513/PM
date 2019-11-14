@@ -12,6 +12,34 @@ public class SNM_Telephony_Extensions_CommonCategory
 		PageFactory.initElements(driver, this);
 	}
 	
+	public WebElement getCatNumberLink(String catNumber)
+	{
+		if(catNumber.equals("0"))
+		{
+			return commonCat0;
+		}
+		else if(catNumber.equals("1"))
+		{
+			return commonCat1;
+		}
+		else if(catNumber.equals("2"))
+		{
+			return commonCat2;
+		}
+		else if(catNumber.equals("3"))
+		{
+			return commonCat3;
+		}
+		else if(catNumber.equals("4"))
+		{
+			return commonCat4;
+		}
+		else
+		{
+			return commonCat5;
+		}
+	}
+	
 	@FindBy(id="changeThis0_img")
 	private WebElement commonCat0;
 	public WebElement getCommonCat0()
@@ -45,6 +73,13 @@ public class SNM_Telephony_Extensions_CommonCategory
 	public WebElement getCommonCat4()
 	{
 		return commonCat4;
+	}
+	
+	@FindBy(id="changeThis5_img")
+	private WebElement commonCat5;
+	public WebElement getCommonCat5()
+	{
+		return commonCat5;
 	}
 	
 	@FindBy(id="exccp.CAT.CATName")
@@ -336,4 +371,33 @@ public class SNM_Telephony_Extensions_CommonCategory
 	{
 		return viewThis4;
 	}
+	
+	@FindBy(id="exccp.divO_CB")
+	private WebElement AllowDiversionOnOrigin;
+	public WebElement getAllowDiversionOnOrigin()
+	{
+		return AllowDiversionOnOrigin;
+	}
+	
+	@FindBy(id="exccp.intO")
+	private WebElement OriginIsAnInternalExtension;
+	public WebElement getOriginIsAnInternalExtension()
+	{
+		return OriginIsAnInternalExtension;
+	}
+	
+	@FindBy(id="exccp.pubO")
+	private WebElement OriginIsAPublicExternalLine;
+	public WebElement getOriginIsAPublicExternalLine()
+	{
+		return OriginIsAPublicExternalLine;
+	}
+	
+	@FindBy(id="exccp.priO")
+	private WebElement OriginIsAPrivateExternalLine;
+	public WebElement getOriginIsAPrivateExternalLine()
+	{
+		return OriginIsAPrivateExternalLine;
+	}
+	
 }

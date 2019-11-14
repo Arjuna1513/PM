@@ -2,61 +2,61 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20364" started-at="2019-10-29T13:47:49Z" finished-at="2019-10-29T13:48:09Z">
+  <suite name="Suite" duration-ms="26487" started-at="2019-11-12T06:36:20Z" finished-at="2019-11-12T06:36:46Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20364" started-at="2019-10-29T13:47:49Z" finished-at="2019-10-29T13:48:09Z">
-      <class name="tests.SNM_Telephony_Extension_CSP_Test">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84]" name="beforeSuite" is-config="true" duration-ms="928" started-at="2019-10-29T13:47:48Z" finished-at="2019-10-29T13:47:49Z">
+    <test name="Test" duration-ms="26487" started-at="2019-11-12T06:36:20Z" finished-at="2019-11-12T06:36:46Z">
+      <class name="tests.PM_User_Test">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.PM_User_Test@13805618]" name="beforeSuite" is-config="true" duration-ms="1146" started-at="2019-11-12T06:36:18Z" finished-at="2019-11-12T06:36:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-10-29T13:47:49Z" finished-at="2019-10-29T13:47:49Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.PM_User_Test@13805618]" name="beforeClass" is-config="true" duration-ms="0" started-at="2019-11-12T06:36:20Z" finished-at="2019-11-12T06:36:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84]" name="beforeMethod" is-config="true" duration-ms="3504" started-at="2019-10-29T13:47:49Z" finished-at="2019-10-29T13:47:53Z">
+        <test-method status="PASS" signature="beforeMethod(org.testng.ITestContext)[pri:0, instance:tests.PM_User_Test@13805618]" name="beforeMethod" is-config="true" duration-ms="4436" started-at="2019-11-12T06:36:20Z" finished-at="2019-11-12T06:36:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@5c92166b]]>
+                <![CDATA[org.testng.TestRunner@32c0915e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="test_edit_CSP_name(java.lang.reflect.Method)[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84]" name="test_edit_CSP_name" duration-ms="14521" started-at="2019-10-29T13:47:53Z" finished-at="2019-10-29T13:48:07Z">
+        <test-method status="PASS" signature="test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@13805618]" name="test_create_user" duration-ms="21781" started-at="2019-11-12T06:36:24Z" finished-at="2019-11-12T06:36:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void tests.SNM_Telephony_Extension_CSP_Test.test_edit_CSP_name(java.lang.reflect.Method) throws java.lang.Exception]]>
+                <![CDATA[public void tests.PM_User_Test.test_create_user(java.lang.reflect.Method) throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test_edit_CSP_name -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84]" name="afterMethod" is-config="true" duration-ms="2316" started-at="2019-10-29T13:48:07Z" finished-at="2019-10-29T13:48:09Z">
+        </test-method> <!-- test_create_user -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:tests.PM_User_Test@13805618]" name="afterMethod" is-config="true" duration-ms="213" started-at="2019-11-12T06:36:46Z" finished-at="2019-11-12T06:36:46Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=test_edit_CSP_name status=SUCCESS method=SNM_Telephony_Extension_CSP_Test.test_edit_CSP_name(java.lang.reflect.Method)[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84] output={null}]]]>
+                <![CDATA[[TestResult name=test_create_user status=SUCCESS method=PM_User_Test.test_create_user(java.lang.reflect.Method)[pri:0, instance:tests.PM_User_Test@13805618] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-10-29T13:48:09Z" finished-at="2019-10-29T13:48:09Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.PM_User_Test@13805618]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-11-12T06:36:46Z" finished-at="2019-11-12T06:36:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.SNM_Telephony_Extension_CSP_Test@67205a84]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-10-29T13:48:09Z" finished-at="2019-10-29T13:48:09Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.PM_User_Test@13805618]" name="afterSuite" is-config="true" duration-ms="0" started-at="2019-11-12T06:36:46Z" finished-at="2019-11-12T06:36:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- tests.SNM_Telephony_Extension_CSP_Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- tests.PM_User_Test -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
