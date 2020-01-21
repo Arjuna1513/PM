@@ -2,6 +2,7 @@ package utilities;
 
 import java.util.List;
 
+import org.apache.commons.math3.analysis.function.Exp;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +23,7 @@ import pm_pom_classes.PM_Users;
 import snm_pom_classes.SNM_External_Length_Page;
 import snm_pom_classes.SNM_Login_Page;
 import snm_pom_classes.SNM_Main_Page;
+import snm_pom_classes.SNM_NumAna__Num_Plan_SystemNumbers_Page;
 import snm_pom_classes.SNM_NumberPlan;
 import snm_pom_classes.SNM_NumberSeries;
 import snm_pom_classes.SNM_Number_Analysis_Page;
@@ -54,6 +56,7 @@ public class CleanUP
 	public SNM_Telephony_Groups_Page snmTelGrp;
 	public SNM_Telephony_Groups_Customer_Page snmTelCustGrps;
 	public SNM_Telephony_Extensions_CSP_Page snmCSP;
+	public SNM_NumAna__Num_Plan_SystemNumbers_Page sysNumbers;
 	
 	public CleanUP(WebDriver driver)
 	{
@@ -77,6 +80,7 @@ public class CleanUP
 		snmTelGrp = new SNM_Telephony_Groups_Page(driver);
 		snmTelCustGrps = new SNM_Telephony_Groups_Customer_Page(driver);
 		snmCSP = new SNM_Telephony_Extensions_CSP_Page(driver);
+		sysNumbers = new SNM_NumAna__Num_Plan_SystemNumbers_Page(driver);
 	}
 	
 	public void deleteUser(WebDriver driver, ExcelReadAndWrite ipData, String[] data, String uerName) throws InterruptedException
@@ -515,6 +519,26 @@ public class CleanUP
 //		Thread.sleep(5000);
 		snmCSP.getManageTemplatesContinueButton().click();
 //		Thread.sleep(5000);
+		pmMainPage.getLogoutLink().click();
+	}
+	
+	public void removeSystemNumbers(WebDriver driver, String methodName, ExcelReadAndWrite loginData, 
+			ExcelReadAndWrite ipData) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		driver.get(ipData.getData(1, 0));
+		String[] credentials = loginData.getData("test_snm_valid_login", 1);
+//		String[] testData = pmTests.getData(methodName, 3);
+		snmLogin.snm_login(credentials[0], credentials[1]);
+		snmMainPage.getNumber_Analysis().click();
+		numAnalysis.getNumber_Plan_Link().click();
+		numPlan.getSystemNumbers().click();
+		sysNumbers.getInternationalPrefix().clear();
+		sysNumbers.getCountryCode().clear();
+		sysNumbers.getNationalPrefix().clear();
+		sysNumbers.getApplyButton().click();
+		wait.until(ExpectedConditions.textToBePresentInElement(sysNumbers.getResponseMessage(), sysNumbers.getMessage()));
+		sysNumbers.getDoneButton().click();
 		pmMainPage.getLogoutLink().click();
 	}
 }

@@ -115,7 +115,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmExtension.getViewRangeButton().click();
 			
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
-			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'Common Category')]//following-sibling::td[contains(text(),'1 - CAT 1')]"));
+			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'Common Category')]//following-sibling::td[contains(text(),'1 - CAT1')]"));
 			Assert.assertTrue(eles.size()==1);
 			
 			pmExtension.getDoneButton().click();
@@ -690,7 +690,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 //				wait.until(ExpectedConditions.presenceOfElementLocated(By.id("myDigitalExtension_VO.DIR")));
 				pmExtension.setDigitalExtensionNumber(testData[1]);
@@ -762,7 +762,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setDigitalExtensionNumber(ipTestData[1]);
 			}
@@ -777,7 +777,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			pmExtension.setDigitalLastname(testData[5]);
 			pmExtension.getApplyButton().click();
 			
-			pmExtension.getApplyButtonAfterAssigningDigitalExtension().click();
+//			pmExtension.getApplyButtonAfterAssigningDigitalExtension().click();
 //			pmExtension.getDoneButton().click();
 			
 //			WebDriverWait wait = new WebDriverWait(driver, 100);
@@ -896,7 +896,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setDigitalExtensionNumber(ipTestData[1]);
 			}
@@ -1087,7 +1087,7 @@ public class PM_DigitalExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setDigitalExtensionNumber(ipTestData[1]);
 			}

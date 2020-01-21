@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Default suite]]]">
+  <test name="Default test(failed)(failed)(failed)">
+    <classes>
+      <class name="tests.PM_PersonalNumber_Tests">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="test_edit_Digital_extension_assign_PN" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="create_PN_Analog_Extension" invocation-numbers="0"/>
+          <include name="edit_digital_extension_to_change_active_call_list"/>
+          <include name="test_edit_Analog_extension_assign_PN"/>
+          <include name="beforeSuite"/>
+          <include name="create_PN_Digital_Extension"/>
+          <include name="afterMethod"/>
+          <include name="edit_analog_extension_to_change_active_call_list"/>
+        </methods>
+      </class> <!-- tests.PM_PersonalNumber_Tests -->
+    </classes>
+  </test> <!-- Default test(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [Default suite]]] -->

@@ -550,7 +550,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setVirtualExtensionTextBox(testData[1]);
 			}
@@ -809,7 +809,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setVirtualExtensionTextBox(extData[1]);
 			}
@@ -886,7 +886,7 @@ public class PM_VirtualExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setVirtualExtensionTextBox(extData[1]);
 			}

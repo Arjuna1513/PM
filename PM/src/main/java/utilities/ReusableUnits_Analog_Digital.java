@@ -108,7 +108,7 @@ public class ReusableUnits_Analog_Digital
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setDigitalExtensionNumber(testData[1]);
 		}
@@ -152,7 +152,7 @@ public class ReusableUnits_Analog_Digital
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setEnterAnalogDirectoryNumber(testData[1]);
 		}
@@ -219,7 +219,7 @@ public class ReusableUnits_Analog_Digital
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setDigitalExtensionNumber(extData[1]);
 		}
@@ -288,7 +288,7 @@ public class ReusableUnits_Analog_Digital
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setEnterAnalogDirectoryNumber(extData[1]);
 		}

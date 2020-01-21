@@ -29,7 +29,7 @@ public class SNM_External_NumberSeries_Test extends ConfigClass
 	Logger log = LoggerClass.getLogger("SNM_Internal_NumberSeries_Test");
 	WebDriverWait wait = null;
 	
-/*	@Test
+	@Test
 	public void test_create_externalCoordinatedNumbers(Method method, ITestContext context1) throws Exception
 	{
 		snmLogin = new SNM_Login_Page(driver);
@@ -390,7 +390,7 @@ public class SNM_External_NumberSeries_Test extends ConfigClass
 					driver, method.getName(), ipData, snmTests, loginData, log, "R3");
 		}
 	}
-*/	
+	
 	
 	@Test
 	public void test_create_publicDestLeastCostRouting(Method method, ITestContext context1) throws Exception

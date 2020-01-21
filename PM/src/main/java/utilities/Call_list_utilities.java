@@ -117,7 +117,7 @@ public class Call_list_utilities
 				System.out.println(version);
 				int ver = Integer.parseInt(version);
 				System.out.println(ver);
-				if(ver >= 720000)
+				if(ver >= 72000)
 				{
 					pmExtension.setSingleExtensionValue(testData[1]);
 				}
@@ -138,7 +138,7 @@ public class Call_list_utilities
 				System.out.println(version);
 				int ver = Integer.parseInt(version);
 				System.out.println(ver);
-				if(ver >= 720000)
+				if(ver >= 72000)
 				{
 					pmExtension.setEnterAnalogDirectoryNumber(testData[1]);
 				}
@@ -158,7 +158,7 @@ public class Call_list_utilities
 				System.out.println(version);
 				int ver = Integer.parseInt(version);
 				System.out.println(ver);
-				if(ver >= 720000)
+				if(ver >= 72000)
 				{
 					pmExtension.setDigitalExtensionNumber(testData[1]);
 				}
@@ -179,7 +179,7 @@ public class Call_list_utilities
 				System.out.println(version);
 				int ver = Integer.parseInt(version);
 				System.out.println(ver);
-				if(ver >= 720000)
+				if(ver >= 72000)
 				{
 					pmExtension.setVirtualExtensionTextBox(testData[1]);
 				}
@@ -200,7 +200,7 @@ public class Call_list_utilities
 				System.out.println(version);
 				int ver = Integer.parseInt(version);
 				System.out.println(ver);
-				if(ver >= 720000)
+				if(ver >= 72000)
 				{
 					pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
 				}

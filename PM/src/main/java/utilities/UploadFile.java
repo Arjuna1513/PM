@@ -77,7 +77,7 @@ public class UploadFile
             	if(i<10)
             	{
             		
-            		lcl_ext = ext.substring(0, 19);
+            		lcl_ext = ext.substring(0, 9);
 	            	str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -103,7 +103,7 @@ public class UploadFile
             	}
             	else if(i >= 10 && i < 100)
             	{
-            		lcl_ext = ext.substring(0, 18);
+            		lcl_ext = ext.substring(0, 8);
             		str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -129,7 +129,7 @@ public class UploadFile
             	}
             	else if(i >= 100 && i < 1000)
             	{
-            		lcl_ext = ext.substring(0, 17);
+            		lcl_ext = ext.substring(0, 7);
             		str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -155,7 +155,7 @@ public class UploadFile
             	}
             	else if(i == 1000)
             	{
-            		lcl_ext = ext.substring(0, 16);
+            		lcl_ext = ext.substring(0, 6);
             		str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -217,7 +217,7 @@ public class UploadFile
             	if(i<10)
             	{
             		
-            		lcl_ext = ext.substring(0, 19);
+            		lcl_ext = ext.substring(0, 9);
             		str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -243,7 +243,7 @@ public class UploadFile
             	}
             	else if(i >= 10 && i < 100)
             	{
-            		lcl_ext = ext.substring(0, 18);
+            		lcl_ext = ext.substring(0, 8);
             		str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -269,7 +269,7 @@ public class UploadFile
             	}
             	else if(i >= 100 && i < 1000)
             	{
-            		lcl_ext = ext.substring(0, 17);
+            		lcl_ext = ext.substring(0, 7);
             		str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -295,7 +295,7 @@ public class UploadFile
             	}
             	else if(i == 1000)
             	{
-            		lcl_ext = ext.substring(0, 16);
+            		lcl_ext = ext.substring(0, 6);
             		str = usrName;
 	            	str = str+x;
 	            	lcl_ext=lcl_ext+x;
@@ -334,16 +334,17 @@ public class UploadFile
         }
 	}
 	
-/*	
+	
 	public static void main(String[] args) throws IOException
 	{    
-		String ext = "80000000000000000000";
+		String ext = "8000000000";
 		UploadFile rd = new UploadFile();
-		rd.generate_BulkFile_For_Existing_Extension(ext, " ",1000,"Mangya");
+//		rd.generate_BulkFile_For_Existing_Extension(ext, ";",1000,"Mangya");
 //		File f = new File("./BulkFile.csv");
 //		f.delete();
-//		rd.generate_BulkFile_For_NEW_Extension(ext, "semicolon");
-	}*/
+		rd.generate_BulkFile_For_NEW_Extension(ext, ";",25,"CISCO","IPTEMPLATE");
+	}
+	
 	
 	
 	

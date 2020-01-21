@@ -1003,7 +1003,7 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 		}
 	}
 	
-	@Test
+	/*@Test
 	public void edit_sip_dect_extension_to_change_active_call_list(Method method) throws Exception
 	{
 		pmTests.checkTestStatus(method.getName());
@@ -1078,5 +1078,5 @@ public class PM_PersonalNumber_Tests extends ConfigClass
 			new ExecuteCommands(driver).executeCmds(method.getName(), ipData, loginData, list);
 		}
 	}
-	
+*/	
 }

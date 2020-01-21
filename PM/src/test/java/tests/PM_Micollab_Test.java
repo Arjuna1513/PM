@@ -107,7 +107,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -296,7 +296,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -488,7 +488,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -687,7 +687,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -1568,7 +1568,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -1763,7 +1763,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -1960,7 +1960,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -2164,7 +2164,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -2363,7 +2363,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -2660,7 +2660,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -2958,7 +2958,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -3257,7 +3257,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -3555,7 +3555,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -3852,7 +3852,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -4149,7 +4149,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -4453,7 +4453,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -4758,7 +4758,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -5065,7 +5065,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -5370,7 +5370,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}
@@ -5678,7 +5678,7 @@ public class PM_Micollab_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(extData[1]);
 			}

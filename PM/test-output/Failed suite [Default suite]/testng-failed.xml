@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Default suite]]">
-  <test thread-count="5" name="Default test(failed)(failed)">
+  <test name="Default test(failed)(failed)">
     <classes>
-      <class name="tests.PM_Micollab_Test">
+      <class name="tests.PM_PersonalNumber_Tests">
         <methods>
-          <include name="test_edit_micollab_Role_from_entry_to_basic" invocation-numbers="0"/>
           <include name="beforeClass"/>
+          <include name="test_edit_Digital_extension_assign_PN" invocation-numbers="0"/>
           <include name="beforeMethod"/>
-          <include name="test_edit_micollab_Role_from_premium_to_basic" invocation-numbers="0"/>
+          <include name="create_PN_Analog_Extension" invocation-numbers="0"/>
+          <include name="edit_digital_extension_to_change_active_call_list" invocation-numbers="0"/>
+          <include name="test_edit_Analog_extension_assign_PN" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="beforeSuite"/>
-          <include name="test_edit_micollab_Role_from_standard_to_basic" invocation-numbers="0"/>
+          <include name="create_PN_Digital_Extension" invocation-numbers="0"/>
           <include name="afterMethod"/>
+          <include name="edit_analog_extension_to_change_active_call_list" invocation-numbers="0"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_Micollab_Test -->
+      </class> <!-- tests.PM_PersonalNumber_Tests -->
     </classes>
   </test> <!-- Default test(failed)(failed) -->
 </suite> <!-- Failed suite [Failed suite [Default suite]] -->

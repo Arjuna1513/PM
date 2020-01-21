@@ -191,7 +191,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
 			}
@@ -589,7 +589,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setMultiTerminalExtensionTextBox(extData[1]);
 			}
@@ -699,7 +699,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setMultiTerminalExtensionTextBox(extData[1]);
 			}
@@ -802,7 +802,7 @@ public class PM_SIPDECT_Tests extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setMultiTerminalExtensionTextBox(extData[1]);
 			}

@@ -192,7 +192,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setSingleExtensionValue(extData[2]);
 		}
@@ -267,7 +267,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setVirtualExtensionTextBox(extData[1]);
 		}
@@ -350,7 +350,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setSingleExtensionValue(testData[2]);
 		}
@@ -392,7 +392,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
 		}
@@ -471,7 +471,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setVirtualExtensionTextBox(testData[1]);
 		}
@@ -513,7 +513,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setSingleExtensionValue(testData[2]);
 		}
@@ -612,7 +612,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setSingleExtensionValue(testData[2]);
 		}
@@ -673,7 +673,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setSingleExtensionValue(testData[3]);
 		}
@@ -991,7 +991,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
 		}
@@ -1097,7 +1097,7 @@ public class ReusableUnits
 		System.out.println(version);
 		int ver = Integer.parseInt(version);
 		System.out.println(ver);
-		if(ver >= 720000)
+		if(ver >= 72000)
 		{
 			pmExtension.setMultiTerminalExtensionTextBox(extData[1]);
 		}
@@ -1172,7 +1172,7 @@ public class ReusableUnits
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(testData[1]);
 			}
@@ -1194,7 +1194,7 @@ public class ReusableUnits
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setEnterAnalogDirectoryNumber(testData[1]);
 			}
@@ -1215,7 +1215,7 @@ public class ReusableUnits
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setDigitalExtensionNumber(testData[1]);
 			}
@@ -1237,7 +1237,7 @@ public class ReusableUnits
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setVirtualExtensionTextBox(testData[1]);
 			}
@@ -1259,7 +1259,7 @@ public class ReusableUnits
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setMultiTerminalExtensionTextBox(testData[1]);
 			}

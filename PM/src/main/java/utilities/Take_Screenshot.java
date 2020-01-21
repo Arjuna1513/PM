@@ -19,7 +19,8 @@ public class Take_Screenshot
 		System.out.println("The value of driver instance is :"+ driver );
 		TakesScreenshot ts = (TakesScreenshot)driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
-		File dest = new File(System.getProperty("user.dir").replace("\\", "\\"+"\\")+"\\ScreenShots\\"+fileName+".png");
+//		File dest = new File(System.getProperty("user.dir").replace("\\", "\\"+"\\")+"\\ScreenShots\\"+fileName+".png");
+		File dest = new File(System.getProperty("user.dir")+"/ScreenShots/"+fileName+".png");
 		System.out.println(System.getProperty("user.dir"));
 //		FileUtils.copyFile(src, dest);
 		FileHandler.copy(src, dest);

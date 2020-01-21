@@ -116,7 +116,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			pmExtension.getViewRangeButton().click();
 			
 			driver.findElement(By.xpath("//td[contains(text(),'"+testData[1]+"')]//preceding-sibling::td[20]")).click();
-			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'Common Category')]//following-sibling::td[contains(text(),'1 - CAT 1')]"));
+			List<WebElement> eles = driver.findElements(By.xpath("//td[contains(text(),'Common Category')]//following-sibling::td[contains(text(),'1 - CAT1')]"));
 			Assert.assertTrue(eles.size()==1);
 			
 			pmExtension.getDoneButton().click();
@@ -616,7 +616,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			String version = new GetMxoneVersionNumber(driver).getMxoneVersionNumber(driver);
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setEnterAnalogDirectoryNumber(testData[1]);
 			}
@@ -686,7 +686,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setEnterAnalogDirectoryNumber(ipTestData[1]);
 			}
@@ -813,7 +813,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setEnterAnalogDirectoryNumber(ipTestData[1]);
 			}
@@ -1004,7 +1004,7 @@ public class PM_AnalogExtension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setEnterAnalogDirectoryNumber(ipTestData[1]);
 			}

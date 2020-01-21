@@ -449,10 +449,10 @@ public class PM_Extension_Test extends ConfigClass
 			List<WebElement> verify1  = driver.findElements(By.xpath("//td[contains(text(),'Terminal Identity')]//following-sibling::td[contains(text(),'0.0.0.0')]"));
 			List<WebElement> verify2  = driver.findElements(By.xpath("//td[contains(text(),'Universal Resource Identifier')]//following-sibling::td[contains(text(),'0.0.0.0')]"));
 			List<WebElement> verify3  = driver.findElements(By.xpath("//td[contains(text(),'Transport')]//following-sibling::td[contains(text(),'TCP')]"));
-			List<WebElement> verify4  = driver.findElements(By.xpath("//td[contains(text(),'IP Address')]//following-sibling::td[contains(text(),'0.0.0.0')]"));
+//			List<WebElement> verify4  = driver.findElements(By.xpath("//td[contains(text(),'IP Address')]//following-sibling::td[contains(text(),'0.0.0.0')]"));
 			List<WebElement> verify5  = driver.findElements(By.xpath("//td[contains(text(),'CS Port')]//following-sibling::td[contains(text(),'5060')]"));
 			
-			Assert.assertTrue(verify1.size() == 1 && verify2.size() == 1 && verify3.size() == 1 && verify4.size() == 1 && verify5.size() == 1);
+			Assert.assertTrue(verify1.size() == 1 && verify2.size() == 1 && verify3.size() == 1 && verify5.size() == 1);
 			pmExtension.getDoneButton().click();
 			pmUser.getLogoutLink().click();
 
@@ -478,12 +478,12 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@DataProvider(name = "SLDProvider")
-	public Object[] getData()
+	public Object[][] getData()
 	{
-		Object[] obj = new Object[3];
-				obj[0] = "No, but can be changed via terminal menu";
-				obj[1] = "Yes, can not be changed via terminal menu";
-				obj[2] = "No, can not be changed via terminal menu";
+		Object[][] obj = new Object[3][1];
+				obj[0][0] = "No, but can be changed via terminal menu";
+				obj[1][0] = "Yes, can not be changed via terminal menu";
+				obj[2][0] = "No, can not be changed via terminal menu";
 		return obj;
 	}
 	
@@ -547,11 +547,11 @@ public class PM_Extension_Test extends ConfigClass
 	}
 	
 	@DataProvider(name = "hotline")
-	public Object[] getHotLineData()
+	public Object[][] getHotLineData()
 	{
-		Object[] obj = new Object[2];
-				obj[0] = "Hot-line";
-				obj[1] = "Delayed hot-line";
+		Object[][] obj = new Object[2][1];
+				obj[0][0] = "Hot-line";
+				obj[1][0] = "Delayed hot-line";
 		return obj;
 	}
 	
@@ -733,7 +733,7 @@ public class PM_Extension_Test extends ConfigClass
 			System.out.println(version);
 			int ver = Integer.parseInt(version);
 			System.out.println(ver);
-			if(ver >= 720000)
+			if(ver >= 72000)
 			{
 				pmExtension.setSingleExtensionValue(testData[1]);
 			}

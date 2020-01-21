@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Default suite]]]]]]">
+  <test name="Default test(failed)(failed)(failed)(failed)(failed)(failed)">
+    <classes>
+      <class name="tests.PM_Extension_Test">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="test_editToConfigureSecondLineState"/>
+          <include name="test_editToConfigureHotLineNumber"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- tests.PM_Extension_Test -->
+    </classes>
+  </test> <!-- Default test(failed)(failed)(failed)(failed)(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Default suite]]]]]] -->
