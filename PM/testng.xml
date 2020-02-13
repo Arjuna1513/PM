@@ -3,7 +3,22 @@
 <suite name="Suite">
   <test name="Test">
     <classes>
+      <class name="tests.SNM_Telephony_Extension_CommonCat_Test"/>
+      <class name="tests.SNM_External_NumberSeries_Test"/>
+      <class name="tests.SNM_Telephony_Extension_CSP_Test"/>
+      <class name="tests.PM_AnalogExtension_Test"/>
+      <class name="tests.PM_MultiTerminal_Test"/>
+      <class name="tests.PM_PersonalNumber_Tests"/>
+      <class name="tests.PM_VirtualExtension_Test"/>
+      <class name="tests.SNM_Telephony_AccountCode_Test"/>
       <class name="tests.PM_User_Test"/>
+      <class name="tests.PM_FunctionKeys_Test"/>
+      <class name="tests.PM_Extension_Test"/>
+      <class name="tests.SNM_Internal_NumberSeries_Test"/>
+      <class name="tests.PM_DigitalExtension_Test"/>
+      <class name="tests.SNM_ExternalNumberLength_Test"/>
+      <class name="tests.PM_Import_Test"/>
+      <class name="tests.SNM_NumAna_NumPlan_SysNumbers_Test"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

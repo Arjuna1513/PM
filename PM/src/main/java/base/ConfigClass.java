@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -49,10 +52,21 @@ public class ConfigClass implements AutoConstants
 		snmTests = new ExcelReadAndWrite("SNMTestData", excelPath);
 		ipData = new ExcelReadAndWrite("IP", excelPath);
 		
-		File file = new File("./ScreenShots");
-	    if (file.exists()) 
+		DateFormat df = new SimpleDateFormat("  yyyy-MM-dd");
+		Date date = new Date();
+		String currentDate = df.format(date);
+		
+		try {
+		File src = new File("./ScreenShots");
+		File dest = new File("C://Users//Mallikarjuna//Desktop//AllReleaseScreenShots//screenShots"+currentDate);
+		if(!dest.exists())
+		{
+			FileUtils.forceMkdir(dest);
+		}
+	    if (src.exists()) 
 	    {
-	      FileUtils.cleanDirectory(file);
+	    	FileUtils.copyDirectory(src, dest);
+	      FileUtils.cleanDirectory(src);
 	    }
 	    
 	    File file1 = new File("./seleniumLogs.log");
@@ -61,6 +75,20 @@ public class ConfigClass implements AutoConstants
 	    {
 	      FileUtils.deleteQuietly(file1);
 	    }
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	    
+	    try {
+		    Runtime.getRuntime().exec("taskkill /F /IM chromeDriver.exe");
+		    Runtime.getRuntime().exec("taskkill /F /IM geckodriver.exe");
+		    Runtime.getRuntime().exec("taskkill /F /IM IEDriverServer.exe");
+		} catch (IOException e) 
+		{
+		    e.printStackTrace();
+		}
 	}
 	
 	@AfterSuite
@@ -142,7 +170,7 @@ public class ConfigClass implements AutoConstants
 	    profile.setPreference("browser.cache.offline.enable", false);
 	    profile.setPreference("network.http.use-cache", false);
 	    FirefoxOptions options = new FirefoxOptions().setProfile(profile);
-		driver = new ChromeDriver(dc);
+		driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

@@ -26,7 +26,7 @@ public class GetMxoneVersionNumber
 		Set<String> windows = driver.getWindowHandles();
 		for(String window : windows)
 		{
-			if(!window.equals(parentWindow))
+			if(!(window.equals(parentWindow)))
 			{
 				driver.switchTo().window(window);
 				if(driver.getTitle().trim().equals(title))

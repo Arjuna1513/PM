@@ -254,7 +254,7 @@ public class PM_Import_Test extends ConfigClass
 	}
 	
 	
-/*	@Test
+	@Test
 	public void test_bulk_user_import_with_existing_extensions_delimiter_space(Method method) throws Exception
 	{
 		pmLoginPage = new PM_Login_Page(driver);
@@ -1307,5 +1307,5 @@ public class PM_Import_Test extends ConfigClass
 		}
 		
 	}
-	*/
+	
 }

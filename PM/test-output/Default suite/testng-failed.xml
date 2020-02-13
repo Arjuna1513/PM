@@ -3,18 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="tests.PM_VirtualExtension_Test">
+      <class name="tests.PM_User_Test">
         <methods>
-          <include name="beforeClass"/>
-          <include name="beforeMethod"/>
-          <include name="afterClass"/>
-          <include name="test_editToConfigureHotLineNumber_Virtual"/>
+          <include name="test_create_user"/>
           <include name="beforeSuite"/>
-          <include name="test_edit_virtual_extension_CSP" invocation-numbers="0"/>
-          <include name="afterMethod"/>
-          <include name="afterSuite"/>
         </methods>
-      </class> <!-- tests.PM_VirtualExtension_Test -->
+      </class> <!-- tests.PM_User_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
